@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Utility
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Utility\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=angle
+comment1.target=double[]\ angleToVector(double)
+comment1.text=\r\n\ converts\ angle\ into\ x-value\ and\ y-value\r\n\ @param\ angle\ \ \ \ \ The\ angle\r\n\ @return\ int[]\ --\ the\ x-value\ and\ the\ y-value\r\n
+comment2.params=x\ y
+comment2.target=double\ vectorToAngle(double,\ double)
+comment2.text=\r\n\ converts\ x-value\ and\ y-value\ into\ angle\r\n\ @param\ x\ \ \ \ \ \ \ \ \ \ The\ x-value\r\n\ @param\ y\ \ \ \ \ \ \ \ \ \ The\ y-value\r\n\ @return\ double\ --\ The\ angle\r\n
+numComments=3
