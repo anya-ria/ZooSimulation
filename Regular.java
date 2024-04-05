@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Regular here.
+ * Regular children are defenseless and must flee at the sight of animals
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas
+ * @version 2024/4/4
  */
 public class Regular extends Child
 {
@@ -14,6 +14,12 @@ public class Regular extends Child
      */
     public void act()
     {
-        // Add your action code here.
+        runAway();
+    }
+    private void runAway(){
+        double[] enemyDetails = detectNearestEnemy(Animal.class, 10000);
+        if(enemyDetails[1] == -1) return;
+        double[] vector = Utility.angleToVector(enemyDetails[0]);
+        setLocation(getX()-vector[0], getY()-vector[1]);
     }
 }
