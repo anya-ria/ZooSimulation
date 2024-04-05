@@ -16,6 +16,6 @@ public class Achievement extends World
     public Achievement()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1024, 800, 1); 
     }
 }
