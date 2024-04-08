@@ -1,5 +1,6 @@
 #Greenfoot project file
 class.MyWorld.image=zoo.png
+<<<<<<< Updated upstream
 dependency1.from=EndingScreen
 dependency1.to=Label
 dependency1.type=UsesDependency
@@ -30,6 +31,35 @@ editor.fx.0.x=360
 editor.fx.0.y=38
 height=951
 package.numDependencies=8
+=======
+dependency1.from=TitleScreen
+dependency1.to=Label
+dependency1.type=UsesDependency
+dependency2.from=TitleScreen
+dependency2.to=MyWorld
+dependency2.type=UsesDependency
+dependency3.from=MyWorld
+dependency3.to=Regular
+dependency3.type=UsesDependency
+dependency4.from=Child
+dependency4.to=SuperStatBar
+dependency4.type=UsesDependency
+dependency5.from=Child
+dependency5.to=Utility
+dependency5.type=UsesDependency
+dependency6.from=Regular
+dependency6.to=Animal
+dependency6.type=UsesDependency
+dependency7.from=Regular
+dependency7.to=Utility
+dependency7.type=UsesDependency
+editor.fx.0.height=725
+editor.fx.0.width=814
+editor.fx.0.x=905
+editor.fx.0.y=295
+height=951
+package.numDependencies=7
+>>>>>>> Stashed changes
 package.numTargets=21
 project.charset=UTF-8
 publish.hasSource=false
@@ -194,6 +224,12 @@ target9.x=0
 target9.y=0
 version=3.1.0
 width=1296
+<<<<<<< Updated upstream
 world.lastInstantiated=TitleScreen
 xPosition=310
 yPosition=76
+=======
+world.lastInstantiated=MyWorld
+xPosition=100
+yPosition=100
+>>>>>>> Stashed changes
