@@ -13,9 +13,28 @@ public class TitleScreen extends World
      * Constructor for objects of class TitleScreen.
      * 
      */
+    
+    Label start, label2;
+    
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
+
+        
+        //Add imagebuttons NewGame and Tutorial
+        start = new Label("Zoo Trip", 230);
+        addObject(start, getWidth()/2, 350);
+        
+        label2 = new Label("Press 'space' to start", 70);
+        addObject(label2,getWidth()/2,600);
+    }
+    
+    public void act(){
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
 }

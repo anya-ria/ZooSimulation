@@ -1,19 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Fighter here.
+ * Fights zombies...
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas
+ * @version 2024/4/8
  */
 public class Fighter extends Child
 {
-    /**
-     * Act - do whatever the Fighter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Fighter(){
+        super(200);
     }
 }
