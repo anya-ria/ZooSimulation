@@ -3,8 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Penguin here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Luke Xiao) 
+ * @version (2024.04.05)
+ * 2024.04.05: Class created
  */
 public class Penguin extends Animal
 {
