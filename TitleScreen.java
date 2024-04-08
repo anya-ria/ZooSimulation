@@ -14,7 +14,7 @@ public class TitleScreen extends World
      * 
      */
     
-    Label title, start;
+    Label title, start, achi, collec;
     
     public TitleScreen()
     {    
@@ -23,14 +23,28 @@ public class TitleScreen extends World
         
         title = new Label("Zoo Trip", 250);
         addObject(title, getWidth()/2, 250);
-        title = new Label("Press 'space' to start", 100);
-        addObject(title, getWidth()/2, 550);
+        title = new Label("Press 'space' to start", 60);
+        addObject(title, getWidth()/2, 450);
+        achi = new Label("Achievements", 60);
+        addObject(achi, getWidth()/2, 550);
+        collec = new Label("Endings", 60);
+        addObject(collec, getWidth()/2, 650);
     }
     
     public void act(){
         if(Greenfoot.isKeyDown("space")){
             MyWorld game = new MyWorld();
             Greenfoot.setWorld(game);
+        }
+        
+        if(Greenfoot.mouseClicked(achi)){
+            Achievement achi1 = new Achievement();
+            Greenfoot.setWorld(achi1);
+        }
+        
+        if(Greenfoot.mouseClicked(collec)){
+            Collections collec1 = new Collections();
+            Greenfoot.setWorld(collec1);
         }
     }
 }
