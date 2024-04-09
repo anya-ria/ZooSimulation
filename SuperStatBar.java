@@ -378,4 +378,17 @@ public class SuperStatBar extends Actor
         }
 
     }
+    
+    /**
+     * removes the stat bar (completely hidden at any hp)
+     */
+    public void hide(){
+        this.setImage(blank);
+    }
+    /**
+     * restores the stat bar
+     */
+    public void unhide(){
+        this.setImage(bar);
+    }
 }

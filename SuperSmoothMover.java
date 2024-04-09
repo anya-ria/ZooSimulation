@@ -37,6 +37,12 @@ public abstract class SuperSmoothMover extends Actor
     private double cosRotation;
     private double sinRotation;
     
+    protected double tempVx = 0; // temporary vx added from push
+    protected double tempVy = 0; // temporary vy added from push
+    protected double friction = 0.95;
+    
+    protected boolean awake = true;
+    
     protected boolean removed = false;
     /**
      * Move forward by the specified distance.
@@ -158,15 +164,18 @@ public abstract class SuperSmoothMover extends Actor
 
     /**
      * Set the location using exact coordinates.
+     * Modified to include temporary velocities
      * 
      * @param x the new x location
      * @param y the new y location
      */
     public void setLocation(double x, double y) 
     {
-        exactX = x;
-        exactY = y;
-        super.setLocation((int)Math.round(x), (int)Math.round(y));
+        exactX = x+tempVx;
+        exactY = y+tempVy;
+        tempVx *= friction;
+        tempVy *= friction;
+        super.setLocation((int)Math.round(exactX), (int)Math.round(exactY));
     }
 
     /**
@@ -179,9 +188,7 @@ public abstract class SuperSmoothMover extends Actor
     @Override
     public void setLocation(int x, int y) 
     {
-        exactX = x;
-        exactY = y;
-        super.setLocation(x, y);
+        setLocation((double)x, (double)y);
     }
 
     /**
@@ -233,5 +240,17 @@ public abstract class SuperSmoothMover extends Actor
       } else {
           return (int)(rotation + 0.5);
       }
+    }
+    
+    public void push(double vx, double vy){
+        tempVx += vx;
+        tempVy += vy;
+    }
+    public void push(int angle, double speed){
+        push(Utility.angleToVector(angle)[0]*speed, 
+             Utility.angleToVector(angle)[1]*speed);
+    }
+    public boolean isAwake(){
+        return awake;
     }
 }
