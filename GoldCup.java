@@ -20,13 +20,13 @@ public class GoldCup extends Icon
     public GoldCup(){
         unlock = false;
         setImage(grey);
-        grey.scale(60, 60);
+        grey.scale(70, 70);
     }
     
     public void act(){
         if(unlock){
             setImage(gold);
-            gold.scale(60, 60);
+            gold.scale(70, 70);
         }
     }
     

@@ -15,8 +15,9 @@ public class Achievement extends World
      * 
      */
 
-    Label title, achi1, achi2, achi3, achi4, achi5, achi6, returnKey;
-    GoldCup[] arr = new GoldCup[6];
+    private Label title, achi1, achi2, achi3, achi4, achi5, achi6;
+    private GoldCup[] arr = new GoldCup[6];
+    private HomeButton returnKey;
 
     public Achievement()
     {    
@@ -37,7 +38,7 @@ public class Achievement extends World
         addObject(achi5, 472, 600);
         achi6 = new Label("Zombie Zoo", 70);
         addObject(achi6, 551, 700);
-        returnKey = new Label("Home", 50);
+        returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);
         addCups();
     }
@@ -48,7 +49,8 @@ public class Achievement extends World
             arr[i] = new GoldCup();
             addObject(arr[i], 200, (100*i+200));
         }
-        arr[2].setAchieved();
+        arr[0].setAchieved();
+        arr[1].setAchieved();
     }
 
     public void act(){
