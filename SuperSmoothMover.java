@@ -171,10 +171,15 @@ public abstract class SuperSmoothMover extends Actor
      */
     public void setLocation(double x, double y) 
     {
-        exactX = x+tempVx;
-        exactY = y+tempVy;
-        tempVx *= friction;
+        exactX = x+tempVx; // add temporary speed to new position
+        exactY = y+tempVy; 
+        tempVx *= friction; // reduce temporary speed
         tempVy *= friction;
+        // bounce back if hitting border
+        if(exactX<=0||exactX>=getWorld().getWidth()-1)
+            tempVx *= -1; 
+        if(exactY<=0||exactY>=getWorld().getHeight()-1)
+            tempVy *= -1;
         super.setLocation((int)Math.round(exactX), (int)Math.round(exactY));
     }
 

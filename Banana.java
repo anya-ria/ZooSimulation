@@ -31,7 +31,11 @@ public class Banana extends Projectile
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
             touched.takeDamage(15);
+            touched.push( vx*0.2 , vy*0.2 );
             getWorld().removeObject(this);
         }
+    }
+    protected void expire(){
+        getWorld().removeObject(this); // to be changed
     }
 }

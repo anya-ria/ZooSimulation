@@ -9,4 +9,6 @@ comment2.target=Banana(double,\ double)
 comment2.text=\r\n\ constructs\ a\ new\ banana\ directly\ using\ vx\ and\ vy\r\n\ @param\ vx\ the\ x-speed\r\n\ @param\ vy\ the\ y-speed\r\n
 comment3.params=
 comment3.target=void\ detectCollision()
-numComments=4
+comment4.params=
+comment4.target=void\ expire()
+numComments=5

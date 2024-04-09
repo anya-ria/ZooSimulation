@@ -50,7 +50,7 @@ public abstract class Child extends SuperSmoothMover
      * @override
      */
     public void addedToWorld(World world){
-        hpBar = new SuperStatBar(maxHp, hp, this, 100, 10, -20, Color.GREEN, Color.RED, false);
+        hpBar = new SuperStatBar(maxHp, hp, this, 100, 10, -20, Color.GREEN, Color.RED, true);
         getWorld().addObject(hpBar, 0, 0);
     }
     /**
