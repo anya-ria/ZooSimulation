@@ -11,6 +11,7 @@ import java.util.Random;
 public class Traitor extends Child
 {
     private int cooldown = 50;
+    private Random rand = new Random();
     public Traitor(){
         super(100);
     }
@@ -39,7 +40,8 @@ public class Traitor extends Child
         setLocation(getX()+vector[0], getY()+vector[1]);
     }
     private void throwBanana(int direction, int speed){
-        getWorld().addObject(new Banana(direction, speed), getX(), getY());
+        int modif = rand.nextInt(-10,11);
+        getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
     private void punch(){
         double[] enemyDetails = detectNearestEnemy(Child.class, 10);
