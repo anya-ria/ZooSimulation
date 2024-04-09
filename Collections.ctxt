@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=Collections
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Collections\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Collections\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Collections()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Collections.\r\n\ \r\n
-numComments=2
