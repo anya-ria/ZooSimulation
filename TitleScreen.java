@@ -23,16 +23,16 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
-        setBackground("title2.jpg");
+        setBackground("title.jpg");
 
         startButton = new StartButton();
-        addObject(startButton,getWidth()/2,450);
+        addObject(startButton,400,480);
         
         achieveButton = new AchieveButton();
-        addObject(achieveButton,getWidth()/2,550);
+        addObject(achieveButton,400,580);
         
         EndButton endButton = new EndButton();
-        addObject(endButton,getWidth()/2,650);
+        addObject(endButton,400,680);
     }
 
     public void act(){
