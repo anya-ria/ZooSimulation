@@ -13,14 +13,9 @@ public class EndingScreen extends World
      * Constructor for objects of class EndingScreen.
      * 
      */
-    
-    
-    
     public EndingScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1024, 800, 1); 
-        
-        
+        super(600, 400, 1); 
     }
 }

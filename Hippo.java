@@ -3,9 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hippo here.
  * 
- * @author (Luke Xiao) 
- * @version (2024.04.05)
- * 2024.04.05: Class created
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Hippo extends Animal
 {
