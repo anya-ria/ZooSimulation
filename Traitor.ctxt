@@ -2,4 +2,5 @@
 comment0.target=Traitor
 comment0.text=\n\ Write\ a\ description\ of\ class\ Traitor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
+comment1.target=Traitor()
 numComments=2
