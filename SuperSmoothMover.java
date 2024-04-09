@@ -234,10 +234,4 @@ public abstract class SuperSmoothMover extends Actor
           return (int)(rotation + 0.5);
       }
     }
-    
-    
-    // lazy fix to getSpeed issue
-    public double getSpeed(){
-        return 0;
-    }
 }
