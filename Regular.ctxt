@@ -2,9 +2,3 @@
 comment0.target=Regular
 comment0.text=\n\ Regular\ children\ are\ defenseless\ and\ must\ flee\ at\ the\ sight\ of\ animals\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/4\n
 comment1.params=
-comment1.target=Regular()
-comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ runAway()
-numComments=4

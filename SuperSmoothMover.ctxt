@@ -51,5 +51,5 @@ comment8.target=void\ turnTowards(greenfoot.Actor)
 comment8.text=\n\ A\ short-cut\ method\ that\ I\ (Jordan\ Cohen)\ always\ thought\ Greenfoot\ should\ have\ -\ use\ the\n\ tuntToward\ method\ above\ to\ face\ another\ Actor\ instead\ of\ just\ a\ point.\ Keeps\ calling\ code\n\ cleaner.\ \n\ \n\ @param\ a\ \ \ \ \ The\ Actor\ to\ turn\ towards.\ \n
 comment9.params=angle
 comment9.target=void\ turn(int)
-comment9.text=\r\n\ Turn\ a\ specified\ number\ of\ degrees.\r\n\ \r\n\ @param\ angle\ \ \ \ \ the\ number\ of\ degrees\ to\ turn.\r\n
+comment9.text=\n\ Turn\ a\ specified\ number\ of\ degrees.\n\ \n\ @param\ angle\ \ \ \ \ the\ number\ of\ degrees\ to\ turn.\n
 numComments=19
