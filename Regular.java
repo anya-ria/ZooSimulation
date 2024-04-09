@@ -8,10 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Regular extends Child
 {
-    /**
-     * Act - do whatever the Regular wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Regular(){
+        super(100);
+    }
     public void act()
     {
         runAway();

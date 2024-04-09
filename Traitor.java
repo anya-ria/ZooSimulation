@@ -8,12 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Traitor extends Child
 {
-    /**
-     * Act - do whatever the Traitor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Traitor(){
+        super(100);
     }
 }
