@@ -14,20 +14,17 @@ public class TitleScreen extends World
      * 
      */
     
-    Label title, start, achi, collec;
+    Label start, achi, collec;
     
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
         
-        title = new Label("Zoo Trip", 250);
-        addObject(title, getWidth()/2, 250);
-        title = new Label("Press 'space' to start", 60);
-        addObject(title, getWidth()/2, 450);
-        achi = new Label("Achievements", 60);
+
+        achi = new Label("Achievements", 50);
         addObject(achi, getWidth()/2, 550);
-        collec = new Label("Endings", 60);
+        collec = new Label("Endings", 50);
         addObject(collec, getWidth()/2, 650);
     }
     
