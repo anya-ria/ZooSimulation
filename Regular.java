@@ -17,8 +17,11 @@ public class Regular extends Child
     }
     private void runAway(){
         double[] enemyDetails = detectNearestEnemy(Animal.class, 10000);
-        if(enemyDetails[1] == -1) return;
-        double[] vector = Utility.angleToVector(enemyDetails[0]);
+        double[] vector;
+        if(enemyDetails[1] != -1)
+            vector = Utility.angleToVector(enemyDetails[0]);
+        else
+            vector = new double[] {0, 0}; 
         setLocation(getX()-vector[0], getY()-vector[1]);
     }
 }
