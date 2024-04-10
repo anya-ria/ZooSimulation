@@ -19,14 +19,18 @@ public class Regular extends Child
     private GreenfootImage[] childTwoWalkLeft = new GreenfootImage[9];
     private GreenfootImage[] childTwoWalkToward = new GreenfootImage[9];
 
-    private int speed = 1;
-    private int animCounter = 0;
-    private int childNum = Greenfoot.getRandomNumber(2);
+    private int speed;
+    private int animCounter;
+    private int childNum;
     private boolean movingRight;
     private boolean movingAway;
     
     public Regular(){
         super(100);
+        
+        speed = 1;
+        animCounter = 0;
+        childNum = Greenfoot.getRandomNumber(2);
     }
 
     public void act()
