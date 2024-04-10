@@ -28,12 +28,15 @@ comment16.text=\n\ Set\ the\ maximum\ values\ for\ all\ bars\ in\ this\ StatBar.
 comment17.params=
 comment17.target=void\ redraw()
 comment17.text=\n\ \ \ The\ Actual\ drawing\ method\ that\ draws\ the\ bars\ onto\ the\ image\ for\ this\ Actor\n\ \ \ \ \ \ \n\ \ \ \ \ \ This\ method\ is\ private\ because\ we\ don't\ want\ another\ method\ to\ \n\ \ \ \ \ \ waste\ time\ calling\ this\ if\ no\ changes\ have\ been\ made\ to\ the\ \n
+ luke
+
 comment18.params=
 comment18.target=void\ hide()
 comment18.text=\n\ removes\ the\ stat\ bar\ (completely\ hidden\ at\ any\ hp)\n
 comment19.params=
 comment19.target=void\ unhide()
 comment19.text=\n\ restores\ the\ stat\ bar\n
+ main
 comment2.params=maxVal\ owner
 comment2.target=SuperStatBar(int,\ greenfoot.Actor)
 comment2.text=\n\ A\ simple\ constructor\ -\ specify\ a\ single\ value\ (which\ will\ be\ treated\ as\ both\ current\ and\ \n\ max\ for\ the\ stat)\ as\ well\ as\ an\ owner\ to\ follow.\ If\ you\ do\ not\ want\ this\ to\ follow\ an\ Actor,\ \n\ use\ null\ for\ the\ second\ parameter.\n\ \n\ @param\ maxVal\ \ \ \ The\ maximum\ value\ for\ this\ stat,\ which\ will\ also\ be\ the\ starting\ value\ for\ this\ stat\n\ @param\ owner\ \ \ \ \ The\ Actor\ to\ follow\ around.\ If\ you\ do\ not\ want\ to\ associate\ this\ with\ an\ Actor,\ provide\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ null\ instead.\n
@@ -57,4 +60,8 @@ comment8.target=void\ addedToWorld(greenfoot.World)
 comment9.params=
 comment9.target=void\ act()
 comment9.text=\n\ The\ only\ purpose\ of\ the\ act\ method\ is\ to\ follow\ the\ target\ Actor.\ If\ you'd\ rather\ control\ this\ yourself,\n\ delete\ this\ act()\ method\ and\ call\ moveMe()\ directly\ whenever\ your\ Actor\ moves.\ \n
+ luke
+numComments=18
+
 numComments=20
+ main
