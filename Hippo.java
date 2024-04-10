@@ -27,16 +27,16 @@ public class Hippo extends Animal
     
     private void moveAround()
     {
-        move(4);
+        move(2);
         if (Greenfoot.getRandomNumber(100) < 10)
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 500 || getX() >= 1010)
+        if (getX() <= 600 || getX() >= 1000)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 390)
+        if (getY() <= 10 || getY() >= 355)
         {
             turn(180);
         }
