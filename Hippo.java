@@ -22,19 +22,23 @@ public class Hippo extends Animal
     
     public void act()
     {
-        if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
+        moveAround();
+    }
+    
+    private void moveAround()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100) < 10)
         {
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (direction == -1 && getY() >= 350)
+        if (getX() <= 10 || getX() >= 500)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
         }
-        else if (direction == 1 && getY() <= 5)
+        if (getY() <= 10 || getY() >= 390)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
         }
     }
 }
