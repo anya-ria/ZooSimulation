@@ -32,7 +32,7 @@ public class Hippo extends Animal
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 10 || getX() >= 500)
+        if (getX() <= 500 || getX() >= 1010)
         {
             turn(180);
         }

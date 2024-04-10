@@ -20,7 +20,28 @@ public class Monkey extends Animal
     
     public void act()
     {
-        if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
+        moveAround();
+    }
+    
+    private void moveAround()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(Greenfoot.getRandomNumber(90) - 45);
+        }
+        if (getX() <= 10 || getX() >= 500)
+        {
+            turn(180);
+        }
+        if (getY() <= 10 || getY() >= 390)
+        {
+            turn(180);
+        }
+    }
+    
+    /*
+     * if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
         {
             setLocation (getX(), getY() + (int)(speed*direction));
         }
@@ -34,5 +55,5 @@ public class Monkey extends Animal
             direction = direction * -1;
             setLocation (getX(), getY() + (int)(speed*direction));
         }
-    }
+     */
 }
