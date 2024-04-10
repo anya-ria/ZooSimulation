@@ -22,14 +22,16 @@ public class Regular extends Child
     private int speed = 1;
     private int animCounter = 0;
     private int childNum = Greenfoot.getRandomNumber(2);
+    private boolean movingRight;
+    private boolean movingAway;
     
     public Regular(){
         super(100);
     }
 
     public void act()
-    {
-        move();
+    {   
+        // move();
         runAway();
     }
 
@@ -40,21 +42,26 @@ public class Regular extends Child
         setLocation(getX()-vector[0], getY()-vector[1]);
     }
     
+    // Can delete if needed - Don't know how characters should move
     public void move() {
-        if(Greenfoot.getRandomNumber(4) == 0) { // move right
+        if(movingRight) { // move right
             setLocation(getX() + speed, getY());
+            move(1);
             animateRight();
         }
-        if(Greenfoot.getRandomNumber(4) == 1) { // move left
+        if(!movingRight) { // move left
             setLocation(getX() - speed, getY());
+            move(1);
             animateLeft();
         }
-        if(Greenfoot.getRandomNumber(4) == 2) { // move away
+        if(movingAway) { // move away
             setLocation(getX(), getY() - speed);
+            move(1);
             animateAway();
         }
-        if(Greenfoot.getRandomNumber(4) == 2) { // move toward
+        if(!movingAway) { // move toward
             setLocation(getX(), getY() + speed);
+            move(1);
             animateToward();
         }
     }
