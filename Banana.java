@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Banana here.
+ * Standard projectile thrown by monkeys and traitors, leaves a banana peel when expiring
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas
+ * @version 2024/4/9
  */
 public class Banana extends Projectile
 {
@@ -32,7 +32,7 @@ public class Banana extends Projectile
         if(touched!=null&&touched.isAwake()){
             touched.takeDamage(15);
             touched.push( vx*0.2 , vy*0.2 );
-            getWorld().removeObject(this);
+            expired = true;
         }
     }
     protected void expire(){
