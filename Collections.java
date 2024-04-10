@@ -14,7 +14,8 @@ public class Collections extends World
      * 
      */
     
-    Label end1, end2, end3, returnKey;
+    private Label end1, end2, end3;
+    private HomeButton returnKey;
     
     public Collections()
     {    
@@ -27,7 +28,7 @@ public class Collections extends World
         addObject(end2, getWidth()/2, 400);
         end3 = new Label("Ending 3", 70);
         addObject(end3, getWidth()/2, 600);
-        returnKey = new Label("Home", 50);
+        returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);
     }
     
