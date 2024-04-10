@@ -16,28 +16,16 @@ public class Achievement extends World
      */
 
     private Label title, achi1, achi2, achi3, achi4, achi5, achi6;
-    private GoldCup[] arr = new GoldCup[6];
+    private Trophy[] arr = new Trophy[5];
     private HomeButton returnKey;
 
     public Achievement()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
+        setBackground("AchievementsScreen.jpg");
 
-        title = new Label("Achievements", 110);
-        addObject(title, getWidth()/2, 90);
-        achi1 = new Label("Healer", 70);
-        addObject(achi1, 471, 200);
-        achi2 = new Label("I'm the Hospital", 70);
-        addObject(achi2, getWidth()/2+100, 300);
-        achi3 = new Label("Banan-AHHH!", 70);
-        addObject(achi3, 581, 400);
-        achi4 = new Label("All Affected", 70);
-        addObject(achi4, 543, 500);
-        achi5 = new Label("Oops...", 70);
-        addObject(achi5, 472, 600);
-        achi6 = new Label("Zombie Zoo", 70);
-        addObject(achi6, 551, 700);
+        
         returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);
         addCups();
@@ -46,17 +34,12 @@ public class Achievement extends World
     
     public void addCups(){
         for(int i=0; i<arr.length;i++){
-            arr[i] = new GoldCup();
-            addObject(arr[i], 200, (100*i+200));
+            arr[i] = new Trophy();
+            addObject(arr[i], 285, (92*i+260));
         }
         arr[0].setAchieved();
         arr[1].setAchieved();
     }
 
-    public void act(){
-        if(Greenfoot.mouseClicked(returnKey)){
-            TitleScreen game = new TitleScreen();
-            Greenfoot.setWorld(game);
-        }
-    }
+
 }
