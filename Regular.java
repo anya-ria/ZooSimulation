@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Regular children are defenseless and must flee at the sight of animals
  * 
  * @author Lucas, Anya Shah
- * @version 2024/4/4
+ * @version 04/04/2024
  */
 public class Regular extends Child
 {

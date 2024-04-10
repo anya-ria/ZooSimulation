@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Healer here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anya Shah 
+ * @version 04/10/2024
  */
 public class Healer extends Child
 {
