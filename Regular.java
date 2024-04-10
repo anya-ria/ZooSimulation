@@ -40,7 +40,7 @@ public class Regular extends Child
     }
 
     private void runAway(){
-        double[] enemyDetails = detectNearestEnemy(Animal.class, 10000);
+        double[] enemyDetails = detectNearestEntity(Animal.class, 10000);
         double[] vector;
         if(enemyDetails[1] != -1)
             vector = Utility.angleToVector(enemyDetails[0]);
