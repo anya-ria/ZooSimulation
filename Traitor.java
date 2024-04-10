@@ -10,16 +10,19 @@ import java.util.Random;
  */
 public class Traitor extends Child
 {
-    private int cooldown = 50;
+    private final int throwCooldown = 50;
+    
+    private int cooldown = throwCooldown;
     private Random rand = new Random();
     public Traitor(){
         super(100);
     }
     public void act(){
+        if(!awake) return;
         chaseChildren();
     }
     public void chaseChildren(){
-        double[] enemyDetails = detectNearestEnemy(Child.class, 1000);
+        double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
@@ -29,12 +32,11 @@ public class Traitor extends Child
         }
         if(distance<500 && distance > 10 && cooldown<=0){
             throwBanana((int)direction, 4);
-            cooldown = 50;
+            cooldown = throwCooldown;
         }
         cooldown--;
         if(distance < 10){
             punch();
-            cooldown = 25; 
             return;
         }
         setLocation(getX()+vector[0], getY()+vector[1]);
@@ -44,7 +46,7 @@ public class Traitor extends Child
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
     private void punch(){
-        double[] enemyDetails = detectNearestEnemy(Child.class, 10);
+        double[] enemyDetails = detectNearestEntity(Child.class, 10);
         if(enemyDetails[1] == -1) return;
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
