@@ -23,5 +23,6 @@ public class MyWorld extends World
         addObject(new Regular(), 312, 400);
         addObject(new Regular(), 412, 400);
         addObject(new Traitor(), 800, 600);
+        addObject(new Healer(), 600, 200);
     }
 }
