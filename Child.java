@@ -12,12 +12,12 @@ public abstract class Child extends SuperSmoothMover
     private int hp;
     private SuperStatBar hpBar;
     /**
-     * finds the nearest enemy withing radius of the specific class
+     * finds the nearest entity withing radius of the specific class
      * @param type          The class that is to be found
      * @param detectRadius  The range in which to find enemies
      * @return double[] --  The details (direction, distance) of the enemy found, returns {0, -1} if not found
      */
-    protected double[] detectNearestEnemy(Class type, int detectRadius){
+    protected double[] detectNearestEntity(Class type, int detectRadius){
         double[] enemyDetails = new double[2]; // {enemy direction, enemy distance}
         SuperSmoothMover nearestEnemy = null;
         for(double i=0; i<=detectRadius; i+=5){
@@ -39,7 +39,7 @@ public abstract class Child extends SuperSmoothMover
     }
     /**
      * When constructed, sets the max hp and the hp
-     * @param maxHp the maximum hp the child can have
+     * @param maxHp   the maximum hp the child can have
      */
     protected Child(int maxHp){
         this.maxHp = maxHp;
@@ -55,7 +55,7 @@ public abstract class Child extends SuperSmoothMover
     }
     /**
      * Method to make the child take damage, updates the hp and the stat bar
-     * @param dmg the damage to be taken
+     * @param dmg   the damage to be taken
      */
     public void takeDamage(int dmg){
         hp -= dmg;
@@ -65,6 +65,16 @@ public abstract class Child extends SuperSmoothMover
             return;
         }
         hpBar.update(hp);
+    }
+    /**
+     * heals the child, essentially just taking negative damage, but also checks
+     * if the child is still alive
+     * 
+     * @param healing   the amount to be healed
+     */
+    public void heal(int healing){
+        if(awake)
+            takeDamage(-healing);
     }
     private void die(){
         setRotation(90);

@@ -1,16 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Projectile here.
+ * General class of projectiles
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas
+ * @version 2024/4/9
  */
 public abstract class Projectile extends SuperSmoothMover
 {
     protected double maxActs = 500;
     protected double acts = 0;
     protected double vx, vy;
+    protected boolean expired = false;
     private int downTime = 10;
     public void act()
     {
@@ -19,7 +20,14 @@ public abstract class Projectile extends SuperSmoothMover
         if(downTime-- <= 0)
             detectCollision();
         if(acts>maxActs){
+            expired = true;
+        }
+        if(isAtEdge()){
+            expired = true;
+        }
+        if(expired){
             expire();
+            return;
         }
     }
     protected abstract void detectCollision();
