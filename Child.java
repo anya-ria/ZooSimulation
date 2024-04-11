@@ -67,14 +67,17 @@ public abstract class Child extends SuperSmoothMover
         hpBar.update(hp);
     }
     /**
-     * heals the child, essentially just taking negative damage, but also checks
+     * heals the child, but also checks
      * if the child is still alive
      * 
      * @param healing   the amount to be healed
      */
     public void heal(int healing){
-        if(awake)
-            takeDamage(-healing);
+        if(awake){
+            hp += healing;
+            if(hp>maxHp) hp = maxHp;
+            hpBar.update(hp);
+        }
     }
     private void die(){
         setRotation(90);

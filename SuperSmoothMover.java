@@ -180,6 +180,15 @@ public abstract class SuperSmoothMover extends Actor
             tempVx *= -1; 
         if(exactY<=0||exactY>=getWorld().getHeight()-1)
             tempVy *= -1;
+            
+        // add artificial temp velocity if close to border
+        // (we don't want to see children hugging the wall!)
+        if(this instanceof Child){
+            if(exactX<100) tempVx += 1;
+            if(exactX>924) tempVx -= 1;
+            if(exactY<050) tempVy += 1;
+            if(exactY>750) tempVy -= 1;
+        }
         super.setLocation((int)Math.round(exactX), (int)Math.round(exactY));
     }
 
