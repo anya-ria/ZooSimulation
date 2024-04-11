@@ -1,11 +1,17 @@
 #Greenfoot project file
 class.Achievement.image=AchievementsScreen.jpg
+ HEAD
 class.Healer.image=healToward0.png
 class.MyWorld.image=zooScreen.jpg
+
+class.Customization.image=userSelectScreen.jpg
+class.MyWorld.image=zoo.jpg
+ main
 class.Regular.image=child1WalkToward0.png
-dependency1.from=TitleScreen
-dependency1.to=Label
+dependency1.from=Customization
+dependency1.to=StartButton
 dependency1.type=UsesDependency
+ HEAD
 dependency10.from=Collections
 dependency10.to=HomeButton
 dependency10.type=UsesDependency
@@ -35,10 +41,42 @@ dependency18.to=Utility
 dependency18.type=UsesDependency
 dependency19.from=Regular
 dependency19.to=Animal
+
+dependency10.from=Achievement
+dependency10.to=Trophy
+dependency10.type=UsesDependency
+dependency11.from=Achievement
+dependency11.to=HomeButton
+dependency11.type=UsesDependency
+dependency12.from=Collections
+dependency12.to=Label
+dependency12.type=UsesDependency
+dependency13.from=Collections
+dependency13.to=HomeButton
+dependency13.type=UsesDependency
+dependency14.from=Collections
+dependency14.to=TitleScreen
+dependency14.type=UsesDependency
+dependency15.from=MyWorld
+dependency15.to=HomeButton
+dependency15.type=UsesDependency
+dependency16.from=MyWorld
+dependency16.to=Regular
+dependency16.type=UsesDependency
+dependency17.from=MyWorld
+dependency17.to=Traitor
+dependency17.type=UsesDependency
+dependency18.from=MyWorld
+dependency18.to=Healer
+dependency18.type=UsesDependency
+dependency19.from=SuperSmoothMover
+dependency19.to=Utility
+ main
 dependency19.type=UsesDependency
-dependency2.from=TitleScreen
-dependency2.to=AchieveButton
+dependency2.from=Customization
+dependency2.to=MyWorld
 dependency2.type=UsesDependency
+ HEAD
 dependency20.from=Regular
 dependency20.to=Utility
 dependency20.type=UsesDependency
@@ -87,10 +125,70 @@ dependency33.type=UsesDependency
 dependency34.from=AchieveButton
 dependency34.to=Achievement
 dependency34.type=UsesDependency
+
+dependency20.from=Child
+dependency20.to=SuperStatBar
+dependency20.type=UsesDependency
+dependency21.from=Child
+dependency21.to=Utility
+dependency21.type=UsesDependency
+dependency22.from=Regular
+dependency22.to=Animal
+dependency22.type=UsesDependency
+dependency23.from=Regular
+dependency23.to=Utility
+dependency23.type=UsesDependency
+dependency24.from=Traitor
+dependency24.to=Banana
+dependency24.type=UsesDependency
+dependency25.from=Traitor
+dependency25.to=Utility
+dependency25.type=UsesDependency
+dependency26.from=Healer
+dependency26.to=HealingEffect
+dependency26.type=UsesDependency
+dependency27.from=Healer
+dependency27.to=HealingBall
+dependency27.type=UsesDependency
+dependency28.from=Healer
+dependency28.to=Utility
+dependency28.type=UsesDependency
+dependency29.from=HealingBall
+dependency29.to=HealingEffect
+dependency29.type=UsesDependency
+dependency3.from=EndingScreen
+dependency3.to=Label
+dependency3.type=UsesDependency
+dependency30.from=HealingBall
+dependency30.to=Child
+dependency30.type=UsesDependency
+dependency31.from=HealingBall
+dependency31.to=Utility
+dependency31.type=UsesDependency
+dependency32.from=Banana
+dependency32.to=Child
+dependency32.type=UsesDependency
+dependency33.from=Banana
+dependency33.to=Utility
+dependency33.type=UsesDependency
+dependency34.from=HealingEffect
+dependency34.to=Child
+dependency34.type=UsesDependency
+dependency35.from=HomeButton
+dependency35.to=TitleScreen
+dependency35.type=UsesDependency
+dependency36.from=EndButton
+dependency36.to=Collections
+dependency36.type=UsesDependency
+dependency37.from=AchieveButton
+dependency37.to=Achievement
+dependency37.type=UsesDependency
+ main
 dependency4.from=TitleScreen
-dependency4.to=StartButton
+dependency4.to=Label
 dependency4.type=UsesDependency
 dependency5.from=TitleScreen
+ HEAD
 dependency5.to=MyWorld
 dependency5.type=UsesDependency
 dependency6.from=Achievement
@@ -111,6 +209,28 @@ editor.fx.0.x=356
 editor.fx.0.y=84
 height=865
 package.numDependencies=34
+
+dependency5.to=AchieveButton
+dependency5.type=UsesDependency
+dependency6.from=TitleScreen
+dependency6.to=EndButton
+dependency6.type=UsesDependency
+dependency7.from=TitleScreen
+dependency7.to=StartButton
+dependency7.type=UsesDependency
+dependency8.from=TitleScreen
+dependency8.to=Customization
+dependency8.type=UsesDependency
+dependency9.from=Achievement
+dependency9.to=Label
+dependency9.type=UsesDependency
+editor.fx.0.height=854
+editor.fx.0.width=879
+editor.fx.0.x=261
+editor.fx.0.y=119
+height=1011
+package.numDependencies=37
+ main
 package.numTargets=32
 project.charset=UTF-8
 publish.hasSource=false
@@ -207,7 +327,11 @@ target2.height=70
 target2.name=HomeButton
 target2.showInterface=false
 target2.type=ClassTarget
+ HEAD
 target2.width=130
+
+target2.width=120
+ main
 target2.x=0
 target2.y=0
 target20.height=70
@@ -284,7 +408,11 @@ target3.height=70
 target3.name=SuperSmoothMover
 target3.showInterface=false
 target3.type=AbstractTarget
+ HEAD
 target3.width=120
+
+target3.width=130
+ main
 target3.x=0
 target3.y=0
 target30.height=70
@@ -351,7 +479,14 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
+ HEAD
 width=1300
 world.lastInstantiated=TitleScreen
 xPosition=100
 yPosition=38
+
+width=1296
+world.lastInstantiated=TitleScreen
+xPosition=100
+yPosition=25
+ main
