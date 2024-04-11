@@ -35,6 +35,7 @@ public class Regular extends Child
 
     public void act()
     {   
+        if(!awake) return;
         // move();
         runAway();
     }
