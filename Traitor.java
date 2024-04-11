@@ -39,7 +39,7 @@ public class Traitor extends Child
             punch();
             return;
         }
-        setLocation(getX()+vector[0], getY()+vector[1]);
+        setLocation(getX()+vector[0]*1.1, getY()+vector[1]*1.1);
     }
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
