@@ -13,35 +13,34 @@ public class TitleScreen extends World
      * Constructor for objects of class TitleScreen.
      * 
      */
-    
+
     Label start, achi, collec;
+    private AchieveButton achieveButton;
+    private EndButton endButton;
+    private StartButton startButton;
     
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
-        
+        setBackground("title.jpg");
 
-        achi = new Label("Achievements", 50);
-        addObject(achi, getWidth()/2, 550);
-        collec = new Label("Endings", 50);
-        addObject(collec, getWidth()/2, 650);
+        startButton = new StartButton();
+        addObject(startButton,400,480);
+        
+        achieveButton = new AchieveButton();
+        addObject(achieveButton,400,580);
+        
+        EndButton endButton = new EndButton();
+        addObject(endButton,400,680);
     }
-    
+
     public void act(){
-        if(Greenfoot.isKeyDown("space")){
+
+        if(Greenfoot.mouseClicked(startButton)){
             MyWorld game = new MyWorld();
             Greenfoot.setWorld(game);
         }
-        
-        if(Greenfoot.mouseClicked(achi)){
-            Achievement achi1 = new Achievement();
-            Greenfoot.setWorld(achi1);
-        }
-        
-        if(Greenfoot.mouseClicked(collec)){
-            Collections collec1 = new Collections();
-            Greenfoot.setWorld(collec1);
-        }
     }
+
 }
