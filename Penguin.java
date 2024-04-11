@@ -20,19 +20,42 @@ public class Penguin extends Animal
     
     public void act()
     {
-        if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
+        moveAround();
+    }
+    
+    private void moveAround()
+    {
+        move(2);
+        if (Greenfoot.getRandomNumber(100) < 10)
         {
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (direction == -1 && getY() <= 450)
+        if (getX() <= 695 || getX() >= 980)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
         }
-        else if (direction == 1 && getY() <= 795)
+        if (getY() <= 510 || getY() >= 760)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
+        }
+    }
+    
+    public void slide()
+    {
+        direction = Greenfoot.getRandomNumber(90) - 45;
+        move(3);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(direction);
+            setRotation(direction);
+        }
+        if (getX() <= 695 || getX() >= 980)
+        {
+            turn(180);
+        }
+        if (getY() <= 510 || getY() >= 760)
+        {
+            turn(180);
         }
     }
 }

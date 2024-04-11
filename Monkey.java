@@ -30,14 +30,19 @@ public class Monkey extends Animal
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 10 || getX() >= 455)
+        if (getX() <= 30 || getX() >= 320)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 310)
+        if (getY() <= 45 || getY() >= 290)
         {
             turn(180);
         }
+    }
+    
+    public void throwBananas()
+    {
+        
     }
     
     /*

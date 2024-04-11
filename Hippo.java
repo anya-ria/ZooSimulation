@@ -16,27 +16,48 @@ public class Hippo extends Animal
      */
     
     private boolean isInfected;
-    private double speed;
-    private double maxSpeed;
-    private int direction;
+    //private double speed;
+    //private double maxSpeed;
+    //private int direction;
     
     public void act()
     {
         moveAround();
+        if (isInfected)
+        {
+            charge();
+        }
     }
     
-    private void moveAround()
+    public void moveAround()
     {
         move(2);
         if (Greenfoot.getRandomNumber(100) < 10)
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 610 || getX() >= 1000)
+        if (getX() <= 685 || getX() >= 1000)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 310)
+        if (getY() <= 30 || getY() >= 290)
+        {
+            turn(180);
+        }
+    }
+    
+    public void charge()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(Greenfoot.getRandomNumber(90) - 45);
+        }
+        if (getX() <= 685 || getX() >= 1000)
+        {
+            turn(180);
+        }
+        if (getY() <= 30 || getY() >= 290)
         {
             turn(180);
         }
