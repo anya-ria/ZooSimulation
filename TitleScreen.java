@@ -38,7 +38,7 @@ public class TitleScreen extends World
     public void act(){
 
         if(Greenfoot.mouseClicked(startButton)){
-            MyWorld game = new MyWorld();
+            Customization game = new Customization();
             Greenfoot.setWorld(game);
         }
     }
