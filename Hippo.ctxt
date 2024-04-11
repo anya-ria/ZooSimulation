@@ -1,26 +1,21 @@
 #BlueJ class context
 comment0.target=Hippo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Hippo\ here.\r\n\ \r\n\ @author\ (Luke\ Xiao)\ \r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Hippo\ here.\n\ \n\ @author\ (Luke\ Xiao)\ \n\ @version\ (2024.04.05)\n\ 2024.04.05\:\ Class\ created\n
 comment1.params=
 comment1.target=Hippo()
 comment2.params=
- HEAD
-comment2.target=void\ moveAround()
-comment3.params=
-comment3.target=void\ charge()
-numComments=4
-
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Hippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Hippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ moveAround()
 comment4.params=
-comment4.target=void\ animateRight()
+comment4.target=void\ charge()
 comment5.params=
-comment5.target=void\ animateLeft()
+comment5.target=void\ animateRight()
 comment6.params=
-comment6.target=void\ animateToward()
+comment6.target=void\ animateLeft()
 comment7.params=
-comment7.target=void\ animateAway()
-numComments=8
- main
+comment7.target=void\ animateToward()
+comment8.params=
+comment8.target=void\ animateAway()
+numComments=9
