@@ -17,4 +17,11 @@ public class EndButton extends Icon
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(this)){
+            Collections collec1 = new Collections();
+            Greenfoot.setWorld(collec1);
+        }
+    }
 }

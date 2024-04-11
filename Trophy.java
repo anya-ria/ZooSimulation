@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GoldCup extends Icon
+public class Trophy extends Icon
 {
     /**
      * Act - do whatever the GoldCup wants to do. This method is called whenever
@@ -17,16 +17,16 @@ public class GoldCup extends Icon
     private GreenfootImage grey = new GreenfootImage("golden_cup1.png");
     private GreenfootImage gold = new GreenfootImage("golden_cup2.png");
     
-    public GoldCup(){
+    public Trophy(){
         unlock = false;
         setImage(grey);
-        grey.scale(60, 60);
+        grey.scale(70, 70);
     }
     
     public void act(){
         if(unlock){
             setImage(gold);
-            gold.scale(60, 60);
+            gold.scale(70, 70);
         }
     }
     
