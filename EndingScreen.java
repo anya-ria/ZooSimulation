@@ -14,13 +14,17 @@ public class EndingScreen extends World
      * 
      */
     
-    
+    Label end, name;
     
     public EndingScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
         
+        end = new Label("Game Over", 150);
+        addObject(end, getWidth()/2, 200);
         
+        end = new Label("*Ending Name*", 120);
+        addObject(end, getWidth()/2, 500);
     }
 }
