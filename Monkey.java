@@ -25,16 +25,16 @@ public class Monkey extends Animal
     
     private void moveAround()
     {
-        move(4);
+        move(2);
         if (Greenfoot.getRandomNumber(100) < 10)
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 10 || getX() >= 500)
+        if (getX() <= 10 || getX() >= 455)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 390)
+        if (getY() <= 10 || getY() >= 310)
         {
             turn(180);
         }
