@@ -33,7 +33,7 @@ public class Healer extends Child
     private int stunDuration = 0;
     
     public Healer(){
-        super(200);
+        super(300);
         animCounter = 0;
     }
     
@@ -100,9 +100,10 @@ public class Healer extends Child
         stunDuration--;
         if(stunDuration>0){
             setLocation(getX(), getY());
+            healToward();
             return;
         }
-        double[] allyDetails = detectNearestEntity(Child.class, 10000);
+        double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
     }
@@ -110,12 +111,20 @@ public class Healer extends Child
         double[] vector;
         if(details[1] >= 95) // too far
             vector = Utility.angleToVector(details[0]);
-        else if(details[1] <= 25) // too close
+        else if(details[1] <= 70 && details[1] != -1) // too close
             vector = Utility.angleToVector(details[0]+180);
         else
             vector = new double[] {0, 0}; 
         if(stunDuration<=0){
             setLocation(getX()+vector[0], getY()+vector[1]);
+            if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1]))
+                walkLeft();
+            else if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1]))
+                walkRight();
+            else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1]))
+                walkToward();
+            else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1]))
+                walkAway();
         }
     }
     private void checkHeal(double[] details){
@@ -124,10 +133,16 @@ public class Healer extends Child
         if(distance<=100 && aoeCooldown<=0){
             getWorld().addObject(new HealingEffect(200, 40), getX(), getY());
             aoeCooldown = maxAoeCooldown;
+            healToward();
             stunDuration = 120;
         }
-        if(distance>=25 && distance < 500 && projCooldown<=0){
-            getWorld().addObject(new HealingBall((int)direction, 4, 10), getX(), getY());
+        if(distance>=65 && distance < 500 && projCooldown<=0){
+            getWorld().addObject(new HealingBall((int)direction, 8, 10), getX(), getY());
+            // if(direction<=45) healRight();
+            // else if(direction<=135) healAway();
+            // else if(direction<=225) healLeft();
+            // else if(direction<=315) healToward();
+            // else healRight();
             projCooldown = maxProjCooldown;
         }
         aoeCooldown--; projCooldown--;
