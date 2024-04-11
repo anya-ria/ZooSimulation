@@ -17,4 +17,11 @@ public class HomeButton extends Icon
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(this)){
+            TitleScreen game = new TitleScreen();
+            Greenfoot.setWorld(game);
+        }
+    }
 }

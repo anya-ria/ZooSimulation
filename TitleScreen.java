@@ -37,16 +37,6 @@ public class TitleScreen extends World
 
     public void act(){
 
-        if(Greenfoot.mouseClicked(endButton)){
-            Collections collec1 = new Collections();
-            Greenfoot.setWorld(collec1);
-        }
-
-        if(Greenfoot.mouseClicked(achieveButton)){
-            Achievement achi1 = new Achievement();
-            Greenfoot.setWorld(achi1);
-        }
-        
         if(Greenfoot.mouseClicked(startButton)){
             MyWorld game = new MyWorld();
             Greenfoot.setWorld(game);

@@ -17,5 +17,12 @@ public class AchieveButton extends Icon
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(this)){
+            Achievement achi1 = new Achievement();
+            Greenfoot.setWorld(achi1);
+        }
+    }
 
 }

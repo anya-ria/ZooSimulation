@@ -1,10 +1,20 @@
 #BlueJ class context
 comment0.target=Regular
-comment0.text=\n\ Regular\ children\ are\ defenseless\ and\ must\ flee\ at\ the\ sight\ of\ animals\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/4\n
+comment0.text=\r\n\ Regular\ children\ are\ defenseless\ and\ must\ flee\ at\ the\ sight\ of\ animals\r\n\ \r\n\ @author\ Lucas,\ Anya\ Shah\r\n\ @version\ 04/04/2024\r\n
 comment1.params=
 comment1.target=Regular()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ runAway()
-numComments=4
+comment4.params=
+comment4.target=void\ move()
+comment5.params=
+comment5.target=void\ animateRight()
+comment6.params=
+comment6.target=void\ animateLeft()
+comment7.params=
+comment7.target=void\ animateAway()
+comment8.params=
+comment8.target=void\ animateToward()
+numComments=9
