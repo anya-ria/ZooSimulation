@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hippo here.
  * 
- * @author (Luke Xiao) 
+ * @author Luke Xiao, Anya Shah
  * @version (2024.04.05)
  * 2024.04.05: Class created
  */
