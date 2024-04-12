@@ -18,11 +18,13 @@ public class Hippo extends Animal
     private int animCounter; 
     
     private boolean isInfected;
+    private int direction;
     //private double speed;
     //private double maxSpeed;
     //private int direction;
     
-    public Hippo() {
+    public Hippo() 
+    {
         animCounter = 0;
     }
     
@@ -41,10 +43,27 @@ public class Hippo extends Animal
     
     public void moveAround()
     {
-        move(2);
-        if (Greenfoot.getRandomNumber(100) < 10)
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(200) < 10)
         {
-            turn(Greenfoot.getRandomNumber(90) - 45);
+            turn(direction);
+            if (direction >= 315 && direction <= 45)
+            {
+                animateAway();
+            }
+            else if (direction > 45 && direction <= 135)
+            {
+                animateRight();
+            }
+            else if (direction > 135 && direction <= 225)
+            {
+                animateLeft();
+            }
+            else if (direction > 225 && direction <= 315)
+            {
+                animateToward();
+            }
         }
         if (getX() <= 685 || getX() >= 1000)
         {
@@ -73,27 +92,35 @@ public class Hippo extends Animal
         }
     }
     
-    public void animateRight() {
-        for(int i = 0; i < 3; i++) {
+    public void animateRight() 
+    {
+        for(int i = 0; i < 3; i++) 
+        {
             hippoWalkRight[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
             setImage(hippoWalkRight[animCounter++ % 3]);
         }
     }
-    public void animateLeft() {
-        for(int i = 0; i < 3; i++) {
+    public void animateLeft() 
+    {
+        for(int i = 0; i < 3; i++) 
+        {
             hippoWalkLeft[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
             hippoWalkLeft[i].mirrorHorizontally();
             setImage(hippoWalkLeft[animCounter++ % 3]);
         }
     }
-    public void animateToward() {
-        for(int i = 0; i < 3; i++) {
+    public void animateToward() 
+    {
+        for(int i = 0; i < 3; i++) 
+        {
             hippoWalkToward[i] = new GreenfootImage("hippoWalkToward/hippoWalkToward" + i + ".png");
             setImage(hippoWalkToward[animCounter++ % 3]);
         }
     }
-    public void animateAway() {
-        for(int i = 0; i < 3; i++) {
+    public void animateAway() 
+    {
+        for(int i = 0; i < 3; i++) 
+        {
             hippoWalkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
             setImage(hippoWalkAway[animCounter++ % 3]);
         }
