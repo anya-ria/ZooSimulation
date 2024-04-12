@@ -1,8 +1,18 @@
 #BlueJ class context
 comment0.target=Monkey
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ (Luke\ Xiao)\ \r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ Luke\ Xiao,\ Anya\ Shah\r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Monkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ moveAround()
-numComments=3
+comment3.params=
+comment3.target=void\ walkRight()
+comment3.text=\r\n\ if\ (getOneObjectAtOffset(0,\ (int)(direction\ *\ getImage().getHeight()/2\ +\ (int)(direction\ *\ speed)),\ Animal.class)\ \=\=\ null)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ setLocation\ (getX(),\ getY()\ +\ (int)(speed*direction));\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ if\ (direction\ \=\=\ -1\ &&\ getY()\ >\=\ 350)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ direction\ \=\ direction\ *\ -1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ setLocation\ (getX(),\ getY()\ +\ (int)(speed*direction));\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else\ if\ (direction\ \=\=\ 1\ &&\ getY()\ <\=\ 5)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ direction\ \=\ direction\ *\ -1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ setLocation\ (getX(),\ getY()\ +\ (int)(speed*direction));\r\n\ \ \ \ \ \ \ \ }\r\n
+comment4.params=
+comment4.target=void\ walkLeft()
+comment5.params=
+comment5.target=void\ walkAway()
+comment6.params=
+comment6.target=void\ walkToward()
+numComments=7
