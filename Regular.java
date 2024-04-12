@@ -3,28 +3,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Regular children are defenseless and must flee at the sight of animals
  * 
- * @author Lucas, Anya Shah
+ * @author Lucas Fu, Anya Shah
  * @version 04/04/2024
  */
 public class Regular extends Child
 {
-    // Child 1 Sprites
+    // Child Sprites
     private GreenfootImage[] walkAway = new GreenfootImage[9];
     private GreenfootImage[] walkRight = new GreenfootImage[9];
     private GreenfootImage[] walkLeft = new GreenfootImage[9];
     private GreenfootImage[] walkToward = new GreenfootImage[9];
 
-    private int speed;
-    private int animCounter;
-    private int animDelay, animIndex;
-    private int childNum;
-    private boolean right, away;
+    private int animCounter, animDelay, animIndex;
     private int maxIndex;
+    private boolean right, away;
+    
+    private int childNum;
 
     public Regular(){
         super(100);
 
-        speed = 1;
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(2);
         maxIndex = walkRight.length;
@@ -109,14 +107,18 @@ public class Regular extends Child
             }
             if(right){
                 setImage(walkRight[animIndex]);
-            } else if (!right){
+            } 
+            else if (!right){
                 setImage(walkLeft[animIndex]);
-            } else if(!away){
+            } 
+            else if(!away){
                 setImage(walkToward[animIndex]); 
-            } else {
+            } 
+            else {
                 setImage(walkAway[animIndex]);
             }
-        } else {
+        } 
+        else {
             animCounter--; 
         }
     }
