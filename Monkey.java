@@ -21,6 +21,10 @@ public class Monkey extends Animal
     private double maxSpeed;
     private int direction;
     
+    public Monkey() {
+        animCounter = 0;
+    }
+    
     /**
      * Act - do whatever the Monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -64,26 +68,26 @@ public class Monkey extends Animal
         }
      */
     
-    public void walkRight() {
+    public void animateRight() {
         for(int i = 0; i < 3; i++) {
             monkeyWalkRight[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
             setImage(monkeyWalkRight[animCounter++ % 3]);
         }
     }
-    public void walkLeft() {
+    public void animateLeft() {
         for(int i = 0; i < 3; i++) {
             monkeyWalkLeft[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
             monkeyWalkLeft[i].mirrorHorizontally();
             setImage(monkeyWalkLeft[animCounter++ % 3]);
         }
     }
-    public void walkAway() {
+    public void animateAway() {
         for(int i = 0; i < 3; i++) {
             monkeyWalkAway[i] = new GreenfootImage("monkeyWalkAway/monkeyWalkAway" + i + ".png");
             setImage(monkeyWalkAway[animCounter++ % 3]);
         }
     }
-    public void walkToward() {
+    public void animateToward() {
         for(int i = 0; i < 3; i++) {
             monkeyWalkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
             setImage(monkeyWalkToward[animCounter++ % 3]);

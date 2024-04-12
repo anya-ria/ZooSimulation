@@ -6,6 +6,7 @@ class.Healer.image=healToward0.png
 class.Hippo.image=hippoWalkToward1.png
 class.Monkey.image=monkeyWalkToward1.png
 class.MyWorld.image=zoo.png
+class.Penguin.image=walkTowards1.png
 class.Regular.image=child1WalkToward0.png
 dependency1.from=Customization
 dependency1.to=StartButton
