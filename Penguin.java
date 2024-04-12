@@ -18,6 +18,10 @@ public class Penguin extends Animal
     private double maxSpeed;
     private int direction;
     
+    public Penguin(){
+        super(100);
+    }
+    
     public void act()
     {
         if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)

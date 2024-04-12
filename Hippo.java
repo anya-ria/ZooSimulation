@@ -23,6 +23,7 @@ public class Hippo extends Animal
     private int direction;
     
     public Hippo() {
+        super(200);
         animCounter = 0;
     }
     

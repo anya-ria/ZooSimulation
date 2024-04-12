@@ -13,6 +13,10 @@ public abstract class Projectile extends SuperSmoothMover
     protected double vx, vy;
     protected boolean expired = false;
     private int downTime = 10;
+    public Projectile(double vx, double vy){
+        this.vx = vx;
+        this.vy = vy;
+    }
     public void act()
     {
         setLocation(getX()+vx, getY()+vy);

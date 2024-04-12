@@ -18,6 +18,10 @@ public class Monkey extends Animal
     private double maxSpeed;
     private int direction;
     
+    public Monkey(){
+        super(100);
+    }
+    
     public void act()
     {
         moveAround();

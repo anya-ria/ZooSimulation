@@ -2,7 +2,9 @@
 comment0.target=Monkey
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ (Luke\ Xiao)\ \r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Monkey()
 comment2.params=
-comment2.target=void\ moveAround()
-numComments=3
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moveAround()
+numComments=4

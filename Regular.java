@@ -31,12 +31,11 @@ public class Regular extends Child
         speed = 1;
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(2);
-        if(childNum==1) setImage(childOneWalkToward[0]);
-        else setImage(childTwoWalkToward[0]);
     }
 
     public void act()
     {   
+        super.act();
         if(!awake) return;
         runAway();
     }
