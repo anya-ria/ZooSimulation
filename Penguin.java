@@ -28,9 +28,6 @@ public class Penguin extends Animal
     
     public Penguin(){
         super(100);
-    }
-    
-    public Penguin() {
         animCounter = 0;
     }
     

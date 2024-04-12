@@ -23,9 +23,6 @@ public class Monkey extends Animal
     
     public Monkey(){
         super(100);
-    }
-    
-    public Monkey() {
         animCounter = 0;
     }
     
