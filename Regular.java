@@ -31,50 +31,40 @@ public class Regular extends Child
         speed = 1;
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(2);
+        if(childNum==1) setImage(childOneWalkToward[0]);
+        else setImage(childTwoWalkToward[0]);
     }
 
     public void act()
     {   
         if(!awake) return;
-        // move();
         runAway();
     }
 
     private void runAway(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 10000);
+        double[] enemyDetails = detectNearestEntity(Animal.class, 1000);
         double[] vector;
         if(enemyDetails[1] != -1)
             vector = Utility.angleToVector(enemyDetails[0]);
-        else
-            vector = new double[] {0, 0}; 
+        else {
+            enemyDetails = detectNearestEntity(Traitor.class, 200);
+            if(enemyDetails[1] != -1)
+                vector = Utility.angleToVector(enemyDetails[0]);
+            else 
+                vector = new double[] {0, 0}; 
+        }
         setLocation(getX()-vector[0], getY()-vector[1]);
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1]))
+                walkLeft();
+            else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1]))
+                walkRight();
+            else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1]))
+                walkToward();
+            else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1]))
+                walkAway();
     }
     
-    // Can delete if needed - Don't know how characters should move
-    public void move() {
-        if(movingRight) { // move right
-            setLocation(getX() + speed, getY());
-            move(1);
-            animateRight();
-        }
-        if(!movingRight) { // move left
-            setLocation(getX() - speed, getY());
-            move(1);
-            animateLeft();
-        }
-        if(movingAway) { // move away
-            setLocation(getX(), getY() - speed);
-            move(1);
-            animateAway();
-        }
-        if(!movingAway) { // move toward
-            setLocation(getX(), getY() + speed);
-            move(1);
-            animateToward();
-        }
-    }
-    
-    public void animateRight() {
+    public void walkRight() {
         if(childNum == 0) {
             for(int i = 0; i < 9; i++) {
                 childOneWalkRight[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
@@ -89,7 +79,7 @@ public class Regular extends Child
         }
     }
 
-    public void animateLeft() {
+    public void walkLeft() {
         if(childNum == 0) {
             for(int i = 0; i < 9; i++) {
                 childOneWalkLeft[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
@@ -106,7 +96,7 @@ public class Regular extends Child
         }
     }
 
-    public void animateAway() {
+    public void walkAway() {
         if(childNum == 0) {
             for(int i = 0; i < 9; i++) {
                 childOneWalkAway[i] = new GreenfootImage("child1WalkAway/child1WalkAway" + i + ".png");
@@ -121,7 +111,7 @@ public class Regular extends Child
         }
     }
 
-    public void animateToward() {
+    public void walkToward() {
         if(childNum == 0) {
             for(int i = 0; i < 9; i++) {
                 childOneWalkToward[i] = new GreenfootImage("child1WalkToward/child1WalkToward" + i + ".png");
