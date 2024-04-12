@@ -39,8 +39,8 @@ public class HealingBall extends Projectile
     }
     public void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
-        if(touched!=null&&touched.isAwake()){
-            touched.push( vx*0.2 , vy*0.2 );
+        if(touched!=null&&touched.isAwake()&&!(touched instanceof Traitor)){
+            touched.push( vx*0.4 , vy*0.4 );
             expired = true;
         }
     }
