@@ -3,29 +3,56 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Monkey here.
  * 
- * @author Luke Xiao, Anya Shah
- * @version (2024.04.05)
- * 2024.04.05: Class created
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
+ * @version 04/12/2024
  */
 public class Monkey extends Animal
 {
     // Monkey sprites
-    private GreenfootImage[] monkeyWalkRight = new GreenfootImage[3];
-    private GreenfootImage[] monkeyWalkLeft = new GreenfootImage[3];
-    private GreenfootImage[] monkeyWalkToward = new GreenfootImage[3];
-    private GreenfootImage[] monkeyWalkAway = new GreenfootImage[3];
-    private int animCounter; 
-    
+    private GreenfootImage[] walkRight = new GreenfootImage[3];
+    private GreenfootImage[] walkLeft = new GreenfootImage[3];
+    private GreenfootImage[] walkToward = new GreenfootImage[3];
+    private GreenfootImage[] walkAway = new GreenfootImage[3];
+
+    // Animation variables
+    private int animCounter, animDelay, animIndex;
+    private int maxIndex;
+    private boolean right, away, healingRight, healingAway;
+
     private boolean isInfected;
     private double speed;
     private double maxSpeed;
     private int direction;
-    
+
     public Monkey(){
         super(100);
+
         animCounter = 0;
+        maxIndex = walkRight.length;
+        initImages();
     }
-    
+
+    private void initImages() {
+        for(int i = 0; i < maxIndex; i++) {
+            walkRight[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkLeft[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkAway[i] = new GreenfootImage("monkeyWalkAway/monkeyWalkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
+        }
+        
+        animIndex = 0;
+        animDelay = 5;
+        animCounter = animDelay;
+    }
+
     /**
      * Act - do whatever the Monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -33,8 +60,9 @@ public class Monkey extends Animal
     public void act()
     {
         moveAround();
+        animate();
     }
-    
+
     private void moveAround()
     {
         move(2);
@@ -52,46 +80,44 @@ public class Monkey extends Animal
         }
     }
     
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex == maxIndex) {
+                animIndex = 0;
+            }
+            if(right) {
+                setImage(walkRight[animIndex]);
+            }
+            if(!right) {
+                setImage(walkLeft[animIndex]);
+            }
+            if(away) {
+                setImage(walkAway[animIndex]);
+            }
+            if(!away) {
+                setImage(walkToward[animIndex]);
+            }
+        }
+        else {
+            animCounter--;
+        }
+    }
     /*
      * if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
-        {
-            setLocation (getX(), getY() + (int)(speed*direction));
-        }
-        if (direction == -1 && getY() >= 350)
-        {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
-        }
-        else if (direction == 1 && getY() <= 5)
-        {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
-        }
+    {
+    setLocation (getX(), getY() + (int)(speed*direction));
+    }
+    if (direction == -1 && getY() >= 350)
+    {
+    direction = direction * -1;
+    setLocation (getX(), getY() + (int)(speed*direction));
+    }
+    else if (direction == 1 && getY() <= 5)
+    {
+    direction = direction * -1;
+    setLocation (getX(), getY() + (int)(speed*direction));
+    }
      */
-    
-    public void animateRight() {
-        for(int i = 0; i < 3; i++) {
-            monkeyWalkRight[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
-            setImage(monkeyWalkRight[animCounter++ % 3]);
-        }
-    }
-    public void animateLeft() {
-        for(int i = 0; i < 3; i++) {
-            monkeyWalkLeft[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
-            monkeyWalkLeft[i].mirrorHorizontally();
-            setImage(monkeyWalkLeft[animCounter++ % 3]);
-        }
-    }
-    public void animateAway() {
-        for(int i = 0; i < 3; i++) {
-            monkeyWalkAway[i] = new GreenfootImage("monkeyWalkAway/monkeyWalkAway" + i + ".png");
-            setImage(monkeyWalkAway[animCounter++ % 3]);
-        }
-    }
-    public void animateToward() {
-        for(int i = 0; i < 3; i++) {
-            monkeyWalkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
-            setImage(monkeyWalkToward[animCounter++ % 3]);
-        }
-    }
 }

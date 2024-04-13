@@ -54,7 +54,8 @@ public class Healer extends Child
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
-        animate();
+        animateWalking();
+        animateHealing();
     }
     
     private void initImages() {
@@ -93,11 +94,10 @@ public class Healer extends Child
         animCounter = animDelay;
     }
     
-    private void animate() {
+    private void animateWalking() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            // Set walking images
             if(animIndex == maxWalkIndex) {
                 animIndex = 0;
             }
@@ -113,7 +113,16 @@ public class Healer extends Child
             if(!away) {
                 setImage(walkToward[animIndex]);
             }
-            // Set healing images
+        }
+        else {
+            animCounter--;
+        }
+    }
+    
+    private void animateHealing() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
             if (animIndex == maxHealIndex) {
                 animIndex = 0;
             }

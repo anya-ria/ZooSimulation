@@ -3,9 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Penguin here.
  * 
- * @author Luke Xiao, Anya Shah
- * @version (2024.04.05)
- * 2024.04.05: Class created
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
+ * @version 04/12/2024
  */
 public class Penguin extends Animal
 {
@@ -14,23 +14,68 @@ public class Penguin extends Animal
     private GreenfootImage[] slideLeft = new GreenfootImage[3];
     private GreenfootImage[] slideAway = new GreenfootImage[3];
     private GreenfootImage[] slideToward = new GreenfootImage[3];
+
     // Penguin walk sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];
     private GreenfootImage[] walkLeft = new GreenfootImage[3];
     private GreenfootImage[] walkAway = new GreenfootImage[3];
     private GreenfootImage[] walkToward = new GreenfootImage[3];
-    private int animCounter;
-    
+
+    // Animation variables
+    private int animCounter, animDelay, animIndex; 
+    private int maxSlideIndex, maxWalkIndex;
+    private boolean right, away;
+
     private boolean isInfected;
     private double speed;
     private double maxSpeed;
     private int direction;
-    
+
     public Penguin(){
         super(100);
+
         animCounter = 0;
+        maxSlideIndex = slideRight.length;
+        maxWalkIndex = walkRight.length;
+        initImages();
     }
-    
+
+    private void initImages() {
+        // Initializing sliding images
+        for(int i = 0; i < maxSlideIndex; i++) {
+            slideRight[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+        }
+        for(int i = 0; i < maxSlideIndex; i++) {
+            slideLeft[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+            slideLeft[i].mirrorHorizontally();
+        }
+        for(int i = 0; i < maxSlideIndex; i++) {
+            slideAway[i] = new GreenfootImage("penguinSlideAway/slideAway" + i + ".png");
+        }
+        for(int i = 0; i < maxSlideIndex; i++) {
+            slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
+        }
+        
+        // Initializing walking images
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkRight[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkLeft[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkAway[i] = new GreenfootImage("penguinWalkAway/walkAway"+ i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkToward[i] = new GreenfootImage("penguinWalkToward/walkToward" + i + ".png");
+        }
+        
+        animIndex = 0;
+        animDelay = 5;
+        animCounter = animDelay;
+    }
+
     /**
      * Act - do whatever the Penguin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -53,55 +98,53 @@ public class Penguin extends Animal
         }
     }
     
-    public void animateSlideRight() {
-        for(int i = 0; i < 3; i++) {
-            slideRight[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
-            setImage(slideRight[animCounter++ % 3]);
+    private void animateWalking() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex == maxWalkIndex) {
+                animIndex = 0;
+            }
+            if(right) {
+                setImage(walkRight[animIndex]);
+            }
+            if(!right) {
+                setImage(walkLeft[animIndex]);
+            }
+            if(away) {
+                setImage(walkAway[animIndex]);
+            }
+            if(!away) {
+                setImage(walkToward[animIndex]);
+            }
         }
-    }
-    public void animateSlideLeft() {
-        for(int i = 0; i < 3; i++) {
-            slideLeft[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
-            slideLeft[i].mirrorHorizontally();
-            setImage(slideLeft[animCounter++ % 3]);
-        }
-    }
-    public void animateSlideAway() {
-        for(int i = 0; i < 3; i++) {
-            slideAway[i] = new GreenfootImage("penguinSlideAway/slideAway" + i + ".png");
-            setImage(slideAway[animCounter++ % 3]);
-        }
-    }
-    public void animateSlideToward() {
-        for(int i = 0; i < 3; i++) {
-            slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
-            setImage(slideToward[animCounter++ % 3]);
+        else {
+            animCounter--;
         }
     }
     
-    public void animateRight() {
-        for(int i = 0; i < 3; i++) {
-            walkRight[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
-            setImage(walkRight[animCounter++ % 3]);
+    private void animateSliding() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex == maxSlideIndex) {
+                animIndex = 0;
+            }
+            if(right) {
+                setImage(slideRight[animIndex]);
+            }
+            if(!right) {
+                setImage(slideLeft[animIndex]);
+            }
+            if(away) {
+                setImage(slideAway[animIndex]);
+            }
+            if(!away) {
+                setImage(slideToward[animIndex]);
+            }
         }
-    }
-    public void animateLeft() {
-        for(int i = 0; i < 3; i++) {
-            walkLeft[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
-            walkLeft[i].mirrorHorizontally();
-            setImage(walkLeft[animCounter++ % 3]);
-        }
-    }
-    public void animateAway() {
-        for(int i = 0; i < 3; i++) {
-            walkAway[i] = new GreenfootImage("penguinWalkAway/walkAway"+ i + ".png");
-            setImage(walkAway[animCounter++ % 3]);
-        }
-    }
-    public void animateToward() {
-        for(int i = 0; i < 3; i++) {
-            walkToward[i] = new GreenfootImage("penguinWalkToward/walkToward" + i + ".png");
-            setImage(walkToward[animCounter++ % 3]);
+        else {
+            animCounter--;
         }
     }
 }
