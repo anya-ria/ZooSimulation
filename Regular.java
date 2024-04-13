@@ -13,7 +13,8 @@ public class Regular extends Child
     private GreenfootImage[] walkRight = new GreenfootImage[9];
     private GreenfootImage[] walkLeft = new GreenfootImage[9];
     private GreenfootImage[] walkToward = new GreenfootImage[9];
-
+    
+    // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
     private boolean right, away;
@@ -25,7 +26,7 @@ public class Regular extends Child
 
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(2);
-        maxIndex = walkRight.length;
+        maxIndex = walkAway.length;
         initImages();
     }
 
@@ -58,14 +59,14 @@ public class Regular extends Child
             for(int i = 0; i < maxIndex; i++) {
                 walkRight[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
             }
-            for(int i = 0; i < 9; i++) {
+            for(int i = 0; i < maxIndex; i++) {
                 walkLeft[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
                 walkLeft[i].mirrorHorizontally();
             }
-            for(int i = 0; i < 9; i++) {
+            for(int i = 0; i < maxIndex; i++) {
                 walkAway[i] = new GreenfootImage("child2WalkAway/child2WalkAway" + i + ".png");
             }
-            for(int i = 0; i < 9; i++) {
+            for(int i = 0; i < maxIndex; i++) {
                 walkToward[i] = new GreenfootImage("child2WalkToward/child2WalkToward" + i + ".png");
             }
         }
