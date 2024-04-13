@@ -3,9 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The healer likes to help fellow children with some clerical magic
  * 
- * @author Anya Shah  animations
- * @author Lucas      functions
- * @version 04/10/2024
+ * @author Anya Shah | Animations
+ * @author Lucas Fu  | Functions
+ * @version 04/12/2024
  */
 public class Healer extends Child
 {
@@ -55,7 +55,6 @@ public class Healer extends Child
         followAlly(allyDetails);
         checkHeal(allyDetails);
         animate();
-        //animateHealing();
     }
     
     private void initImages() {
