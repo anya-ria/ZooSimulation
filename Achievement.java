@@ -24,7 +24,6 @@ public class Achievement extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
         setBackground("AchievementsScreen.jpg");
-
         
         returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);

@@ -3,4 +3,6 @@ comment0.target=EndingScreen
 comment0.text=\n\ Write\ a\ description\ of\ class\ EndingScreen\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=EndingScreen()
-numComments=2
+comment2.params=x
+comment2.target=void\ setTimeElasped(int)
+numComments=3

@@ -19,6 +19,8 @@ public class Customization extends World
         super(1024, 800, 1); 
         startButton = new StartButton();
         addObject(startButton,getWidth()/2,760);
+        
+        setBackground("userSelectScreen.jpg");
     }
     
     public void act(){

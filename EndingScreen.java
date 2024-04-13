@@ -14,17 +14,25 @@ public class EndingScreen extends World
      * 
      */
     
-    Label end, name;
+    Label time;
+    int timeElasped;
+    HomeButton homeButton = new HomeButton();
     
     public EndingScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
         
-        end = new Label("Game Over", 150);
-        addObject(end, getWidth()/2, 200);
+        time = new Label(timeElasped, 150);
+        //addObject(end, getWidth()/2, 200);
         
-        end = new Label("*Ending Name*", 120);
-        addObject(end, getWidth()/2, 500);
+        homeButton.setLocation(72,754);
+        addObject(new Healer(), 600, 200);
+        
+        setBackground("end1.png");
+    }
+    
+    public void setTimeElasped(int x){
+        timeElasped = x;
     }
 }
