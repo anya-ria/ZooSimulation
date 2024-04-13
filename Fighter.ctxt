@@ -1,6 +1,12 @@
 #BlueJ class context
 comment0.target=Fighter
-comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/8\r\n
+comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
 comment1.params=
 comment1.target=Fighter()
-numComments=2
+comment2.params=
+comment2.target=void\ initImages()
+comment3.params=
+comment3.target=void\ animateWalking()
+comment4.params=
+comment4.target=void\ animateFighting()
+numComments=5

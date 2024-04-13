@@ -1,8 +1,15 @@
 #BlueJ class context
 comment0.target=Monkey
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ (Luke\ Xiao)\ \r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/12/2024\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Monkey()
 comment2.params=
-comment2.target=void\ moveAround()
-numComments=3
+comment2.target=void\ initImages()
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Monkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.params=
+comment4.target=void\ moveAround()
+comment5.params=
+comment5.target=void\ animate()
+numComments=6
