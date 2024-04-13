@@ -1,6 +1,15 @@
 #BlueJ class context
 comment0.target=Penguin
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Penguin\ here.\r\n\ \r\n\ @author\ (Luke\ Xiao)\ \r\n\ @version\ (2024.04.05)\r\n\ 2024.04.05\:\ Class\ created\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Penguin\ here.\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/12/2024\r\n
 comment1.params=
-comment1.target=void\ act()
-numComments=2
+comment1.target=Penguin()
+comment2.params=
+comment2.target=void\ initImages()
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Penguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.params=
+comment4.target=void\ animateWalking()
+comment5.params=
+comment5.target=void\ animateSliding()
+numComments=6

@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Utility here.
+ * A class to provide static methods for calculations
  * 
  * @author (your name) 
  * @version (a version number or a date)

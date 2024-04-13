@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Banana extends Projectile
 {
+    private int damage = 15;
     /**
      * constructs a new Banana with a speed and direction
      * @param angle the direction in degrees
@@ -23,14 +24,13 @@ public class Banana extends Projectile
      * @param vy the y-speed
      */
     public Banana(double vx, double vy){
-        this.vx = vx;
-        this.vy = vy;
+        super(vx,vy);
         getImage().scale(20, 20);
     }
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
-            touched.takeDamage(15);
+            touched.takeDamage(damage);
             touched.push( vx*0.2 , vy*0.2 );
             expired = true;
         }
