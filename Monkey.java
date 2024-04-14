@@ -49,7 +49,7 @@ public class Monkey extends Animal
         }
         
         animIndex = 0;
-        animDelay = 5;
+        animDelay = 3;
         animCounter = animDelay;
     }
 
@@ -90,13 +90,13 @@ public class Monkey extends Animal
             if(right) {
                 setImage(walkRight[animIndex]);
             }
-            if(!right) {
+            else if(!right) {
                 setImage(walkLeft[animIndex]);
             }
-            if(away) {
+            else if(away) {
                 setImage(walkAway[animIndex]);
             }
-            if(!away) {
+            else {
                 setImage(walkToward[animIndex]);
             }
         }

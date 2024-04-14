@@ -72,7 +72,7 @@ public class Penguin extends Animal
         }
         
         animIndex = 0;
-        animDelay = 5;
+        animDelay = 3;
         animCounter = animDelay;
     }
 
@@ -108,13 +108,13 @@ public class Penguin extends Animal
             if(right) {
                 setImage(walkRight[animIndex]);
             }
-            if(!right) {
+            else if(!right) {
                 setImage(walkLeft[animIndex]);
             }
-            if(away) {
+            else if(away) {
                 setImage(walkAway[animIndex]);
             }
-            if(!away) {
+            else if(!away) {
                 setImage(walkToward[animIndex]);
             }
         }
@@ -133,13 +133,13 @@ public class Penguin extends Animal
             if(right) {
                 setImage(slideRight[animIndex]);
             }
-            if(!right) {
+            else if(!right) {
                 setImage(slideLeft[animIndex]);
             }
-            if(away) {
+            else if(away) {
                 setImage(slideAway[animIndex]);
             }
-            if(!away) {
+            else if(!away) {
                 setImage(slideToward[animIndex]);
             }
         }

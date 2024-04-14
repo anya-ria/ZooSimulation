@@ -57,7 +57,7 @@ public class Healer extends Child
         animateWalking();
         animateHealing();
     }
-    
+
     private void initImages() {
         // Initialize healing images 
         for(int i = 0; i < maxHealIndex; i++) {
@@ -88,12 +88,21 @@ public class Healer extends Child
             walkLeft[i] = new GreenfootImage("healerWalkRight/healerWalkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-        
+
         animIndex = 0;
-        animDelay = 5;
+        animDelay = 7;
         animCounter = animDelay;
     }
-    
+
+    private void animate() {
+        if(right || away || !right || !away) {
+            animateWalking();
+        }
+        if(healingRight || healingAway || !healingRight || !healingAway) {
+            animateHealing();
+        }
+    }
+
     private void animateWalking() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -104,13 +113,13 @@ public class Healer extends Child
             if(right) {
                 setImage(walkRight[animIndex]);
             }
-            if(!right) {
+            else if(!right) {
                 setImage(walkLeft[animIndex]);
             }
-            if(away) {
+            else if(away) {
                 setImage(walkAway[animIndex]);
             }
-            if(!away) {
+            else if(!away) {
                 setImage(walkToward[animIndex]);
             }
         }
@@ -118,7 +127,7 @@ public class Healer extends Child
             animCounter--;
         }
     }
-    
+
     private void animateHealing() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -129,13 +138,13 @@ public class Healer extends Child
             if(healingRight) {
                 setImage(healRight[animIndex]);
             }
-            if(!healingRight) {
+            else if(!healingRight) {
                 setImage(healLeft[animIndex]);
             }
-            if(healingAway) {
+            else if(healingAway) {
                 setImage(healAway[animIndex]);
             }
-            if(!healingAway) {
+            else if(!healingAway) {
                 setImage(healToward[animIndex]);
             }
         }

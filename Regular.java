@@ -26,7 +26,7 @@ public class Regular extends Child
         super(100);
 
         animCounter = 0;
-        childNum = Greenfoot.getRandomNumber(2);
+        childNum = Greenfoot.getRandomNumber(3);
         maxIndex = walkAway.length;
         initImages();
     }
@@ -41,7 +41,7 @@ public class Regular extends Child
 
     private void initImages(){
         // Initialize child 1
-        if(childNum == 0){
+        if(childNum == 0) {
             for(int i = 0; i < maxIndex; i++) {
                 walkRight[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
             }
@@ -55,8 +55,9 @@ public class Regular extends Child
             for(int i = 0; i < maxIndex; i++) {
                 walkToward[i] = new GreenfootImage("child1WalkToward/child1WalkToward" + i + ".png");
             }
-        } else {
-            // Initialize child 2
+        }
+        // Initialize child 2
+        if(childNum == 1) {
             for(int i = 0; i < maxIndex; i++) {
                 walkRight[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
             }
@@ -69,6 +70,22 @@ public class Regular extends Child
             }
             for(int i = 0; i < maxIndex; i++) {
                 walkToward[i] = new GreenfootImage("child2WalkToward/child2WalkToward" + i + ".png");
+            }
+        }
+        // Initialize child 3
+        if(childNum == 2) {
+            for(int i = 0; i < maxIndex; i++) {
+                walkRight[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkLeft[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
+                walkLeft[i].mirrorHorizontally();
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkAway[i] = new GreenfootImage("child3WalkAway/child3WalkAway" + i + ".png");
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
 
