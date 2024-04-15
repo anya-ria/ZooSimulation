@@ -24,7 +24,7 @@ public class Fighter extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxFightIndex, maxWalkIndex;
-    private boolean right, away, fightingRight, fightingAway;
+    private boolean right, left, away, toward, fighting;
 
     // fighting variables
     private final int throwCooldown = 50;
@@ -38,6 +38,10 @@ public class Fighter extends Child
         maxFightIndex = fightAway.length;
         maxWalkIndex = walkAway.length;
         initImages();
+    }
+    
+    public void act() {
+        
     }
 
 
@@ -75,50 +79,47 @@ public class Fighter extends Child
         animDelay = 5;
         animCounter = animDelay;
     }
-
-    private void animateWalking() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
-            }
-            if(right) {
-                setImage(walkRight[animIndex]);
-            }
-            if(!right) {
-                setImage(walkLeft[animIndex]);
-            }
-            if(away) {
-                setImage(walkAway[animIndex]);
-            }
-            if(!away) {
-                setImage(walkToward[animIndex]);
-            }
-        }
-        else {
-            animCounter--;
-        }
-    }
     
-    private void animateFighting() {
+    private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxFightIndex) {
-                animIndex = 0;
+            if(fighting) {
+                if(animIndex == maxFightIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(fightRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(fightLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(fightAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(fightToward[animIndex]);
+                }
             }
-            if(fightingRight) {
-                setImage(fightRight[animIndex]);
-            }
-            if(!fightingRight) {
-                setImage(fightLeft[animIndex]);
-            }
-            if(fightingAway) {
-                setImage(fightAway[animIndex]);
-            }
-            if(!fightingAway) {
-                setImage(fightToward[animIndex]);
+            else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
+                // else {
+                    // setImage("fighterWalkToward/fighterWalkToward.png");
+                // }
             }
         }
         else {
