@@ -33,8 +33,8 @@ public class Regular extends Child
 
     public void act()
     {   
-        super.act();
         if(!awake) return;
+        super.act();
         runAway();
         animate(); 
     }

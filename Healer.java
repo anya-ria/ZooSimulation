@@ -45,6 +45,7 @@ public class Healer extends Child
 
     public void act(){
         if(!awake) return;
+        super.act();
         stunDuration--;
         if(stunDuration>0){
             setLocation(getX(), getY());
@@ -185,11 +186,6 @@ public class Healer extends Child
         }
         if(distance>=65 && distance < 500 && projCooldown<=0){
             getWorld().addObject(new HealingBall((int)direction, 8, 10), getX(), getY());
-            // if(direction<=45) healRight();
-            // else if(direction<=135) healAway();
-            // else if(direction<=225) healLeft();
-            // else if(direction<=315) healToward();
-            // else healRight();
             projCooldown = maxProjCooldown;
         }
         aoeCooldown--; projCooldown--;
