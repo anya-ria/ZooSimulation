@@ -1,26 +1,17 @@
 #BlueJ class context
 comment0.target=Monkey
- HEAD
-comment0.text=\n\ Write\ a\ description\ of\ class\ Monkey\ here.\n\ \n\ @author\ (Luke\ Xiao)\ \n\ @version\ (2024.04.05)\n\ 2024.04.05\:\ Class\ created\n
-
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Monkey\ here.\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/12/2024\r\n
- main
+comment0.text=\n\ Write\ a\ description\ of\ class\ Monkey\ here.\n\ \n\ @author\ Luke\ Xiao\ |\ Functions\n\ @author\ Anya\ Shah\ |\ Animations\n\ @version\ 04/12/2024\n
 comment1.params=
 comment1.target=Monkey()
 comment2.params=
- HEAD
-comment2.target=void\ moveAround()
-comment3.params=
-comment3.target=void\ throwBananas()
-numComments=4
-
 comment2.target=void\ initImages()
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Monkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ Monkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment4.params=
 comment4.target=void\ moveAround()
 comment5.params=
-comment5.target=void\ animate()
-numComments=6
- main
+comment5.target=void\ throwBananas()
+comment6.params=
+comment6.target=void\ animate()
+numComments=7

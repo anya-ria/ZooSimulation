@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Pencil
-comment0.text=\r\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/12\r\n
+comment0.text=\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/12\n
 comment1.params=angle\ speed
 comment1.target=Pencil(int,\ double)
 comment2.params=vx\ vy

@@ -1,28 +1,6 @@
 #BlueJ class context
 comment0.target=Child
- HEAD
 comment0.text=\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/4\n
-comment1.params=type\ detectRadius
-comment1.target=double[]\ detectNearestEntity(java.lang.Class,\ int)
-comment1.text=\n\ finds\ the\ nearest\ entity\ withing\ radius\ of\ the\ specific\ class\n\ @param\ type\ \ \ \ \ \ \ \ \ \ The\ class\ that\ is\ to\ be\ found\n\ @param\ detectRadius\ \ The\ range\ in\ which\ to\ find\ enemies\n\ @return\ double[]\ --\ \ The\ details\ (direction,\ distance)\ of\ the\ enemy\ found,\ returns\ {0,\ -1}\ if\ not\ found\n
-comment2.params=maxHp
-comment2.target=Child(int)
-comment2.text=\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ child\ can\ have\n
-comment3.params=world
-comment3.target=void\ addedToWorld(greenfoot.World)
-comment3.text=\n\ Creates\ a\ statbar\ when\ added\ to\ world\n\ @override\n
-comment4.params=dmg
-comment4.target=void\ takeDamage(int)
-comment4.text=\n\ Method\ to\ make\ the\ child\ take\ damage,\ updates\ the\ hp\ and\ the\ stat\ bar\n\ @param\ dmg\ \ \ the\ damage\ to\ be\ taken\n
-comment5.params=healing
-comment5.target=void\ heal(int)
-comment5.text=\n\ heals\ the\ child,\ but\ also\ checks\n\ if\ the\ child\ is\ still\ alive\n\ \n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\n
-comment6.params=
-comment6.target=void\ die()
-numComments=7
-
-comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/4\r\n
 comment1.params=maxHp
 comment1.target=Child(int)
 numComments=2
- main
