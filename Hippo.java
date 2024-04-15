@@ -50,7 +50,7 @@ public class Hippo extends Animal
         }
         
         animIndex = 0;
-        animDelay = 3;
+        animDelay = 10;
         animCounter = animDelay;
     }
     

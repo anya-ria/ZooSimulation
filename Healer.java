@@ -24,7 +24,7 @@ public class Healer extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxHealIndex, maxWalkIndex;
-    private boolean right, away, healing;
+    private boolean right, left, away, toward, healing;
 
     // healing variables
     private final int maxAoeCooldown = 200;
@@ -48,13 +48,13 @@ public class Healer extends Child
         stunDuration--;
         if(stunDuration>0){
             setLocation(getX(), getY());
-            healing = false;
+            healing = false; // When healing = true, set animIndex = 0
             return;
         }
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
-        animateWalking();
+        animate();
     }
 
     private void initImages() {
@@ -89,17 +89,11 @@ public class Healer extends Child
         }
 
         animIndex = 0;
-        animDelay = 15;
+        animDelay = 8;
         animCounter = animDelay;
     }
 
     private void animate() {
-
-        animateWalking();
-
-    }
-
-    private void animateWalking() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
@@ -110,13 +104,13 @@ public class Healer extends Child
                 if(right) {
                     setImage(healRight[animIndex]);
                 }
-                else if(!right) {
+                else if(left) {
                     setImage(healLeft[animIndex]);
                 }
                 else if(away) {
                     setImage(healAway[animIndex]);
                 }
-                else if(!away) {
+                else if(toward) {
                     setImage(healToward[animIndex]);
                 }
             } else {
@@ -126,15 +120,18 @@ public class Healer extends Child
                 if(right) {
                     setImage(walkRight[animIndex]);
                 }
-                else if(!right) {
+                else if(left) {
                     setImage(walkLeft[animIndex]);
                 }
                 else if(away) {
                     setImage(walkAway[animIndex]);
                 }
-                else if(!away) {
+                else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
+                // else {
+                    // setImage("healerWalkToward/healerWalkToward0.png");
+                // }
             }
         }
         else {

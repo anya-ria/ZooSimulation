@@ -26,7 +26,7 @@ public class Traitor extends Child
     // Animation sprites
     private int animCounter, animDelay, animIndex;
     private int maxPunchIndex, maxWalkIndex;
-    private boolean right, away, punchingRight, punchingAway;
+    private boolean right, left, away, toward, punching;
     
     private final int throwCooldown = 50;
     
@@ -40,6 +40,12 @@ public class Traitor extends Child
         maxPunchIndex = punchAway.length;
         maxWalkIndex = walkAway.length;
         initImages();
+    }
+    
+    public void act(){
+        if(!awake) return;
+        chaseChildren();
+        animate();
     }
     
     private void initImages() {
@@ -74,13 +80,55 @@ public class Traitor extends Child
         }
         
         animIndex = 0;
-        animDelay = 6;
+        animDelay = 8;
         animCounter = animDelay;
     }
     
-    public void act(){
-        if(!awake) return;
-        chaseChildren();
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(punching) {
+                if(animIndex == maxPunchIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(punchRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(punchLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(punchAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(punchToward[animIndex]);
+                }
+            }
+            else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
+                // else {
+                    // setImage("traitorWalkToward/walkToward0.png");
+                // }
+            }
+        }
+        else {
+            animCounter--;
+        }
     }
     
     public void chaseChildren(){
