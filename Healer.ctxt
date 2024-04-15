@@ -1,6 +1,20 @@
 #BlueJ class context
 comment0.target=Healer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Healer\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ healer\ likes\ to\ help\ fellow\ children\ with\ some\ clerical\ magic\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/12/2024\r\n
 comment1.params=
 comment1.target=Healer()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ initImages()
+comment4.params=
+comment4.target=void\ animate()
+comment5.params=
+comment5.target=void\ animateWalking()
+comment6.params=
+comment6.target=void\ animateHealing()
+comment7.params=details
+comment7.target=void\ followAlly(double[])
+comment8.params=details
+comment8.target=void\ checkHeal(double[])
+numComments=9

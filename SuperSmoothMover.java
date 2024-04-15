@@ -30,14 +30,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  */
 public abstract class SuperSmoothMover extends Actor
 {
-    private double exactX;
-    private double exactY;
+    protected double exactX;
+    protected double exactY;
     private double rotation;
     private boolean staticRotation = false;
     private double cosRotation;
     private double sinRotation;
     
-    protected boolean removed = false;
     /**
      * Move forward by the specified distance.
      * (Overrides the method in Actor).
@@ -158,6 +157,7 @@ public abstract class SuperSmoothMover extends Actor
 
     /**
      * Set the location using exact coordinates.
+     * Modified to include temporary velocities
      * 
      * @param x the new x location
      * @param y the new y location
@@ -179,9 +179,7 @@ public abstract class SuperSmoothMover extends Actor
     @Override
     public void setLocation(int x, int y) 
     {
-        exactX = x;
-        exactY = y;
-        super.setLocation(x, y);
+        setLocation((double)x, (double)y);
     }
 
     /**
