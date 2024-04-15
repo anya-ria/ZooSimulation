@@ -87,10 +87,32 @@ public class Penguin extends Animal
     
     private void moveAround()
     {
-        move(2);
-        if (Greenfoot.getRandomNumber(100) < 10)
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
         {
-            turn(Greenfoot.getRandomNumber(90) - 45);
+            setRotation(direction);
+            // The initial orientation of the images are facing RIGHT
+            if (direction >= 315 || direction <= 45) // Right
+            {
+                away = true;
+                right = true;
+            }
+            if (direction > 45 && direction <= 135) // Down
+            {   
+                right = true;
+                away = false;
+            }
+            if (direction > 135 && direction <= 225) // Left
+            {
+                right = false;
+                away = false;
+            }
+            if (direction > 225 && direction <= 315) // Up
+            {
+                right = false;
+                away = true;
+            }
         }
         if (getX() <= 695 || getX() >= 980)
         {
@@ -121,52 +143,68 @@ public class Penguin extends Animal
         }
     }
     
-    private void animateWalking() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
+    private void animateWalking() 
+    {
+        if(animCounter == 0)
+        {
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxWalkIndex)
+            {
+                animIndex = 0; 
             }
-            if(right) {
+            if(right && away)
+            {
                 setImage(walkRight[animIndex]);
-            }
-            else if(!right) {
+            } 
+            else if (!right && !away)
+            {
                 setImage(walkLeft[animIndex]);
-            }
-            else if(away) {
+            } 
+            else if(right && !away)
+            {
+                setImage(walkToward[animIndex]); 
+            } 
+            else 
+            {
                 setImage(walkAway[animIndex]);
             }
-            else if(!away) {
-                setImage(walkToward[animIndex]);
-            }
-        }
-        else {
+        } 
+        else 
+        {
             animCounter--;
         }
     }
     
-    private void animateSliding() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if(animIndex == maxSlideIndex) {
-                animIndex = 0;
+    private void animateSliding() 
+    {
+        if(animCounter == 0)
+        {
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxSlideIndex)
+            {
+                animIndex = 0; 
             }
-            if(right) {
+            if(right && away)
+            {
                 setImage(slideRight[animIndex]);
-            }
-            else if(!right) {
+            } 
+            else if (!right && !away)
+            {
                 setImage(slideLeft[animIndex]);
-            }
-            else if(away) {
+            } 
+            else if(right && !away)
+            {
+                setImage(slideToward[animIndex]); 
+            } 
+            else 
+            {
                 setImage(slideAway[animIndex]);
             }
-            else if(!away) {
-                setImage(slideToward[animIndex]);
-            }
-        }
-        else {
+        } 
+        else 
+        {
             animCounter--;
         }
     }

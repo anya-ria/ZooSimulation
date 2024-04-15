@@ -82,22 +82,23 @@ public class Hippo extends Animal
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
-            if (direction >= 315 || direction <= 45)
+            // The initial orientation of the images are facing RIGHT
+            if (direction >= 315 || direction <= 45) // Right
             {
                 away = true;
                 right = true;
             }
-            if (direction > 45 && direction <= 135)
+            if (direction > 45 && direction <= 135) // Down
             {   
                 right = true;
                 away = false;
             }
-            if (direction > 135 && direction <= 225)
+            if (direction > 135 && direction <= 225) // Left
             {
                 right = false;
                 away = false;
             }
-            if (direction > 225 && direction <= 315)
+            if (direction > 225 && direction <= 315) // Up
             {
                 right = false;
                 away = true;
