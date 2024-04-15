@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Child
+ HEAD
 comment0.text=\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/4\n
 comment1.params=type\ detectRadius
 comment1.target=double[]\ detectNearestEntity(java.lang.Class,\ int)
@@ -19,3 +20,9 @@ comment5.text=\n\ heals\ the\ child,\ but\ also\ checks\n\ if\ the\ child\ is\ s
 comment6.params=
 comment6.target=void\ die()
 numComments=7
+
+comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/4\r\n
+comment1.params=maxHp
+comment1.target=Child(int)
+numComments=2
+ main

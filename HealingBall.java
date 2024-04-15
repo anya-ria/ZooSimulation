@@ -28,8 +28,7 @@ public class HealingBall extends Projectile
      * @param healing  the healing value
      */
     public HealingBall(double vx, double vy, int healing){
-        this.vx = vx;
-        this.vy = vy;
+        super(vx,vy);
         getImage().scale(20, 20);
         healingValue = healing;
     }

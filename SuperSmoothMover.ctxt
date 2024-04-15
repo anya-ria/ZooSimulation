@@ -29,15 +29,17 @@ comment17.params=
 comment17.target=double\ getPreciseRotation()
 comment18.params=
 comment18.target=int\ getRotation()
-comment19.params=vx\ vy
-comment19.target=void\ push(double,\ double)
 comment2.params=distance
 comment2.target=void\ move(double)
+ HEAD
 comment2.text=\n\ Move\ forward\ by\ the\ specified\ exact\ distance.\n\ \n\ @param\ distance\ the\ precise\ distance\ to\ move\ in\ the\ current\ facing\ direction\n
 comment20.params=angle\ speed
 comment20.target=void\ push(int,\ double)
 comment21.params=
 comment21.target=boolean\ isAwake()
+
+comment2.text=\r\n\ Move\ forward\ by\ the\ specified\ exact\ distance.\r\n\ \r\n\ @param\ distance\ the\ precise\ distance\ to\ move\ in\ the\ current\ facing\ direction\r\n
+ main
 comment3.params=
 comment3.target=void\ enableStaticRotation()
 comment3.text=\n\ Static\ rotation\ means\ that\ the\ IMAGE\ WILL\ NOT\ ROTATE.\ The\ turn,\ turnTowards\ and\ move\ commands\n\ will\ still\ work,\ and\ the\ Actor\ will\ move\ in\ the\ appropriate\ direction,\ but\ the\ image's\ facing\ angle\n\ will\ not\ change.\ Note\ that\ the\ disableStaticRotation()\ method\ can\ be\ used\ to\ turn\ this\ off.\n
@@ -57,5 +59,10 @@ comment8.target=void\ turnTowards(greenfoot.Actor)
 comment8.text=\n\ A\ short-cut\ method\ that\ I\ (Jordan\ Cohen)\ always\ thought\ Greenfoot\ should\ have\ -\ use\ the\n\ tuntToward\ method\ above\ to\ face\ another\ Actor\ instead\ of\ just\ a\ point.\ Keeps\ calling\ code\n\ cleaner.\ \n\ \n\ @param\ a\ \ \ \ \ The\ Actor\ to\ turn\ towards.\ \n
 comment9.params=angle
 comment9.target=void\ turn(int)
+ HEAD
 comment9.text=\n\ Turn\ a\ specified\ number\ of\ degrees.\n\ \n\ @param\ angle\ \ \ \ \ the\ number\ of\ degrees\ to\ turn.\n
 numComments=22
+
+comment9.text=\r\n\ Turn\ a\ specified\ number\ of\ degrees.\r\n\ \r\n\ @param\ angle\ \ \ \ \ the\ number\ of\ degrees\ to\ turn.\r\n
+numComments=19
+ main

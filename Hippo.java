@@ -3,19 +3,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hippo here.
  * 
- * @author (Luke Xiao) 
- * @version (2024.04.05)
- * 2024.04.05: Class created
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
+ * @version 04/12/2024
  */
 
 public class Hippo extends Animal
 {
     // Hippo sprites
-    private GreenfootImage[] hippoWalkRight = new GreenfootImage[3];
-    private GreenfootImage[] hippoWalkLeft = new GreenfootImage[3];
-    private GreenfootImage[] hippoWalkToward = new GreenfootImage[3];
-    private GreenfootImage[] hippoWalkAway = new GreenfootImage[3];
-    private int animCounter; 
+    private GreenfootImage[] walkRight = new GreenfootImage[3];
+    private GreenfootImage[] walkLeft = new GreenfootImage[3];
+    private GreenfootImage[] walkToward = new GreenfootImage[3];
+    private GreenfootImage[] walkAway = new GreenfootImage[3];
+    
+    // Animation variables
+    private int animCounter, animDelay, animIndex; 
+    private int maxIndex;
+    private boolean right, away;
     
     private boolean isInfected;
     private int direction;
@@ -23,9 +27,37 @@ public class Hippo extends Animal
     //private double maxSpeed;
     //private int direction;
     
+ HEAD
     public Hippo() 
     {
+
+    public Hippo() {
+        super(200);
+        
+ main
         animCounter = 0;
+        maxIndex = walkRight.length;
+        initImages();
+    }
+    
+    private void initImages() {
+        for(int i = 0; i < maxIndex; i++) {
+            walkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkToward[i] = new GreenfootImage("hippoWalkToward/hippoWalkToward" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkRight[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkLeft[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        
+        animIndex = 0;
+        animDelay = 3;
+        animCounter = animDelay;
     }
     
     /**
@@ -35,10 +67,14 @@ public class Hippo extends Animal
     public void act()
     {
         moveAround();
+ HEAD
         if (isInfected)
         {
             charge();
         }
+
+        animate();
+ main
     }
     
     public void moveAround()
@@ -92,6 +128,7 @@ public class Hippo extends Animal
         }
     }
     
+ HEAD
     public void animateRight() 
     {
         for(int i = 0; i < 3; i++) 
@@ -123,6 +160,30 @@ public class Hippo extends Animal
         {
             hippoWalkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
             setImage(hippoWalkAway[animCounter++ % 3]);
+
+    private void animate() {
+        if(animCounter == 0){
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxIndex){
+                animIndex = 0; 
+            }
+            if(right){
+                setImage(walkRight[animIndex]);
+            } 
+            else if (!right){
+                setImage(walkLeft[animIndex]);
+            } 
+            else if(!away){
+                setImage(walkToward[animIndex]); 
+            } 
+            else {
+                setImage(walkAway[animIndex]);
+            }
+        } 
+        else {
+            animCounter--; 
+ main
         }
     }
 }
