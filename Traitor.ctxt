@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Traitor
-comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ throw\ bananas\ and\ punch\ other\ children\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/8\r\n
+comment0.text=\r\n\ The\ traitor\ is\ a\ fighter\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ throw\ bananas\ and\ pencils,\ and\ punch\ other\ children\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/8\r\n
 comment1.params=
 comment1.target=Traitor()
 comment2.params=
@@ -8,7 +8,9 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ chaseChildren()
 comment4.params=direction\ speed
-comment4.target=void\ throwBanana(int,\ int)
-comment5.params=
-comment5.target=void\ punch()
-numComments=6
+comment4.target=void\ throwPencil(int,\ int)
+comment5.params=direction\ speed
+comment5.target=void\ throwBanana(int,\ int)
+comment6.params=
+comment6.target=void\ punch()
+numComments=7

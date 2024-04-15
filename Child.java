@@ -10,4 +10,7 @@ public abstract class Child extends Entity
     public Child(int maxHp){
         super(maxHp);
     }
+    public void act(){
+        super.act();
+    }
 }

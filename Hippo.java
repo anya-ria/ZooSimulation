@@ -60,6 +60,7 @@ public class Hippo extends Animal
      */
     public void act()
     {
+        super.act();
         moveAround();
         animate();
     }

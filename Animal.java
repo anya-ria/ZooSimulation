@@ -13,6 +13,10 @@ public abstract class Animal extends Entity
     private double maxSpeed;
     private int direction;
     
+    public void act(){
+        super.act();
+    }
+    
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the child can have
