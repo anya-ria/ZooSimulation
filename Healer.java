@@ -24,7 +24,7 @@ public class Healer extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxHealIndex, maxWalkIndex;
-    private boolean right, away, healingRight, healingAway;
+    private boolean right, away, healing;
 
     // healing variables
     private final int maxAoeCooldown = 200;
@@ -48,14 +48,13 @@ public class Healer extends Child
         stunDuration--;
         if(stunDuration>0){
             setLocation(getX(), getY());
-            healingAway = false;
+            healing = false;
             return;
         }
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
         animateWalking();
-        animateHealing();
     }
 
     private void initImages() {
@@ -90,62 +89,52 @@ public class Healer extends Child
         }
 
         animIndex = 0;
-        animDelay = 7;
+        animDelay = 15;
         animCounter = animDelay;
     }
 
     private void animate() {
-        if(right || away || !right || !away) {
-            animateWalking();
-        }
-        if(healingRight || healingAway || !healingRight || !healingAway) {
-            animateHealing();
-        }
+
+        animateWalking();
+
     }
 
     private void animateWalking() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
-            }
-            if(right) {
-                setImage(walkRight[animIndex]);
-            }
-            else if(!right) {
-                setImage(walkLeft[animIndex]);
-            }
-            else if(away) {
-                setImage(walkAway[animIndex]);
-            }
-            else if(!away) {
-                setImage(walkToward[animIndex]);
-            }
-        }
-        else {
-            animCounter--;
-        }
-    }
-
-    private void animateHealing() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if (animIndex == maxHealIndex) {
-                animIndex = 0;
-            }
-            if(healingRight) {
-                setImage(healRight[animIndex]);
-            }
-            else if(!healingRight) {
-                setImage(healLeft[animIndex]);
-            }
-            else if(healingAway) {
-                setImage(healAway[animIndex]);
-            }
-            else if(!healingAway) {
-                setImage(healToward[animIndex]);
+            if(healing){
+                if(animIndex == maxHealIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(healRight[animIndex]);
+                }
+                else if(!right) {
+                    setImage(healLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(healAway[animIndex]);
+                }
+                else if(!away) {
+                    setImage(healToward[animIndex]);
+                }
+            } else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(!right) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(!away) {
+                    setImage(walkToward[animIndex]);
+                }
             }
         }
         else {
@@ -180,7 +169,7 @@ public class Healer extends Child
         if(distance<=100 && aoeCooldown<=0){
             getWorld().addObject(new HealingEffect(200, 40), getX(), getY());
             aoeCooldown = maxAoeCooldown;
-            healingAway = false;
+            healing = false;
             stunDuration = 120;
         }
         if(distance>=65 && distance < 500 && projCooldown<=0){

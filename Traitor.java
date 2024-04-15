@@ -5,22 +5,84 @@ import java.util.Random;
  * The traitor is a child that no longer wants to cooperate with other children.
  * This character will throw bananas and punch other children
  * 
- * @author Lucas
+ * @author Anya Shah | Animations
+ * @author Lucas Fu  | Functions
  * @version 2024/4/8
  */
 public class Traitor extends Child
 {
+    // Punching sprites
+    private GreenfootImage[] punchAway = new GreenfootImage[6];
+    private GreenfootImage[] punchToward = new GreenfootImage[6];
+    private GreenfootImage[] punchRight = new GreenfootImage[6];
+    private GreenfootImage[] punchLeft = new GreenfootImage[6];
+    
+    // Walking sprites
+    private GreenfootImage[] walkAway = new GreenfootImage[9];
+    private GreenfootImage[] walkToward = new GreenfootImage[9];
+    private GreenfootImage[] walkRight = new GreenfootImage[9];
+    private GreenfootImage[] walkLeft = new GreenfootImage[9];
+    
+    // Animation sprites
+    private int animCounter, animDelay, animIndex;
+    private int maxPunchIndex, maxWalkIndex;
+    private boolean right, away, punchingRight, punchingAway;
+    
     private final int throwCooldown = 50;
     
     private int cooldown = throwCooldown;
     private Random rand = new Random();
+    
     public Traitor(){
         super(100);
+        
+        animCounter = 0;
+        maxPunchIndex = punchAway.length;
+        maxWalkIndex = walkAway.length;
+        initImages();
     }
+    
+    private void initImages() {
+        // Initialize punching images
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchAway[i] = new GreenfootImage("traitorPunchAway/punchAway" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchToward[i] = new GreenfootImage("traitorPunchToward/punchToward" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchRight[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchLeft[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
+            punchLeft[i].mirrorHorizontally();
+        }
+        
+        // Initialize walking images
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkAway[i] = new GreenfootImage("traitorWalkAway/walkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkToward[i] = new GreenfootImage("traitorWalkToward/walkToward" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkRight[i] = new GreenfootImage("traitorWalkRight/walkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkLeft[i] = new GreenfootImage("traitorWalkRight/walkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        
+        animIndex = 0;
+        animDelay = 6;
+        animCounter = animDelay;
+    }
+    
     public void act(){
         if(!awake) return;
         chaseChildren();
     }
+    
     public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
@@ -41,10 +103,12 @@ public class Traitor extends Child
         }
         setLocation(getX()+vector[0]*1.1, getY()+vector[1]*1.1);
     }
+    
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
+    
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
         if(enemyDetails[1] == -1) return;
