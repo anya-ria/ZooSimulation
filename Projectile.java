@@ -12,7 +12,7 @@ public abstract class Projectile extends SuperSmoothMover
     protected double acts = 0;
     protected double vx, vy;
     protected boolean expired = false;
-    private int downTime = 10;
+    private int downTime = 12;
     public Projectile(double vx, double vy){
         this.vx = vx;
         this.vy = vy;

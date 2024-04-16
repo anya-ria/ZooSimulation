@@ -40,6 +40,20 @@ public class Fighter extends Child
         initImages();
     }
 
+    public void act(){
+        if(!awake) return;
+        super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
+        chaseZombies();
+    }
+
     private void initImages() {
         // Initialize 4 fighting images
         for(int i = 0; i < maxFightIndex; i++) {
@@ -112,9 +126,6 @@ public class Fighter extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("fighterWalkToward/fighterWalkToward.png");
-                // }
             }
         }
         else {
@@ -124,11 +135,6 @@ public class Fighter extends Child
 
     
     // **************************** FIGHTING ****************************** \\
-    public void act(){
-        if(!awake) return;
-        super.act();
-        chaseZombies();
-    }
     private void chaseZombies(){
         double[] enemyDetails = detectNearestEntity(Animal.class, 500);
         double direction = enemyDetails[0];

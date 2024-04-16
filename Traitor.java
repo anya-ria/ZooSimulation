@@ -46,6 +46,14 @@ public class Traitor extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         chaseChildren();
         animate();
         setLocation(getX(), getY());
@@ -124,9 +132,6 @@ public class Traitor extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("traitorWalkToward/walkToward0.png");
-                // }
             }
         }
         else {
@@ -175,7 +180,7 @@ public class Traitor extends Child
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
     private void selfHeal(){
-        getWorld().addObject(new HealingEffect(20, 10), getX(), getY());
+        getWorld().addObject(new HealingEffect(20, 20), getX(), getY());
     }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);

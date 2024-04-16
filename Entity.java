@@ -19,6 +19,8 @@ public abstract class Entity extends SuperSmoothMover
     protected double tempVy = 0; // temporary vy added from push
     protected double friction = 0.95;
     
+    protected double slippedDuration = 0;
+    
     protected boolean awake = true;
     
     /**
@@ -164,6 +166,13 @@ public abstract class Entity extends SuperSmoothMover
     public void setLocation(int x, int y) 
     {
         setLocation((double)x, (double)y);
+    }
+    /**
+     * The Entity has slipped! Rotates upside-down and is now stunned for a duration
+     */
+    public void slip(){
+        setRotation(180);
+        slippedDuration = 200;
     }
     public void push(double vx, double vy){
         tempVx += vx;
