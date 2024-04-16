@@ -8,24 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pencil extends Projectile
 {
-    private int dot = 5; // damage
-    private int duration = dot*30; // how many acts (divide by 30 for number of ticks)
+    private int dot; // damage
+    private int duration; // how many acts (divide by 30 for number of ticks)
     /**
      * Constructs a new Pencil using angle and speed
+     * @param dmg       the damage to be taken every tick (30 acts)
+     * @param duration  the duration in terms of acts
      * @param angle     the direction in which to throw
      * @param speed     the speed at which the pencil moves
      */
-    public Pencil(int angle, double speed){
-        this(Utility.angleToVector(angle)[0]*speed, 
+    public Pencil(int dmg, int duration, int angle, double speed){
+        this(dmg, duration,
+             Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
     }
     /**
      * Constructs a new Pencil using velocities
+     * @param dmg       the damage to be taken every tick (30 acts)
+     * @param duration  the duration in terms of acts
      * @param vx        the horizontal velocity
      * @param vy        the vertical velocity
      */
-    public Pencil(double vx, double vy){
+    public Pencil(int dmg, int duration, double vx, double vy){
         super(vx, vy);
+        dot = dmg;
+        this.duration = duration;
         getImage().scale(20,20);  
     }
     protected void detectCollision(){

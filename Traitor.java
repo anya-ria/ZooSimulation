@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.Random;
 /**
- * The traitor is a fighter child that no longer wants to cooperate with other children.
- * This character will throw bananas and pencils, and punch other children
+ * The traitor is a child that no longer wants to cooperate with other children.
+ * This character will imitate all other characters' attacks
  * 
  * @author Lucas
  * @version 2024/4/8
@@ -11,6 +11,7 @@ import java.util.Random;
 public class Traitor extends Child
 {
     private final int throwCooldown = 50;
+    private final int healCooldown = 75;
     
     private int cooldown = throwCooldown;
     private Random rand = new Random();
@@ -21,6 +22,7 @@ public class Traitor extends Child
         if(!awake) return;
         super.act();
         chaseChildren();
+        setLocation(getX(), getY());
     }
     public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
@@ -29,7 +31,11 @@ public class Traitor extends Child
         double[] vector = Utility.angleToVector(direction);
         if(distance == -1){
             vector[0] = 0;
-            vector[1] = 1;
+            vector[1] = 0;
+        }
+        if(hp<75 && cooldown<=0){
+            selfHeal();
+            cooldown = healCooldown;
         }
         if(distance<500 && distance > 10 && cooldown<=0){
             switch(rand.nextInt(2)){
@@ -51,11 +57,14 @@ public class Traitor extends Child
     }
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
     }
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
+    }
+    private void selfHeal(){
+        getWorld().addObject(new HealingEffect(20, 10), getX(), getY());
     }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
