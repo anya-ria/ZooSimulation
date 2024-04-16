@@ -19,7 +19,7 @@ public class Hippo extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-    private boolean right, away;
+    private boolean right, left, away, toward;
     
     private boolean isInfected;
     private double speed;
@@ -50,7 +50,7 @@ public class Hippo extends Animal
         }
         
         animIndex = 0;
-        animDelay = 3;
+        animDelay = 10;
         animCounter = animDelay;
     }
     
@@ -92,13 +92,13 @@ public class Hippo extends Animal
             if(right){
                 setImage(walkRight[animIndex]);
             } 
-            else if (!right){
+            else if (left){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(!away){
+            else if(toward){
                 setImage(walkToward[animIndex]); 
             } 
-            else {
+            else if(away){
                 setImage(walkAway[animIndex]);
             }
         } 
