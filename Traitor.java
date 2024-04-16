@@ -21,9 +21,101 @@ public class Traitor extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         chaseChildren();
         setLocation(getX(), getY());
     }
+<<<<<<< Updated upstream
+=======
+    
+    private void initImages() {
+        // Initialize punching images
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchAway[i] = new GreenfootImage("traitorPunchAway/punchAway" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchToward[i] = new GreenfootImage("traitorPunchToward/punchToward" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchRight[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
+        }
+        for(int i = 0; i < maxPunchIndex; i++) {
+            punchLeft[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
+            punchLeft[i].mirrorHorizontally();
+        }
+        
+        // Initialize walking images
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkAway[i] = new GreenfootImage("traitorWalkAway/walkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkToward[i] = new GreenfootImage("traitorWalkToward/walkToward" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkRight[i] = new GreenfootImage("traitorWalkRight/walkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxWalkIndex; i++) {
+            walkLeft[i] = new GreenfootImage("traitorWalkRight/walkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        
+        animIndex = 0;
+        animDelay = 8;
+        animCounter = animDelay;
+    }
+    
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(punching) {
+                if(animIndex == maxPunchIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(punchRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(punchLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(punchAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(punchToward[animIndex]);
+                }
+            }
+            else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
+            }
+        }
+        else {
+            animCounter--;
+        }
+    }
+    
+>>>>>>> Stashed changes
     public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
@@ -64,7 +156,7 @@ public class Traitor extends Child
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
     private void selfHeal(){
-        getWorld().addObject(new HealingEffect(20, 10), getX(), getY());
+        getWorld().addObject(new HealingEffect(20, 20), getX(), getY());
     }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);

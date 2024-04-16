@@ -46,11 +46,19 @@ public class Healer extends Child
     public void act(){
         if(!awake) return;
         super.act();
-        stunDuration--;
         if(stunDuration>0){
+            stunDuration--;
             setLocation(getX(), getY());
             healingAway = false;
             return;
+        }
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
         }
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);

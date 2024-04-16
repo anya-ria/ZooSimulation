@@ -6,9 +6,15 @@ comment1.target=Fighter()
 comment2.params=
 comment2.target=void\ initImages()
 comment3.params=
+<<<<<<< Updated upstream
 comment3.target=void\ animateWalking()
 comment4.params=
 comment4.target=void\ animateFighting()
+=======
+comment3.target=void\ animate()
+comment4.params=
+comment4.target=void\ act()
+>>>>>>> Stashed changes
 comment5.params=
 comment5.target=void\ act()
 comment6.params=

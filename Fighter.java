@@ -39,7 +39,10 @@ public class Fighter extends Child
         maxWalkIndex = walkAway.length;
         initImages();
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     private void initImages() {
         // Initialize 4 fighting images
@@ -131,6 +134,14 @@ public class Fighter extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         chaseZombies();
     }
     private void chaseZombies(){
