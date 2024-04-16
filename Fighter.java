@@ -126,9 +126,6 @@ public class Fighter extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("fighterWalkToward/fighterWalkToward.png");
-                // }
             }
         }
         else {
