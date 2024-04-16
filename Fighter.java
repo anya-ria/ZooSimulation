@@ -40,10 +40,11 @@ public class Fighter extends Child
         initImages();
     }
     
-    public void act() {
-        
+    public void act(){
+        if(!awake) return;
+        super.act();
+        chaseZombies();
     }
-
 
     private void initImages() {
         // Initialize 4 fighting images
@@ -127,11 +128,7 @@ public class Fighter extends Child
         }
     }
 
-    public void act(){
-        if(!awake) return;
-        super.act();
-        chaseZombies();
-    }
+    
     private void chaseZombies(){
         double[] enemyDetails = detectNearestEntity(Animal.class, 500);
         double direction = enemyDetails[0];
@@ -152,10 +149,12 @@ public class Fighter extends Child
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
     }
+    
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
     }
+    
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Animal.class, 10);
         if(enemyDetails[1] == -1){
