@@ -39,12 +39,6 @@ public class Fighter extends Child
         maxWalkIndex = walkAway.length;
         initImages();
     }
-    
-    public void act(){
-        if(!awake) return;
-        super.act();
-        chaseZombies();
-    }
 
     private void initImages() {
         // Initialize 4 fighting images
