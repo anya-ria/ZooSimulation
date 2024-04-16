@@ -28,14 +28,19 @@ public class Traitor extends Child
     private int maxPunchIndex, maxWalkIndex;
     private boolean right, left, away, toward, punching;
     
-    private final int throwCooldown = 50;
-    private final int healCooldown = 75;
+    private final int maxThrowCooldown = 50;
+    private final int maxHealCooldown = 100;
+    private final int maxSmashCooldown = 500;
     
-    private int cooldown = throwCooldown;
+    private int throwCooldown = maxThrowCooldown;
+    private int healCooldown = maxHealCooldown;
+    private int smashCooldown = maxSmashCooldown;
+    private int stunDuration = 0;
+    
     private Random rand = new Random();
     
     public Traitor(){
-        super(100);
+        super(150);
         
         animCounter = 0;
         maxPunchIndex = punchAway.length;
@@ -53,6 +58,11 @@ public class Traitor extends Child
         } else if(slippedDuration==0){
             setRotation(0);
             slippedDuration--; // effectively only makes this code run once
+        }
+        if(stunDuration>0){ // essentially the same as slippedDuration
+            stunDuration--;
+            setLocation(getX(), getY());
+            return;
         }
         chaseChildren();
         animate();
@@ -148,11 +158,12 @@ public class Traitor extends Child
             vector[0] = 0;
             vector[1] = 0;
         }
-        if(hp<75 && cooldown<=0){
+        if(hp<100 && healCooldown<=0){
             selfHeal();
-            cooldown = healCooldown;
+            healCooldown = maxHealCooldown;
+            throwCooldown = maxHealCooldown;
         }
-        if(distance<500 && distance > 10 && cooldown<=0){
+        if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
                 case 0:
                     throwBanana((int)direction, 4);
@@ -161,9 +172,15 @@ public class Traitor extends Child
                     throwPencil((int)direction, 4);
                     break;
             }
-            cooldown = throwCooldown;
+            throwCooldown = maxThrowCooldown;
         }
-        cooldown--;
+        if(distance>=10 && distance<100 && hp>100 && smashCooldown<=0){
+            getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+            selfHeal(); selfHeal(); selfHeal();
+            smashCooldown = maxSmashCooldown;
+            stunDuration = 200;
+        }
+        throwCooldown--; healCooldown--; smashCooldown--;
         if(distance < 10){
             punch();
             return;

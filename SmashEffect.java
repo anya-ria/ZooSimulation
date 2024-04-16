@@ -1,26 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * An effect that heals children whenever it appears. This effect is only used
- * by the healer
+ * The SmashEffect is an effect that deals damage in an aoe
  * 
  * @author Lucas
+ * @version 2024/4/16
  */
-public class HealingEffect extends Effect
+public class SmashEffect extends Effect
 {
-    private int healingLevel;
+    private int damage;
     /**
-     * creates a new healing effect that is the specified size and level
-     * @param size      how big the effect will be
-     * @param level     how much healing is to be dealt
+     * creates a new smash effect that is the specified size and damage
+     * @param size    how big the effect will be (diameter)
+     * @param dmg     how much damage is to be dealt
      */
-    public HealingEffect(int size, int level){
+    public SmashEffect(int size, int dmg){
         super(null, new GreenfootImage("empty.png"),10,10,100);
         getImage().scale(size,size);
-        getImage().setColor(Color.YELLOW);
+        getImage().setColor(Color.GRAY);
         getImage().fillOval(0,0,size,size);
         
-        healingLevel = level;
+        damage = dmg;
     }
     /**
      * @override
@@ -28,7 +28,7 @@ public class HealingEffect extends Effect
     public void addedToWorld(World world){
         List<Child> children = getIntersectingObjects(Child.class);
         for(Child c : children){
-            c.heal(healingLevel);
+            c.takeDamage(damage);
         }
     }
 }
