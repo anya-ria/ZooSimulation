@@ -19,6 +19,4 @@ public class Lightning extends Effect
     {
         // Add your action code here.
     }
-    
-
 }
