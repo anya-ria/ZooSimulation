@@ -18,7 +18,7 @@ public class Monkey extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, away, healingRight, healingAway;
+    private boolean right, left, away, toward;
 
     private boolean isInfected;
     private double speed;
@@ -49,7 +49,7 @@ public class Monkey extends Animal
         }
         
         animIndex = 0;
-        animDelay = 5;
+        animDelay = 10;
         animCounter = animDelay;
     }
 
@@ -90,13 +90,13 @@ public class Monkey extends Animal
             if(right) {
                 setImage(walkRight[animIndex]);
             }
-            if(!right) {
+            else if(left) {
                 setImage(walkLeft[animIndex]);
             }
-            if(away) {
+            else if(away) {
                 setImage(walkAway[animIndex]);
             }
-            if(!away) {
+            else if(toward){
                 setImage(walkToward[animIndex]);
             }
         }

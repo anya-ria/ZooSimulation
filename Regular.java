@@ -18,7 +18,7 @@ public class Regular extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, away;
+    private boolean right, left, away, toward;
     
     private int childNum;
 
@@ -26,22 +26,22 @@ public class Regular extends Child
         super(100);
 
         animCounter = 0;
-        childNum = Greenfoot.getRandomNumber(2);
+        childNum = Greenfoot.getRandomNumber(3);
         maxIndex = walkAway.length;
         initImages();
     }
 
     public void act()
     {   
-        super.act();
         if(!awake) return;
+        super.act();
         runAway();
         animate(); 
     }
 
     private void initImages(){
         // Initialize child 1
-        if(childNum == 0){
+        if(childNum == 0) {
             for(int i = 0; i < maxIndex; i++) {
                 walkRight[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
             }
@@ -55,8 +55,9 @@ public class Regular extends Child
             for(int i = 0; i < maxIndex; i++) {
                 walkToward[i] = new GreenfootImage("child1WalkToward/child1WalkToward" + i + ".png");
             }
-        } else {
-            // Initialize child 2
+        }
+        // Initialize child 2
+        if(childNum == 1) {
             for(int i = 0; i < maxIndex; i++) {
                 walkRight[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
             }
@@ -71,9 +72,25 @@ public class Regular extends Child
                 walkToward[i] = new GreenfootImage("child2WalkToward/child2WalkToward" + i + ".png");
             }
         }
+        // Initialize child 3
+        if(childNum == 2) {
+            for(int i = 0; i < maxIndex; i++) {
+                walkRight[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkLeft[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
+                walkLeft[i].mirrorHorizontally();
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkAway[i] = new GreenfootImage("child3WalkAway/child3WalkAway" + i + ".png");
+            }
+            for(int i = 0; i < maxIndex; i++) {
+                walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
+            }
+        }
 
         animIndex = 0; 
-        animDelay = 5; // # of acts in btw each image
+        animDelay = 8; // # of acts in btw each image
         animCounter = animDelay; 
     }
 
@@ -90,14 +107,18 @@ public class Regular extends Child
                 vector = new double[] {0, 0}; 
         }
         setLocation(getX()-vector[0], getY()-vector[1]);
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1]))
-            right = false; 
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1]))
-            right = true; 
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1]))
-            away = false; 
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1]))
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            left = true;
+        }
+        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            right = true;
+        }
+        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            toward = true;
+        }
+        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
             away = true; 
+        }
     }
 
     private void animate(){
@@ -110,14 +131,25 @@ public class Regular extends Child
             if(right){
                 setImage(walkRight[animIndex]);
             } 
-            else if (!right){
+            else if (left){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(!away){
+            else if(toward){
                 setImage(walkToward[animIndex]); 
             } 
-            else {
+            else if(away){
                 setImage(walkAway[animIndex]);
+            }
+            else {
+                // if(childNum == 0) {
+                    // setImage("child1WalkToward/child1WalkToward0.png");
+                // }
+                // if(childNum == 1) {
+                    // setImage("child2WalkToward/child2WalkToward0.png");
+                // }
+                // if(childNum == 2) {
+                    // setImage("child3WalkToward/child3WalkToward0.png");
+                // }
             }
         } 
         else {

@@ -33,7 +33,7 @@ public abstract class Entity extends SuperSmoothMover
     
     public void act(){
         if(wound[1]>0){
-            if(wound[1]%10==0) takeDamage(wound[0]);
+            if(wound[1]%30==0) takeDamage(wound[0]);
             wound[1]--;
         }
     }    
@@ -94,7 +94,11 @@ public abstract class Entity extends SuperSmoothMover
      * @param duration    The length, in acts
      */
     public void getWounded(int dmg, int duration){
-        wound = new int[] {dmg, duration};
+        if(dmg > wound[0]){ // replace the previous wound stack
+            wound[0] = dmg; wound[1] = duration;
+        } else { // extend the wound
+            wound[1] += duration;
+        }
     }
     /**
      * heals the entity, but also checks
