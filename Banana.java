@@ -36,7 +36,7 @@ public class Banana extends Projectile
         }
     }
     protected void expire(){
-        getWorld().addObject(new Peel(), getX(), getY());
+        getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
         getWorld().removeObject(this);
     }
 }
