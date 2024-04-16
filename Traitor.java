@@ -5,19 +5,44 @@ import java.util.Random;
  * The traitor is a child that no longer wants to cooperate with other children.
  * This character will imitate all other characters' attacks
  * 
- * @author Lucas
+ * @author Anya Shah | Animations
+ * @author Lucas Fu  | Functions
  * @version 2024/4/8
  */
 public class Traitor extends Child
 {
+    // Punching sprites
+    private GreenfootImage[] punchAway = new GreenfootImage[6];
+    private GreenfootImage[] punchToward = new GreenfootImage[6];
+    private GreenfootImage[] punchRight = new GreenfootImage[6];
+    private GreenfootImage[] punchLeft = new GreenfootImage[6];
+    
+    // Walking sprites
+    private GreenfootImage[] walkAway = new GreenfootImage[9];
+    private GreenfootImage[] walkToward = new GreenfootImage[9];
+    private GreenfootImage[] walkRight = new GreenfootImage[9];
+    private GreenfootImage[] walkLeft = new GreenfootImage[9];
+    
+    // Animation sprites
+    private int animCounter, animDelay, animIndex;
+    private int maxPunchIndex, maxWalkIndex;
+    private boolean right, left, away, toward, punching;
+    
     private final int throwCooldown = 50;
     private final int healCooldown = 75;
     
     private int cooldown = throwCooldown;
     private Random rand = new Random();
+    
     public Traitor(){
         super(100);
+        
+        animCounter = 0;
+        maxPunchIndex = punchAway.length;
+        maxWalkIndex = walkAway.length;
+        initImages();
     }
+    
     public void act(){
         if(!awake) return;
         super.act();
@@ -30,10 +55,9 @@ public class Traitor extends Child
             slippedDuration--; // effectively only makes this code run once
         }
         chaseChildren();
+        animate();
         setLocation(getX(), getY());
     }
-<<<<<<< Updated upstream
-=======
     
     private void initImages() {
         // Initialize punching images
@@ -115,7 +139,6 @@ public class Traitor extends Child
         }
     }
     
->>>>>>> Stashed changes
     public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
@@ -151,6 +174,7 @@ public class Traitor extends Child
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
     }
+    
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());

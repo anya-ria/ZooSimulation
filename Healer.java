@@ -24,7 +24,7 @@ public class Healer extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxHealIndex, maxWalkIndex;
-    private boolean right, away, healingRight, healingAway;
+    private boolean right, left, away, toward, healing;
 
     // healing variables
     private final int maxAoeCooldown = 200;
@@ -49,7 +49,7 @@ public class Healer extends Child
         if(stunDuration>0){
             stunDuration--;
             setLocation(getX(), getY());
-            healingAway = false;
+            healing = false; // When healing = true, set animIndex = 0
             return;
         }
         if(slippedDuration>0){
@@ -63,8 +63,7 @@ public class Healer extends Child
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
-        animateWalking();
-        animateHealing();
+        animate();
     }
 
     private void initImages() {
@@ -99,62 +98,49 @@ public class Healer extends Child
         }
 
         animIndex = 0;
-        animDelay = 7;
+        animDelay = 8;
         animCounter = animDelay;
     }
 
     private void animate() {
-        if(right || away || !right || !away) {
-            animateWalking();
-        }
-        if(healingRight || healingAway || !healingRight || !healingAway) {
-            animateHealing();
-        }
-    }
-
-    private void animateWalking() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
-            }
-            if(right) {
-                setImage(walkRight[animIndex]);
-            }
-            else if(!right) {
-                setImage(walkLeft[animIndex]);
-            }
-            else if(away) {
-                setImage(walkAway[animIndex]);
-            }
-            else if(!away) {
-                setImage(walkToward[animIndex]);
-            }
-        }
-        else {
-            animCounter--;
-        }
-    }
-
-    private void animateHealing() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if (animIndex == maxHealIndex) {
-                animIndex = 0;
-            }
-            if(healingRight) {
-                setImage(healRight[animIndex]);
-            }
-            else if(!healingRight) {
-                setImage(healLeft[animIndex]);
-            }
-            else if(healingAway) {
-                setImage(healAway[animIndex]);
-            }
-            else if(!healingAway) {
-                setImage(healToward[animIndex]);
+            if(healing){
+                if(animIndex == maxHealIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(healRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(healLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(healAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(healToward[animIndex]);
+                }
+            } else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
+                // else {
+                    // setImage("healerWalkToward/healerWalkToward0.png");
+                // }
             }
         }
         else {
@@ -189,7 +175,7 @@ public class Healer extends Child
         if(distance<=100 && aoeCooldown<=0){
             getWorld().addObject(new HealingEffect(200, 40), getX(), getY());
             aoeCooldown = maxAoeCooldown;
-            healingAway = false;
+            healing = false;
             stunDuration = 120;
         }
         if(distance>=65 && distance < 500 && projCooldown<=0){

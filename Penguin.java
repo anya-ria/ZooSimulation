@@ -24,7 +24,7 @@ public class Penguin extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
-    private boolean right, away;
+    private boolean right, left, away, toward, sliding;
 
     private boolean isInfected;
     private double speed;
@@ -55,7 +55,7 @@ public class Penguin extends Animal
         for(int i = 0; i < maxSlideIndex; i++) {
             slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
         }
-        
+
         // Initializing walking images
         for(int i = 0; i < maxWalkIndex; i++) {
             walkRight[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
@@ -70,9 +70,9 @@ public class Penguin extends Animal
         for(int i = 0; i < maxWalkIndex; i++) {
             walkToward[i] = new GreenfootImage("penguinWalkToward/walkToward" + i + ".png");
         }
-        
+
         animIndex = 0;
-        animDelay = 3;
+        animDelay = 10;
         animCounter = animDelay;
     }
 
@@ -96,51 +96,46 @@ public class Penguin extends Animal
             direction = direction * -1;
             setLocation (getX(), getY() + (int)(speed*direction));
         }
+        animate();
     }
-    
-    private void animateWalking() {
+
+    private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
+            if(sliding) {
+                if(animIndex == maxSlideIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(slideRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(slideLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(slideAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(slideToward[animIndex]);
+                }
             }
-            if(right) {
-                setImage(walkRight[animIndex]);
-            }
-            else if(!right) {
-                setImage(walkLeft[animIndex]);
-            }
-            else if(away) {
-                setImage(walkAway[animIndex]);
-            }
-            else if(!away) {
-                setImage(walkToward[animIndex]);
-            }
-        }
-        else {
-            animCounter--;
-        }
-    }
-    
-    private void animateSliding() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if(animIndex == maxSlideIndex) {
-                animIndex = 0;
-            }
-            if(right) {
-                setImage(slideRight[animIndex]);
-            }
-            else if(!right) {
-                setImage(slideLeft[animIndex]);
-            }
-            else if(away) {
-                setImage(slideAway[animIndex]);
-            }
-            else if(!away) {
-                setImage(slideToward[animIndex]);
+            else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
             }
         }
         else {

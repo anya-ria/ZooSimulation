@@ -18,7 +18,7 @@ public class Regular extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, away;
+    private boolean right, left, away, toward;
     
     private int childNum;
 
@@ -98,7 +98,7 @@ public class Regular extends Child
         }
 
         animIndex = 0; 
-        animDelay = 5; // # of acts in btw each image
+        animDelay = 8; // # of acts in btw each image
         animCounter = animDelay; 
     }
 
@@ -115,14 +115,18 @@ public class Regular extends Child
                 vector = new double[] {0, 0}; 
         }
         setLocation(getX()-vector[0], getY()-vector[1]);
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1]))
-            right = false; 
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1]))
-            right = true; 
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1]))
-            away = false; 
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1]))
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            left = true;
+        }
+        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            right = true;
+        }
+        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            toward = true;
+        }
+        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
             away = true; 
+        }
     }
 
     private void animate(){
@@ -135,14 +139,25 @@ public class Regular extends Child
             if(right){
                 setImage(walkRight[animIndex]);
             } 
-            else if (!right){
+            else if (left){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(!away){
+            else if(toward){
                 setImage(walkToward[animIndex]); 
             } 
-            else {
+            else if(away){
                 setImage(walkAway[animIndex]);
+            }
+            else {
+                // if(childNum == 0) {
+                    // setImage("child1WalkToward/child1WalkToward0.png");
+                // }
+                // if(childNum == 1) {
+                    // setImage("child2WalkToward/child2WalkToward0.png");
+                // }
+                // if(childNum == 2) {
+                    // setImage("child3WalkToward/child3WalkToward0.png");
+                // }
             }
         } 
         else {

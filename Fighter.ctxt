@@ -4,23 +4,21 @@ comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animat
 comment1.params=
 comment1.target=Fighter()
 comment2.params=
-comment2.target=void\ initImages()
+comment2.target=void\ act()
 comment3.params=
-<<<<<<< Updated upstream
 comment3.target=void\ animateWalking()
 comment4.params=
 comment4.target=void\ animateFighting()
-=======
 comment3.target=void\ animate()
 comment4.params=
 comment4.target=void\ act()
->>>>>>> Stashed changes
+comment3.target=void\ initImages()
+comment4.params=
+comment4.target=void\ animate()
 comment5.params=
-comment5.target=void\ act()
-comment6.params=
-comment6.target=void\ chaseZombies()
-comment7.params=direction\ speed
-comment7.target=void\ throwPencil(int,\ int)
-comment8.params=
-comment8.target=void\ punch()
-numComments=9
+comment5.target=void\ chaseZombies()
+comment6.params=direction\ speed
+comment6.target=void\ throwPencil(int,\ int)
+comment7.params=
+comment7.target=void\ punch()
+numComments=8
