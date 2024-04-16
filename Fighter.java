@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -24,7 +24,12 @@ public class Fighter extends Child
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxFightIndex, maxWalkIndex;
-    private boolean right, away, fightingRight, fightingAway;
+    private boolean right, left, away, toward, fighting;
+
+    // fighting variables
+    private final int throwCooldown = 50;
+    private int cooldown = throwCooldown;
+    Random rand = new Random();
 
     public Fighter(){
         super(200);
@@ -33,6 +38,12 @@ public class Fighter extends Child
         maxFightIndex = fightAway.length;
         maxWalkIndex = walkAway.length;
         initImages();
+    }
+    
+    public void act(){
+        if(!awake) return;
+        super.act();
+        chaseZombies();
     }
 
     private void initImages() {
@@ -69,54 +80,90 @@ public class Fighter extends Child
         animDelay = 5;
         animCounter = animDelay;
     }
-
-    private void animateWalking() {
+    
+    private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxWalkIndex) {
-                animIndex = 0;
+            if(fighting) {
+                if(animIndex == maxFightIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(fightRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(fightLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(fightAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(fightToward[animIndex]);
+                }
             }
-            if(right) {
-                setImage(walkRight[animIndex]);
-            }
-            if(!right) {
-                setImage(walkLeft[animIndex]);
-            }
-            if(away) {
-                setImage(walkAway[animIndex]);
-            }
-            if(!away) {
-                setImage(walkToward[animIndex]);
+            else {
+                if(animIndex == maxWalkIndex) {
+                    animIndex = 0;
+                }
+                if(right) {
+                    setImage(walkRight[animIndex]);
+                }
+                else if(left) {
+                    setImage(walkLeft[animIndex]);
+                }
+                else if(away) {
+                    setImage(walkAway[animIndex]);
+                }
+                else if(toward) {
+                    setImage(walkToward[animIndex]);
+                }
+                // else {
+                    // setImage("fighterWalkToward/fighterWalkToward.png");
+                // }
             }
         }
         else {
             animCounter--;
         }
+    }
+
+    
+    private void chaseZombies(){
+        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+        double direction = enemyDetails[0];
+        double distance = enemyDetails[1];
+        double[] vector = Utility.angleToVector(direction);
+        if(distance == -1){
+            vector[0] = 0;
+            vector[1] = 1;
+        }
+        if(distance<250 && distance > 10 && cooldown<=0){
+            throwPencil((int)direction, 4);
+            cooldown = throwCooldown;
+        }
+        cooldown--;
+        if(distance < 10){
+            punch();
+            return;
+        }
+        setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
     }
     
-    private void animateFighting() {
-        if(animCounter == 0) {
-            animCounter = animDelay;
-            animIndex++;
-            if(animIndex == maxFightIndex) {
-                animIndex = 0;
-            }
-            if(fightingRight) {
-                setImage(fightRight[animIndex]);
-            }
-            if(!fightingRight) {
-                setImage(fightLeft[animIndex]);
-            }
-            if(fightingAway) {
-                setImage(fightAway[animIndex]);
-            }
-            if(!fightingAway) {
-                setImage(fightToward[animIndex]);
-            }
+    private void throwPencil(int direction, int speed){
+        int modif = rand.nextInt(-10,11);
+        getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
+    }
+    
+    private void punch(){
+        double[] enemyDetails = detectNearestEntity(Animal.class, 10);
+        if(enemyDetails[1] == -1){
+            enemyDetails = detectNearestEntity(Traitor.class, 10);
+            if(enemyDetails[1] == -1) return;
         }
-        else {
-            animCounter--;
-        }
+        Entity enemy = getObjectsInRange(10, Entity.class).get(0);
+        enemy.takeDamage(10);
+        enemy.push((int)enemyDetails[0], 10);
     }
 }
+
