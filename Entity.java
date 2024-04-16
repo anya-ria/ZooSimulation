@@ -10,8 +10,8 @@ import java.util.List;
  */
 public abstract class Entity extends SuperSmoothMover
 {
-    private int maxHp;
-    private int hp;
+    protected int maxHp;
+    protected int hp;
     private int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     

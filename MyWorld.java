@@ -30,6 +30,7 @@ public class MyWorld extends World
         homeButton.setLocation(72,754);
         addObject(new Healer(), 600, 200);
         addObject(new Healer(), 400, 200);
+        addObject(new Fighter(), 800, 150);
         
         setBackground("zoo.jpg");
     }
