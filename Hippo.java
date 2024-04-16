@@ -146,8 +146,10 @@ public class Hippo extends Animal
             else if (!right && !away){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(right && !away){
-
+            else if(right && !away)
+            {
+                setImage(walkToward[animIndex]);
+            }
             else if (left){
                 setImage(walkLeft[animIndex]);
             } 

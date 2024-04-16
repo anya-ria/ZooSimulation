@@ -141,7 +141,6 @@ public class Monkey extends Animal
             else if(toward){
                 setImage(walkToward[animIndex]);
             }
-        }
 
         else {
             animCounter--;

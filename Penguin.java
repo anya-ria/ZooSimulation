@@ -207,8 +207,9 @@ public class Penguin extends Animal
         } 
         else 
         {
-
-
+            animCounter--;
+        }
+    }
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
