@@ -19,4 +19,9 @@ public class Lightning extends Effect
     {
         // Add your action code here.
     }
+    
+    public void sound()
+    {
+        Greenfoot.playSound("lightning.mp3");
+    }
 }
