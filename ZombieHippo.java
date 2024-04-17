@@ -53,6 +53,31 @@ public class ZombieHippo extends Animal
      */
     public void act()
     {
-        // Add your action code here.
+        animate();
+    }
+    
+    private void animate() {
+        if(animCounter == 0){
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxIndex){
+                animIndex = 0; 
+            }
+            if(right){
+                setImage(walkRight[animIndex]);
+            } 
+            else if (left){
+                setImage(walkLeft[animIndex]);
+            } 
+            else if(toward){
+                setImage(walkToward[animIndex]); 
+            } 
+            else if(away){
+                setImage(walkAway[animIndex]);
+            }
+        } 
+        else {
+            animCounter--; 
+        }
     }
 }
