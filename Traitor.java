@@ -42,7 +42,7 @@ public class Traitor extends Child
     private Random rand = new Random();
     
     public Traitor(){
-        super(150);
+        super(200);
         
         animCounter = 0;
         maxPunchIndex = punchAway.length;
@@ -53,6 +53,7 @@ public class Traitor extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        animate();
         if(slippedDuration>0){
             slippedDuration--;
             setLocation(getX(), getY());
@@ -67,7 +68,6 @@ public class Traitor extends Child
             return;
         }
         chaseChildren();
-        animate();
         setLocation(getX(), getY());
     }
     
@@ -112,8 +112,9 @@ public class Traitor extends Child
             animCounter = animDelay;
             animIndex++;
             if(punching) {
-                if(animIndex == maxPunchIndex) {
+                if(animIndex >= maxPunchIndex) {
                     animIndex = 0;
+                    punching = false;
                 }
                 if(right) {
                     setImage(punchRight[animIndex]);
@@ -129,7 +130,7 @@ public class Traitor extends Child
                 }
             }
             else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -160,7 +161,7 @@ public class Traitor extends Child
             vector[0] = 0;
             vector[1] = 0;
         }
-        if(hp<100 && healCooldown<=0){
+        if(hp<150 && healCooldown<=0){
             selfHeal();
             healCooldown = maxHealCooldown;
             throwCooldown = maxHealCooldown;
@@ -185,6 +186,23 @@ public class Traitor extends Child
             return;
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
+        // update facing direction
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            right = true;
+            left = false; toward = false; away = false;
+        }
+        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            left = true;
+            right = false; toward = false; away = false;
+        }
+        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            away = true;
+            left = false; right = false; toward = false;
+        }
+        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            toward = true; 
+            left = false; right = false; away = false;
+        }
     }
     
     // traitor moves
@@ -206,6 +224,7 @@ public class Traitor extends Child
         stunDuration = 200;
     }
     private void punch(){
+        punching = true;
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
         if(enemyDetails[1] == -1) return;
         Child enemy = getObjectsInRange(10, Child.class).get(0);
