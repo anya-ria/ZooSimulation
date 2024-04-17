@@ -12,7 +12,7 @@ public abstract class Entity extends SuperSmoothMover
 {
     protected int maxHp;
     protected int hp;
-    private int[] wound = new int[] {0, 0};
+    protected int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     
     protected double tempVx = 0; // temporary vx added from push
@@ -66,6 +66,7 @@ public abstract class Entity extends SuperSmoothMover
                 nearestEnemy = (Entity) enemiesInRange.get(0);
                 if(!nearestEnemy.isAwake()){
                     enemiesInRange.remove(0);
+                    nearestEnemy = null;
                     continue;
                 }
                 enemyDetails[1] = i;
@@ -98,8 +99,9 @@ public abstract class Entity extends SuperSmoothMover
     public void getWounded(int dmg, int duration){
         if(dmg > wound[0]){ // replace the previous wound stack
             wound[0] = dmg; wound[1] = duration;
-        } else { // extend the wound
-            wound[1] += duration;
+        } else { // refresh the wound and increase damage
+            wound[0]++;
+            wound[1] = duration;
         }
     }
     /**

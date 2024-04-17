@@ -37,6 +37,8 @@ public class Traitor extends Child
     private int smashCooldown = 0;
     private int stunDuration = 0;
     
+    private int revives = 3;
+    
     private Random rand = new Random();
     
     public Traitor(){
@@ -175,15 +177,7 @@ public class Traitor extends Child
             throwCooldown = maxThrowCooldown;
         }
         if(distance>=10 && distance<100 && hp>=100 && smashCooldown<=0){
-            getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
-            for(Entity e: getObjectsInRange(150, Entity.class)){
-                double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
-                double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
-                e.push(vx, vy);
-            }
-            selfHeal(); selfHeal(); selfHeal();
-            smashCooldown = maxSmashCooldown;
-            stunDuration = 200;
+            smash();
         }
         throwCooldown--; healCooldown--; smashCooldown--;
         if(distance < 10){
@@ -192,17 +186,24 @@ public class Traitor extends Child
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
     }
+    
+    // traitor moves
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
     }
-    
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
     private void selfHeal(){
-        getWorld().addObject(new HealingEffect(20, 20), getX(), getY());
+        getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
+    }
+    private void smash(){
+        getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+        selfHeal(); selfHeal();
+        smashCooldown = maxSmashCooldown;
+        stunDuration = 200;
     }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
@@ -210,5 +211,32 @@ public class Traitor extends Child
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+    }
+    private void revive(){
+        wound[0] = 0; wound[1] = 0;
+        for(int i=0; i<5; i++){
+            selfHeal();
+        }
+        for(Entity e: getObjectsInRange(150, Entity.class)){
+            double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
+            double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
+            e.push(vx, vy);
+        }
+        for(int i=0; i<360; i+=10){
+            getWorld().addObject(new Banana(i, 8), getX(), getY());
+            getWorld().addObject(new Pencil(20, 150, i+5, 8), getX(), getY());
+        }
+    }
+    
+    /**
+     * @override, gives traitor ability to revive once
+     */
+    public void die(){
+        if(revives>0){
+            revives--;
+            revive();
+        } else {
+            super.die();
+        }
     }
 }

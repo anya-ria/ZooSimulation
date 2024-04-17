@@ -142,6 +142,7 @@ public class Fighter extends Child
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
         if(distance == -1){
+            fighting = false;
             enemyDetails = detectNearestEntity(Traitor.class, 500);
             direction = enemyDetails[0];
             distance = enemyDetails[1];
@@ -152,13 +153,13 @@ public class Fighter extends Child
                 fighting = false;
             }
         }
-        if(distance<250 && distance > 10 && cooldown<=0){
+        if(distance<250 && distance >= 15 && cooldown<=0){
             fighting = true;
-            throwPencil((int)direction, 8);
+            throwPencil((int)direction, 6);
             cooldown = throwCooldown;
         }
         cooldown--;
-        if(distance < 10){
+        if(distance < 15){
             fighting = true;
             punch();
             return;
@@ -186,7 +187,7 @@ public class Fighter extends Child
     
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(6, 150, direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(2, 150, direction+modif, speed), getX(), getY());
     }
     
     private void punch(){
