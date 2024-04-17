@@ -1,5 +1,14 @@
 #BlueJ class context
 comment0.target=Animal
+
+comment0.text=\n\ Write\ a\ description\ of\ class\ Animal\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=maxHp
+comment1.target=Animal(int)
+comment1.text=\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ child\ can\ have\n
+comment2.params=
+comment2.target=void\ zombify()
+numComments=3
+
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Animal\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
@@ -9,3 +18,4 @@ comment2.text=\r\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\r\n\ @p
 comment3.params=
 comment3.target=void\ zombify()
 numComments=4
+
