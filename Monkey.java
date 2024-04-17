@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Monkey here.
  * 
@@ -25,9 +24,9 @@ public class Monkey extends Animal
     private double maxSpeed;
     private int direction;
 
-    public Monkey(){
+    public Monkey()
+    {
         super(100);
-
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
@@ -106,43 +105,43 @@ public class Monkey extends Animal
         }
     }
     
-    public void throwBananas()
+    private void animate()
     {
-        
-    }
-    
-    private void animate() {
-        if(animCounter == 0){
+        if(animCounter == 0)
+        {
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
+            if(animIndex == maxIndex)
+            {
                 animIndex = 0; 
             }
-            if(right && away){
+            if(right && away)
+            {
                 setImage(walkRight[animIndex]);
-
             } 
-            else if (!right && !away){
-
+            else if (!right && !away)
+            {
+                setImage(walkLeft[animIndex]);
             }
-            else if(left) {
-
+            else if(left) 
+            {
                 setImage(walkLeft[animIndex]);
             } 
-            else if(right && !away){
+            else if(right && !away)
+            {
                 setImage(walkToward[animIndex]); 
             } 
-            else {
+            else 
+            {
                 setImage(walkAway[animIndex]);
             }
-
         } 
-
-            else if(toward){
-                setImage(walkToward[animIndex]);
-            }
-
-        else {
+        else if(toward)
+        {
+            setImage(walkToward[animIndex]);
+        }
+        else
+        {
             animCounter--;
         }
     }
