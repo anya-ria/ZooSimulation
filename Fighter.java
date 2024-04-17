@@ -39,10 +39,18 @@ public class Fighter extends Child
         maxWalkIndex = walkAway.length;
         initImages();
     }
-    
+
     public void act(){
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         chaseZombies();
     }
 
@@ -118,9 +126,6 @@ public class Fighter extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("fighterWalkToward/fighterWalkToward.png");
-                // }
             }
         }
         else {
@@ -129,17 +134,24 @@ public class Fighter extends Child
     }
 
     
+    // **************************** FIGHTING ****************************** \\
     private void chaseZombies(){
         double[] enemyDetails = detectNearestEntity(Animal.class, 500);
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
         if(distance == -1){
-            vector[0] = 0;
-            vector[1] = 1;
+            enemyDetails = detectNearestEntity(Traitor.class, 500);
+            direction = enemyDetails[0];
+            distance = enemyDetails[1];
+            vector = Utility.angleToVector(direction);
+            if(distance == -1){
+                vector[0] = 0;
+                vector[1] = 0;
+            }
         }
         if(distance<250 && distance > 10 && cooldown<=0){
-            throwPencil((int)direction, 4);
+            throwPencil((int)direction, 8);
             cooldown = throwCooldown;
         }
         cooldown--;
@@ -147,12 +159,12 @@ public class Fighter extends Child
             punch();
             return;
         }
-        setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
+        setLocation(getX()+vector[0], getY()+vector[1]);
     }
     
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(6, 150, direction+modif, speed), getX(), getY());
     }
     
     private void punch(){

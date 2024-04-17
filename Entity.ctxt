@@ -6,6 +6,18 @@ comment1.target=Entity(int)
 comment1.text=\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ entity\ can\ have\n
 comment10.params=x\ y
 comment10.target=void\ setLocation(int,\ int)
+HEAD
+comment10.text=\r\n\ Set\ the\ location\ using\ integer\ coordinates.\r\n\ (Overrides\ the\ method\ in\ SuperSmoothMover.)\ \ \ \ \r\n\ \r\n\ @param\ x\ the\ new\ x\ location\r\n\ @param\ y\ the\ new\ y\ location\r\n
+comment11.params=
+comment11.target=void\ slip()
+comment11.text=\r\n\ The\ Entity\ has\ slipped\!\ Rotates\ upside-down\ and\ is\ now\ stunned\ for\ a\ duration\r\n
+comment12.params=vx\ vy
+comment12.target=void\ push(double,\ double)
+comment13.params=angle\ speed
+comment13.target=void\ push(int,\ double)
+comment14.params=
+comment14.target=boolean\ isAwake()
+
 comment10.text=\n\ Set\ the\ location\ using\ integer\ coordinates.\n\ (Overrides\ the\ method\ in\ SuperSmoothMover.)\ \ \ \ \n\ \n\ @param\ x\ the\ new\ x\ location\n\ @param\ y\ the\ new\ y\ location\n
 comment11.params=vx\ vy
 comment11.target=void\ push(double,\ double)
@@ -13,6 +25,7 @@ comment12.params=angle\ speed
 comment12.target=void\ push(int,\ double)
 comment13.params=
 comment13.target=boolean\ isAwake()
+ luke
 comment2.params=
 comment2.target=void\ act()
 comment3.params=world
@@ -34,5 +47,7 @@ comment8.params=
 comment8.target=void\ die()
 comment9.params=x\ y
 comment9.target=void\ setLocation(double,\ double)
+comment9.text=\r\n\ @override\r\n\ Overidden\ from\ SuperSmoothMover,\ now\ has\ temporary\ velocities\r\n\ \r\n\ Set\ the\ location\ using\ exact\ coordinates.\r\n\ Modified\ to\ include\ temporary\ velocities\r\n\ \r\n\ @param\ x\ the\ new\ x\ location\r\n\ @param\ y\ the\ new\ y\ location\r\n
+numComments=15
 comment9.text=\n\ @override\n\ Overidden\ from\ SuperSmoothMover,\ now\ has\ temporary\ velocities\n\ \n\ Set\ the\ location\ using\ exact\ coordinates.\n\ Modified\ to\ include\ temporary\ velocities\n\ \n\ @param\ x\ the\ new\ x\ location\n\ @param\ y\ the\ new\ y\ location\n
 numComments=14

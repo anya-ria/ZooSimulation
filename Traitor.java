@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.Random;
 /**
- * The traitor is a fighter child that no longer wants to cooperate with other children.
- * This character will throw bananas and pencils, and punch other children
+ * The traitor is a child that no longer wants to cooperate with other children.
+ * This character will imitate all other characters' attacks
  * 
  * @author Anya Shah | Animations
  * @author Lucas Fu  | Functions
@@ -28,13 +28,19 @@ public class Traitor extends Child
     private int maxPunchIndex, maxWalkIndex;
     private boolean right, left, away, toward, punching;
     
-    private final int throwCooldown = 50;
+    private final int maxThrowCooldown = 50;
+    private final int maxHealCooldown = 100;
+    private final int maxSmashCooldown = 500;
     
-    private int cooldown = throwCooldown;
+    private int throwCooldown = maxThrowCooldown;
+    private int healCooldown = maxHealCooldown;
+    private int smashCooldown = maxSmashCooldown;
+    private int stunDuration = 0;
+    
     private Random rand = new Random();
     
     public Traitor(){
-        super(100);
+        super(150);
         
         animCounter = 0;
         maxPunchIndex = punchAway.length;
@@ -45,8 +51,22 @@ public class Traitor extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
+        if(stunDuration>0){ // essentially the same as slippedDuration
+            stunDuration--;
+            setLocation(getX(), getY());
+            return;
+        }
         chaseChildren();
         animate();
+        setLocation(getX(), getY());
     }
     
     private void initImages() {
@@ -122,9 +142,6 @@ public class Traitor extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("traitorWalkToward/walkToward0.png");
-                // }
             }
         }
         else {
@@ -139,9 +156,14 @@ public class Traitor extends Child
         double[] vector = Utility.angleToVector(direction);
         if(distance == -1){
             vector[0] = 0;
-            vector[1] = 1;
+            vector[1] = 0;
         }
-        if(distance<500 && distance > 10 && cooldown<=0){
+        if(hp<100 && healCooldown<=0){
+            selfHeal();
+            healCooldown = maxHealCooldown;
+            throwCooldown = maxHealCooldown;
+        }
+        if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
                 case 0:
                     throwBanana((int)direction, 4);
@@ -150,9 +172,15 @@ public class Traitor extends Child
                     throwPencil((int)direction, 4);
                     break;
             }
-            cooldown = throwCooldown;
+            throwCooldown = maxThrowCooldown;
         }
-        cooldown--;
+        if(distance>=10 && distance<100 && hp>100 && smashCooldown<=0){
+            getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+            selfHeal(); selfHeal(); selfHeal();
+            smashCooldown = maxSmashCooldown;
+            stunDuration = 200;
+        }
+        throwCooldown--; healCooldown--; smashCooldown--;
         if(distance < 10){
             punch();
             return;
@@ -161,14 +189,16 @@ public class Traitor extends Child
     }
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
     }
     
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
-    
+    private void selfHeal(){
+        getWorld().addObject(new HealingEffect(20, 20), getX(), getY());
+    }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
         if(enemyDetails[1] == -1) return;
