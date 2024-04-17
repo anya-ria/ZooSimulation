@@ -68,7 +68,7 @@ public class Penguin extends Animal
             walkAway[i] = new GreenfootImage("penguinWalkAway/walkAway"+ i + ".png");
         }
         for(int i = 0; i < maxWalkIndex; i++) {
-            walkToward[i] = new GreenfootImage("penguinWalkToward/walkToward" + i + ".png");
+            walkToward[i] = new GreenfootImage("penguinWalkToward/walkTowards" + i + ".png");
         }
 
         animIndex = 0;
