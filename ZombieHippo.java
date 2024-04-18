@@ -3,8 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ZombieHippo here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author
+ * Movements: Luke Xiao
+ * Animations: Anya Shah
+ * 
+ * @version (2024.04.18)
  */
 public class ZombieHippo extends Animal
 {
