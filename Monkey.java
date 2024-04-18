@@ -13,12 +13,12 @@ public class Monkey extends Animal
     private GreenfootImage[] walkRight = new GreenfootImage[3];
     private GreenfootImage[] walkLeft = new GreenfootImage[3];
     private GreenfootImage[] walkToward = new GreenfootImage[3];
-    private GreenfootImage[] walkAway = new GreenfootImage[3];
+    private GreenfootImage[] walkAway = new GreenfootImage[3];  
 
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, left, away, toward;
+    private boolean right, left, away, toward, zombie;
 
     private boolean isInfected;
     private double speed;
@@ -33,10 +33,9 @@ public class Monkey extends Animal
         initImages();
     }
 
-    private void initImages() 
-    {
-        for(int i = 0; i < maxIndex; i++) 
-        {
+    private void initImages() {
+        // Initialize monkey images
+        for(int i = 0; i < maxIndex; i++) {
             walkRight[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
         }
         for(int i = 0; i < maxIndex; i++) 
