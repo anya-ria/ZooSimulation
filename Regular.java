@@ -33,18 +33,9 @@ public class Regular extends Child
 
     public void act()
     {   
-        if(!awake) return;
-        super.act();
-        if(slippedDuration>0){
-            slippedDuration--;
-            setLocation(getX(), getY());
-            return;
-        } else if(slippedDuration==0){
-            setRotation(0);
-            slippedDuration--; // effectively only makes this code run once
-        }
-        runAway();
-        animate(); 
+        if(!super.update()) return;
+        double[] enemyDetails = detectNearestEntity(Animal.class, 400);
+        runAway(enemyDetails); 
     }
 
     private void initImages(){
@@ -102,8 +93,7 @@ public class Regular extends Child
         animCounter = animDelay; 
     }
 
-    private void runAway(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 400);
+    private void runAway(double[] enemyDetails){
         double[] vector;
         if(enemyDetails[1] != -1)
             vector = Utility.angleToVector(enemyDetails[0]);
@@ -134,7 +124,7 @@ public class Regular extends Child
         }
     }
 
-    private void animate(){
+    protected void animate(){
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 

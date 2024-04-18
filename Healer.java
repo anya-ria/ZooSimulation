@@ -44,9 +44,7 @@ public class Healer extends Child
     }
 
     public void act(){
-        if(!awake) return;
-        super.act();
-        animate();
+        if(!super.update()) return;
         if(stunDuration>0){
             stunDuration--;
             setLocation(getX(), getY());
@@ -54,14 +52,6 @@ public class Healer extends Child
             return;
         } else {
             healing = false;
-        }
-        if(slippedDuration>0){
-            slippedDuration--;
-            setLocation(getX(), getY());
-            return;
-        } else if(slippedDuration==0){
-            setRotation(0);
-            slippedDuration--; // effectively only makes this code run once
         }
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
@@ -104,7 +94,7 @@ public class Healer extends Child
         animCounter = animDelay;
     }
 
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;

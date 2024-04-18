@@ -10,18 +10,18 @@ import java.util.List;
  */
 public abstract class Entity extends SuperSmoothMover
 {
-    protected int maxHp;
+    private int maxHp;
     protected int hp;
     protected int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     
-    protected double tempVx = 0; // temporary vx added from push
-    protected double tempVy = 0; // temporary vy added from push
-    protected double friction = 0.95;
+    private double tempVx = 0; // temporary vx added from push
+    private double tempVy = 0; // temporary vy added from push
+    private double friction = 0.95;
     
-    protected double slippedDuration = 0;
+    private double slippedDuration = 0;
     
-    protected boolean awake = true;
+    private boolean awake = true;
     
     /**
      * When constructed, sets the max hp and the hp
@@ -32,12 +32,15 @@ public abstract class Entity extends SuperSmoothMover
         hp = maxHp;
     }
     
-    
-    public void act(){
-        if(wound[1]>0){
-            if(wound[1]%30==0) takeDamage(wound[0]);
-            wound[1]--;
-        }
+    /**
+     * updates all stuns, wounds and other stuff
+     * @return boolean -- whether this should continue acting this cycle
+     */
+    public boolean update(){
+        if(!isAwake()) return false;
+        updateWound();
+        if(checkSlipping()) return false;
+        return true;
     }    
     
     /**
@@ -104,6 +107,12 @@ public abstract class Entity extends SuperSmoothMover
             wound[1] = duration;
         }
     }
+    private void updateWound(){
+        if(wound[1]>0){
+            if(wound[1]%30==0) takeDamage(wound[0]);
+            wound[1]--;
+        }        
+    }
     /**
      * heals the entity, but also checks
      * if the entity is still alive
@@ -117,7 +126,7 @@ public abstract class Entity extends SuperSmoothMover
             hpBar.update(hp);
         }
     }
-    public void die(){
+    protected void die(){
         setRotation(90);
         awake = false;
         hpBar.hide();
@@ -125,7 +134,7 @@ public abstract class Entity extends SuperSmoothMover
     
     
     // ********************* PHYSICS SECTION *********************
-       /**
+    /**
      * @override
      * Overidden from SuperSmoothMover, now has temporary velocities
      * 
@@ -186,5 +195,16 @@ public abstract class Entity extends SuperSmoothMover
     }
     public boolean isAwake(){
         return awake;
+    }
+    private boolean checkSlipping(){
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return true;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }        
+        return false;
     }
 }

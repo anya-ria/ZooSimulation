@@ -41,17 +41,7 @@ public class Fighter extends Child
     }
 
     public void act(){
-        if(!awake) return;
-        super.act();
-        animate();
-        if(slippedDuration>0){
-            slippedDuration--;
-            setLocation(getX(), getY());
-            return;
-        } else if(slippedDuration==0){
-            setRotation(0);
-            slippedDuration--; // effectively only makes this code run once
-        }
+        if(!super.update()) return;
         chaseZombies();
     }
 
@@ -90,7 +80,7 @@ public class Fighter extends Child
         animCounter = animDelay;
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
