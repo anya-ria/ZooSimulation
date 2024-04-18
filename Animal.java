@@ -6,21 +6,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Animal extends SuperSmoothMover
+public abstract class Animal extends Entity
 {
-    /**
-     * Act - do whatever the Animal wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private boolean isInfected;
     private double speed;
     private double maxSpeed;
     private int direction;
-    public void act()
-    {
+    
+    public void act(){
         super.act();
     }
     
+    /**
+     * When constructed, sets the max hp and the hp
+     * @param maxHp   the maximum hp the child can have
+     */
+    protected Animal(int maxHp){
+        super(maxHp);
+    }
+
     public void zombify()
     {
         speed = 2;

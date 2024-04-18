@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Projectile
 comment0.text=\r\n\ General\ class\ of\ projectiles\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/9\r\n
-comment1.params=
-comment1.target=void\ act()
+comment1.params=vx\ vy
+comment1.target=Projectile(double,\ double)
 comment2.params=
-comment2.target=void\ detectCollision()
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ expire()
-numComments=4
+comment3.target=void\ detectCollision()
+comment4.params=
+comment4.target=void\ expire()
+numComments=5

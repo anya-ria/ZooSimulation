@@ -10,8 +10,9 @@ public class HealingEffect extends Effect
 {
     private int healingLevel;
     /**
-     * creates a new healing effect that is the specified size
-     * @param size how big the effect will be
+     * creates a new healing effect that is the specified size and level
+     * @param size      how big the effect will be
+     * @param level     how much healing is to be dealt
      */
     public HealingEffect(int size, int level){
         super(null, new GreenfootImage("empty.png"),10,10,100);
