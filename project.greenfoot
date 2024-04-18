@@ -1,14 +1,23 @@
 #Greenfoot project file
 class.Achievement.image=AchievementsScreen.jpg
 class.Customization.image=userSelectScreen.jpg
+ HEAD
 class.EndingScreen.image=ending1Screen.png
+
+ main
 class.Fighter.image=fighterWalkToward0.png
 class.Healer.image=healToward0.png
 class.Hippo.image=hippoWalkToward1.png
+class.Monkey.image=monkeyWalkToward1.png
 class.MyWorld.image=zoo.png
+class.Peel.image=pizza_cheese.png
 class.Pencil.image=karo.png
+class.Penguin.image=walkTowards1.png
 class.Regular.image=child1WalkToward0.png
 class.Traitor.image=walkToward0.png
+class.ZombieHippo.image=walkToward1.png
+class.ZombieMonkey.image=walkToward1.png
+class.ZombiePenguin.image=walkToward1.png
 dependency1.from=Customization
 dependency1.to=StartButton
 dependency1.type=UsesDependency
@@ -40,12 +49,17 @@ dependency18.from=Collections
 dependency18.to=TitleScreen
 dependency18.type=UsesDependency
 dependency19.from=MyWorld
+ HEAD
 dependency19.to=HomeButton
+
+dependency19.to=Fighter
+ main
 dependency19.type=UsesDependency
 dependency2.from=Customization
 dependency2.to=ChildParam
 dependency2.type=UsesDependency
 dependency20.from=MyWorld
+ HEAD
 dependency20.to=Regular
 dependency20.type=UsesDependency
 dependency21.from=MyWorld
@@ -71,6 +85,33 @@ dependency27.to=Utility
 dependency27.type=UsesDependency
 dependency28.from=Regular
 dependency28.to=Traitor
+
+dependency20.to=Hippo
+dependency20.type=UsesDependency
+dependency21.from=Entity
+dependency21.to=SuperStatBar
+dependency21.type=UsesDependency
+dependency22.from=Entity
+dependency22.to=Child
+dependency22.type=UsesDependency
+dependency23.from=Entity
+dependency23.to=Utility
+dependency23.type=UsesDependency
+dependency24.from=Regular
+dependency24.to=Animal
+dependency24.type=UsesDependency
+dependency25.from=Regular
+dependency25.to=Utility
+dependency25.type=UsesDependency
+dependency26.from=Regular
+dependency26.to=Traitor
+dependency26.type=UsesDependency
+dependency27.from=Traitor
+dependency27.to=SmashEffect
+dependency27.type=UsesDependency
+dependency28.from=Traitor
+dependency28.to=Entity
+ main
 dependency28.type=UsesDependency
 dependency29.from=Traitor
 dependency29.to=Pencil
@@ -82,6 +123,7 @@ dependency30.from=Traitor
 dependency30.to=Banana
 dependency30.type=UsesDependency
 dependency31.from=Traitor
+ HEAD
 dependency31.to=Utility
 dependency31.type=UsesDependency
 dependency32.from=Fighter
@@ -107,10 +149,39 @@ dependency38.to=HealingBall
 dependency38.type=UsesDependency
 dependency39.from=Healer
 dependency39.to=Utility
+
+dependency31.to=HealingEffect
+dependency31.type=UsesDependency
+dependency32.from=Traitor
+dependency32.to=Utility
+dependency32.type=UsesDependency
+dependency33.from=Fighter
+dependency33.to=Pencil
+dependency33.type=UsesDependency
+dependency34.from=Fighter
+dependency34.to=Entity
+dependency34.type=UsesDependency
+dependency35.from=Fighter
+dependency35.to=Animal
+dependency35.type=UsesDependency
+dependency36.from=Fighter
+dependency36.to=Utility
+dependency36.type=UsesDependency
+dependency37.from=Fighter
+dependency37.to=Traitor
+dependency37.type=UsesDependency
+dependency38.from=Healer
+dependency38.to=HealingEffect
+dependency38.type=UsesDependency
+dependency39.from=HealingBall
+dependency39.from=Healer
+dependency39.to=HealingBall
+ main
 dependency39.type=UsesDependency
 dependency4.from=EndingScreen
 dependency4.to=Label
 dependency4.type=UsesDependency
+ HEAD
 dependency40.from=HealingBall
 dependency40.to=HealingEffect
 dependency40.type=UsesDependency
@@ -155,6 +226,58 @@ dependency52.to=Achievement
 dependency52.type=UsesDependency
 dependency6.from=EndingScreen
 dependency6.to=SimpleTimer
+
+dependency40.from=Healer
+dependency40.to=Utility
+dependency40.type=UsesDependency
+dependency41.from=Peel
+dependency41.to=Child
+dependency41.type=UsesDependency
+dependency42.from=HealingBall
+dependency42.to=HealingEffect
+dependency42.type=UsesDependency
+dependency43.from=HealingBall
+dependency43.to=Child
+dependency43.type=UsesDependency
+dependency44.from=HealingBall
+dependency44.to=Utility
+dependency44.type=UsesDependency
+dependency45.from=Pencil
+dependency45.to=Entity
+dependency45.type=UsesDependency
+dependency46.from=Pencil
+dependency46.to=Utility
+dependency46.type=UsesDependency
+dependency47.from=Banana
+dependency47.to=Child
+dependency47.type=UsesDependency
+dependency48.from=Banana
+dependency48.to=Peel
+dependency48.type=UsesDependency
+dependency49.from=Banana
+dependency49.to=Utility
+dependency49.type=UsesDependency
+dependency5.from=TitleScreen
+dependency5.to=AchieveButton
+dependency5.type=UsesDependency
+dependency50.from=HealingEffect
+dependency50.to=Child
+dependency50.type=UsesDependency
+dependency51.from=SmashEffect
+dependency51.to=Child
+dependency51.type=UsesDependency
+dependency52.from=HomeButton
+dependency52.to=TitleScreen
+dependency52.type=UsesDependency
+dependency53.from=EndButton
+dependency53.to=Collections
+dependency53.type=UsesDependency
+dependency54.from=AchieveButton
+dependency54.to=Achievement
+dependency54.type=UsesDependency
+dependency6.from=TitleScreen
+dependency6.to=EndButton
+ main
 dependency6.type=UsesDependency
 dependency7.from=EndingScreen
 dependency7.to=Healer
@@ -165,6 +288,7 @@ dependency8.type=UsesDependency
 dependency9.from=TitleScreen
 dependency9.to=AchieveButton
 dependency9.type=UsesDependency
+ HEAD
 editor.fx.0.height=760
 editor.fx.0.width=1032
 editor.fx.0.x=353
@@ -172,6 +296,25 @@ editor.fx.0.y=210
 height=1011
 package.numDependencies=52
 package.numTargets=40
+
+editor.fx.0.height=865
+editor.fx.0.width=1512
+editor.fx.0.x=0
+editor.fx.0.y=38
+height=865
+package.numDependencies=47
+editor.fx.0.height=694
+editor.fx.0.width=1294
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+height=694
+package.numDependencies=42
+package.numDependencies=49
+package.numTargets=35
+package.numTargets=34
+package.numDependencies=54
+package.numTargets=39
+ main
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -201,63 +344,99 @@ target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
+ HEAD
 target11.name=Monkey
+
+target11.name=Regular
+ main
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
+ HEAD
 target12.name=Label
+
+target12.name=Monkey
+ main
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
+ HEAD
 target13.name=Rectangle
+
+target13.name=Label
+ main
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
+ HEAD
 target14.name=ChildParam
+
+target14.name=Traitor
+ main
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
+ HEAD
 target15.name=Traitor
+
+target15.name=TitleScreen
+ main
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
+ HEAD
 target16.name=TitleScreen
+
+target16.name=Utility
+ main
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
 target17.height=70
+ HEAD
 target17.name=Utility
+
+target17.name=HealingEffect
+ main
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
+ HEAD
 target18.name=ZombieParam
+
+target18.name=Special
+ main
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
+ HEAD
 target19.name=HealingEffect
+
+target19.name=Peel
+ main
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=120
@@ -271,28 +450,46 @@ target2.width=120
 target2.x=0
 target2.y=0
 target20.height=70
+ HEAD
 target20.name=Special
+
+target20.name=Child
+target20.name=MyWorld
+target20.name=Achievement
+ main
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
 target21.height=70
+ HEAD
 target21.name=Achievement
+
+target21.name=Collections
+ main
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=120
 target21.x=0
 target21.y=0
 target22.height=70
+ HEAD
 target22.name=Collections
+
+target22.name=Child
+ main
 target22.showInterface=false
-target22.type=ClassTarget
+target22.type=AbstractTarget
 target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
+ HEAD
 target23.name=Child
+
+target23.name=HealingBall
+ main
 target23.showInterface=false
 target23.type=AbstractTarget
 target23.width=120
@@ -306,35 +503,59 @@ target24.width=120
 target24.x=0
 target24.y=0
 target25.height=70
+ HEAD
 target25.name=HealingBall
+
+target25.name=Fighter
+ main
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=120
 target25.x=0
 target25.y=0
 target26.height=70
+ HEAD
 target26.name=Fighter
+
+target26.name=EndButton
+ main
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=120
 target26.x=0
 target26.y=0
 target27.height=70
+ HEAD
 target27.name=EndButton
+
+target27.name=AchieveButton
+ main
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
+ HEAD
 target28.name=SimpleTimer
+
+target28.name=SuperStatBar
+target28.name=Projectile
+target28.name=Pencil
+ main
 target28.showInterface=false
-target28.type=ClassTarget
+target28.type=AbstractTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
+ HEAD
 target29.name=AchieveButton
+
+target29.name=Banana
+target29.name=StartButton
+target29.name=Healer
+ main
 target29.showInterface=false
 target29.type=ClassTarget
 target29.width=120
@@ -348,21 +569,37 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
+ HEAD
 target30.name=Pencil
+
+target30.name=Projectile
+target30.name=Banana
+target30.name=SuperStatBar
+ main
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
+ HEAD
 target31.name=Healer
+
+target31.name=StartButton
+target31.name=Lightning
+target31.name=ZombieHippo
+ main
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
+ HEAD
 target32.name=SuperStatBar
+
+target32.name=Banana
+ main
 target32.showInterface=false
 target32.type=ClassTarget
 target32.width=120
@@ -383,42 +620,70 @@ target34.width=120
 target34.x=0
 target34.y=0
 target35.height=70
+ HEAD
 target35.name=Banana
 target35.showInterface=false
 target35.type=ClassTarget
+
+target35.name=Animal
+target35.showInterface=false
+target35.type=AbstractTarget
+ main
 target35.width=120
 target35.x=0
 target35.y=0
 target36.height=70
+ HEAD
 target36.name=HealerParam
+
+target36.name=Lightning
+ main
 target36.showInterface=false
 target36.type=ClassTarget
 target36.width=120
 target36.x=0
 target36.y=0
 target37.height=70
+ HEAD
 target37.name=Lightning
+
+target37.name=SmashEffect
+ main
 target37.showInterface=false
 target37.type=ClassTarget
 target37.width=120
 target37.x=0
 target37.y=0
 target38.height=70
+ HEAD
 target38.name=Animal
+
+target38.name=Effect
+ main
 target38.showInterface=false
 target38.type=AbstractTarget
 target38.width=120
 target38.x=0
 target38.y=0
 target39.height=70
+ HEAD
 target39.name=Effect
 target39.showInterface=false
 target39.type=AbstractTarget
+
+target39.name=Icon
+target39.showInterface=false
+target39.type=ClassTarget
+ main
 target39.width=120
 target39.x=0
 target39.y=0
 target4.height=70
+ HEAD
 target4.name=FighterParam
+
+target4.name=ZombiePenguin
+ main
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=120
@@ -432,20 +697,33 @@ target40.width=120
 target40.x=0
 target40.y=0
 target5.height=70
+ HEAD
 target5.name=SuperSmoothMover
+
+target5.name=Regular
+target5.name=ZombieMonkey
+ main
 target5.showInterface=false
 target5.type=AbstractTarget
 target5.width=130
 target5.x=0
 target5.y=0
 target6.height=70
+ HEAD
 target6.name=Regular
+
+target6.name=SuperSmoothMover
+ main
 target6.showInterface=false
-target6.type=ClassTarget
-target6.width=120
+target6.type=AbstractTarget
+target6.width=130
 target6.x=0
 target6.y=0
 target7.height=70
+ HEAD
+
+target7.name=EndingScreen
+ main
 target7.name=Customization
 target7.showInterface=false
 target7.type=ClassTarget
@@ -453,6 +731,10 @@ target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+ HEAD
+
+target8.name=Hippo
+ main
 target8.name=EndingScreen
 target8.showInterface=false
 target8.type=ClassTarget
@@ -460,14 +742,25 @@ target8.width=130
 target8.x=0
 target8.y=0
 target9.height=70
+ HEAD
+
+target9.name=Penguin
+ main
 target9.name=Hippo
 target9.showInterface=false
 target9.type=ClassTarget
-target9.width=120
+target9.width=130
 target9.x=0
 target9.y=0
 version=3.1.0
+ HEAD
 width=1301
 world.lastInstantiated=Customization
 xPosition=239
 yPosition=25
+
+width=1294
+world.lastInstantiated=TitleScreen
+xPosition=205
+yPosition=38
+ main

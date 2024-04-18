@@ -30,6 +30,7 @@ public class Customization extends World
         if(Greenfoot.mouseClicked(startButton)){
             MyWorld game = new MyWorld();
             Greenfoot.setWorld(game);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 

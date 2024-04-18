@@ -35,6 +35,14 @@ public class Regular extends Child
     {   
         if(!awake) return;
         super.act();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         runAway();
         animate(); 
     }
@@ -107,17 +115,22 @@ public class Regular extends Child
                 vector = new double[] {0, 0}; 
         }
         setLocation(getX()-vector[0], getY()-vector[1]);
+        // update facing direction
         if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
             left = true;
+            right = false; toward = false; away = false;
         }
         else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
             right = true;
+            left = false; toward = false; away = false;
         }
         else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
             toward = true;
+            left = false; right = false; away = false;
         }
         else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
             away = true; 
+            left = false; right = false; toward = false;
         }
     }
 

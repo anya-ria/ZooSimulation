@@ -46,16 +46,26 @@ public class Healer extends Child
     public void act(){
         if(!awake) return;
         super.act();
-        stunDuration--;
+        animate();
         if(stunDuration>0){
+            stunDuration--;
             setLocation(getX(), getY());
-            healing = false; // When healing = true, set animIndex = 0
+            healing = true; // When healing = true, set animIndex = 0
             return;
+        } else {
+            healing = false;
+        }
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
         }
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
         followAlly(allyDetails);
         checkHeal(allyDetails);
-        animate();
     }
 
     private void initImages() {
@@ -99,7 +109,7 @@ public class Healer extends Child
             animCounter = animDelay;
             animIndex++;
             if(healing){
-                if(animIndex == maxHealIndex) {
+                if(animIndex >= maxHealIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -115,7 +125,7 @@ public class Healer extends Child
                     setImage(healToward[animIndex]);
                 }
             } else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -130,9 +140,6 @@ public class Healer extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("healerWalkToward/healerWalkToward0.png");
-                // }
             }
         }
         else {
@@ -150,14 +157,23 @@ public class Healer extends Child
             vector = new double[] {0, 0}; 
         if(stunDuration<=0){
             setLocation(getX()+vector[0], getY()+vector[1]);
-            if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1]))
-                right = false;
-            else if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1]))
+            // update facing direction
+            if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
                 right = true;
-            else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1]))
-                away = false;
-            else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1]))
+                left = false; toward = false; away = false;
+            }
+            else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+                left = true;
+                right = false; toward = false; away = false;
+            }
+            else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
                 away = true;
+                left = false; right = false; toward = false;
+            }
+            else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+                toward = true; 
+                left = false; right = false; away = false;
+            }
         }
     }
 
@@ -167,7 +183,6 @@ public class Healer extends Child
         if(distance<=100 && aoeCooldown<=0){
             getWorld().addObject(new HealingEffect(200, 40), getX(), getY());
             aoeCooldown = maxAoeCooldown;
-            healing = false;
             stunDuration = 120;
         }
         if(distance>=65 && distance < 500 && projCooldown<=0){

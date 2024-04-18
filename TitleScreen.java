@@ -40,6 +40,7 @@ public class TitleScreen extends World
         if(Greenfoot.mouseClicked(startButton)){
             Customization game = new Customization();
             Greenfoot.setWorld(game);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 

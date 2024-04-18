@@ -39,10 +39,19 @@ public class Fighter extends Child
         maxWalkIndex = walkAway.length;
         initImages();
     }
-    
+
     public void act(){
         if(!awake) return;
         super.act();
+        animate();
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }
         chaseZombies();
     }
 
@@ -86,7 +95,7 @@ public class Fighter extends Child
             animCounter = animDelay;
             animIndex++;
             if(fighting) {
-                if(animIndex == maxFightIndex) {
+                if(animIndex >= maxFightIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -103,7 +112,7 @@ public class Fighter extends Child
                 }
             }
             else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -118,9 +127,6 @@ public class Fighter extends Child
                 else if(toward) {
                     setImage(walkToward[animIndex]);
                 }
-                // else {
-                    // setImage("fighterWalkToward/fighterWalkToward.png");
-                // }
             }
         }
         else {
@@ -129,30 +135,59 @@ public class Fighter extends Child
     }
 
     
+    // **************************** FIGHTING ****************************** \\
     private void chaseZombies(){
         double[] enemyDetails = detectNearestEntity(Animal.class, 500);
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
         if(distance == -1){
-            vector[0] = 0;
-            vector[1] = 1;
+            enemyDetails = detectNearestEntity(Traitor.class, 500);
+            direction = enemyDetails[0];
+            distance = enemyDetails[1];
+            vector = Utility.angleToVector(direction);
+            if(distance == -1){
+                vector[0] = 0;
+                vector[1] = 0;
+                fighting = false;
+            }
         }
         if(distance<250 && distance > 10 && cooldown<=0){
-            throwPencil((int)direction, 4);
+            fighting = true;
+            throwPencil((int)direction, 8);
             cooldown = throwCooldown;
         }
         cooldown--;
         if(distance < 10){
+            fighting = true;
             punch();
             return;
         }
-        setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
+        
+        // update facing direction
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            right = true;
+            left = false; toward = false; away = false;
+        }
+        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            left = true;
+            right = false; toward = false; away = false;
+        }
+        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            away = true;
+            left = false; right = false; toward = false;
+        }
+        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            toward = true; 
+            left = false; right = false; away = false;
+        }
+        setLocation(getX()+vector[0], getY()+vector[1]);
     }
     
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(6, 150, direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("pencilThrow1.mp3");
     }
     
     private void punch(){
@@ -164,6 +199,7 @@ public class Fighter extends Child
         Entity enemy = getObjectsInRange(10, Entity.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("punch2.mp3");
     }
 }
 

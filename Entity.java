@@ -10,14 +10,16 @@ import java.util.List;
  */
 public abstract class Entity extends SuperSmoothMover
 {
-    private int maxHp;
-    private int hp;
+    protected int maxHp;
+    protected int hp;
     private int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     
     protected double tempVx = 0; // temporary vx added from push
     protected double tempVy = 0; // temporary vy added from push
     protected double friction = 0.95;
+    
+    protected double slippedDuration = 0;
     
     protected boolean awake = true;
     
@@ -56,7 +58,7 @@ public abstract class Entity extends SuperSmoothMover
      * @return double[] --  The details (direction, distance) of the enemy found, returns {0, -1} if not found
      */
     protected double[] detectNearestEntity(Class type, int detectRadius){
-        double[] enemyDetails = new double[2]; // {enemy direction, enemy distance}
+        double[] enemyDetails = new double[] {0, -1}; // {enemy direction, enemy distance}
         Entity nearestEnemy = null;
         for(double i=0; i<=detectRadius; i+=5){
             List<Entity> enemiesInRange = getObjectsInRange((int)i, type);
@@ -164,6 +166,13 @@ public abstract class Entity extends SuperSmoothMover
     public void setLocation(int x, int y) 
     {
         setLocation((double)x, (double)y);
+    }
+    /**
+     * The Entity has slipped! Rotates upside-down and is now stunned for a duration
+     */
+    public void slip(){
+        setRotation(180);
+        slippedDuration = 200;
     }
     public void push(double vx, double vy){
         tempVx += vx;

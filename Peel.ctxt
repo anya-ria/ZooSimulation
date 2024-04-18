@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Peel
+comment0.text=\n\ The\ banana\ peel\ is\ a\ non-moving\ "projectile"\ that\ makes\ characters\ slip\ when\ they\ step\ on\ it\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/16\n
+comment1.params=
+comment1.target=Peel()
+comment2.params=
+comment2.target=void\ detectCollision()
+comment3.params=
+comment3.target=void\ expire()
+numComments=4
