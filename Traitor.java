@@ -34,7 +34,7 @@ public class Traitor extends Child
     
     private int throwCooldown = maxThrowCooldown;
     private int healCooldown = maxHealCooldown;
-    private int smashCooldown = maxSmashCooldown;
+    private int smashCooldown = 0;
     private int stunDuration = 0;
     
     private Random rand = new Random();
@@ -174,8 +174,13 @@ public class Traitor extends Child
             }
             throwCooldown = maxThrowCooldown;
         }
-        if(distance>=10 && distance<100 && hp>100 && smashCooldown<=0){
+        if(distance>=10 && distance<100 && hp>=100 && smashCooldown<=0){
             getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+            for(Entity e: getObjectsInRange(150, Entity.class)){
+                double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
+                double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
+                e.push(vx, vy);
+            }
             selfHeal(); selfHeal(); selfHeal();
             smashCooldown = maxSmashCooldown;
             stunDuration = 200;

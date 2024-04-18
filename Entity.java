@@ -58,7 +58,7 @@ public abstract class Entity extends SuperSmoothMover
      * @return double[] --  The details (direction, distance) of the enemy found, returns {0, -1} if not found
      */
     protected double[] detectNearestEntity(Class type, int detectRadius){
-        double[] enemyDetails = new double[2]; // {enemy direction, enemy distance}
+        double[] enemyDetails = new double[] {0, -1}; // {enemy direction, enemy distance}
         Entity nearestEnemy = null;
         for(double i=0; i<=detectRadius; i+=5){
             List<Entity> enemiesInRange = getObjectsInRange((int)i, type);
