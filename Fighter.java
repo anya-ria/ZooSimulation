@@ -43,6 +43,7 @@ public class Fighter extends Child
     public void act(){
         if(!awake) return;
         super.act();
+        animate();
         if(slippedDuration>0){
             slippedDuration--;
             setLocation(getX(), getY());
@@ -94,7 +95,7 @@ public class Fighter extends Child
             animCounter = animDelay;
             animIndex++;
             if(fighting) {
-                if(animIndex == maxFightIndex) {
+                if(animIndex >= maxFightIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -111,7 +112,7 @@ public class Fighter extends Child
                 }
             }
             else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -148,16 +149,37 @@ public class Fighter extends Child
             if(distance == -1){
                 vector[0] = 0;
                 vector[1] = 0;
+                fighting = false;
             }
         }
         if(distance<250 && distance > 10 && cooldown<=0){
+            fighting = true;
             throwPencil((int)direction, 8);
             cooldown = throwCooldown;
         }
         cooldown--;
         if(distance < 10){
+            fighting = true;
             punch();
             return;
+        }
+        
+        // update facing direction
+        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            right = true;
+            left = false; toward = false; away = false;
+        }
+        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
+            left = true;
+            right = false; toward = false; away = false;
+        }
+        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            away = true;
+            left = false; right = false; toward = false;
+        }
+        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
+            toward = true; 
+            left = false; right = false; away = false;
         }
         setLocation(getX()+vector[0], getY()+vector[1]);
     }

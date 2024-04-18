@@ -7,13 +7,25 @@ class.Fighter.image=fighterWalkToward0.png
 class.Healer.image=healToward0.png
 class.HealingBall.image=glowingOrb.png
 class.Hippo.image=hippoWalkToward1.png
+class.Monkey.image=monkeyWalkToward1.png
 class.MyWorld.image=zoo.png
+<<<<<<< HEAD
 class.Peel.image=bananaPeel1.png
 class.Pencil.image=pencil.png
 class.Regular.image=child1WalkToward0.png
 class.Traitor.image=walkToward0.png
 =======
 >>>>>>> Stashed changes
+=======
+class.Peel.image=pizza_cheese.png
+class.Pencil.image=karo.png
+class.Penguin.image=walkTowards1.png
+class.Regular.image=child1WalkToward0.png
+class.Traitor.image=walkToward0.png
+class.ZombieHippo.image=walkToward1.png
+class.ZombieMonkey.image=walkToward1.png
+class.ZombiePenguin.image=walkToward1.png
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 dependency1.from=Customization
 dependency1.to=StartButton
 dependency1.type=UsesDependency
@@ -267,6 +279,7 @@ dependency8.type=UsesDependency
 dependency9.from=Achievement
 dependency9.to=Label
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 editor.fx.0.height=737
 editor.fx.0.width=814
@@ -284,6 +297,15 @@ height=854
 package.numDependencies=47
 package.numTargets=34
 >>>>>>> Stashed changes
+=======
+editor.fx.0.height=694
+editor.fx.0.width=1294
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+height=694
+package.numDependencies=54
+package.numTargets=39
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -306,70 +328,82 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
-target10.name=Monkey
+target10.name=Penguin
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-target11.name=Label
+target11.name=Regular
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-target12.name=Traitor
+target12.name=Monkey
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
-target13.name=TitleScreen
+target13.name=Label
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
-target14.name=Utility
+target14.name=Traitor
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
-target15.name=HealingEffect
+target15.name=TitleScreen
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
-target16.name=Special
+target16.name=Utility
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
 target17.height=70
+<<<<<<< HEAD
 target17.name=Achievement
+=======
+target17.name=HealingEffect
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
+<<<<<<< HEAD
 target18.name=Collections
+=======
+target18.name=Special
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
+<<<<<<< HEAD
 target19.name=Child
+=======
+target19.name=Peel
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target19.showInterface=false
 target19.type=AbstractTarget
 target19.width=120
@@ -383,78 +417,118 @@ target2.width=120
 target2.x=0
 target2.y=0
 target20.height=70
+<<<<<<< HEAD
 target20.name=MyWorld
+=======
+target20.name=Achievement
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
 target21.height=70
+<<<<<<< HEAD
 target21.name=MyWorld
+=======
+target21.name=Collections
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=120
 target21.x=0
 target21.y=0
 target22.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target22.name=HealingBall
 =======
 target22.name=Fighter
 >>>>>>> Stashed changes
+=======
+target22.name=Child
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target22.showInterface=false
-target22.type=ClassTarget
+target22.type=AbstractTarget
 target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
+<<<<<<< HEAD
 target23.name=EndButton
+=======
+target23.name=HealingBall
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target23.showInterface=false
 target23.type=ClassTarget
 target23.width=120
 target23.x=0
 target23.y=0
 target24.height=70
+<<<<<<< HEAD
 target24.name=AchieveButton
+=======
+target24.name=MyWorld
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
 target24.x=0
 target24.y=0
 target25.height=70
+<<<<<<< HEAD
 target25.name=Pencil
+=======
+target25.name=Fighter
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=120
 target25.x=0
 target25.y=0
 target26.height=70
+<<<<<<< HEAD
 target26.name=Healer
+=======
+target26.name=EndButton
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=120
 target26.x=0
 target26.y=0
 target27.height=70
+<<<<<<< HEAD
 target27.name=SuperStatBar
+=======
+target27.name=AchieveButton
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
+<<<<<<< HEAD
 target28.name=Projectile
+=======
+target28.name=Pencil
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target28.showInterface=false
 target28.type=AbstractTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target29.name=Projectile
 =======
 target29.name=StartButton
 >>>>>>> Stashed changes
+=======
+target29.name=Healer
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target29.showInterface=false
 target29.type=AbstractTarget
 target29.width=120
@@ -468,51 +542,71 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target30.name=StartButton
 =======
 target30.name=Banana
 >>>>>>> Stashed changes
+=======
+target30.name=SuperStatBar
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target31.name=Banana
 =======
 target31.name=Lightning
 >>>>>>> Stashed changes
+=======
+target31.name=ZombieHippo
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
+<<<<<<< HEAD
 target32.name=Lightning
+=======
+target32.name=Banana
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target32.showInterface=false
 target32.type=ClassTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target33.name=Animal
 =======
 target33.name=Effect
 >>>>>>> Stashed changes
+=======
+target33.name=Projectile
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target33.showInterface=false
 target33.type=AbstractTarget
 target33.width=120
 target33.x=0
 target33.y=0
 target34.height=70
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 target34.name=SmashEffect
 =======
 target34.name=Icon
 >>>>>>> Stashed changes
+=======
+target34.name=StartButton
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target34.showInterface=false
 target34.type=ClassTarget
 target34.width=120
@@ -520,67 +614,116 @@ target34.x=0
 target34.y=0
 <<<<<<< Updated upstream
 target35.height=70
-target35.name=Effect
+target35.name=Animal
 target35.showInterface=false
 target35.type=AbstractTarget
 target35.width=120
 target35.x=0
 target35.y=0
 target36.height=70
-target36.name=Icon
+target36.name=Lightning
 target36.showInterface=false
 target36.type=ClassTarget
 target36.width=120
 target36.x=0
 target36.y=0
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+target37.height=70
+target37.name=SmashEffect
+target37.showInterface=false
+target37.type=ClassTarget
+target37.width=120
+target37.x=0
+target37.y=0
+target38.height=70
+target38.name=Effect
+target38.showInterface=false
+target38.type=AbstractTarget
+target38.width=120
+target38.x=0
+target38.y=0
+target39.height=70
+target39.name=Icon
+target39.showInterface=false
+target39.type=ClassTarget
+target39.width=120
+target39.x=0
+target39.y=0
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target4.height=70
-target4.name=SuperSmoothMover
+target4.name=ZombiePenguin
 target4.showInterface=false
-target4.type=AbstractTarget
-target4.width=130
+target4.type=ClassTarget
+target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
+<<<<<<< HEAD
 target5.name=Regular
+=======
+target5.name=ZombieMonkey
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
+<<<<<<< HEAD
 target6.name=Customization
+=======
+target6.name=SuperSmoothMover
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target6.showInterface=false
-target6.type=ClassTarget
-target6.width=120
+target6.type=AbstractTarget
+target6.width=130
 target6.x=0
 target6.y=0
 target7.height=70
+<<<<<<< HEAD
 target7.name=EndingScreen
+=======
+target7.name=Customization
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+<<<<<<< HEAD
 target8.name=Hippo
+=======
+target8.name=EndingScreen
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=130
 target8.x=0
 target8.y=0
 target9.height=70
+<<<<<<< HEAD
 target9.name=Penguin
+=======
+target9.name=Hippo
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target9.showInterface=false
 target9.type=ClassTarget
-target9.width=120
+target9.width=130
 target9.x=0
 target9.y=0
 version=3.1.0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 width=1307
 world.lastInstantiated=MyWorld
+=======
+width=1294
+world.lastInstantiated=TitleScreen
+>>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 xPosition=0
 =======
 width=1300
