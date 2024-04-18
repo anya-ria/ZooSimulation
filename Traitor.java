@@ -195,14 +195,17 @@ public class Traitor extends Child
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("pencilThrow2.mp3");
     }
     
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("throwBanana.mp3");
     }
     private void selfHeal(){
         getWorld().addObject(new HealingEffect(20, 20), getX(), getY());
+        Greenfoot.playSound("healup.mp3");
     }
     private void punch(){
         double[] enemyDetails = detectNearestEntity(Child.class, 10);
