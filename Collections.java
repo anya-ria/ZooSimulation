@@ -38,6 +38,7 @@ public class Collections extends World
         if(Greenfoot.mouseClicked(returnKey)){
             TitleScreen game = new TitleScreen();
             Greenfoot.setWorld(game);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 }

@@ -210,5 +210,6 @@ public class Traitor extends Child
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("swishingPunch.mp3");
     }
 }

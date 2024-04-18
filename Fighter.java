@@ -176,6 +176,7 @@ public class Fighter extends Child
         Entity enemy = getObjectsInRange(10, Entity.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("swishingPunch.mp3");
     }
 }
 

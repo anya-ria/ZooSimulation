@@ -22,6 +22,7 @@ public class HomeButton extends Icon
         if(Greenfoot.mouseClicked(this)){
             TitleScreen game = new TitleScreen();
             Greenfoot.setWorld(game);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 }
