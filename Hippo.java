@@ -102,11 +102,11 @@ public class Hippo extends Animal
         }
         if (getX() <= 700 || getX() >= 985)
         {
-            turn(180);
+            setRotation(180);
         }
         if (getY() <= 30 || getY() >= 280)
         {
-            turn(180);
+            setRotation(180);
         }
     }
     
