@@ -1,22 +1,13 @@
 #Greenfoot project file
-<<<<<<< Updated upstream
 class.Achievement.image=AchievementsScreen.jpg
 class.Banana.image=bananas.png
 class.Customization.image=userSelectScreen.jpg
 class.Fighter.image=fighterWalkToward0.png
 class.Healer.image=healToward0.png
-class.HealingBall.image=glowingOrb.png
+class.HealingBall.image=lemon.png
 class.Hippo.image=hippoWalkToward1.png
 class.Monkey.image=monkeyWalkToward1.png
 class.MyWorld.image=zoo.png
-<<<<<<< HEAD
-class.Peel.image=bananaPeel1.png
-class.Pencil.image=pencil.png
-class.Regular.image=child1WalkToward0.png
-class.Traitor.image=walkToward0.png
-=======
->>>>>>> Stashed changes
-=======
 class.Peel.image=pizza_cheese.png
 class.Pencil.image=karo.png
 class.Penguin.image=walkTowards1.png
@@ -25,7 +16,6 @@ class.Traitor.image=walkToward0.png
 class.ZombieHippo.image=walkToward1.png
 class.ZombieMonkey.image=walkToward1.png
 class.ZombiePenguin.image=walkToward1.png
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 dependency1.from=Customization
 dependency1.to=StartButton
 dependency1.type=UsesDependency
@@ -56,13 +46,12 @@ dependency17.type=UsesDependency
 dependency18.from=MyWorld
 dependency18.to=Healer
 dependency18.type=UsesDependency
-dependency19.from=Entity
-dependency19.to=SuperStatBar
+dependency19.from=MyWorld
+dependency19.to=Fighter
 dependency19.type=UsesDependency
 dependency2.from=Customization
 dependency2.to=MyWorld
 dependency2.type=UsesDependency
-<<<<<<< Updated upstream
 dependency20.from=MyWorld
 dependency20.to=Hippo
 dependency20.type=UsesDependency
@@ -92,42 +81,10 @@ dependency28.to=Entity
 dependency28.type=UsesDependency
 dependency29.from=Traitor
 dependency29.to=Pencil
-=======
-dependency20.from=Entity
-dependency20.to=Child
-dependency20.type=UsesDependency
-dependency21.from=Entity
-dependency21.to=Utility
-dependency21.type=UsesDependency
-dependency22.from=Regular
-dependency22.to=Animal
-dependency22.type=UsesDependency
-dependency23.from=Regular
-dependency23.to=Utility
-dependency23.type=UsesDependency
-dependency24.from=Regular
-dependency24.to=Traitor
-dependency24.type=UsesDependency
-dependency25.from=Traitor
-dependency25.to=Pencil
-dependency25.type=UsesDependency
-dependency26.from=Traitor
-dependency26.to=Banana
-dependency26.type=UsesDependency
-dependency27.from=Traitor
-dependency27.to=Utility
-dependency27.type=UsesDependency
-dependency28.from=Fighter
-dependency28.to=Pencil
-dependency28.type=UsesDependency
-dependency29.from=Fighter
-dependency29.to=Entity
->>>>>>> Stashed changes
 dependency29.type=UsesDependency
 dependency3.from=EndingScreen
 dependency3.to=Label
 dependency3.type=UsesDependency
-<<<<<<< Updated upstream
 dependency30.from=Traitor
 dependency30.to=Banana
 dependency30.type=UsesDependency
@@ -155,44 +112,13 @@ dependency37.type=UsesDependency
 dependency38.from=Healer
 dependency38.to=HealingEffect
 dependency38.type=UsesDependency
+dependency39.from=HealingBall
 dependency39.from=Healer
 dependency39.to=HealingBall
-=======
-dependency30.from=Fighter
-dependency30.to=Animal
-dependency30.type=UsesDependency
-dependency31.from=Fighter
-dependency31.to=Utility
-dependency31.type=UsesDependency
-dependency32.from=Fighter
-dependency32.to=Traitor
-dependency32.type=UsesDependency
-dependency33.from=Healer
-dependency33.to=HealingEffect
-dependency33.type=UsesDependency
-dependency34.from=Healer
-dependency34.to=HealingBall
-dependency34.type=UsesDependency
-dependency35.from=Healer
-dependency35.to=Utility
-dependency35.type=UsesDependency
-dependency36.from=HealingBall
-dependency36.to=HealingEffect
-dependency36.type=UsesDependency
-dependency37.from=HealingBall
-dependency37.to=Child
-dependency37.type=UsesDependency
-dependency38.from=HealingBall
-dependency38.to=Traitor
-dependency38.type=UsesDependency
-dependency39.from=HealingBall
-dependency39.to=Utility
->>>>>>> Stashed changes
 dependency39.type=UsesDependency
 dependency4.from=TitleScreen
 dependency4.to=Label
 dependency4.type=UsesDependency
-<<<<<<< Updated upstream
 dependency40.from=Healer
 dependency40.to=Utility
 dependency40.type=UsesDependency
@@ -223,32 +149,6 @@ dependency48.type=UsesDependency
 dependency49.from=Banana
 dependency49.to=Utility
 dependency49.type=UsesDependency
-=======
-dependency40.from=Pencil
-dependency40.to=Entity
-dependency40.type=UsesDependency
-dependency41.from=Pencil
-dependency41.to=Utility
-dependency41.type=UsesDependency
-dependency42.from=Banana
-dependency42.to=Child
-dependency42.type=UsesDependency
-dependency43.from=Banana
-dependency43.to=Utility
-dependency43.type=UsesDependency
-dependency44.from=HealingEffect
-dependency44.to=Child
-dependency44.type=UsesDependency
-dependency45.from=HomeButton
-dependency45.to=TitleScreen
-dependency45.type=UsesDependency
-dependency46.from=EndButton
-dependency46.to=Collections
-dependency46.type=UsesDependency
-dependency47.from=AchieveButton
-dependency47.to=Achievement
-dependency47.type=UsesDependency
->>>>>>> Stashed changes
 dependency5.from=TitleScreen
 dependency5.to=AchieveButton
 dependency5.type=UsesDependency
@@ -279,33 +179,23 @@ dependency8.type=UsesDependency
 dependency9.from=Achievement
 dependency9.to=Label
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=100
-editor.fx.0.y=100
-height=854
-package.numDependencies=54
-package.numTargets=36
-=======
-editor.fx.0.height=0
-editor.fx.0.width=0
+editor.fx.0.height=865
+editor.fx.0.width=1512
 editor.fx.0.x=0
-editor.fx.0.y=0
-height=854
+editor.fx.0.y=38
+height=865
 package.numDependencies=47
-package.numTargets=34
->>>>>>> Stashed changes
-=======
 editor.fx.0.height=694
 editor.fx.0.width=1294
 editor.fx.0.x=-7
 editor.fx.0.y=-7
 height=694
+package.numDependencies=42
+package.numDependencies=49
+package.numTargets=35
+package.numTargets=34
 package.numDependencies=54
 package.numTargets=39
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -377,35 +267,23 @@ target16.width=120
 target16.x=0
 target16.y=0
 target17.height=70
-<<<<<<< HEAD
-target17.name=Achievement
-=======
 target17.name=HealingEffect
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
-<<<<<<< HEAD
-target18.name=Collections
-=======
 target18.name=Special
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
-<<<<<<< HEAD
-target19.name=Child
-=======
 target19.name=Peel
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target19.showInterface=false
-target19.type=AbstractTarget
+target19.type=ClassTarget
 target19.width=120
 target19.x=0
 target19.y=0
@@ -417,120 +295,78 @@ target2.width=120
 target2.x=0
 target2.y=0
 target20.height=70
-<<<<<<< HEAD
+target20.name=Child
 target20.name=MyWorld
-=======
 target20.name=Achievement
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
 target21.height=70
-<<<<<<< HEAD
-target21.name=MyWorld
-=======
 target21.name=Collections
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=120
 target21.x=0
 target21.y=0
 target22.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target22.name=HealingBall
-=======
-target22.name=Fighter
->>>>>>> Stashed changes
-=======
 target22.name=Child
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target22.showInterface=false
 target22.type=AbstractTarget
 target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
-<<<<<<< HEAD
-target23.name=EndButton
-=======
 target23.name=HealingBall
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target23.showInterface=false
 target23.type=ClassTarget
 target23.width=120
 target23.x=0
 target23.y=0
 target24.height=70
-<<<<<<< HEAD
-target24.name=AchieveButton
-=======
 target24.name=MyWorld
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
 target24.x=0
 target24.y=0
 target25.height=70
-<<<<<<< HEAD
-target25.name=Pencil
-=======
 target25.name=Fighter
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=120
 target25.x=0
 target25.y=0
 target26.height=70
-<<<<<<< HEAD
-target26.name=Healer
-=======
 target26.name=EndButton
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=120
 target26.x=0
 target26.y=0
 target27.height=70
-<<<<<<< HEAD
-target27.name=SuperStatBar
-=======
 target27.name=AchieveButton
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
-<<<<<<< HEAD
+target28.name=SuperStatBar
 target28.name=Projectile
-=======
 target28.name=Pencil
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target28.showInterface=false
 target28.type=AbstractTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target29.name=Projectile
-=======
+target29.name=Banana
 target29.name=StartButton
->>>>>>> Stashed changes
-=======
 target29.name=Healer
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target29.showInterface=false
-target29.type=AbstractTarget
+target29.type=ClassTarget
 target29.width=120
 target29.x=0
 target29.y=0
@@ -542,77 +378,44 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target30.name=StartButton
-=======
+target30.name=Projectile
 target30.name=Banana
->>>>>>> Stashed changes
-=======
 target30.name=SuperStatBar
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target31.name=Banana
-=======
+target31.name=StartButton
 target31.name=Lightning
->>>>>>> Stashed changes
-=======
 target31.name=ZombieHippo
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
-<<<<<<< HEAD
-target32.name=Lightning
-=======
 target32.name=Banana
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target32.showInterface=false
 target32.type=ClassTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target33.name=Animal
-=======
-target33.name=Effect
->>>>>>> Stashed changes
-=======
 target33.name=Projectile
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target33.showInterface=false
 target33.type=AbstractTarget
 target33.width=120
 target33.x=0
 target33.y=0
 target34.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target34.name=SmashEffect
-=======
-target34.name=Icon
->>>>>>> Stashed changes
-=======
 target34.name=StartButton
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target34.showInterface=false
 target34.type=ClassTarget
 target34.width=120
 target34.x=0
 target34.y=0
-<<<<<<< Updated upstream
 target35.height=70
 target35.name=Animal
 target35.showInterface=false
@@ -627,10 +430,6 @@ target36.type=ClassTarget
 target36.width=120
 target36.x=0
 target36.y=0
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
 target37.height=70
 target37.name=SmashEffect
 target37.showInterface=false
@@ -652,7 +451,6 @@ target39.type=ClassTarget
 target39.width=120
 target39.x=0
 target39.y=0
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target4.height=70
 target4.name=ZombiePenguin
 target4.showInterface=false
@@ -661,73 +459,46 @@ target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
-<<<<<<< HEAD
 target5.name=Regular
-=======
 target5.name=ZombieMonkey
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
-<<<<<<< HEAD
-target6.name=Customization
-=======
 target6.name=SuperSmoothMover
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target6.showInterface=false
 target6.type=AbstractTarget
 target6.width=130
 target6.x=0
 target6.y=0
 target7.height=70
-<<<<<<< HEAD
 target7.name=EndingScreen
-=======
 target7.name=Customization
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-<<<<<<< HEAD
 target8.name=Hippo
-=======
 target8.name=EndingScreen
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=130
 target8.x=0
 target8.y=0
 target9.height=70
-<<<<<<< HEAD
 target9.name=Penguin
-=======
 target9.name=Hippo
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=130
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-width=1307
-world.lastInstantiated=MyWorld
-=======
 width=1294
 world.lastInstantiated=TitleScreen
->>>>>>> 0534d3a4e35a9b6ef76f6a50dfac157d715533ad
-xPosition=0
-=======
-width=1300
-world.lastInstantiated=TitleScreen
-xPosition=34
->>>>>>> Stashed changes
-yPosition=37
+xPosition=205
+yPosition=38
