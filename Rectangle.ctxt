@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Rectangle
+comment0.text=\n\ Write\ a\ description\ of\ class\ Rectangle\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=Rectangle()
+comment3.params=text\ x\ y\ size
+comment3.target=void\ placeText(java.lang.String,\ int,\ int,\ int)
+comment3.text=\n\ Prints\ text\ using\ Text().\ Adds\ new\ Text\ object\ if\ the\ spot\ is\ empty,\ otherwise\ changes\ object's\ image.\n\ \n\ @param\ text\n\ \ \ \ \ \ Text\ to\ be\ written.\n\ \ \ \ \ \ \n\ @param\ x,\ y\n\ \ \ \ \ \ Coordinates\ at\ which\ to\ place\ the\ text.\n\ \ \ \ \ \ \n\ @param\ size\n\ \ \ \ \ \ Size\ of\ the\ text.\n
+numComments=4

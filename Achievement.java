@@ -39,6 +39,4 @@ public class Achievement extends World
         arr[0].setAchieved();
         arr[1].setAchieved();
     }
-
-
 }

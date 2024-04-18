@@ -14,9 +14,10 @@ public class EndingScreen extends World
      * 
      */
     
-    Label time;
-    int timeElasped;
-    HomeButton homeButton = new HomeButton();
+    private Label time;
+    private int timeElasped;
+    private HomeButton homeButton = new HomeButton();
+    private SimpleTimer gameTimer = new SimpleTimer();
     
     public EndingScreen()
     {    
@@ -30,9 +31,16 @@ public class EndingScreen extends World
         addObject(new Healer(), 600, 200);
         
         setBackground("end1.png");
+        
+        gameTimer.mark();
+        
+        timeElasped();
     }
     
-    public void setTimeElasped(int x){
-        timeElasped = x;
+    public void timeElasped(){
+        int x = gameTimer.millisElapsed()/1000;
+        Label gameOverLabel3 = new Label(x+" second", 48);
+        addObject(gameOverLabel3,635,560);
+        gameTimer.mark();
     }
 }
