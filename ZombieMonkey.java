@@ -8,15 +8,43 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ZombieMonkey extends Animal
 {
-    
-    
     // Zombie monkey sprites
-    private GreenfootImage[] zombieWalkRight = new GreenfootImage[3];
-    private GreenfootImage[] zombieWalkLeft = new GreenfootImage[3];
-    private GreenfootImage[] zombieWalkToward = new GreenfootImage[3];
-    private GreenfootImage[] zombieWalkAway = new GreenfootImage[3];  
+    private GreenfootImage[] walkRight = new GreenfootImage[3];
+    private GreenfootImage[] walkLeft = new GreenfootImage[3];
+    private GreenfootImage[] walkToward = new GreenfootImage[3];
+    private GreenfootImage[] walkAway = new GreenfootImage[3]; 
+    
+    // Animation variables
+    private int animCounter, animDelay, animIndex; 
+    private int maxIndex;
+    private boolean right, left, away, toward;
+    
     public ZombieMonkey() {
         super(100);
+        
+        animCounter = 0;
+        maxIndex = walkRight.length;
+        initImages();
+    }
+    
+    private void initImages() {
+        for(int i = 0; i < maxIndex; i++) {
+            walkAway[i] = new GreenfootImage("zombieMonkeyWalkAway/walkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkToward[i] = new GreenfootImage("zombieMonkeyWalkToward/walkToward" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkRight[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkLeft[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        
+        animIndex = 0;
+        animDelay = 10;
+        animCounter = animDelay;
     }
     
     /**
@@ -25,6 +53,31 @@ public class ZombieMonkey extends Animal
      */
     public void act()
     {
-        // Add your action code here.
+        animate();
+    }
+    
+    private void animate() {
+        if(animCounter == 0){
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxIndex){
+                animIndex = 0; 
+            }
+            if(right){
+                setImage(walkRight[animIndex]);
+            } 
+            else if (left){
+                setImage(walkLeft[animIndex]);
+            } 
+            else if(toward){
+                setImage(walkToward[animIndex]); 
+            } 
+            else if(away){
+                setImage(walkAway[animIndex]);
+            }
+        } 
+        else {
+            animCounter--; 
+        }
     }
 }
