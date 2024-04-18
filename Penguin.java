@@ -82,23 +82,134 @@ public class Penguin extends Animal
      */
     public void act()
     {
-        if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
+        moveAround();
+    }
+    
+    private void moveAround()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setLocation (getX(), getY() + (int)(speed*direction));
+            setRotation(direction);
+            // The initial orientation of the images are facing RIGHT
+            if (direction >= 315 || direction <= 45) // Right
+            {
+                away = true;
+                right = true;
+            }
+            if (direction > 45 && direction <= 135) // Down
+            {   
+                right = true;
+                away = false;
+            }
+            if (direction > 135 && direction <= 225) // Left
+            {
+                right = false;
+                away = false;
+            }
+            if (direction > 225 && direction <= 315) // Up
+            {
+                right = false;
+                away = true;
+            }
         }
-        if (direction == -1 && getY() <= 450)
+        if (getX() <= 695 || getX() >= 980)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
         }
-        else if (direction == 1 && getY() <= 795)
+        if (getY() <= 510 || getY() >= 760)
         {
-            direction = direction * -1;
-            setLocation (getX(), getY() + (int)(speed*direction));
+            turn(180);
         }
         animate();
     }
 
+    
+    public void slide()
+    {
+        direction = Greenfoot.getRandomNumber(90) - 45;
+        move(3);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(direction);
+            setRotation(direction);
+        }
+        if (getX() <= 695 || getX() >= 980)
+        {
+            turn(180);
+        }
+        if (getY() <= 510 || getY() >= 760)
+        {
+            turn(180);
+        }
+    }
+    
+    private void animateWalking() 
+    {
+        if(animCounter == 0)
+        {
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxWalkIndex)
+            {
+                animIndex = 0; 
+            }
+            if(right && away)
+            {
+                setImage(walkRight[animIndex]);
+            } 
+            else if (!right && !away)
+            {
+                setImage(walkLeft[animIndex]);
+            } 
+            else if(right && !away)
+            {
+                setImage(walkToward[animIndex]); 
+            } 
+            else 
+            {
+                setImage(walkAway[animIndex]);
+            }
+        } 
+        else 
+        {
+            animCounter--;
+        }
+    }
+    
+    private void animateSliding() 
+    {
+        if(animCounter == 0)
+        {
+            animCounter = animDelay; 
+            animIndex++; 
+            if(animIndex == maxSlideIndex)
+            {
+                animIndex = 0; 
+            }
+            if(right && away)
+            {
+                setImage(slideRight[animIndex]);
+            } 
+            else if (!right && !away)
+            {
+                setImage(slideLeft[animIndex]);
+            } 
+            else if(right && !away)
+            {
+                setImage(slideToward[animIndex]); 
+            } 
+            else 
+            {
+                setImage(slideAway[animIndex]);
+            }
+        } 
+        else 
+        {
+            animCounter--;
+        }
+    }
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -139,6 +250,7 @@ public class Penguin extends Animal
             }
         }
         else {
+
             animCounter--;
         }
     }

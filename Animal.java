@@ -23,6 +23,7 @@ public abstract class Animal extends Entity
      */
     protected Animal(int maxHp){
         super(maxHp);
+        enableStaticRotation();
     }
 
     public void zombify()
