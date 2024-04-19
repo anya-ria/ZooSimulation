@@ -215,7 +215,7 @@ public class Penguin extends Animal
             animCounter = animDelay;
             animIndex++;
             if(sliding) {
-                if(animIndex == maxSlideIndex) {
+                if(animIndex >= maxSlideIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -232,7 +232,7 @@ public class Penguin extends Animal
                 }
             }
             else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {

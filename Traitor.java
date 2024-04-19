@@ -110,7 +110,7 @@ public class Traitor extends Child
             animCounter = animDelay;
             animIndex++;
             if(punching) {
-                if(animIndex == maxPunchIndex) {
+                if(animIndex >= maxPunchIndex) {
                     animIndex = 0;
                 }
                 if(right) {
@@ -127,7 +127,7 @@ public class Traitor extends Child
                 }
             }
             else {
-                if(animIndex == maxWalkIndex) {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right) {

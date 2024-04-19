@@ -132,7 +132,7 @@ public class Hippo extends Animal
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
+            if(animIndex >= maxIndex){
                 animIndex = 0; 
             }
             if(right && away){
