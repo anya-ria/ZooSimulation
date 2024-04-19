@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ZombiePenguin
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=ZombiePenguin()
 comment2.params=world
@@ -9,7 +9,9 @@ comment3.params=
 comment3.target=void\ initImages()
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.text=\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment5.params=
-comment5.target=void\ animate()
-numComments=6
+comment5.target=void\ slide()
+comment6.params=
+comment6.target=void\ animate()
+numComments=7
