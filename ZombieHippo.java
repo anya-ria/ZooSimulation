@@ -33,6 +33,10 @@ public class ZombieHippo extends Animal
         initImages();
     }
     
+    public void addedToWorld(World world){
+        setImage("zombieHippoWalkToward/walkToward1.png");
+    }
+    
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("zombieHippoWalkAway/walkAway" + i + ".png");

@@ -104,15 +104,12 @@ public class Monkey extends Animal
         }
     }
     
-    private void animate()
-    {
-        if(animCounter == 0)
-        {
-            animCounter = animDelay; 
-            animIndex++; 
-            if(animIndex == maxIndex)
-            {
-                animIndex = 0; 
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex >= maxIndex) {
+                animIndex = 0;
             }
             if(right && away)
             {
@@ -134,13 +131,18 @@ public class Monkey extends Animal
             {
                 setImage(walkAway[animIndex]);
             }
-        } 
+        }
         else if(toward)
         {
             setImage(walkToward[animIndex]);
         }
         else
         {
+            else if(toward){
+                setImage(walkToward[animIndex]);
+            }
+
+        else {
             animCounter--;
         }
     }

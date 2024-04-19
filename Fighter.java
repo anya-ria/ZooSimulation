@@ -187,6 +187,7 @@ public class Fighter extends Child
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(6, 150, direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("pencilThrow1.mp3");
     }
     
     private void punch(){
@@ -198,6 +199,7 @@ public class Fighter extends Child
         Entity enemy = getObjectsInRange(10, Entity.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("punch2.mp3");
     }
 }
 

@@ -22,6 +22,7 @@ public class EndButton extends Icon
         if(Greenfoot.mouseClicked(this)){
             Collections collec1 = new Collections();
             Greenfoot.setWorld(collec1);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 }

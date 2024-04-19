@@ -43,6 +43,10 @@ public class ZombieMonkey extends Animal
         initImages();
     }
     
+    public void addedToWorld(World world){
+        setImage("zombieMonkeyWalkToward/walkToward1.png");
+    }
+    
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("zombieMonkeyWalkAway/walkAway" + i + ".png");

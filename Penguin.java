@@ -224,10 +224,8 @@ public class Penguin extends Animal
         {
             animCounter = animDelay;
             animIndex++;
-            if(sliding)
-            {
-                if(animIndex == maxSlideIndex)
-                {
+            if(sliding) {
+                if(animIndex >= maxSlideIndex) {
                     animIndex = 0;
                 }
                 if(right)
@@ -247,10 +245,8 @@ public class Penguin extends Animal
                     setImage(slideToward[animIndex]);
                 }
             }
-            else
-            {
-                if(animIndex == maxWalkIndex)
-                {
+            else {
+                if(animIndex >= maxWalkIndex) {
                     animIndex = 0;
                 }
                 if(right)
