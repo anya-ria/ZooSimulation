@@ -25,6 +25,8 @@ public class ZombiePenguin extends Animal
     private int maxIndex, maxSlideIndex;
     private boolean right, left, away, toward, sliding;
 
+    private int direction;
+    
     public ZombiePenguin() {
         super(100);
 
@@ -81,8 +83,51 @@ public class ZombiePenguin extends Animal
     public void act()
     {
         animate();
+        slide();
     }
 
+    private void slide()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
+        {
+            setRotation(direction);
+            if (direction >= 315 || direction <= 45)
+            {
+                away = true;
+                right = true;
+                sliding = true;
+            }
+            if (direction > 45 && direction <= 135)
+            {   
+                right = true;
+                away = false;
+                sliding = true;
+            }
+            if (direction > 135 && direction <= 225)
+            {
+                right = false;
+                away = false;
+                sliding = true;
+            }
+            if (direction > 225 && direction <= 315)
+            {
+                right = false;
+                away = true;
+                sliding = true;
+            }
+        }
+        if (getX() <= 20 || getX() >= 1004)
+        {
+            setRotation(180);
+        }
+        if (getY() <= 20 || getY() >= 780)
+        {
+            setRotation(180);
+        }
+    }
+    
     private void animate() {
         if(animCounter == 0){
             if(sliding) {

@@ -25,19 +25,13 @@ public class ZombieMonkey extends Animal
     private boolean right, left, away, toward;
     
     private final int maxThrowCooldown = 50;
-    //private final int maxHealCooldown = 100;
-    //private final int maxSmashCooldown = 500;
-    
     private int throwCooldown = maxThrowCooldown;
-    //private int healCooldown = maxHealCooldown;
-    //private int smashCooldown = 0;
     private int stunDuration = 0;
     
     private Random rand = new Random();
     
     public ZombieMonkey() {
         super(100);
-        
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();

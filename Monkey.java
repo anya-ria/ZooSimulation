@@ -50,12 +50,12 @@ public class Monkey extends Animal
         {
             walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
         }
-        
+
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;
     }
-    
+
     /**
      * Act - do whatever the Monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -65,7 +65,7 @@ public class Monkey extends Animal
         moveAround();
         animate();
     }
-    
+
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -103,7 +103,7 @@ public class Monkey extends Animal
             turn(180);
         }
     }
-    
+
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -136,12 +136,6 @@ public class Monkey extends Animal
         {
             setImage(walkToward[animIndex]);
         }
-        else
-        {
-            else if(toward){
-                setImage(walkToward[animIndex]);
-            }
-
         else {
             animCounter--;
         }
