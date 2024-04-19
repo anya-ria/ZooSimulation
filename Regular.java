@@ -9,12 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Regular extends Child
 {
-    // Child Sprites
-    private GreenfootImage[] walkAway = new GreenfootImage[9];
-    private GreenfootImage[] walkRight = new GreenfootImage[9];
-    private GreenfootImage[] walkLeft = new GreenfootImage[9];
-    private GreenfootImage[] walkToward = new GreenfootImage[9];
-    
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
@@ -33,18 +27,10 @@ public class Regular extends Child
 
     public void act()
     {   
-        if(!awake) return;
-        super.act();
-        if(slippedDuration>0){
-            slippedDuration--;
-            setLocation(getX(), getY());
-            return;
-        } else if(slippedDuration==0){
-            setRotation(0);
-            slippedDuration--; // effectively only makes this code run once
-        }
-        runAway();
-        animate(); 
+        if(!super.update()) return;
+        double[] enemyDetails = detectNearestEntity(Animal.class, 400);
+        if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 200);
+        runAway(enemyDetails); 
     }
 
     private void initImages(){
@@ -98,21 +84,17 @@ public class Regular extends Child
         }
 
         animIndex = 0; 
-        animDelay = 8; // # of acts in btw each image
+        animDelay = 8; // # of acts in between each image
         animCounter = animDelay; 
     }
 
-    private void runAway(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 1000);
+    private void runAway(double[] enemyDetails){
         double[] vector;
+        int adjustment = rand.nextInt(-15, 16); // set the move direction to be a bit more random
         if(enemyDetails[1] != -1)
-            vector = Utility.angleToVector(enemyDetails[0]);
+            vector = Utility.angleToVector(enemyDetails[0]+adjustment);
         else {
-            enemyDetails = detectNearestEntity(Traitor.class, 200);
-            if(enemyDetails[1] != -1)
-                vector = Utility.angleToVector(enemyDetails[0]);
-            else 
-                vector = new double[] {0, 0}; 
+            vector = new double[] {0, 0}; 
         }
         setLocation(getX()-vector[0], getY()-vector[1]);
         // update facing direction
@@ -134,7 +116,7 @@ public class Regular extends Child
         }
     }
 
-    private void animate(){
+    protected void animate(){
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 

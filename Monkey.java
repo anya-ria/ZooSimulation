@@ -105,12 +105,7 @@ public class Monkey extends Animal
         }
     }
     
-    public void throwBananas()
-    {
-        
-    }
-    
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;

@@ -7,10 +7,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Child extends Entity
 {
+    // Walking sprites
+    protected GreenfootImage[] walkAway = new GreenfootImage[9];
+    protected GreenfootImage[] walkRight = new GreenfootImage[9];
+    protected GreenfootImage[] walkLeft = new GreenfootImage[9];
+    protected GreenfootImage[] walkToward = new GreenfootImage[9];
     public Child(int maxHp){
         super(maxHp);
     }
-    public void act(){
-        super.act();
+    public boolean update(){
+        return super.update();
     }
+    protected abstract void animate();
 }
