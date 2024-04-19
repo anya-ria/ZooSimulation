@@ -33,6 +33,10 @@ public class ZombiePenguin extends Animal
         maxSlideIndex = slideRight.length;
         initImages();
     }
+    
+    public void addedToWorld(World world){
+        setImage("zombiePenguinWalkToward/walkToward1.png");
+    }
 
     private void initImages() {
         // Initialize walking images

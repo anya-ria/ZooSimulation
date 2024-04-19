@@ -195,13 +195,16 @@ public class Traitor extends Child
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("pencilThrow2.mp3");
     }
     private void throwBanana(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("throwBanana.mp3");
     }
     private void selfHeal(){
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
+        Greenfoot.playSound("healup.mp3");
     }
     private void smash(){
         getWorld().addObject(new SmashEffect(200, 99), getX(), getY()); // deal damage
@@ -222,6 +225,7 @@ public class Traitor extends Child
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("swishingPunch.mp3");
     }
     private void revive(){
         wound[0] = 0; wound[1] = 0;

@@ -38,14 +38,17 @@ public class Monkey extends Animal
         for(int i = 0; i < maxIndex; i++) {
             walkRight[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
         }
-        for(int i = 0; i < maxIndex; i++) {
+        for(int i = 0; i < maxIndex; i++) 
+        {
             walkLeft[i] = new GreenfootImage("monkeyWalkRight/monkeyWalkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-        for(int i = 0; i < maxIndex; i++) {
+        for(int i = 0; i < maxIndex; i++) 
+        {
             walkAway[i] = new GreenfootImage("monkeyWalkAway/monkeyWalkAway" + i + ".png");
         }
-        for(int i = 0; i < maxIndex; i++) {
+        for(int i = 0; i < maxIndex; i++) 
+        {
             walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
         }
         
@@ -53,7 +56,7 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
+    
     /**
      * Act - do whatever the Monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -63,19 +66,40 @@ public class Monkey extends Animal
         moveAround();
         animate();
     }
-
+    
     private void moveAround()
     {
-        move(2);
-        if (Greenfoot.getRandomNumber(100) < 10)
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
         {
-            turn(Greenfoot.getRandomNumber(90) - 45);
+            setRotation(direction);
+            if (direction >= 315 || direction <= 45)
+            {
+                away = true;
+                right = true;
+            }
+            if (direction > 45 && direction <= 135)
+            {   
+                right = true;
+                away = false;
+            }
+            if (direction > 135 && direction <= 225)
+            {
+                right = false;
+                away = false;
+            }
+            if (direction > 225 && direction <= 315)
+            {
+                right = false;
+                away = true;
+            }
         }
-        if (getX() <= 10 || getX() >= 455)
+        if (getX() <= 30 || getX() >= 320)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 310)
+        if (getY() <= 45 || getY() >= 290)
         {
             turn(180);
         }
@@ -85,26 +109,37 @@ public class Monkey extends Animal
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(animIndex == maxIndex) {
+            if(animIndex >= maxIndex) {
                 animIndex = 0;
             }
-            if(right) {
+            if(right && away){
                 setImage(walkRight[animIndex]);
+
+            } 
+            else if (!right && !away){
+
             }
             else if(left) {
+
                 setImage(walkLeft[animIndex]);
-            }
-            else if(away) {
+            } 
+            else if(right && !away){
+                setImage(walkToward[animIndex]); 
+            } 
+            else {
                 setImage(walkAway[animIndex]);
             }
+
+        } 
             else if(toward){
                 setImage(walkToward[animIndex]);
             }
-        }
+
         else {
             animCounter--;
         }
     }
+
     /*
      * if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
     {

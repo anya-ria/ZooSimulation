@@ -42,7 +42,7 @@ public class Healer extends Child
         if(stunDuration>0){
             stunDuration--;
             setLocation(getX(), getY());
-            healing = true; // When healing = true, set animIndex = 0
+            healing = true;
             return;
         } else {
             healing = false;
