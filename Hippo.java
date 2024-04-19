@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Hippo here.
  * 
@@ -22,13 +21,13 @@ public class Hippo extends Animal
     private boolean right, left, away, toward;
 
     private boolean isInfected;
-    private double speed;
-    private double maxSpeed;
     private int direction;
+    //private double speed;
+    //private double maxSpeed;
+    //private int direction;
 
     public Hippo() {
         super(200);
-
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
@@ -36,16 +35,19 @@ public class Hippo extends Animal
 
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
-            walkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
+            walkAway[i] = new GreenfootImage("hippoWalkAway/walkAway" + i + ".png");
         }
-        for(int i = 0; i < maxIndex; i++) {
-            walkToward[i] = new GreenfootImage("hippoWalkToward/hippoWalkToward" + i + ".png");
+        for(int i = 0; i < maxIndex; i++) 
+        {
+            walkToward[i] = new GreenfootImage("hippoWalkToward/walkToward" + i + ".png");
         }
-        for(int i = 0; i < maxIndex; i++) {
-            walkRight[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+        for(int i = 0; i < maxIndex; i++) 
+        {
+            walkRight[i] = new GreenfootImage("hippoWalkRight/walkRight" + i + ".png");
         }
-        for(int i = 0; i < maxIndex; i++) {
-            walkLeft[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+        for(int i = 0; i < maxIndex; i++) 
+        {
+            walkLeft[i] = new GreenfootImage("hippoWalkRight/walkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
 
@@ -60,43 +62,91 @@ public class Hippo extends Animal
      */
     public void act()
     {
-        super.act();
-        if(!awake) return;
+        if(!super.update()) return;
         moveAround();
-        animate();
+        if (isInfected)
+        {
+            charge();
+        }
     }
-
     private void moveAround()
     {
-        move(2);
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
+        {
+            setRotation(direction);
+            // The initial orientation of the images are facing RIGHT
+            if (direction >= 315 || direction <= 45) // Right
+            {
+                away = true;
+                right = true;
+            }
+            if (direction > 45 && direction <= 135) // Down
+            {   
+                right = true;
+                away = false;
+            }
+            if (direction > 135 && direction <= 225) // Left
+            {
+                right = false;
+                away = false;
+            }
+            if (direction > 225 && direction <= 315) // Up
+            {
+                right = false;
+                away = true;
+            }
+        }
+        if (getX() <= 700 || getX() >= 985)
+        {
+            setRotation(180);
+        }
+        if (getY() <= 30 || getY() >= 280)
+        {
+            setRotation(180);
+        }
+    }
+    
+    public void charge()
+    {
+        move(4);
         if (Greenfoot.getRandomNumber(100) < 10)
         {
             turn(Greenfoot.getRandomNumber(90) - 45);
         }
-        if (getX() <= 610 || getX() >= 1000)
+        if (getX() <= 685 || getX() >= 1000)
         {
             turn(180);
         }
-        if (getY() <= 10 || getY() >= 310)
+        if (getY() <= 30 || getY() >= 290)
         {
             turn(180);
         }
     }
-
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
+            if(animIndex >= maxIndex){
                 animIndex = 0; 
             }
-            if(right){
+            if(right && away){
                 setImage(walkRight[animIndex]);
             } 
+
+            else if (!right && !away){
+                setImage(walkLeft[animIndex]);
+            } 
+            else if(right && !away)
+            {
+                setImage(walkToward[animIndex]);
+            }
             else if (left){
                 setImage(walkLeft[animIndex]);
             } 
             else if(toward){
+
                 setImage(walkToward[animIndex]); 
             } 
             else if(away){
@@ -104,7 +154,7 @@ public class Hippo extends Animal
             }
         } 
         else {
-            animCounter--; 
+            animCounter--;
         }
     }
 }

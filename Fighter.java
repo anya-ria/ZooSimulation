@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -15,21 +14,14 @@ public class Fighter extends Child
     private GreenfootImage[] fightLeft = new GreenfootImage[6];
     private GreenfootImage[] fightToward = new GreenfootImage[6];
 
-    // Walking sprites
-    private GreenfootImage[] walkAway = new GreenfootImage[9];
-    private GreenfootImage[] walkRight = new GreenfootImage[9];
-    private GreenfootImage[] walkLeft = new GreenfootImage[9];
-    private GreenfootImage[] walkToward = new GreenfootImage[9];
-
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxFightIndex, maxWalkIndex;
     private boolean right, left, away, toward, fighting;
 
     // fighting variables
-    private final int throwCooldown = 50;
-    private int cooldown = throwCooldown;
-    Random rand = new Random();
+    private final int THROW_COOLDOWN = 50;
+    private int cooldown = THROW_COOLDOWN;
 
     public Fighter(){
         super(200);
@@ -41,18 +33,10 @@ public class Fighter extends Child
     }
 
     public void act(){
-        if(!awake) return;
-        super.act();
-        animate();
-        if(slippedDuration>0){
-            slippedDuration--;
-            setLocation(getX(), getY());
-            return;
-        } else if(slippedDuration==0){
-            setRotation(0);
-            slippedDuration--; // effectively only makes this code run once
-        }
-        chaseZombies();
+        if(!super.update()) return;
+        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+        if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
+        chaseZombies(enemyDetails);
     }
 
     private void initImages() {
@@ -83,6 +67,7 @@ public class Fighter extends Child
         }
         for(int i = 0; i < maxWalkIndex; i++) {
             walkLeft[i] = new GreenfootImage("fighterWalkRight/fighterWalkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
         }
 
         animIndex = 0;
@@ -90,7 +75,7 @@ public class Fighter extends Child
         animCounter = animDelay;
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
@@ -136,31 +121,27 @@ public class Fighter extends Child
 
     
     // **************************** FIGHTING ****************************** \\
-    private void chaseZombies(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+    private void chaseZombies(double[] enemyDetails){
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
-        if(distance == -1){
-            enemyDetails = detectNearestEntity(Traitor.class, 500);
-            direction = enemyDetails[0];
-            distance = enemyDetails[1];
-            vector = Utility.angleToVector(direction);
-            if(distance == -1){
-                vector[0] = 0;
-                vector[1] = 0;
-                fighting = false;
-            }
+        fighting = false;
+        if(distance == -1){ // couldn't find anything
+            vector[0] = 0;
+            vector[1] = 0;
         }
-        if(distance<250 && distance > 10 && cooldown<=0){
+        // within throwing range
+        if(distance<250 && distance >= 15 && cooldown<=0){
             fighting = true;
-            throwPencil((int)direction, 8);
-            cooldown = throwCooldown;
+            throwPencil((int)direction, 6);
+            cooldown = THROW_COOLDOWN;
         }
         cooldown--;
-        if(distance < 10){
+        // within punching range
+        if(distance < 15){
             fighting = true;
             punch();
+            setLocation(getX(), getY());
             return;
         }
         
@@ -186,7 +167,8 @@ public class Fighter extends Child
     
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
-        getWorld().addObject(new Pencil(6, 150, direction+modif, speed), getX(), getY());
+        getWorld().addObject(new Pencil(2, 150, direction+modif, speed), getX(), getY());
+        Greenfoot.playSound("pencilThrow1.mp3");
     }
     
     private void punch(){
@@ -198,6 +180,7 @@ public class Fighter extends Child
         Entity enemy = getObjectsInRange(10, Entity.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
+        Greenfoot.playSound("punch2.mp3");
     }
 }
 

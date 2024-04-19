@@ -23,8 +23,9 @@ public class Customization extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
-            MyWorld game = new MyWorld();
+            Zoo game = new Zoo();
             Greenfoot.setWorld(game);
+            Greenfoot.playSound("mouseClick.mp3");
         }
     }
 }
