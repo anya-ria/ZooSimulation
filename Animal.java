@@ -26,6 +26,7 @@ public abstract class Animal extends Entity
         enableStaticRotation();
     }
 
+    // still needs to be implemented
     public void zombify()
     {
         speed = 2;
