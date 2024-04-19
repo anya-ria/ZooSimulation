@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
-import java.util.Random;
 /**
  * The traitor is a child that no longer wants to cooperate with other children.
  * This character will imitate all other characters' attacks
@@ -17,29 +16,21 @@ public class Traitor extends Child
     private GreenfootImage[] punchRight = new GreenfootImage[6];
     private GreenfootImage[] punchLeft = new GreenfootImage[6];
     
-    // Walking sprites
-    private GreenfootImage[] walkAway = new GreenfootImage[9];
-    private GreenfootImage[] walkToward = new GreenfootImage[9];
-    private GreenfootImage[] walkRight = new GreenfootImage[9];
-    private GreenfootImage[] walkLeft = new GreenfootImage[9];
-    
     // Animation sprites
     private int animCounter, animDelay, animIndex;
     private int maxPunchIndex, maxWalkIndex;
     private boolean right, left, away, toward, punching;
     
-    private final int maxThrowCooldown = 50;
-    private final int maxHealCooldown = 100;
-    private final int maxSmashCooldown = 500;
+    private final int MAX_THROW_COOLDOWN = 50;
+    private final int MAX_HEAL_COOLDOWN = 100;
+    private final int MAX_SMASH_COOLDOWN = 500;
     
-    private int throwCooldown = maxThrowCooldown;
-    private int healCooldown = maxHealCooldown;
+    private int throwCooldown = MAX_THROW_COOLDOWN;
+    private int healCooldown = MAX_HEAL_COOLDOWN;
     private int smashCooldown = 0;
     private int stunDuration = 0;
     
     private int revives = 3;
-    
-    private Random rand = new Random();
     
     public Traitor(){
         super(200);
@@ -52,12 +43,14 @@ public class Traitor extends Child
     
     public void act(){
         if(!super.update()) return;
-        if(stunDuration>0){ // essentially the same as slippedDuration
+        if(stunDuration>0){ // currently stunned
             stunDuration--;
+            animCounter = 10; // make sure this guy isn't animating when stunned
             setLocation(getX(), getY());
             return;
         }
-        chaseChildren();
+        double[] childDetails = detectNearestEntity(Child.class, 1000);
+        chaseChildren(childDetails);
     }
     
     private void initImages() {
@@ -141,8 +134,7 @@ public class Traitor extends Child
         }
     }
     
-    public void chaseChildren(){
-        double[] enemyDetails = detectNearestEntity(Child.class, 1000);
+    private void chaseChildren(double[] enemyDetails){
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
@@ -151,9 +143,10 @@ public class Traitor extends Child
             vector[1] = 0;
         }
         if(hp<150 && healCooldown<=0){
+            punching = false;
             selfHeal();
-            healCooldown = maxHealCooldown;
-            throwCooldown = maxHealCooldown;
+            healCooldown = MAX_HEAL_COOLDOWN;
+            throwCooldown = MAX_HEAL_COOLDOWN;
         }
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
@@ -164,14 +157,18 @@ public class Traitor extends Child
                     throwPencil((int)direction, 4);
                     break;
             }
-            throwCooldown = maxThrowCooldown;
+            punching = true;
+            throwCooldown = MAX_THROW_COOLDOWN;
         }
         if(distance>=10 && distance<100 && hp>=100 && smashCooldown<=0){
             smash();
+            punching = true;
         }
         throwCooldown--; healCooldown--; smashCooldown--;
         if(distance < 10){
             punch();
+            punching = true;
+            setLocation(getX(), getY());
             return;
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
@@ -207,9 +204,15 @@ public class Traitor extends Child
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
     }
     private void smash(){
-        getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
-        selfHeal(); selfHeal();
-        smashCooldown = maxSmashCooldown;
+        getWorld().addObject(new SmashEffect(200, 99), getX(), getY()); // deal damage
+        selfHeal(); selfHeal(); // heal self
+        // deal knockback
+        for(Entity e: getObjectsInRange(150, Entity.class)){
+            double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
+            double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
+            e.push(vx, vy);
+        }
+        smashCooldown = MAX_SMASH_COOLDOWN;
         stunDuration = 200;
     }
     private void punch(){
@@ -239,7 +242,7 @@ public class Traitor extends Child
     /**
      * @override, gives traitor ability to revive once
      */
-    public void die(){
+    protected void die(){
         if(revives>0){
             revives--;
             revive();

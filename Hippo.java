@@ -60,10 +60,8 @@ public class Hippo extends Animal
      */
     public void act()
     {
-        super.act();
-        if(!isAwake()) return;
+        if(!super.update()) return;
         moveAround();
-        animate();
     }
     
     private void moveAround()
@@ -83,7 +81,7 @@ public class Hippo extends Animal
         }
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 

@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import java.util.Random;
 /**
  * The Entity is an abstract class that encompasses animals and children.
  * <li> manages the hp mechanics
@@ -15,13 +16,19 @@ public abstract class Entity extends SuperSmoothMover
     protected int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     
+    // physics variables
     private double tempVx = 0; // temporary vx added from push
     private double tempVy = 0; // temporary vy added from push
     private double friction = 0.95;
     
+    // stun due to slipping on a banana or anything else
     private double slippedDuration = 0;
     
+    // euphemism for "is this dead"
     private boolean awake = true;
+    
+    // might as well declare this for all subclasses
+    protected Random rand = new Random();
     
     /**
      * When constructed, sets the max hp and the hp
@@ -40,6 +47,7 @@ public abstract class Entity extends SuperSmoothMover
         if(!isAwake()) return false;
         updateWound();
         if(checkSlipping()) return false;
+        animate();
         return true;
     }    
     
@@ -52,6 +60,8 @@ public abstract class Entity extends SuperSmoothMover
         getWorld().addObject(hpBar, 0, 0);
     }
     
+    // ********************* ANIMATION SECTION **************************
+    protected abstract void animate();
     
     // *********************** DAMAGE SECTION ***************************
     /**

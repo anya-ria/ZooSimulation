@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -15,21 +14,14 @@ public class Fighter extends Child
     private GreenfootImage[] fightLeft = new GreenfootImage[6];
     private GreenfootImage[] fightToward = new GreenfootImage[6];
 
-    // Walking sprites
-    private GreenfootImage[] walkAway = new GreenfootImage[9];
-    private GreenfootImage[] walkRight = new GreenfootImage[9];
-    private GreenfootImage[] walkLeft = new GreenfootImage[9];
-    private GreenfootImage[] walkToward = new GreenfootImage[9];
-
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxFightIndex, maxWalkIndex;
     private boolean right, left, away, toward, fighting;
 
     // fighting variables
-    private final int throwCooldown = 50;
-    private int cooldown = throwCooldown;
-    Random rand = new Random();
+    private final int THROW_COOLDOWN = 50;
+    private int cooldown = THROW_COOLDOWN;
 
     public Fighter(){
         super(200);
@@ -42,7 +34,9 @@ public class Fighter extends Child
 
     public void act(){
         if(!super.update()) return;
-        chaseZombies();
+        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+        if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
+        chaseZombies(enemyDetails);
     }
 
     private void initImages() {
@@ -73,6 +67,7 @@ public class Fighter extends Child
         }
         for(int i = 0; i < maxWalkIndex; i++) {
             walkLeft[i] = new GreenfootImage("fighterWalkRight/fighterWalkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
         }
 
         animIndex = 0;
@@ -126,32 +121,27 @@ public class Fighter extends Child
 
     
     // **************************** FIGHTING ****************************** \\
-    private void chaseZombies(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+    private void chaseZombies(double[] enemyDetails){
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
-        if(distance == -1){
-            fighting = false;
-            enemyDetails = detectNearestEntity(Traitor.class, 500);
-            direction = enemyDetails[0];
-            distance = enemyDetails[1];
-            vector = Utility.angleToVector(direction);
-            if(distance == -1){
-                vector[0] = 0;
-                vector[1] = 0;
-                fighting = false;
-            }
+        fighting = false;
+        if(distance == -1){ // couldn't find anything
+            vector[0] = 0;
+            vector[1] = 0;
         }
+        // within throwing range
         if(distance<250 && distance >= 15 && cooldown<=0){
             fighting = true;
             throwPencil((int)direction, 6);
-            cooldown = throwCooldown;
+            cooldown = THROW_COOLDOWN;
         }
         cooldown--;
+        // within punching range
         if(distance < 15){
             fighting = true;
             punch();
+            setLocation(getX(), getY());
             return;
         }
         
