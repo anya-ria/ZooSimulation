@@ -63,6 +63,7 @@ public class Monkey extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         moveAround();
         animate();
     }

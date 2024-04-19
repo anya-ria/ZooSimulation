@@ -80,10 +80,11 @@ public class ZombiePenguin extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         animate();
     }
 
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             if(sliding) {
                 animCounter = animDelay; 

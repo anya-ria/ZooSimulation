@@ -57,10 +57,11 @@ public class ZombieHippo extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         animate();
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
