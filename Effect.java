@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Effects that control visuals
+ * Effects that control visuals, imported from another project
  * 
  * @author Lucas
  */

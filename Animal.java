@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Animal extends Entity
 {
-    private boolean isInfected;
-    private double speed;
-    private double maxSpeed;
-    private int direction;
+    protected int direction;
     
     public boolean update(){
         return super.update();
@@ -29,7 +26,6 @@ public abstract class Animal extends Entity
     // still needs to be implemented
     public void zombify()
     {
-        speed = 2;
-        GreenfootImage zombie = new GreenfootImage("");
+        
     }
 }
