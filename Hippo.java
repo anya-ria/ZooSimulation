@@ -15,25 +15,25 @@ public class Hippo extends Animal
     private GreenfootImage[] walkLeft = new GreenfootImage[3];
     private GreenfootImage[] walkToward = new GreenfootImage[3];
     private GreenfootImage[] walkAway = new GreenfootImage[3];
-    
+
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
-    
+
     private boolean isInfected;
     private double speed;
     private double maxSpeed;
     private int direction;
-    
+
     public Hippo() {
         super(200);
-        
+
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
     }
-    
+
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
@@ -48,12 +48,12 @@ public class Hippo extends Animal
             walkLeft[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-        
+
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;
     }
-    
+
     /**
      * Act - do whatever the Hippo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -63,7 +63,7 @@ public class Hippo extends Animal
         if(!super.update()) return;
         moveAround();
     }
-    
+
     private void moveAround()
     {
         move(2);
@@ -80,7 +80,6 @@ public class Hippo extends Animal
             turn(180);
         }
     }
-    
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
