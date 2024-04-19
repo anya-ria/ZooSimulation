@@ -134,7 +134,7 @@ public class ZombiePenguin extends Animal
             if(sliding) {
                 animCounter = animDelay; 
                 animIndex++; 
-                if(animIndex == maxSlideIndex){
+                if(animIndex >= maxSlideIndex){
                     animIndex = 0; 
                 }
                 if(right){
@@ -153,7 +153,7 @@ public class ZombiePenguin extends Animal
             else {
                 animCounter = animDelay; 
                 animIndex++; 
-                if(animIndex == maxIndex){
+                if(animIndex >= maxIndex){
                     animIndex = 0; 
                 }
                 if(right){
