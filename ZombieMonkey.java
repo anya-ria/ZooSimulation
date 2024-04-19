@@ -127,11 +127,11 @@ public class ZombieMonkey extends Animal
         }
         if (getX() <= 20 || getX() >= 1004)
         {
-            setRotation(180);
+            turn(180);
         }
         if (getY() <= 20 || getY() >= 780)
         {
-            setRotation(180);
+            turn(180);
         }
     }
     private void throwBanana(int direction, int speed){
