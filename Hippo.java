@@ -36,19 +36,19 @@ public class Hippo extends Animal
 
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
-            walkAway[i] = new GreenfootImage("hippoWalkAway/hippoWalkAway" + i + ".png");
+            walkAway[i] = new GreenfootImage("hippoWalkAway/walkAway" + i + ".png");
         }
         for(int i = 0; i < maxIndex; i++) 
         {
-            walkToward[i] = new GreenfootImage("hippoWalkToward/hippoWalkToward" + i + ".png");
+            walkToward[i] = new GreenfootImage("hippoWalkToward/walkToward" + i + ".png");
         }
         for(int i = 0; i < maxIndex; i++) 
         {
-            walkRight[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+            walkRight[i] = new GreenfootImage("hippoWalkRight/walkRight" + i + ".png");
         }
         for(int i = 0; i < maxIndex; i++) 
         {
-            walkLeft[i] = new GreenfootImage("hippoWalkRight/hippoWalkRight" + i + ".png");
+            walkLeft[i] = new GreenfootImage("hippoWalkRight/walkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
 

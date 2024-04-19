@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=Traitor
-comment0.text=\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
 comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
-comment0.text=\n\ The\ traitor\ is\ a\ fighter\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ This\ character\ will\ throw\ bananas\ and\ pencils,\ and\ punch\ other\ children\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
 comment1.params=
 comment1.target=Traitor()
 comment2.params=
