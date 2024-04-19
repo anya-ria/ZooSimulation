@@ -60,7 +60,7 @@ public class ZombieHippo extends Animal
     private void charge()
     {
         direction = Greenfoot.getRandomNumber(361);
-        move(4);
+        move(3);
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
@@ -104,6 +104,11 @@ public class ZombieHippo extends Animal
     {
         animate();
         charge();
+    }
+    
+    private void hitChildren()
+    {
+        
     }
     
     private void animate() {
