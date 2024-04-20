@@ -28,15 +28,20 @@ public class Banana extends Projectile
      */
     public Banana(double vx, double vy){
         super(vx,vy);
-        getImage().scale(20, 20);
+        //getImage().scale(20, 20);
         
         animCounter = 0;
         initImages();
     }
     
+     // public void act() {
+        // animate();
+    // }    
+    
     private void initImages() {
         for(int i = 0; i < banana.length; i++) {
             banana[i] = new GreenfootImage("bananaSprites/banana" + i + ".png");
+            banana[i].scale(30, 30);
         }
         
         animIndex = 0;
