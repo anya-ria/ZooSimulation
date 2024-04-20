@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CutScene
+comment0.text=\r\n\ A\ cutscene\ that\ introduces\ the\ inciting\ incident;\ lightning\ turns\ zoo\ animals\ to\ zombies.\r\n\ \r\n\ @author\ Megan\r\n\ @version\ April\ 2024\r\n
+comment1.params=
+comment1.target=CutScene()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CutScene.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+numComments=3
