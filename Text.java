@@ -11,8 +11,4 @@ public class Text extends Effect
     public Text(GreenfootSound sound, GreenfootImage image, int fadeIn, int duration, int fadeOut){
         super(sound, image, fadeIn, duration, fadeOut);
     }
-    
-    public void switchText(GreenfootImage image){
-        setImage(image);
-    }
 }

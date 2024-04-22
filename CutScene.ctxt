@@ -8,5 +8,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawnAnimals()
-comment3.text=\r\n\r\nSpawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens
+comment3.text=\r\n\ Spawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens\r\n
 numComments=4

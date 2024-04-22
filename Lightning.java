@@ -3,25 +3,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Lightning here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Megan  
+ * @version April 2024
  */
 public class Lightning extends Effect
 {
-    public Lightning(GreenfootSound sound, GreenfootImage image, int fadeIn, int duration, int fadeOut, int actTime, int phase){
-        super(sound, image, fadeIn, duration, fadeOut, actTime, phase);
+    private GreenfootImage[] lightningStrike = new GreenfootImage[3];
+    private int imageIndex = 0, actCount = 0;
+
+    public Lightning(GreenfootSound sound, GreenfootImage image, int fadeIn, int duration, int fadeOut){
+        super(sound, image, fadeIn, duration, fadeOut);
+
+        for(int i=1; i<4;i++) {
+            lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
+        }
     }
-    /**
-     * Act - do whatever the Lightning wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
-    }
-    
-    public void sound()
-    {
-        Greenfoot.playSound("lightning.mp3");
+
+    public void act(){
+        if((actCount + 1) % 30 == 0 && actCount < 121){
+            if(imageIndex < 3) {
+                setImage(lightningStrike[imageIndex]);
+                imageIndex++;
+            }
+            else{
+                setImage(new GreenfootImage("darkOverlay.png"));
+            }
+        }
+        
+        if(actCount == allActs[0] + allActs[1] + allActs[2]){
+            getWorld().removeObject(this);
+            return;
+        }
+        actCount++;
     }
 }

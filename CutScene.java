@@ -29,14 +29,27 @@ public class CutScene extends World
 
     public void act(){        
         if(actCount == 180){
-            addObject(new Text(null, new GreenfootImage("teacherText.png"), 40, 120, 40), 500, 400); 
+            Text teacherText1 = new Text(null, new GreenfootImage("teacherText1.png"), 20, 180, 20);
+            addObject(teacherText1, 512, 400); 
+        }
+        if(actCount == 380){
+            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), new GreenfootImage("lightning1.png"), 20, 120, 20);
+            addObject(lightning, 512, 400); 
+        }
+        if(actCount == 460){
+            Text teacherText2 = new Text(null, new GreenfootImage("teacherText2.png"), 20, 180, 20);
+            addObject(teacherText2, 512, 400); 
+        }
+        if(actCount == 680){
+            Zoo zoo = new Zoo();
+            Greenfoot.setWorld(zoo);
         }
         actCount++;
     }
 
     /**
-
-    Spawns 3 of each type of animals in initial location within their respective pens*/
+     * Spawns 3 of each type of animals in initial location within their respective pens
+    */
     public void spawnAnimals(){
 
         addObject(new Monkey(), 80, 100);
