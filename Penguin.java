@@ -90,6 +90,7 @@ public class Penguin extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         moveAround();
     }
     
@@ -218,10 +219,8 @@ public class Penguin extends Animal
             animCounter--;
         }
     }
-    private void animate()
-    {
-        if(animCounter == 0)
-        {
+    protected void animate() {
+        if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
             if(sliding) {

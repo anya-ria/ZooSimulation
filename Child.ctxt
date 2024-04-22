@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Child
-comment0.text=\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/4\n
+comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/4\r\n
 comment1.params=maxHp
 comment1.target=Child(int)
 comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment2.target=boolean\ update()
+comment3.params=
+comment3.target=void\ animate()
+numComments=4

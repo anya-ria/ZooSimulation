@@ -13,8 +13,8 @@ public abstract class Animal extends Entity
     private double maxSpeed;
     private int direction;
     
-    public void act(){
-        super.act();
+    public boolean update(){
+        return super.update();
     }
     
     /**

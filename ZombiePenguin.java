@@ -82,6 +82,7 @@ public class ZombiePenguin extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         animate();
         slide();
     }
@@ -128,12 +129,12 @@ public class ZombiePenguin extends Animal
         }
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             if(sliding) {
                 animCounter = animDelay; 
                 animIndex++; 
-                if(animIndex == maxSlideIndex){
+                if(animIndex >= maxSlideIndex){
                     animIndex = 0; 
                 }
                 if(right){
@@ -152,7 +153,7 @@ public class ZombiePenguin extends Animal
             else {
                 animCounter = animDelay; 
                 animIndex++; 
-                if(animIndex == maxIndex){
+                if(animIndex >= maxIndex){
                     animIndex = 0; 
                 }
                 if(right){

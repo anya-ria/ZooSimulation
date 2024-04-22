@@ -62,6 +62,7 @@ public class Monkey extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         moveAround();
         animate();
     }
@@ -103,8 +104,8 @@ public class Monkey extends Animal
             turn(180);
         }
     }
-
-    private void animate() {
+    
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
@@ -140,21 +141,4 @@ public class Monkey extends Animal
             animCounter--;
         }
     }
-
-    /*
-     * if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
-    {
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-    if (direction == -1 && getY() >= 350)
-    {
-    direction = direction * -1;
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-    else if (direction == 1 && getY() <= 5)
-    {
-    direction = direction * -1;
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-     */
 }

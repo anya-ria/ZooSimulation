@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pencil extends Projectile
 {
+    private GreenfootImage[] pencil = new GreenfootImage[13];
+    private int animCounter, animDelay, animIndex; 
     private int dot; // damage
     private int duration; // how many acts (divide by 30 for number of ticks)
     /**
@@ -33,8 +35,40 @@ public class Pencil extends Projectile
         super(vx, vy);
         dot = dmg;
         this.duration = duration;
-        getImage().scale(20,20);  
+        //getImage().scale(20,20);  
+        
+        animCounter = 0;
+        initImages();
     }
+    
+    // public void act() {
+        // animate();
+    // }
+    
+    private void initImages() {
+        for(int i = 0; i < pencil.length; i++) {
+            pencil[i] = new GreenfootImage("pencilSprites/pencil" + i + ".png");
+        }
+        
+        animIndex = 0;
+        animDelay = 3; // smaller value: goes faster || larger value: goes slower
+        animCounter = animDelay;
+    }
+    
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex >= pencil.length) {
+                animIndex = 0;
+            }
+            setImage(pencil[animIndex]);
+        }
+        else {
+            animCounter--;
+        }
+    }
+    
     protected void detectCollision(){
         Entity touched = (Entity) getOneIntersectingObject(Entity.class);
         if(touched!=null&&touched.isAwake()){

@@ -144,15 +144,16 @@ public class ZombieMonkey extends Animal
      */
     public void act()
     {
+        if(!super.update()) return;
         animate();
         throwBananas();
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
+            if(animIndex >= maxIndex){
                 animIndex = 0; 
             }
             if(right){
