@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ZombieHippo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\r\n\ \r\n\ @version\ (2024.04.18)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\r\n\ Movements\:\ Luke\ Xiao\r\n\ Animations\:\ Anya\ Shah\r\n\ \r\n\ @version\ (2024.04.18)\r\n
 comment1.params=
 comment1.target=ZombieHippo()
 comment2.params=world
