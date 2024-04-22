@@ -19,6 +19,8 @@ public class CutScene extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
 
+        Greenfoot.setSpeed(50);
+        
         setBackground("zoo.jpg");
         setPaintOrder (Icon.class, Effect.class, Animal.class);
         actCount = 0;
@@ -37,7 +39,7 @@ public class CutScene extends World
             addObject(teacherText1, 512, 400); 
         }
         if(actCount == 380){
-            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), new GreenfootImage("lightning1.png"), 20, 120, 20);
+            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), new GreenfootImage("lightning1.png"), 20, 260, 20);
             addObject(lightning, 512, 400); 
         }
         if(actCount == 460){
