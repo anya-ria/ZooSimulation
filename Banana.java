@@ -28,15 +28,16 @@ public class Banana extends Projectile
      */
     public Banana(double vx, double vy){
         super(vx,vy);
-        //getImage().scale(20, 20);
+        getImage().scale(30, 30);
+        initImages();
         
         animCounter = 0;
-        initImages();
-    }
+    } 
     
-     // public void act() {
-        // animate();
-    // }    
+    public void act(){
+        super.act();
+        animate();
+    }
     
     private void initImages() {
         for(int i = 0; i < banana.length; i++) {
