@@ -166,7 +166,7 @@ public class Traitor extends Child
             punching = true;
         }
         throwCooldown--; healCooldown--; smashCooldown--;
-        if(distance < 10){
+        if(distance < 15){
             punch();
             punching = true;
             setLocation(getX(), getY());

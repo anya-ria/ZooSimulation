@@ -1,17 +1,15 @@
 #BlueJ class context
 comment0.target=ZombieHippo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\r\n\ Movements\:\ Luke\ Xiao\r\n\ Animations\:\ Anya\ Shah\r\n\ \r\n\ @version\ (2024.04.18)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\r\n\ \r\n\ @version\ (2024.04.18)\r\n
 comment1.params=
 comment1.target=ZombieHippo()
-comment2.params=world
-comment2.target=void\ addedToWorld(greenfoot.World)
+comment2.params=
+comment2.target=void\ initImages()
 comment3.params=
-comment3.target=void\ initImages()
+comment3.target=void\ charge()
 comment4.params=
-comment4.target=void\ charge()
+comment4.target=void\ act()
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombieHippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment5.params=
-comment5.target=void\ act()
-comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombieHippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment6.params=
-comment6.target=void\ animate()
-numComments=7
+comment5.target=void\ animate()
+numComments=6
