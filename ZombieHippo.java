@@ -29,13 +29,9 @@ public class ZombieHippo extends Animal
     
     public ZombieHippo() {
         super(100);
-        
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
-    }
-    
-    public void addedToWorld(World world){
         setImage("zombieHippoWalkToward/walkToward1.png");
     }
     
@@ -134,7 +130,7 @@ public class ZombieHippo extends Animal
             targetChild = children.get(0);
             // Use method to get distance to target. This will be used
             // to check if any other targets are closer
-            closestTargetDistance = MyWorld.getDistance (this, targetChild);
+            closestTargetDistance = Zoo.getDistance (this, targetChild);
 
             // Loop through the objects in the ArrayList to find the closest target
             for (Child o : children)
@@ -142,7 +138,7 @@ public class ZombieHippo extends Animal
                 // Cast for use in generic method
                 //Actor a = (Actor) o;
                 // Measure distance from me
-                distanceToActor = MyWorld.getDistance(this, o);
+                distanceToActor = Zoo.getDistance(this, o);
                 // If I find a Flower closer than my current target, I will change
                 // targets
                 if (distanceToActor < closestTargetDistance)
