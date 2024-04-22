@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class ZombieHippo here.
  * 
@@ -24,6 +24,8 @@ public class ZombieHippo extends Animal
     
     // Movement Variables
     private int direction;
+    private Child targetChild;
+    private ArrayList<Child> children;
     
     public ZombieHippo() {
         super(100);
@@ -60,7 +62,7 @@ public class ZombieHippo extends Animal
     private void charge()
     {
         direction = Greenfoot.getRandomNumber(361);
-        move(3);
+        move(2);
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
@@ -94,6 +96,7 @@ public class ZombieHippo extends Animal
         {
             setRotation(180);
         }
+        targetClosestChildren();
     }
     
     /**
@@ -106,9 +109,49 @@ public class ZombieHippo extends Animal
         charge();
     }
     
-    private void hitChildren()
+    private void targetClosestChildren ()
     {
-        
+        double closestTargetDistance = 0;
+        double distanceToActor;
+        // Get a list of all children in the World, cast it to ArrayList
+        // for easy management
+
+        children = (ArrayList<Child>)getObjectsInRange(40, Child.class);
+        if (children.size() == 0){
+            children = (ArrayList<Child>)getObjectsInRange(140, Child.class);
+        } 
+        if (children.size() == 0){
+            children = (ArrayList<Child>)getObjectsInRange(350, Child.class);
+        } 
+        if (children.size() == 0){
+            //children = (ArrayList<Flower>)getWorld().getObjects(Flower.class);
+        } 
+
+        if (children.size() > 0)
+        {
+            // set the first one as my target
+            targetChild = children.get(0);
+            // Use method to get distance to target. This will be used
+            // to check if any other targets are closer
+            closestTargetDistance = MyWorld.getDistance (this, targetChild);
+
+            // Loop through the objects in the ArrayList to find the closest target
+            for (Child o : children)
+            {
+                // Cast for use in generic method
+                //Actor a = (Actor) o;
+                // Measure distance from me
+                distanceToActor = MyWorld.getDistance(this, o);
+                // If I find a Flower closer than my current target, I will change
+                // targets
+                if (distanceToActor < closestTargetDistance)
+                {
+                    targetChild = o;
+                    closestTargetDistance = distanceToActor;
+                }
+            }
+            turnTowards(targetChild.getX(), targetChild.getY());
+        }
     }
     
     private void animate() {
@@ -128,7 +171,7 @@ public class ZombieHippo extends Animal
                 setImage(walkToward[animIndex]); 
             } 
             else if(away){
-                setImage(walkAway[animIndex]);
+               setImage(walkAway[animIndex]);
             }
         } 
         else {
