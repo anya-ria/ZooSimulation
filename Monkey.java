@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Monkey here.
  * 
- * @author Luke Xiao | Functions
- * @author Anya Shah | Animations
+ * @author <li> Luke Xiao | Functions
+ * @author <li> Anya Shah | Animations
  * @version 04/12/2024
  */
 public class Monkey extends Animal

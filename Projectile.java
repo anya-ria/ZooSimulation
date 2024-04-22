@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * General class of projectiles
+ * General class of projectiles, objects that fly at a constant speed
  * 
  * @author Lucas
  * @version 2024/4/9
