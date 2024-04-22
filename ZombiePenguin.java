@@ -135,7 +135,6 @@ public class ZombiePenguin extends Zombie
         double distanceToActor;
         // Get a list of all children in the World, cast it to ArrayList
         // for easy management
-
         children = (ArrayList<Child>)getObjectsInRange(40, Child.class);
         if (children.size() == 0){
             children = (ArrayList<Child>)getObjectsInRange(140, Child.class);
@@ -143,10 +142,6 @@ public class ZombiePenguin extends Zombie
         if (children.size() == 0){
             children = (ArrayList<Child>)getObjectsInRange(350, Child.class);
         } 
-        if (children.size() == 0){
-            //children = (ArrayList<Flower>)getWorld().getObjects(Flower.class);
-        } 
-
         if (children.size() > 0)
         {
             // set the first one as my target
@@ -154,16 +149,9 @@ public class ZombiePenguin extends Zombie
             // Use method to get distance to target. This will be used
             // to check if any other targets are closer
             closestTargetDistance = Zoo.getDistance (this, targetChild);
-
-            // Loop through the objects in the ArrayList to find the closest target
             for (Child o : children)
             {
-                // Cast for use in generic method
-                //Actor a = (Actor) o;
-                // Measure distance from me
                 distanceToActor = Zoo.getDistance(this, o);
-                // If I find a Flower closer than my current target, I will change
-                // targets
                 if (distanceToActor < closestTargetDistance)
                 {
                     targetChild = o;
@@ -171,6 +159,10 @@ public class ZombiePenguin extends Zombie
                 }
             }
             turnTowards(targetChild.getX(), targetChild.getY());
+        }
+        if (isTouching(Child.class))
+        {
+            targetChild.takeDamage(1);
         }
     }
     
