@@ -15,9 +15,6 @@ public class ChildParam extends Icon
     
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
-    private boolean isClicked = false;
-    private GreenfootImage x;
-    private int index;
     
     public ChildParam(){
         for(int i=1; i<list.length;i++){
@@ -32,13 +29,6 @@ public class ChildParam extends Icon
             GreenfootImage image = getImage();
             clicked[i].scale(70,70);
         }
-    }
-    
-    public void setIcon(int x){
-        if(x<list.length){
-            setImage(list[x]);
-        }
-        index = x;
     }
     
     public void act(){
@@ -56,14 +46,31 @@ public class ChildParam extends Icon
                if(other != this)
               {
                  other.setClicked(false);
+                 other.reset();
               }
             }
             this.setClicked(true);
+            setValue();
         }
     }
     
-    public void setClicked(boolean x){
-        isClicked = x;
+    public void setIcon(int x){
+        if(x<list.length){
+            setImage(list[x]);
+        }
+        index = x;
+    }
+    
+    public void setValue(){
+        if(index == 1){
+            value = 20;
+        }
+        else if(index == 2){
+            value = 25;
+        }
+        else{
+            value = 30;
+        }
     }
     
 }

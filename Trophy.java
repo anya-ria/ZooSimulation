@@ -33,4 +33,5 @@ public class Trophy extends Icon
     public void setAchieved(){
         unlock = true;
     }
+    
 }

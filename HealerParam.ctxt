@@ -2,6 +2,11 @@
 comment0.target=HealerParam
 comment0.text=\n\ Write\ a\ description\ of\ class\ HealerParam\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ HealerParam\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment1.target=HealerParam()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=x
+comment3.target=void\ setIcon(int)
+comment4.params=
+comment4.target=void\ setValue()
+numComments=5
