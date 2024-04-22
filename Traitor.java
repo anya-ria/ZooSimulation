@@ -2,10 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * The traitor is a child that no longer wants to cooperate with other children.
- * This character will imitate all other characters' attacks
+ * <li> This character will imitate all other characters' attacks.
+ * <li> Also has his own special move: Ground Pound
  * 
- * @author Anya Shah | Animations
- * @author Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Functions
  * @version 2024/4/8
  */
 public class Traitor extends Child

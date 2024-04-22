@@ -3,10 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ZombiePenguin here.
  * 
- * @author (your name) 
+ * @author <li> Luke Xiao -- Movements
+ * @author <li> Anya Shah -- Animations
  * @version (a version number or a date)
  */
-public class ZombiePenguin extends Animal
+public class ZombiePenguin extends Zombie
 {
     // Zombie penguin sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];

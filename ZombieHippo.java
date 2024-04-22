@@ -3,13 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ZombieHippo here.
  * 
- * @author
- * Movements: Luke Xiao
- * Animations: Anya Shah
+ * @author <li> Luke Xiao -- Movements
+ * @author <li> Anya Shah -- Animations
  * 
  * @version (2024.04.18)
  */
-public class ZombieHippo extends Animal
+public class ZombieHippo extends Zombie
 {
     // Zombie hippo sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];
