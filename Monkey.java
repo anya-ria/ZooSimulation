@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Monkey here.
  * 
@@ -25,9 +24,9 @@ public class Monkey extends Animal
     private double maxSpeed;
     private int direction;
 
-    public Monkey(){
+    public Monkey()
+    {
         super(100);
-
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
@@ -51,22 +50,23 @@ public class Monkey extends Animal
         {
             walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
         }
-        
+
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;
     }
-    
+
     /**
      * Act - do whatever the Monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        if(!super.update()) return;
         moveAround();
         animate();
     }
-    
+
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -105,60 +105,40 @@ public class Monkey extends Animal
         }
     }
     
-    public void throwBananas()
-    {
-        
-    }
-    
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
             if(animIndex >= maxIndex) {
                 animIndex = 0;
             }
-            if(right && away){
+            if(right && away)
+            {
                 setImage(walkRight[animIndex]);
-
             } 
-            else if (!right && !away){
-
+            else if (!right && !away)
+            {
+                setImage(walkLeft[animIndex]);
             }
-            else if(left) {
-
+            else if(left) 
+            {
                 setImage(walkLeft[animIndex]);
             } 
-            else if(right && !away){
+            else if(right && !away)
+            {
                 setImage(walkToward[animIndex]); 
             } 
-            else {
+            else 
+            {
                 setImage(walkAway[animIndex]);
             }
-
-        } 
-            else if(toward){
-                setImage(walkToward[animIndex]);
-            }
-
+        }
+        else if(toward)
+        {
+            setImage(walkToward[animIndex]);
+        }
         else {
             animCounter--;
         }
     }
-
-    /*
-     * if (getOneObjectAtOffset(0, (int)(direction * getImage().getHeight()/2 + (int)(direction * speed)), Animal.class) == null)
-    {
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-    if (direction == -1 && getY() >= 350)
-    {
-    direction = direction * -1;
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-    else if (direction == 1 && getY() <= 5)
-    {
-    direction = direction * -1;
-    setLocation (getX(), getY() + (int)(speed*direction));
-    }
-     */
 }

@@ -3,8 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ZombieHippo here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author
+ * Movements: Luke Xiao
+ * Animations: Anya Shah
+ * 
+ * @version (2024.04.18)
  */
 public class ZombieHippo extends Animal
 {
@@ -18,6 +21,9 @@ public class ZombieHippo extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
+    
+    // Movement Variables
+    private int direction;
     
     public ZombieHippo() {
         super(100);
@@ -51,20 +57,61 @@ public class ZombieHippo extends Animal
         animCounter = animDelay;
     }
     
+    private void charge()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(4);
+        if (Greenfoot.getRandomNumber(240) < 10)
+        {
+            setRotation(direction);
+            // The initial orientation of the images are facing RIGHT
+            if (direction >= 315 || direction <= 45) // Right
+            {
+                away = true;
+                right = true;
+            }
+            if (direction > 45 && direction <= 135) // Down
+            {   
+                right = true;
+                away = false;
+            }
+            if (direction > 135 && direction <= 225) // Left
+            {
+                right = false;
+                away = false;
+            }
+            if (direction > 225 && direction <= 315) // Up
+            {
+                right = false;
+                away = true;
+            }
+        }
+        if (getX() <= 20 || getX() >= 1004)
+        {
+            setRotation(180);
+        }
+        if (getY() <= 20 || getY() >= 780)
+        {
+            setRotation(180);
+        }
+    }
+    
     /**
      * Act - do whatever the ZombieHippo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        if(!super.update()) return;
         animate();
+        charge();
     }
     
-    private void animate() {
+    protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
+            if(animIndex >= maxIndex){
                 animIndex = 0; 
             }
             if(right){

@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import java.util.Random;
 /**
  * The Entity is an abstract class that encompasses animals and children.
  * <li> manages the hp mechanics
@@ -10,18 +11,24 @@ import java.util.List;
  */
 public abstract class Entity extends SuperSmoothMover
 {
-    protected int maxHp;
+    private int maxHp;
     protected int hp;
-    private int[] wound = new int[] {0, 0};
+    protected int[] wound = new int[] {0, 0};
     private SuperStatBar hpBar;
     
-    protected double tempVx = 0; // temporary vx added from push
-    protected double tempVy = 0; // temporary vy added from push
-    protected double friction = 0.95;
+    // physics variables
+    private double tempVx = 0; // temporary vx added from push
+    private double tempVy = 0; // temporary vy added from push
+    private double friction = 0.95;
     
-    protected double slippedDuration = 0;
+    // stun due to slipping on a banana or anything else
+    private double slippedDuration = 0;
     
-    protected boolean awake = true;
+    // euphemism for "is this dead"
+    private boolean awake = true;
+    
+    // might as well declare this for all subclasses
+    protected Random rand = new Random();
     
     /**
      * When constructed, sets the max hp and the hp
@@ -32,12 +39,16 @@ public abstract class Entity extends SuperSmoothMover
         hp = maxHp;
     }
     
-    
-    public void act(){
-        if(wound[1]>0){
-            if(wound[1]%30==0) takeDamage(wound[0]);
-            wound[1]--;
-        }
+    /**
+     * updates all stuns, wounds and other stuff
+     * @return boolean -- whether this should continue acting this cycle
+     */
+    public boolean update(){
+        if(!isAwake()) return false;
+        updateWound();
+        if(checkSlipping()) return false;
+        animate();
+        return true;
     }    
     
     /**
@@ -49,6 +60,8 @@ public abstract class Entity extends SuperSmoothMover
         getWorld().addObject(hpBar, 0, 0);
     }
     
+    // ********************* ANIMATION SECTION **************************
+    protected abstract void animate();
     
     // *********************** DAMAGE SECTION ***************************
     /**
@@ -66,6 +79,7 @@ public abstract class Entity extends SuperSmoothMover
                 nearestEnemy = (Entity) enemiesInRange.get(0);
                 if(!nearestEnemy.isAwake()){
                     enemiesInRange.remove(0);
+                    nearestEnemy = null;
                     continue;
                 }
                 enemyDetails[1] = i;
@@ -98,9 +112,16 @@ public abstract class Entity extends SuperSmoothMover
     public void getWounded(int dmg, int duration){
         if(dmg > wound[0]){ // replace the previous wound stack
             wound[0] = dmg; wound[1] = duration;
-        } else { // extend the wound
-            wound[1] += duration;
+        } else { // refresh the wound and increase damage
+            wound[0]++;
+            wound[1] = duration;
         }
+    }
+    private void updateWound(){
+        if(wound[1]>0){
+            if(wound[1]%30==0) takeDamage(wound[0]);
+            wound[1]--;
+        }        
     }
     /**
      * heals the entity, but also checks
@@ -115,7 +136,7 @@ public abstract class Entity extends SuperSmoothMover
             hpBar.update(hp);
         }
     }
-    public void die(){
+    protected void die(){
         setRotation(90);
         awake = false;
         hpBar.hide();
@@ -123,7 +144,7 @@ public abstract class Entity extends SuperSmoothMover
     
     
     // ********************* PHYSICS SECTION *********************
-       /**
+    /**
      * @override
      * Overidden from SuperSmoothMover, now has temporary velocities
      * 
@@ -184,5 +205,16 @@ public abstract class Entity extends SuperSmoothMover
     }
     public boolean isAwake(){
         return awake;
+    }
+    private boolean checkSlipping(){
+        if(slippedDuration>0){
+            slippedDuration--;
+            setLocation(getX(), getY());
+            return true;
+        } else if(slippedDuration==0){
+            setRotation(0);
+            slippedDuration--; // effectively only makes this code run once
+        }        
+        return false;
     }
 }
