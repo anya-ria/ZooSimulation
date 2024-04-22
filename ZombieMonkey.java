@@ -4,14 +4,13 @@ import java.util.Random;
 /**
  * Write a description of class ZombieMonkey here.
  * 
- * @authors
- * Movements: Luke Xiao
- * Method "throwBananas": Lucas Fu
- * Animations: Anya Shah
+ * @author <li> Luke Xiao -- Movements
+ * @author <li> Anya Shah -- Animations
+ * @author <li> Lucas Fu -- ThrowBananas
  * 
  * @version (2024.04.18)
  */
-public class ZombieMonkey extends Animal
+public class ZombieMonkey extends Zombie
 {
     // Zombie monkey sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];

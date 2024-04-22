@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ZombieMonkey
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\n\ \n\ @authors\n\ Movements\:\ Luke\ Xiao\n\ Method\ "throwBananas"\:\ Lucas\ Fu\n\ Animations\:\ Anya\ Shah\n\ \n\ @version\ (2024.04.18)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\n\ @author\ <li>\ Lucas\ Fu\ --\ ThrowBananas\n\ \n\ @version\ (2024.04.18)\n
 comment1.params=
 comment1.target=ZombieMonkey()
 comment2.params=

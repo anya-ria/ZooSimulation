@@ -2,8 +2,8 @@
 /**
  * A class to provide static methods for calculations
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas 
+ * @version 2024/4/4
  */
 public class Utility  
 {

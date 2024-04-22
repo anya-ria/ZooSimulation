@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Achievement here.
  * 
- * @Vanessa
- * @
+ * @author Vanessa
+ * @version 2024/4/19
  */
 public class Achievement extends World
 {

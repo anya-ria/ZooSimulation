@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HealingEffect
-comment0.text=\n\ An\ effect\ that\ heals\ children\ whenever\ it\ appears.\ This\ effect\ is\ only\ used\n\ by\ the\ healer\n\ \n\ @author\ Lucas\n
+comment0.text=\r\n\ An\ effect\ that\ heals\ children\ whenever\ it\ appears.\ This\ effect\ is\ only\ used\r\n\ by\ the\ healer\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/10\r\n
 comment1.params=size\ level
 comment1.target=HealingEffect(int,\ int)
 comment1.text=\n\ creates\ a\ new\ healing\ effect\ that\ is\ the\ specified\ size\ and\ level\n\ @param\ size\ \ \ \ \ \ how\ big\ the\ effect\ will\ be\n\ @param\ level\ \ \ \ \ how\ much\ healing\ is\ to\ be\ dealt\n

@@ -35,19 +35,21 @@ public class Pencil extends Projectile
         super(vx, vy);
         dot = dmg;
         this.duration = duration;
-        //getImage().scale(20,20);  
+        getImage().scale(20,20);  
         
         animCounter = 0;
         initImages();
     }
     
-    // public void act() {
-        // animate();
-    // }
+    public void act() {
+        super.act();
+        animate();
+    }
     
     private void initImages() {
         for(int i = 0; i < pencil.length; i++) {
             pencil[i] = new GreenfootImage("pencilSprites/pencil" + i + ".png");
+            getImage().scale(20, 20);
         }
         
         animIndex = 0;
