@@ -25,6 +25,7 @@ public abstract class Effect extends SuperSmoothMover
         currentActTime = allActs[0];
         this.sound = sound;
     }
+    
     /**
      * constructs an effect that is in the middle of its lifespan 
      */
@@ -33,6 +34,7 @@ public abstract class Effect extends SuperSmoothMover
         currentPhase = phase;
         currentActTime = actTime;
     }
+    
     /**
      * manages the fade effect
      */
@@ -43,6 +45,7 @@ public abstract class Effect extends SuperSmoothMover
         int transparency = (int)(255*percent);
         image.setTransparency(transparency);
     }
+    
     public void act(){
         switch(currentPhase){
             case 0:

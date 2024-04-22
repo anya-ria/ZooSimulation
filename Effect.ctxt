@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Effect
-comment0.text=\r\n\ Effects\ that\ control\ visuals,\ imported\ from\ another\ project\r\n\ \r\n\ @author\ Lucas\r\n
+comment0.text=\r\n\ Effects\ that\ control\ visuals\r\n\ \r\n\ @author\ Lucas\r\n
 comment1.params=sound\ image\ fadeIn\ duration\ fadeOut
 comment1.target=Effect(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int)
 comment1.text=\r\n\ constructs\ a\ new\ effect,\ with\ a\ sound,\ image,\ and\ 3\ timers\r\n
