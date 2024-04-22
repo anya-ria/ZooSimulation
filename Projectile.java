@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * General class of projectiles
+ * General class of projectiles, objects that fly at a constant speed
  * 
  * @author Lucas
  * @version 2024/4/9
  */
 public abstract class Projectile extends SuperSmoothMover
 {
-    protected double maxActs = 500;
-    protected double acts = 0;
+    private double maxActs = 500;
+    private double acts = 0;
     protected double vx, vy;
     protected boolean expired = false;
     private int downTime = 12;

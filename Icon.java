@@ -8,6 +8,7 @@ import java.util.*;
  */
 public abstract class Icon extends Actor
 {
+
     
     /**
      * Act - do whatever the Icons wants to do. This method is called whenever
@@ -38,4 +39,5 @@ public abstract class Icon extends Actor
         isClicked = x;
     }
     
+
 }

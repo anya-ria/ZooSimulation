@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Achievement here.
  * 
- * @Vanessa
- * @
+ * @author Vanessa
+ * @version 2024/4/19
  */
 public class Achievement extends World
 {
@@ -31,7 +31,7 @@ public class Achievement extends World
     }
     
     
-    public void addCups(){
+    private void addCups(){
         for(int i=0; i<arr.length;i++){
             arr[i] = new Trophy();
             addObject(arr[i], 285, (92*i+260));

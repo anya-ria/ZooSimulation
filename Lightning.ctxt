@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Lightning
+ HEAD
 comment0.text=\n\ Write\ a\ description\ of\ class\ Lightning\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=sound\ image\ fadeIn\ duration\ fadeOut\ actTime\ phase
 comment1.target=Lightning(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int,\ int,\ int)
@@ -9,3 +10,11 @@ comment2.text=\n\ Act\ -\ do\ whatever\ the\ Lightning\ wants\ to\ do.\ This\ me
 comment3.params=
 comment3.target=void\ sound()
 numComments=4
+
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Lightning\ here.\r\n\ \r\n\ @author\ Megan\ \ \r\n\ @version\ April\ 2024\r\n
+comment1.params=sound\ image\ fadeIn\ duration\ fadeOut
+comment1.target=Lightning(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+numComments=3
+ main

@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Fighter
+ HEAD
 comment0.text=\n\ Fights\ zombies...\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
+
+comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
+main
 comment1.params=
 comment1.target=Fighter()
 comment2.params=
