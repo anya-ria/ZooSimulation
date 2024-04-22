@@ -152,10 +152,10 @@ public class Traitor extends Child
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
                 case 0:
-                    throwBanana((int)direction, 4);
+                    throwBanana((int)direction, 6);
                     break;
                 case 1:
-                    throwPencil((int)direction, 4);
+                    throwPencil((int)direction, 6);
                     break;
             }
             punching = true;

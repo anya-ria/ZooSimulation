@@ -30,9 +30,6 @@ public class ZombieHippo extends Zombie
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
-    }
-    
-    public void addedToWorld(World world){
         setImage("zombieHippoWalkToward/walkToward1.png");
     }
     
