@@ -1,21 +1,32 @@
 #BlueJ class context
 comment0.target=Traitor
+HEAD
  HEAD
 
 comment0.text=\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
 comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
  main
 comment0.text=\n\ The\ traitor\ is\ a\ fighter\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ This\ character\ will\ throw\ bananas\ and\ pencils,\ and\ punch\ other\ children\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
+
+comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
+main
 comment1.params=
 comment1.target=Traitor()
+comment10.params=
+comment10.target=void\ punch()
+comment11.params=
+comment11.target=void\ revive()
+comment12.params=
+comment12.target=void\ die()
+comment12.text=\r\n\ @override,\ gives\ traitor\ ability\ to\ revive\ once\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ initImages()
 comment4.params=
 comment4.target=void\ animate()
-comment5.params=
-comment5.target=void\ chaseChildren()
+comment5.params=enemyDetails
+comment5.target=void\ chaseChildren(double[])
 comment6.params=direction\ speed
 comment6.target=void\ throwPencil(int,\ int)
 comment7.params=direction\ speed
@@ -23,5 +34,5 @@ comment7.target=void\ throwBanana(int,\ int)
 comment8.params=
 comment8.target=void\ selfHeal()
 comment9.params=
-comment9.target=void\ punch()
-numComments=10
+comment9.target=void\ smash()
+numComments=13
