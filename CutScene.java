@@ -20,11 +20,15 @@ public class CutScene extends World
         super(1024, 800, 1); 
 
         setBackground("zoo.jpg");
-        setPaintOrder (Effect.class, Animal.class);
+        setPaintOrder (Icon.class, Effect.class, Animal.class);
         actCount = 0;
 
         addObject(new Transition(null, null, 0, 120, 60), 512, 400);
         spawnAnimals();
+        
+        SkipButton skipButton = new SkipButton();
+        addObject(skipButton,79,739);
+        skipButton.setLocation(952,754);
     }
 
     public void act(){        
