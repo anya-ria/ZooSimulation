@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=Effect
-comment0.text=\n\ Effects\ that\ control\ visuals\n\ \n\ @author\ Lucas\n
+comment0.text=\r\n\ Effects\ that\ control\ visuals\r\n\ \r\n\ @author\ Lucas\r\n
 comment1.params=sound\ image\ fadeIn\ duration\ fadeOut
 comment1.target=Effect(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int)
-comment1.text=\n\ constructs\ a\ new\ effect,\ with\ a\ sound,\ image,\ and\ 3\ timers\n
+comment1.text=\r\n\ constructs\ a\ new\ effect,\ with\ a\ sound,\ image,\ and\ 3\ timers\r\n
 comment2.params=sound\ image\ fadeIn\ duration\ fadeOut\ actTime\ phase
 comment2.target=Effect(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int,\ int,\ int)
-comment2.text=\n\ constructs\ an\ effect\ that\ is\ in\ the\ middle\ of\ its\ lifespan\ \n
+comment2.text=\r\n\ constructs\ an\ effect\ that\ is\ in\ the\ middle\ of\ its\ lifespan\ \r\n
 comment3.params=isFadeIn\ timeLeft\ totalFadeTime
 comment3.target=void\ fade(boolean,\ int,\ int)
-comment3.text=\n\ manages\ the\ fade\ effect\n
+comment3.text=\r\n\ manages\ the\ fade\ effect\r\n
 comment4.params=
 comment4.target=void\ act()
 numComments=5
