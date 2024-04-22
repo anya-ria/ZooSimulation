@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class AchieveButton here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Megan Lee
+ * @version April 2024
  */
 public class AchieveButton extends Icon
 {
