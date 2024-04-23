@@ -14,7 +14,7 @@ public class Customization extends World
     private ZombieParam z1, z2, z3;
     private HealerParam h1, h2;
     private FighterParam f1, f2;
-    Zoo game = new Zoo();
+    CutScene game = new CutScene();
     /**
      * Constructor for objects of class Customization.
      * 

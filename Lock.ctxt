@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Lock
+comment0.text=\n\ Write\ a\ description\ of\ class\ Lock\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Lock()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ setAchieved()
+comment4.params=
+comment4.target=boolean\ getUnlock()
+numComments=5

@@ -30,10 +30,6 @@ public class Regular extends Child
         double[] enemyDetails = detectNearestEntity(Animal.class, 400);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 200);
         runAway(enemyDetails); 
-        if(hp == 0){
-            getWorld().removeObject(this);
-            Zoo.setNumHealer(Zoo.getNumChild()-1);
-        }
     }
 
     private void initImages(){
@@ -85,7 +81,6 @@ public class Regular extends Child
                 walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
-
         animIndex = 0; 
         animDelay = 8; // # of acts in between each image
         animCounter = animDelay; 

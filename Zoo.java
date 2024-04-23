@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -16,10 +16,13 @@ public class Zoo extends World
 
     private GreenfootSound lightningS;
     private GreenfootImage lightningI;
+
     private int actCount;
+    private EndingScreen world = new EndingScreen();
     
     private static int numHealed = 0; //number of children healed
     private static int numHit = 0; //number of children get hit by banana
+    private static int numDead = 0;
     
     private static int numChildren = 5;
     private static int numHealer = 0;
@@ -56,8 +59,8 @@ public class Zoo extends World
         // }
 
         
-        lightningS = new GreenfootSound("lightning.mp3");
-        lightningI = new GreenfootImage("darkOverlay.png");
+        setPaintOrder (Lightning.class, Banana.class, Pencil.class);
+        
         setBackground("zoo.jpg");
     }
     
@@ -66,6 +69,7 @@ public class Zoo extends World
         actCount++;
         spawn();
         checkAchi();
+        checkEnd();
     }
     
     public void spawn(){
@@ -104,7 +108,8 @@ public class Zoo extends World
         }
         
         if (actCount % 600 == 0){
-            addObject(new Lightning(lightningS,lightningI,10,10,10), getWidth()/2, getHeight()/2);
+            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), new GreenfootImage("lightning1.png"), 1, 250, 5);
+            addObject(lightning, 512, 400);
         }
     }
     
@@ -126,8 +131,48 @@ public class Zoo extends World
         }
     }
     
+    public void checkEnd(){
+        if(numDead == numChildren){
+            Greenfoot.setWorld(world);
+            world.ending1();
+        }
+        if(numZombie == 0){
+            Greenfoot.setWorld(world);
+            world.ending2();
+        }
+        if(numZombie == 0){
+            Greenfoot.setWorld(world);
+            world.ending2();
+        }
+    }
+    
+    public void check(){
+        ArrayList<Regular> y = (ArrayList<Regular>)getObjects(Regular.class);
+        for(Regular other: y)
+        {
+            if(!other.isAwake())
+            {
+                numDead++;
+            }
+        }
+    }
+    
     public static int healed(){
         return numHealed++;
+    }
+    
+    public static int dead(){
+        return numDead++;
+    }
+
+    public int getdead(){
+        int x = numDead;
+        return x;
+    }
+    
+    public int setDead(int x){
+        numDead = x;
+        return numDead;
     }
     
     public static int hit(){

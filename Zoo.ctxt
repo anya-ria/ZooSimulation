@@ -5,9 +5,19 @@ comment1.params=
 comment1.target=Zoo()
  HEAD
 comment10.params=x
-comment10.target=void\ setNumFighter(int)
-comment11.params=x
-comment11.target=void\ setNumZombie(int)
+comment10.target=int\ setDead(int)
+comment11.params=
+comment11.target=int\ hit()
+comment12.params=x
+comment12.target=void\ setNumChild(int)
+comment13.params=
+comment13.target=int\ getNumChild()
+comment14.params=x
+comment14.target=void\ setNumHealer(int)
+comment15.params=x
+comment15.target=void\ setNumFighter(int)
+comment16.params=x
+comment16.target=void\ setNumZombie(int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
@@ -15,12 +25,13 @@ comment3.target=void\ spawn()
 comment4.params=
 comment4.target=void\ checkAchi()
 comment5.params=
-comment5.target=int\ healed()
+comment5.target=void\ checkEnd()
 comment6.params=
-comment6.target=int\ hit()
-comment7.params=x
-comment7.target=void\ setNumChild(int)
+comment6.target=void\ check()
+comment7.params=
+comment7.target=int\ healed()
 comment8.params=
+ Updated upstream
 comment8.target=int\ getNumChild()
 comment9.params=x
 comment9.target=void\ setNumHealer(int)
@@ -30,3 +41,9 @@ comment2.params=a\ b
 comment2.target=double\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
 numComments=3
  main
+
+comment8.target=int\ dead()
+comment9.params=
+comment9.target=int\ getdead()
+numComments=17
+ Stashed changes

@@ -37,6 +37,26 @@ public class EndingScreen extends World
         timeElasped();
     }
     
+    /**
+     * Call "Game Over" and stop the game. 
+     */
+    public void ending1(){
+        gameTimer.mark();
+        //Greenfoot.stop();
+    }
+    
+    public void ending2(){
+        setBackground("end2.png");
+        gameTimer.mark();
+        //Greenfoot.stop();
+    }
+    
+    public void ending3(){
+        setBackground("end3.png");
+        gameTimer.mark();
+        //Greenfoot.stop();
+    }
+    
     public void timeElasped(){
         int x = gameTimer.millisElapsed()/1000;
         Label gameOverLabel3 = new Label(x+" second", 48);
