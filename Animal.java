@@ -9,11 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Animal extends Entity
 {
     protected int direction;
-    
-    public boolean update(){
-        return super.update();
-    }
-    
+
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the child can have
@@ -22,10 +18,17 @@ public abstract class Animal extends Entity
         super(maxHp);
         enableStaticRotation();
     }
-
-    // still needs to be implemented
+    
     public void zombify()
     {
-        
+        if(this instanceof Hippo) getWorld().addObject(new ZombieHippo(), getX(), getY());
+        if(this instanceof Monkey) getWorld().addObject(new ZombieMonkey(), getX(), getY());
+        if(this instanceof Penguin) getWorld().addObject(new ZombiePenguin(), getX(), getY());
+        getWorld().removeObject(this);
+    }
+    
+    protected void die(){
+        disableStaticRotation();
+        super.die();
     }
 }

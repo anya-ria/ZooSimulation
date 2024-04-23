@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=HealingBall
-comment0.text=\n\ The\ healing\ ball\ is\ a\ projectile\ shot\ by\ the\ healer\ to\ heal\ children.\n\ Creates\ a\ healing\ effect\ when\ expiring.\n\ \n\ @author\ Lucas\ \n\ @version\ 2024/4/10\n
+comment0.text=\r\n\ The\ healing\ ball\ is\ a\ projectile\ shot\ by\ the\ healer\ to\ heal\ children.\r\n\ Creates\ a\ healing\ effect\ when\ expiring.\r\n\ \r\n\ @author\ Lucas\ \r\n\ @version\ 2024/4/10\r\n
 comment1.params=angle\ speed\ healing
 comment1.target=HealingBall(int,\ double,\ int)
-comment1.text=\n\ constructs\ a\ new\ HealingBall\ with\ a\ speed,\ direction,\ and\ healing\ value\n\ @param\ angle\ \ \ \ the\ direction\ in\ degrees\n\ @param\ speed\ \ \ \ the\ magnitude\ of\ speed\n\ @param\ healing\ \ the\ healing\ value\n
+comment1.text=\r\n\ constructs\ a\ new\ HealingBall\ with\ a\ speed,\ direction,\ and\ healing\ value\r\n\ @param\ angle\ \ \ \ the\ direction\ in\ degrees\r\n\ @param\ speed\ \ \ \ the\ magnitude\ of\ speed\r\n\ @param\ healing\ \ the\ healing\ value\r\n
 comment2.params=vx\ vy\ healing
 comment2.target=HealingBall(double,\ double,\ int)
-comment2.text=\n\ constructs\ a\ new\ HealingBall\ directly\ using\ vx,\ vy,\ and\ healing\n\ @param\ vx\ \ \ \ \ \ \ the\ x-speed\n\ @param\ vy\ \ \ \ \ \ \ the\ y-speed\n\ @param\ healing\ \ the\ healing\ value\n
+comment2.text=\r\n\ constructs\ a\ new\ HealingBall\ directly\ using\ vx,\ vy,\ and\ healing\r\n\ @param\ vx\ \ \ \ \ \ \ the\ x-speed\r\n\ @param\ vy\ \ \ \ \ \ \ the\ y-speed\r\n\ @param\ healing\ \ the\ healing\ value\r\n
 comment3.params=
 comment3.target=void\ expire()
 comment3.text=\r\n\ Creates\ a\ new\ HealingEffect\ when\ this\ expires\r\n
