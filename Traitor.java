@@ -7,7 +7,7 @@ import java.util.List;
  * 
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Functions
- * @version 2024/4/8
+ * @version 04/08/2024
  */
 public class Traitor extends Child
 {

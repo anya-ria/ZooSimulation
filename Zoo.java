@@ -33,6 +33,14 @@ public class Zoo extends World
         addObject(new Fighter(), 800, 150);
         addObject(new Hippo(), 850, 150);
         addObject(new Hippo(), 750, 250);
+        addObject(new Penguin(), 750, 600);
+        addObject(new Penguin(), 850, 650);
+        addObject(new Monkey(), 150, 50);
+        addObject(new Monkey(), 250, 250);
+        
+        // for(Animal a: getObjects(Animal.class)){
+            // a.zombify();
+        // }
         
         setBackground("zoo.jpg");
     }

@@ -4,11 +4,11 @@ import java.util.Random;
 /**
  * Write a description of class ZombieMonkey here.
  * 
- * @author <li> Luke Xiao -- Movements
- * @author <li> Anya Shah -- Animations
- * @author <li> Lucas Fu -- ThrowBananas
+ * @author <li> Luke Xiao | Movements
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu | ThrowBananas
  * 
- * @version (2024.04.18)
+ * @version 04/18/2024
  */
 public class ZombieMonkey extends Zombie
 {
@@ -72,20 +72,21 @@ public class ZombieMonkey extends Zombie
                     throwBanana((int)direction, 4);
                     break;
                 case 1:
-                    throwBanana((int)direction, 4);
+                    throwBanana((int)direction, 8);
                     break;
             }
             throwCooldown = maxThrowCooldown;
         }
-        if(distance>=10 && distance<100 && hp>=100){
-            getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
-            for(Entity e: getObjectsInRange(150, Entity.class)){
-                double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
-                double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
-                e.push(vx, vy);
-            }
-            stunDuration = 200;
-        }
+        // // this isn't a banana
+        // if(distance>=10 && distance<100 && hp>=100){
+            // getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+            // for(Entity e: getObjectsInRange(150, Entity.class)){
+                // double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
+                // double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
+                // e.push(vx, vy);
+            // }
+            // stunDuration = 200;
+        // }
         throwCooldown--;
         if(distance < 10){
             return;
