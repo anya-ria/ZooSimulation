@@ -100,25 +100,21 @@ public class ZombieMonkey extends Zombie
             {
                 away = true;
                 right = true;
-                //sliding = true;
             }
             if (direction > 45 && direction <= 135)
             {   
                 right = true;
                 away = false;
-                //sliding = true;
             }
             if (direction > 135 && direction <= 225)
             {
                 right = false;
                 away = false;
-                //sliding = true;
             }
             if (direction > 225 && direction <= 315)
             {
                 right = false;
                 away = true;
-                //sliding = true;
             }
         }
         if (getX() <= 20 || getX() >= 1004)
