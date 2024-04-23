@@ -32,7 +32,7 @@ public class Achievement extends World
     }
     
     
-    public void addCups(){
+    private void addCups(){
         for(int i=0; i<arr.length;i++){
             arr[i] = new Trophy();
             addObject(arr[i], 285, (92*i+260));

@@ -19,9 +19,10 @@ public class Peel extends Projectile
     }
     
     public void act(){
-        super.act();
         if(expiring){
             animate();
+        } else {
+            super.act();
         }
     }
     
@@ -52,6 +53,9 @@ public class Peel extends Projectile
         }
     }
     
+    /**
+     * Makes the child that touched this slip, expiring this
+     */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){

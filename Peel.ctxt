@@ -11,6 +11,7 @@ comment4.params=
 comment4.target=void\ animate()
 comment5.params=
 comment5.target=void\ detectCollision()
+comment5.text=\r\n\ Makes\ the\ child\ that\ touched\ this\ slip,\ expiring\ this\r\n
 comment6.params=
 comment6.target=void\ expire()
 numComments=7

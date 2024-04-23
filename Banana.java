@@ -63,7 +63,9 @@ public class Banana extends Projectile
             animCounter--;
         }
     }
-    
+    /**
+     * Does damage and minor pushing to the child touching this, expiring this
+     */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
@@ -72,6 +74,9 @@ public class Banana extends Projectile
             expired = true;
         }
     }
+    /**
+     * Creates a peel when expired
+     */
     protected void expire(){
         getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
         getWorld().removeObject(this);

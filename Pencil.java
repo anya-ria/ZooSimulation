@@ -71,6 +71,9 @@ public class Pencil extends Projectile
         }
     }
     
+    /**
+     * Wounds the touched entity when touching them, also expires this
+     */
     protected void detectCollision(){
         Entity touched = (Entity) getOneIntersectingObject(Entity.class);
         if(touched!=null&&touched.isAwake()){
