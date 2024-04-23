@@ -5,4 +5,5 @@ comment1.params=
 comment1.target=Achievement()
 comment2.params=
 comment2.target=void\ addCups()
+comment2.text=\r\n\ Adds\ the\ achievement\ cups\ to\ the\ achievement\ screen\r\n
 numComments=3

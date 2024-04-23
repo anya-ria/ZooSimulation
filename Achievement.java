@@ -9,12 +9,6 @@ import java.util.ArrayList;
  */
 public class Achievement extends World
 {
-
-    /**
-     * Constructor for objects of class Achievement.
-     * 
-     */
-
     private Label title, achi1, achi2, achi3, achi4, achi5, achi6;
     private Trophy[] arr = new Trophy[5];
     private HomeButton returnKey;
@@ -31,7 +25,9 @@ public class Achievement extends World
         addCups();
     }
     
-    
+    /**
+     * Adds the achievement cups to the achievement screen
+     */
     private void addCups(){
         for(int i=0; i<arr.length;i++){
             arr[i] = new Trophy();
@@ -40,6 +36,4 @@ public class Achievement extends World
         arr[0].setAchieved();
         arr[1].setAchieved();
     }
-
-
 }
