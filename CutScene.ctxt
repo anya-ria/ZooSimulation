@@ -8,13 +8,8 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawnAnimals()
-
 comment3.text=\n\ Spawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens\n
-numComments=4
-
-comment3.text=\r\n\ Spawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens\r\n
 comment4.params=
 comment4.target=void\ removeAnimals()
-comment4.text=\r\n\ Removes\ all\ animals\ from\ screen\ to\ disappear\ during\ special\ effects\r\n
+comment4.text=\n\ Removes\ all\ animals\ from\ screen\ to\ disappear\ during\ special\ effects\n
 numComments=5
- main

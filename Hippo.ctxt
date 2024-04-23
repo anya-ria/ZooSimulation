@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=Hippo
- HEAD
-comment0.text=\n\ Write\ a\ description\ of\ class\ Hippo\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @version\ 04/12/2024\n
-
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Hippo\ here.\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/12/2024\r\n
- main
+comment0.text=\n\ Write\ a\ description\ of\ class\ Hippo\ here.\n\ \n\ @author\ Luke\ Xiao\ |\ Functions\n\ @author\ Anya\ Shah\ |\ Animations\n\ @version\ 04/12/2024\n
 comment1.params=
 comment1.target=Hippo()
 comment2.params=
@@ -15,5 +11,7 @@ comment3.text=\n\ Act\ -\ do\ whatever\ the\ Hippo\ wants\ to\ do.\ This\ method
 comment4.params=
 comment4.target=void\ moveAround()
 comment5.params=
-comment5.target=void\ animate()
-numComments=6
+comment5.target=void\ charge()
+comment6.params=
+comment6.target=void\ animate()
+numComments=7

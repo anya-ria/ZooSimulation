@@ -1,17 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
+ * Icon abstract class
  * 
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo 
+ * @version 2024/04
  */
 public abstract class Icon extends Actor
 {
-    /**
-     * Act - do whatever the Icons wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     protected boolean isClicked = false;
     protected int index;
     protected int value;

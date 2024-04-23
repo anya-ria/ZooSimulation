@@ -2,48 +2,62 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import java.util.*;
 /**
- * Write a description of class Customization here.
+ * Customization screen where plays can set the initial number of Children, Fighers, Healers and Zombies in Zoo
+ * Different values may lead to different endings
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo | Functions
+ * @version 2024/04
  */
 public class Customization extends World
 {
+    //Init instances 
     private StartButton startButton;
-    private ChildParam c1, c2, c3;
-    private ZombieParam z1, z2, z3;
-    private HealerParam h1, h2;
+    private ChildParam c1, c2, c3; //3 choices
+    private ZombieParam z1, z2, z3; 
+    private HealerParam h1, h2; //2 choices
     private FighterParam f1, f2;
+    
     CutScene game = new CutScene();
-    /**
-     * Constructor for objects of class Customization.
-     * 
-     */
     public Customization()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
+        
+        //Add start button 
         startButton = new StartButton();
         addObject(startButton,getWidth()/2,760);
+        
         setBackground("userSelectScreen.jpg");
-        prepare();
+        
+        createParams();
     }
 
+    
+    /**
+     * When 'Start' button gets pressed, set initial number of each actor in Zoo
+     * Go to CutScene world and play sound effect
+     */
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
             setValue();
+            //Go to CutScene
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
     
+    /**
+     * A method that checks which button player clicked for each variable. 
+     * Set the initial number of Children, Fighter, Healer and Zombie according to player's choice. 
+     * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
+     */
     public void setValue(){
         ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
         for(ChildParam other: y)
         {
             if(other.getClicked())
             {
-                Zoo.setNumChild(other.getValue());
+                Zoo.setNumChild(other.getValue()); //Set number of Children in Zoo according player's choice
             }
         }
         ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
@@ -73,10 +87,9 @@ public class Customization extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Create choices (buttons) for each variable in the Customization screen
      */
-    private void prepare()
+    private void createParams()
     {
         addObject(new ChildParam(1),getWidth()/2-100,318);
         addObject(new ChildParam(2),getWidth()/2,318);

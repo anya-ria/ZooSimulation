@@ -1,36 +1,39 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Collections here.
+ * Show a list of endings
+ * Unlocked - completed
+ * Locked - not completed yet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo | Functions
+ * @version 2024/04
  */
 public class Collections extends World
 {
-
-    /**
-     * Constructor for objects of class Collections.
-     * 
-     */
-    private static boolean end1 = false; //heal 15 children
-    private static boolean end2 = false; //get hit by 10 bananas
-    private static boolean end3 = false;
+    //Booleans that detect if an ending is completed 
+    private static boolean end1 = false; //all children were killed
+    private static boolean end2 = false; //zombie animals were defeated 
+    private static boolean end3 = false; //boss level was defeated 
     
     private HomeButton returnKey;
     private Lock[] arr = new Lock[3];
 
     public Collections()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1);  
         setBackground("collectionsScreen.png");
-
+        
+        //Add return button
         returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);
+        
         addLocks();
     }
 
+    /**
+     * If an endng is completed, shows "unlock" icon 
+     */
     public void act(){
         if(end1){
             arr[0].setAchieved();
@@ -43,6 +46,9 @@ public class Collections extends World
         }
     }
     
+    /**
+     * Adds the locks to the Collections screen
+     */
     private void addLocks(){
         for(int i=0; i<arr.length;i++){
             arr[i] = new Lock();
@@ -50,16 +56,14 @@ public class Collections extends World
         }
     }
     
+    //Static methods that are called when an ending is completed (change boolean to true)
     public static void unlockEnd1(){
         end1 = true;
     }
-    
     public static void unlockEnd2(){
         end2 = true;
     }
-    
     public static void unlockEnd3(){
         end3 = true;
     }
-    
 }

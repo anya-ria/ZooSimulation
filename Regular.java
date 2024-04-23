@@ -15,6 +15,7 @@ public class Regular extends Child
     private boolean right, left, away, toward;
     
     private int childNum;
+    private boolean check = false;
 
     public Regular(){
         super(100);
@@ -148,5 +149,13 @@ public class Regular extends Child
         else {
             animCounter--; 
         }
+    }
+    
+    public boolean getCheck(){
+        return check;
+    }
+    
+    public void setCheck(){
+        check = true;
     }
 }

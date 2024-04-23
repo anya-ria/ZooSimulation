@@ -1,62 +1,59 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.World;
 /**
- * Write a description of class EndingScreen here.
+ * Ending screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo
+ * @version 2024/04
  */
 public class EndingScreen extends World
 {
-
-    /**
-     * Constructor for objects of class EndingScreen.
-     * 
-     */
-    
-    private Label time;
-    private int timeElasped;
+    //Init button and timer
     private HomeButton homeButton = new HomeButton();
     private SimpleTimer gameTimer = new SimpleTimer();
     
+    private int timeElasped;
     public EndingScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
-        
-        time = new Label(timeElasped, 150);
-        //addObject(end, getWidth()/2, 200);
         
         homeButton.setLocation(72,754);
         addObject(new Healer(), 600, 200);
         
-        setBackground("end1.png");
-        
         gameTimer.mark();
-        
-        timeElasped();
     }
     
     /**
-     * Call "Game Over" and stop the game. 
+     * Call "Ending 1" and stop the game. 
      */
     public void ending1(){
-        gameTimer.mark();
+        setBackground("end1.png");
+        timeElasped();
         //Greenfoot.stop();
     }
     
+    /**
+     * Call "Ending 2" and stop the game. 
+     */
     public void ending2(){
         setBackground("end2.png");
-        gameTimer.mark();
+        timeElasped();
         //Greenfoot.stop();
     }
     
+    /**
+     * Call "Ending 3" and stop the game. 
+     */
     public void ending3(){
         setBackground("end3.png");
-        gameTimer.mark();
+        timeElasped();
         //Greenfoot.stop();
     }
     
+    /**
+     * Record and show the time used to complete the game
+     */
     public void timeElasped(){
         int x = gameTimer.millisElapsed()/1000;
         Label gameOverLabel3 = new Label(x+" second", 48);

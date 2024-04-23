@@ -1,49 +1,38 @@
 #BlueJ class context
 comment0.target=Zoo
-comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ The\ Zoo\:)\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ April\ 2024\n\ \ *\ \n\ Credits\:\ \n\ images\:\ \n\ \ children\:\ \n\ \ \ \ \ \ https\://\n\ \ \ \ \ \ author\:\ \n\ sounds\:\ \n\ \ lightning\:\n\ \ \ \ \ \ https\://\n\ \ \ \ \ \ author\:\ \n\ Code\:\ \n\ \n\ \ \ \ \ \ author\:\ Jordan\ Cohen\n\n\ Description\:\ \n\ \n\ Known\ bugs\:\n\ \n\ \n
 comment1.params=
 comment1.target=Zoo()
- HEAD
 comment10.params=x
-comment10.target=int\ setDead(int)
+comment10.target=void\ setNumChild(int)
 comment11.params=
-comment11.target=int\ hit()
+comment11.target=int\ getNumChild()
 comment12.params=x
-comment12.target=void\ setNumChild(int)
-comment13.params=
-comment13.target=int\ getNumChild()
+comment12.target=void\ setNumHealer(int)
+comment13.params=x
+comment13.target=void\ setNumFighter(int)
 comment14.params=x
-comment14.target=void\ setNumHealer(int)
-comment15.params=x
-comment15.target=void\ setNumFighter(int)
-comment16.params=x
-comment16.target=void\ setNumZombie(int)
+comment14.target=void\ setNumZombie(int)
+comment15.params=a\ b
+comment15.target=double\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawn()
+comment3.text=\n\ A\ method\ that\ spawn\ animals\ and\ children\ according\ to\ preset\ values\ in\ the\ Customization\ screen.\n\ If\ there\ is\ no\ preset\ value,\ then\ spawn\ default\ number\ of\ actors.\ \n
 comment4.params=
 comment4.target=void\ checkAchi()
+comment4.text=\n\ If\ an\ achievement\ is\ completed,\ called\ the\ static\ method\ to\ unlock\ achievement\n
 comment5.params=
 comment5.target=void\ checkEnd()
+comment5.text=\n\ If\ an\ ending\ is\ completed,\ called\ the\ static\ method\ to\ unlock\ ending\n
 comment6.params=
 comment6.target=void\ check()
+comment6.text=\n\ Count\ the\ number\ of\ dead\ children\n
 comment7.params=
 comment7.target=int\ healed()
 comment8.params=
- Updated upstream
-comment8.target=int\ getNumChild()
-comment9.params=x
-comment9.target=void\ setNumHealer(int)
-numComments=12
-
-comment2.params=a\ b
-comment2.target=double\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
-numComments=3
- main
-
 comment8.target=int\ dead()
 comment9.params=
-comment9.target=int\ getdead()
-numComments=17
- Stashed changes
+comment9.target=int\ hit()
+numComments=16

@@ -6,9 +6,5 @@ comment1.target=SmashEffect(int,\ int)
 comment1.text=\n\ creates\ a\ new\ smash\ effect\ that\ is\ the\ specified\ size\ and\ damage\n\ @param\ size\ \ \ \ how\ big\ the\ effect\ will\ be\ (diameter)\n\ @param\ dmg\ \ \ \ \ how\ much\ damage\ is\ to\ be\ dealt\n
 comment2.params=world
 comment2.target=void\ addedToWorld(greenfoot.World)
- HEAD
-comment2.text=\n\ @override\n
-
-comment2.text=\r\n\ @override\r\n\ Gets\ all\ touching\ children\ when\ added\ to\ world,\ making\ them\ take\ damage\r\n
- main
+comment2.text=\n\ @override\n\ Gets\ all\ touching\ children\ when\ added\ to\ world,\ making\ them\ take\ damage\n
 numComments=3
