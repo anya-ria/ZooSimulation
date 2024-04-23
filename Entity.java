@@ -120,6 +120,9 @@ public abstract class Entity extends SuperSmoothMover
             wound[1] = duration;
         }
     }
+    /**
+     * Updates the wound, taking damage if the wound timer is a multiple of 30 acts
+     */
     private void updateWound(){
         if(wound[1]>0){
             if(wound[1]%30==0) takeDamage(wound[0]);
@@ -178,8 +181,8 @@ public abstract class Entity extends SuperSmoothMover
             if(exactY<050) tempVy += 1;
             if(exactY>750) tempVy -= 1;
         }
-        // artificial temp velocity for zombies too, but a bit less
-        if(this instanceof Zombie){
+        // artificial temp velocity for animals too, but a bit less
+        if(this instanceof Animal){
             if(exactX<100) tempVx += 0.5;
             if(exactX>924) tempVx -= 0.5;
             if(exactY<050) tempVy += 0.5;
@@ -206,10 +209,20 @@ public abstract class Entity extends SuperSmoothMover
         setRotation(180);
         slippedDuration = 200;
     }
+    /**
+     * The Entity got pushed! Adds temporary x-velocity and y-velocity
+     * @param vx    x-velocity
+     * @param vy    y-velocity
+     */
     public void push(double vx, double vy){
         tempVx += vx;
         tempVy += vy;
     }
+    /**
+     * Pushes the entity at a fixed speed towards a direction
+     * @param angle     direction of push
+     * @param speed     speed of push
+     */
     public void push(int angle, double speed){
         push(Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
@@ -217,6 +230,10 @@ public abstract class Entity extends SuperSmoothMover
     public boolean isAwake(){
         return awake;
     }
+    /**
+     * Is this slipping?
+     * @return boolean -- whether this is slipping
+     */
     private boolean checkSlipping(){
         if(slippedDuration>0){
             slippedDuration--;

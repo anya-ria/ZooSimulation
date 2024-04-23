@@ -25,7 +25,7 @@ public class CutScene extends World
         setPaintOrder (Icon.class, Effect.class, Animal.class);
         actCount = 0;
 
-        addObject(new Transition(null, null, 0, 120, 60), 512, 400);
+        addObject(new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60), 512, 400);
         spawnAnimals();
         
         SkipButton skipButton = new SkipButton();
@@ -35,15 +35,15 @@ public class CutScene extends World
 
     public void act(){        
         if(actCount == 180){
-            Text teacherText1 = new Text(null, new GreenfootImage("teacherText1.png"), 20, 180, 20);
+            Effect teacherText1 = new Effect(null, new GreenfootImage("teacherText1.png"), 20, 180, 20);
             addObject(teacherText1, 512, 400); 
         }
         if(actCount == 380){
-            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), new GreenfootImage("lightning1.png"), 20, 260, 20);
+            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 300);
             addObject(lightning, 512, 400); 
         }
         if(actCount == 460){
-            Text teacherText2 = new Text(null, new GreenfootImage("teacherText2.png"), 20, 180, 20);
+            Effect teacherText2 = new Effect(null, new GreenfootImage("teacherText2.png"), 20, 180, 20);
             addObject(teacherText2, 512, 400); 
         }
         if(actCount == 680){
@@ -69,5 +69,13 @@ public class CutScene extends World
         addObject(new Penguin(), 750, 580);
         addObject(new Penguin(), 850, 630);
         addObject(new Penguin(), 950, 710);
+    }
+    /**
+     * Removes all animals from screen to disappear during special effects
+     */
+    public void removeAnimals(){
+        for(Animal a: getObjects(Animal.class)){
+            removeObject(a);
+        }
     }
 }

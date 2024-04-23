@@ -6,5 +6,9 @@ comment1.target=HealingEffect(int,\ int)
 comment1.text=\n\ creates\ a\ new\ healing\ effect\ that\ is\ the\ specified\ size\ and\ level\n\ @param\ size\ \ \ \ \ \ how\ big\ the\ effect\ will\ be\n\ @param\ level\ \ \ \ \ how\ much\ healing\ is\ to\ be\ dealt\n
 comment2.params=world
 comment2.target=void\ addedToWorld(greenfoot.World)
+ HEAD
 comment2.text=\n\ @override\n
+
+comment2.text=\r\n\ @override\r\n\ gets\ touching\ children,\ and\ heals\ them\r\n
+ main
 numComments=3

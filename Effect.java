@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Lucas
  */
-public abstract class Effect extends SuperSmoothMover
+public class Effect extends SuperSmoothMover
 {
     protected GreenfootImage image;
     protected int width, height;
@@ -47,17 +47,6 @@ public abstract class Effect extends SuperSmoothMover
     }
     
     public void act(){
-        switch(currentPhase){
-            case 0:
-                fade(true, currentActTime, allActs[0]);
-                break;
-            case 2:
-                fade(false, currentActTime, allActs[2]);
-                
-        }
-        currentActTime--;
-        // if the sound stopped playing, play it again
-        if(sound!=null && !sound.isPlaying()) sound.play();
         // if current phase is finished...
         if(currentActTime==0){
             // ...move onto next phase
@@ -74,6 +63,21 @@ public abstract class Effect extends SuperSmoothMover
             // reset act timer to act length of new phase
             currentActTime = allActs[currentPhase];
         }  
+        switch(currentPhase){
+            case 0:
+                fade(true, currentActTime, allActs[0]);
+                break;
+            case 1: 
+                image.setTransparency(255);
+                break;
+            case 2:
+                fade(false, currentActTime, allActs[2]);
+                break;
+                
+        }
+        currentActTime--;
+        // if the sound stopped playing, play it again
+        if(sound!=null && !sound.isPlaying()) sound.play();
         // remove this if it leaves the world boundaries
         if(getX()+width/2<0 || getX()-width/2>1024){
             getWorld().removeObject(this);

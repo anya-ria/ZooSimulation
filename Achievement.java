@@ -26,6 +26,12 @@ public class Achievement extends World
      * Constructor for objects of class Achievement.
      * 
      */
+
+    private Label title, achi1, achi2, achi3, achi4, achi5, achi6;
+    private Trophy[] arr = new Trophy[5];
+    private HomeButton returnKey;
+
+
     public Achievement()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,12 +44,18 @@ public class Achievement extends World
         addCups();
     }
     
+
+    /**
+     * Adds the achievement cups to the achievement screen
+     */
+
     private void addCups(){
         for(int i=0; i<arr.length;i++){
             arr[i] = new Trophy();
             addObject(arr[i], 285, (92*i+260));
         }
     }
+
     
     public void act(){
         if(achi0){
