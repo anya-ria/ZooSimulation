@@ -14,7 +14,6 @@ public class Lightning extends Effect
 
     public Lightning(GreenfootSound sound, GreenfootImage image, int fadeIn, int duration, int fadeOut){
         super(sound, image, fadeIn, duration, fadeOut);
-
         for(int i=1; i<4;i++) {
             lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
         }

@@ -49,8 +49,8 @@ public class Monkey extends Animal
         for(int i = 0; i < maxIndex; i++) 
         {
             walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
+            walkToward[i].scale((int)(walkToward[i].getWidth()*1.3),(int)(walkToward[i].getHeight()*1.3));
         }
-
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;

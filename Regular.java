@@ -18,7 +18,6 @@ public class Regular extends Child
 
     public Regular(){
         super(100);
-
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(3);
         maxIndex = walkAway.length;
@@ -31,6 +30,10 @@ public class Regular extends Child
         double[] enemyDetails = detectNearestEntity(Animal.class, 400);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 200);
         runAway(enemyDetails); 
+        if(hp == 0){
+            getWorld().removeObject(this);
+            Zoo.setNumHealer(Zoo.getNumChild()-1);
+        }
     }
 
     private void initImages(){

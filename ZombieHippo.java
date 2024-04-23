@@ -42,9 +42,11 @@ public class ZombieHippo extends Zombie
         }
         for(int i = 0; i < maxIndex; i++) {
             walkRight[i] = new GreenfootImage("zombieHippoWalkRight/walkRight" + i + ".png");
+            walkRight[i].scale(85,43);
         }
         for(int i = 0; i < maxIndex; i++) {
             walkLeft[i] = new GreenfootImage("zombieHippoWalkRight/walkRight" + i + ".png");
+            walkLeft[i].scale(85,43);
             walkLeft[i].mirrorHorizontally();
         }
         

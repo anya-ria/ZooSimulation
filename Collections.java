@@ -13,23 +13,15 @@ public class Collections extends World
      * Constructor for objects of class Collections.
      * 
      */
-    
-    private Label title, end1, end2, end3;
+
     private HomeButton returnKey;
     
     public Collections()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1);  
-        
-        end1 = new Label("Ending Collection", 100);
-        addObject(end1, getWidth()/2, 200);
-        end1 = new Label("Zombie Ate My Brain!!!", 70);
-        addObject(end1, getWidth()/2, 400);
-        end2 = new Label("Just A Normal Zoo", 70);
-        addObject(end2, getWidth()/2, 500);
-        end3 = new Label("Dawn of the Dead", 70);
-        addObject(end3, getWidth()/2, 600);
+        setBackground("collectionScreen.png");
+    
         returnKey = new HomeButton();
         addObject(returnKey, getWidth()-80, 750);
     }
