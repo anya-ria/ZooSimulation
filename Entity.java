@@ -30,6 +30,9 @@ public abstract class Entity extends SuperSmoothMover
     // might as well declare this for all subclasses
     protected Random rand = new Random();
     
+    // number of entities healed
+    private int numHeal;
+    
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the entity can have
@@ -137,6 +140,7 @@ public abstract class Entity extends SuperSmoothMover
             hp += healing;
             if(hp>maxHp) hp = maxHp;
             hpBar.update(hp);
+            Zoo.healed();
         }
     }
     protected void die(){

@@ -60,21 +60,25 @@ public class Penguin extends Animal
         for(int i = 0; i < maxWalkIndex; i++)
         {
             walkRight[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
+            walkRight[i].scale((int)(walkRight[i].getWidth()*1.5),(int)(walkRight[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxWalkIndex; i++)
         {
             walkLeft[i] = new GreenfootImage("penguinWalkRight/walkRight" + i + ".png");
+            walkLeft[i].scale((int)(walkLeft[i].getWidth()*1.5),(int)(walkLeft[i].getHeight()*1.5));
             walkLeft[i].mirrorHorizontally();
         }
         for(int i = 0; i < maxWalkIndex; i++)
         {
             walkAway[i] = new GreenfootImage("penguinWalkAway/walkAway"+ i + ".png");
+            walkAway[i].scale((int)(walkAway[i].getWidth()*1.5),(int)(walkAway[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxWalkIndex; i++)
         {
             walkToward[i] = new GreenfootImage("penguinWalkToward/walkToward" + i + ".png");
+            walkToward[i].scale((int)(walkToward[i].getWidth()*1.5),(int)(walkToward[i].getHeight()*1.5));
         }
-
+        setImage(walkToward[1]);
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;
@@ -114,6 +118,9 @@ public class Penguin extends Animal
                 away = true;
             }
         }
+
+        if (getX() <= 695 || getX() >= 970)
+
         if(Greenfoot.getRandomNumber(500) < 5){
             sliding = true;
         }
@@ -121,6 +128,7 @@ public class Penguin extends Animal
             sliding = false;
         }
         if (getX() <= 695 || getX() >= 980)
+
         {
             turn(180);
         }

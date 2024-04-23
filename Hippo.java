@@ -127,6 +127,25 @@ public class Hippo extends Animal
             turn(180);
         }
     }
+    
+    public void charge()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(Greenfoot.getRandomNumber(90) - 45);
+        }
+        if (getX() <= 685 || getX() >= 1000)
+        {
+            turn(180);
+        }
+        if (getY() <= 30 || getY() >= 290)
+        {
+            turn(180);
+        }
+    }
+
+
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 

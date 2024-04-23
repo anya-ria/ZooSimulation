@@ -51,7 +51,6 @@ public class ZombieMonkey extends Zombie
             walkLeft[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-        
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;

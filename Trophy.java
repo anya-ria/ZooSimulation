@@ -37,4 +37,9 @@ public class Trophy extends Icon
         achievement.play();
         achievement.setVolume(50);
     }
+    
+    public boolean getUnlock(){
+        return unlock;
+    }
+    
 }

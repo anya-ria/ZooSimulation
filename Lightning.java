@@ -10,18 +10,16 @@ public class Lightning extends SuperSmoothMover
 {
     public static final Color WHITE = new Color (255,255,255);
     private GreenfootImage[] lightningStrike = new GreenfootImage[3];
+
     private int imageIndex = 0, actCount = 0, duration;
     private GreenfootSound sound;
-    
-    
+
     /**
      * Creates a new Lightning with specified sound and duration
      */
     public Lightning(GreenfootSound sound, int duration){
         this.duration = duration;
         this.sound = sound;
-        
-        
         for(int i=1; i<4;i++) {
             lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
         }
@@ -61,4 +59,5 @@ public class Lightning extends SuperSmoothMover
         }
         actCount++;
     }
+
 }
