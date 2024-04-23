@@ -12,21 +12,21 @@ public abstract class Icon extends Actor
     protected int index;
     protected int value;
     
+    //If the player choose another option, reset the pervious clicked one
     public void reset(){
         value = 0;
     }
-    
+    //Get the value set of variable
     public int getValue(){
         return value;
     }
-
+    //Check if the button get clicked
     public boolean getClicked(){
         return isClicked;
     }
-    
+    //If a button was clicked, set the boolean to true. vice versa
     public void setClicked(boolean x){
         isClicked = x;
     }
-    
 
 }

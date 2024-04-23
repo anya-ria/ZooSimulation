@@ -16,7 +16,6 @@ import java.util.*;
  *      https://
  *      author: 
  * Code: 
- * 
  *      author: Jordan Cohen
  *
  * Description: 
@@ -44,6 +43,7 @@ public class Zoo extends World
     private HomeButton homeButton = new HomeButton();
     
     private int actCount;
+
     public Zoo()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -125,11 +125,13 @@ public class Zoo extends World
             }
         }
         
-        //edit here
+    
+        //Add lightning. Error
         if (actCount % 600 == 0){
             Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 250);
             addObject(lightning, 512, 400);
         }
+
     }
     
     /**
@@ -170,7 +172,7 @@ public class Zoo extends World
         if(numZombie == 0){
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
-            world.ending2();
+            world.ending3();
         }
     }
     

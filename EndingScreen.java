@@ -18,8 +18,8 @@ public class EndingScreen extends World
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
         super(1024, 800, 1); 
         
+        addObject(homeButton,79,739);
         homeButton.setLocation(72,754);
-        addObject(new Healer(), 600, 200);
         
         gameTimer.mark();
     }
@@ -30,7 +30,7 @@ public class EndingScreen extends World
     public void ending1(){
         setBackground("end1.png");
         timeElasped();
-        //Greenfoot.stop();
+        Greenfoot.stop();
     }
     
     /**
@@ -39,7 +39,7 @@ public class EndingScreen extends World
     public void ending2(){
         setBackground("end2.png");
         timeElasped();
-        //Greenfoot.stop();
+        Greenfoot.stop();
     }
     
     /**
@@ -48,7 +48,7 @@ public class EndingScreen extends World
     public void ending3(){
         setBackground("end3.png");
         timeElasped();
-        //Greenfoot.stop();
+        Greenfoot.stop();
     }
     
     /**

@@ -103,26 +103,9 @@ public class Hippo extends Animal
         }
         if (getX() <= 700 || getX() >= 985)
         {
-            setRotation(180);
-        }
-        if (getY() <= 30 || getY() >= 280)
-        {
-            setRotation(180);
-        }
-    }
-    
-    public void charge()
-    {
-        move(4);
-        if (Greenfoot.getRandomNumber(100) < 10)
-        {
-            turn(Greenfoot.getRandomNumber(90) - 45);
-        }
-        if (getX() <= 685 || getX() >= 1000)
-        {
             turn(180);
         }
-        if (getY() <= 30 || getY() >= 290)
+        if (getY() <= 30 || getY() >= 280)
         {
             turn(180);
         }

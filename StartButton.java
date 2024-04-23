@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartButton here.
+ * Click to start the game
  * 
- * @author Megan Lee
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
  * @version April 2024
  */
 public class StartButton extends Icon
