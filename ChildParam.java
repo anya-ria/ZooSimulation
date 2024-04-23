@@ -16,7 +16,7 @@ public class ChildParam extends Icon
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
     
-    public ChildParam(){
+    public ChildParam(int x){
         for(int i=1; i<list.length;i++){
             list[i]=new GreenfootImage("images/params/childParam"+i+".png");
             GreenfootImage image = getImage();
@@ -29,6 +29,9 @@ public class ChildParam extends Icon
             GreenfootImage image = getImage();
             clicked[i].scale(70,70);
         }
+        
+        setImage(list[index]);
+        index = x;
     }
     
     public void act(){
@@ -52,13 +55,6 @@ public class ChildParam extends Icon
             this.setClicked(true);
             setValue();
         }
-    }
-    
-    public void setIcon(int x){
-        if(x<list.length){
-            setImage(list[x]);
-        }
-        index = x;
     }
     
     public void setValue(){

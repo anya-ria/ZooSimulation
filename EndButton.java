@@ -25,5 +25,5 @@ public class EndButton extends Icon
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
-
+    
 }

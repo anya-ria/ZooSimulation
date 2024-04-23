@@ -1,19 +1,12 @@
 #BlueJ class context
 comment0.target=Icon
- HEAD
 comment0.text=\n\ Write\ a\ description\ of\ class\ Icons\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ reset()
 comment2.params=
-comment2.target=void\ reset()
+comment2.target=int\ getValue()
 comment3.params=
-comment3.target=int\ getValue()
-comment4.params=
-comment4.target=boolean\ getClicked()
-comment5.params=x
-comment5.target=void\ setClicked(boolean)
-numComments=6
-
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Icons\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
- main
+comment3.target=boolean\ getClicked()
+comment4.params=x
+comment4.target=void\ setClicked(boolean)
+numComments=5

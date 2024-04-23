@@ -18,11 +18,6 @@ public abstract class Icon extends Actor
     protected int index;
     protected int value;
     
-    public void act()
-    {
-    
-    }
-    
     public void reset(){
         value = 0;
     }

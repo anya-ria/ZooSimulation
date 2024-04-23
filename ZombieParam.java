@@ -17,7 +17,7 @@ public class ZombieParam extends Icon
     private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;
     
-    public ZombieParam(){
+    public ZombieParam(int x){
         for(int i=1; i<list.length;i++){
             list[i]=new GreenfootImage("images/params/zombieParam"+i+".png");
             GreenfootImage image = getImage();
@@ -30,12 +30,8 @@ public class ZombieParam extends Icon
             GreenfootImage image = getImage();
             clicked[i].scale(70,70);
         }
-    }
-    
-    public void setIcon(int x){
-        if(x<list.length){
-            setImage(list[x]);
-        }
+        
+        setImage(list[index]);
         index = x;
     }
     

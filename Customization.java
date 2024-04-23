@@ -43,7 +43,7 @@ public class Customization extends World
         {
             if(other.getClicked())
             {
-                game.setNumChild(other.getValue());
+                Zoo.setNumChild(other.getValue());
             }
         }
         ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
@@ -51,7 +51,7 @@ public class Customization extends World
         {
             if(other.getClicked())
             {
-                game.setNumFighter(other.getValue());
+                Zoo.setNumFighter(other.getValue());
             }
         }
         ArrayList<HealerParam> y2 = (ArrayList<HealerParam>)getObjects(HealerParam.class);
@@ -59,7 +59,7 @@ public class Customization extends World
         {
             if(other.getClicked())
             {
-                game.setNumHealer(other.getValue());
+                Zoo.setNumHealer(other.getValue());
             }
         }
         ArrayList<ZombieParam> y3 = (ArrayList<ZombieParam>)getObjects(ZombieParam.class);
@@ -67,7 +67,7 @@ public class Customization extends World
         {
             if(other.getClicked())
             {
-                game.setNumZombie(other.getValue());
+                Zoo.setNumZombie(other.getValue());
             }
         }
     }
@@ -78,39 +78,19 @@ public class Customization extends World
      */
     private void prepare()
     {
-        c1 = new ChildParam();
-        c1.setIcon(1);
-        addObject(c1,getWidth()/2-100,318);
-        c2 = new ChildParam();
-        c2.setIcon(2);
-        addObject(c2,getWidth()/2,318);
-        c3 = new ChildParam();
-        c3.setIcon(3);
-        addObject(c3, getWidth()/2+100,318);
+        addObject(new ChildParam(1),getWidth()/2-100,318);
+        addObject(new ChildParam(2),getWidth()/2,318);
+        addObject(new ChildParam(3), getWidth()/2+100,318);
 
-        z1 = new ZombieParam();
-        z1.setIcon(1);
-        addObject(z1,getWidth()/2-100,650);
-        z2 = new ZombieParam();
-        z2.setIcon(2);
-        addObject(z2,getWidth()/2,650);
-        z3 = new ZombieParam();
-        z3.setIcon(3);
-        addObject(z3, getWidth()/2+100,650);
+        addObject(new ZombieParam(1),getWidth()/2-100,650);
+        addObject(new ZombieParam(2),getWidth()/2,650);
+        addObject(new ZombieParam(3), getWidth()/2+100,650);
 
-        h1 = new HealerParam();
-        h1.setIcon(1);
-        addObject(h1,getWidth()/2-280,480);
-        h2 = new HealerParam();
-        h2.setIcon(2);
-        addObject(h2,getWidth()/2-180,480);
+        addObject(new HealerParam(1),getWidth()/2-280,480);
+        addObject(new HealerParam(2),getWidth()/2-180,480);
         
-        f1 = new FighterParam();
-        f1.setIcon(1);
-        addObject(f1,getWidth()/2+180,480);
-        f2 = new FighterParam();
-        f2.setIcon(2);
-        addObject(f2,getWidth()/2+280,480);
+        addObject(new FighterParam(1),getWidth()/2+180,480);
+        addObject(new FighterParam(2),getWidth()/2+280,480);
     }
     
 }

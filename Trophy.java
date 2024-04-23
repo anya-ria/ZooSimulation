@@ -34,4 +34,8 @@ public class Trophy extends Icon
         unlock = true;
     }
     
+    public boolean getUnlock(){
+        return unlock;
+    }
+    
 }

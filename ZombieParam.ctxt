@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=ZombieParam
 comment0.text=\n\ Write\ a\ description\ of\ class\ ChildParam\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=ZombieParam()
-comment2.params=x
-comment2.target=void\ setIcon(int)
+comment1.params=x
+comment1.target=ZombieParam(int)
+comment2.params=
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ act()
-comment4.params=
-comment4.target=void\ setValue()
-numComments=5
+comment3.target=void\ setValue()
+numComments=4

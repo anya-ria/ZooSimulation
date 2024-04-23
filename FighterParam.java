@@ -16,7 +16,7 @@ public class FighterParam extends Icon
     private GreenfootImage[]clicked=new GreenfootImage[3];
     private GreenfootImage x;
     
-    public FighterParam(){
+    public FighterParam(int x){
         for(int i=1; i<list.length;i++){
             list[i]=new GreenfootImage("images/params/fighterParam"+i+".png");
             GreenfootImage image = getImage();
@@ -29,6 +29,9 @@ public class FighterParam extends Icon
             GreenfootImage image = getImage();
             clicked[i].scale(70,70);
         }
+        
+        setImage(list[index]);
+        index = x;
     }
     
     public void act(){

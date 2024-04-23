@@ -12,6 +12,7 @@ public class HomeButton extends Icon
      * Act - do whatever the HomeButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public HomeButton(){
         setImage("homeButton.png");
         GreenfootImage image = getImage();
@@ -25,6 +26,5 @@ public class HomeButton extends Icon
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
-    
  
 }

@@ -13,10 +13,13 @@ public class Zoo extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    private static int numHealed = 0;
+    private static int numChildren = 5;
+    private static int numHealer = 0;
+    private static int numFighter = 3;
+    private static int numZombie = 0;
     
     HomeButton homeButton = new HomeButton();
-    private int numChildren, numHealer, numFighter, numZombie;
-    private int x;
     
     public Zoo()
     {    
@@ -24,7 +27,7 @@ public class Zoo extends World
         super(1024, 800, 1); 
         
         //set default variables
-        numChildren = 5;
+        //numChildren = 5;
         numHealer = 0;
         numFighter = 3;
         numZombie = 0;
@@ -41,6 +44,7 @@ public class Zoo extends World
     
     public void act(){
         spawn();
+        checkAchi();
     }
     
     public void spawn(){
@@ -52,28 +56,41 @@ public class Zoo extends World
             addObject(new Healer(), Greenfoot.getRandomNumber(600)+100, Greenfoot.getRandomNumber(300)+300);
         }
         
-        if(getObjects(Regular.class).size() < numFighter){
+        if(getObjects(Fighter.class).size() < numFighter){
             addObject(new Fighter(), Greenfoot.getRandomNumber(600)+100, Greenfoot.getRandomNumber(300)+300);
         }
         
-        if(getObjects(ZombieHippo.class).size() < numZombie){ //change zombie class
+        if((getObjects(ZombieHippo.class).size() + getObjects(ZombieMonkey.class).size() + getObjects(ZombiePenguin.class).size())< numZombie){ //change zombie class
             addObject(new ZombieHippo(), Greenfoot.getRandomNumber(400)+100, Greenfoot.getRandomNumber(200)+400);
         }
     }
     
-    public void setNumChild(int x){
+    public void checkAchi(){
+        if(numFighter == 0){
+            Achievement.completeAchi2();
+        }
+        if(numHealed >= 15){
+            Achievement.completeAchi0();
+        }
+    }
+    
+    public static int healed(){
+        return numHealed++;
+    }
+    
+    public static void setNumChild(int x){
         numChildren = x;
     }
     
-    public void setNumHealer(int x){
+    public static void setNumHealer(int x){
         numHealer = x;
     }
     
-    public void setNumFighter(int x){
+    public static void setNumFighter(int x){
         numFighter = x;
     }
     
-    public void setNumZombie(int x){
+    public static void setNumZombie(int x){
         numZombie = x;
     }
 

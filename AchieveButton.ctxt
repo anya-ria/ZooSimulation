@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=AchieveButton
- HEAD
-comment0.text=\n\ Write\ a\ description\ of\ class\ AchieveButton\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ AchieveButton\ here.\r\n\ \r\n\ @author\ Megan\ Lee\r\n\ @version\ April\ 2024\r\n
- main
+comment0.text=\n\ Write\ a\ description\ of\ class\ AchieveButton\ here.\n\ \n\ @author\ Megan\ Lee\n\ @version\ April\ 2024\n
 comment1.params=
 comment1.target=AchieveButton()
 comment1.text=\n\ Act\ -\ do\ whatever\ the\ AchieveButton\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n

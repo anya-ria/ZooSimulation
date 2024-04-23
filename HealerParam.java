@@ -16,7 +16,7 @@ public class HealerParam extends Icon
     private GreenfootImage[]clicked=new GreenfootImage[3];
     private GreenfootImage x;
     
-    public HealerParam(){
+    public HealerParam(int x){
         for(int i=1; i<list.length;i++){
             list[i]=new GreenfootImage("images/params/healerParam"+i+".png");
             GreenfootImage image = getImage();
@@ -29,6 +29,9 @@ public class HealerParam extends Icon
             GreenfootImage image = getImage();
             clicked[i].scale(70,70);
         }
+        
+        setImage(list[index]);
+        index = x;
     }
     
     public void act(){
@@ -51,13 +54,6 @@ public class HealerParam extends Icon
             setClicked(true);
             setValue();
         }
-    }
-    
-    public void setIcon(int x){
-        if(x<list.length){
-            setImage(list[x]);
-        }
-        index = x;
     }
     
     public void setValue(){

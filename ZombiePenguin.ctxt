@@ -1,24 +1,15 @@
 #BlueJ class context
 comment0.target=ZombiePenguin
- HEAD
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
- main
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=ZombiePenguin()
 comment2.params=
 comment2.target=void\ initImages()
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment4.params=
-HEAD
-comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-
 comment4.target=void\ slide()
-main
 comment5.params=
 comment5.target=void\ animate()
 numComments=6

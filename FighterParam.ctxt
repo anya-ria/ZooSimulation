@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=FighterParam
 comment0.text=\n\ Write\ a\ description\ of\ class\ FighterParam\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=FighterParam()
+comment1.params=x
+comment1.target=FighterParam(int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=x
