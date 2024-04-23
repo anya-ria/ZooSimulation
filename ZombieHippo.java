@@ -106,6 +106,7 @@ public class ZombieHippo extends Zombie
         animate();
         charge();
         Greenfoot.playSound("hippo1.mp3");
+        takeDamage(1);
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
