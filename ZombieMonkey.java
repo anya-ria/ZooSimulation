@@ -4,11 +4,11 @@ import java.util.Random;
 /**
  * Write a description of class ZombieMonkey here.
  * 
- * @author <li> Luke Xiao -- Movements
- * @author <li> Anya Shah -- Animations
- * @author <li> Lucas Fu -- ThrowBananas
+ * @author <li> Luke Xiao | Movements
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu | ThrowBananas
  * 
- * @version (2024.04.18)
+ * @version 04/18/2024
  */
 public class ZombieMonkey extends Zombie
 {
