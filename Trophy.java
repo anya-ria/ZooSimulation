@@ -32,5 +32,6 @@ public class Trophy extends Icon
     
     public void setAchieved(){
         unlock = true;
+        Greenfoot.playSound("achievement.mp3");
     }
 }

@@ -111,8 +111,13 @@ dependency37.type=UsesDependency
 dependency38.from=Traitor
 dependency38.to=Pencil
 dependency38.type=UsesDependency
+<<<<<<< Updated upstream
 dependency39.from=Traitor
 dependency39.to=Banana
+=======
+dependency39.from=Healer
+dependency39.to=HealingBall
+>>>>>>> Stashed changes
 dependency39.type=UsesDependency
 dependency4.from=TitleScreen
 dependency4.to=Label
@@ -301,6 +306,7 @@ dependency8.type=UsesDependency
 dependency9.from=CutScene
 dependency9.to=Transition
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=100
@@ -312,6 +318,15 @@ editor.fx.0.y=64
 height=487
 package.numDependencies=72
 package.numTargets=43
+=======
+editor.fx.0.height=728
+editor.fx.0.width=800
+editor.fx.0.x=335
+editor.fx.0.y=79
+height=854
+package.numDependencies=54
+package.numTargets=39
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -432,14 +447,18 @@ target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
-target23.name=HealingBall
+target23.name=MyWorld
 target23.showInterface=false
 target23.type=ClassTarget
 target23.width=120
 target23.x=0
 target23.y=0
 target24.height=70
+<<<<<<< Updated upstream
 target24.name=Fighter
+=======
+target24.name=HealingBall
+>>>>>>> Stashed changes
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
@@ -467,14 +486,22 @@ target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
+<<<<<<< Updated upstream
 target28.name=Text
+=======
+target28.name=Pencil
+>>>>>>> Stashed changes
 target28.showInterface=false
 target28.type=ClassTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
+<<<<<<< Updated upstream
 target29.name=Pencil
+=======
+target29.name=Healer
+>>>>>>> Stashed changes
 target29.showInterface=false
 target29.type=ClassTarget
 target29.width=120
@@ -488,51 +515,67 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
+<<<<<<< Updated upstream
 target30.name=Healer
+=======
+target30.name=ZombieHippo
+>>>>>>> Stashed changes
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
+<<<<<<< Updated upstream
 target31.name=ZombieHippo
+=======
+target31.name=SuperStatBar
+>>>>>>> Stashed changes
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
+<<<<<<< Updated upstream
 target32.name=SuperStatBar
+=======
+target32.name=Projectile
+>>>>>>> Stashed changes
 target32.showInterface=false
-target32.type=ClassTarget
+target32.type=AbstractTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
-target33.name=Projectile
+target33.name=StartButton
 target33.showInterface=false
-target33.type=AbstractTarget
+target33.type=ClassTarget
 target33.width=120
 target33.x=0
 target33.y=0
 target34.height=70
-target34.name=StartButton
+target34.name=Banana
 target34.showInterface=false
 target34.type=ClassTarget
 target34.width=120
 target34.x=0
 target34.y=0
 target35.height=70
+<<<<<<< Updated upstream
 target35.name=Banana
+=======
+target35.name=Lightning
+>>>>>>> Stashed changes
 target35.showInterface=false
 target35.type=ClassTarget
 target35.width=120
 target35.x=0
 target35.y=0
 target36.height=70
-target36.name=Lightning
+target36.name=Animal
 target36.showInterface=false
-target36.type=ClassTarget
+target36.type=AbstractTarget
 target36.width=120
 target36.x=0
 target36.y=0
@@ -628,6 +671,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
+<<<<<<< Updated upstream
 width=1356
 world.lastInstantiated=Zoo
 xPosition=0
@@ -636,3 +680,9 @@ width=700
 world.lastInstantiated=Zoo
 xPosition=858
 yPosition=24
+=======
+width=1345
+world.lastInstantiated=Achievement
+xPosition=47
+yPosition=37
+>>>>>>> Stashed changes

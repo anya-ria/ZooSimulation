@@ -35,6 +35,7 @@ public class Zoo extends World
         addObject(new Hippo(), 750, 250);
         
         setBackground("zoo.jpg");
+        Greenfoot.playSound("backgroundMusic.mp3");
     }
 
     public static double getDistance (Actor a, Actor b)

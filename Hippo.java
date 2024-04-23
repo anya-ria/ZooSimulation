@@ -58,6 +58,15 @@ public class Hippo extends Animal
     {
         if(!super.update()) return;
         moveAround();
+<<<<<<< Updated upstream
+=======
+        animate();
+        if (isInfected)
+        {
+            charge();
+            Greenfoot.playSound("Hippo1.mp3");
+        }
+>>>>>>> Stashed changes
     }
     private void moveAround()
     {
@@ -100,6 +109,7 @@ public class Hippo extends Animal
     
     public void charge()
     {
+        Greenfoot.playSound("Hippo1.mp3");
         move(4);
         if (Greenfoot.getRandomNumber(100) < 10)
         {
