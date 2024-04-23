@@ -105,7 +105,10 @@ public class ZombieHippo extends Zombie
         animate();
         charge();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Greenfoot.playSound("hippo1.mp3");
+=======
+>>>>>>> Stashed changes
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
