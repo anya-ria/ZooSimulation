@@ -20,7 +20,6 @@ public class ZombieHippo extends Zombie
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
-    
     // Movement Variables
     private int direction;
     private Child targetChild;
@@ -105,11 +104,14 @@ public class ZombieHippo extends Zombie
         if(!super.update()) return;
         animate();
         charge();
+<<<<<<< Updated upstream
         Greenfoot.playSound("hippo1.mp3");
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
         }
+=======
+>>>>>>> Stashed changes
     }
     
     private void targetClosestChildren ()

@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Traitor
+<<<<<<< Updated upstream
 comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ <li>\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks.\r\n\ <li>\ Also\ has\ his\ own\ special\ move\:\ Ground\ Pound\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/08/2024\r\n
+=======
+comment0.text=\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ <li>\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks.\n\ <li>\ Also\ has\ his\ own\ special\ move\:\ Ground\ Pound\n\ \n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=Traitor()
 comment10.params=

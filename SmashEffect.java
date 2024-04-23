@@ -21,6 +21,7 @@ public class SmashEffect extends Effect
         getImage().fillOval(0,0,size,size);
         
         damage = dmg;
+        Greenfoot.playSound("heal.mp3");
     }
     /**
      * @override

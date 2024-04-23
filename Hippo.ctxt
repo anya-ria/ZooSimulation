@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Hippo
+<<<<<<< Updated upstream
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Hippo\ here.\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/12/2024\r\n
+=======
+comment0.text=\n\ Attacks\ children\ including\ the\ fighter\ children.\n\ Charges\ towards\ children\ and\ attacks\n\ \n\ @author\ Luke\ Xiao\ |\ Functions\n\ @author\ Anya\ Shah\ |\ Animations\n\ @version\ 04/12/2024\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=Hippo()
 comment2.params=
