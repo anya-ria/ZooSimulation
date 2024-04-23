@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ZombieHippo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ \r\n\ @version\ 04/18/2024\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ \n\ @version\ 04/18/2024\n
 comment1.params=
 comment1.target=ZombieHippo()
 comment2.params=
@@ -9,7 +9,7 @@ comment3.params=
 comment3.target=void\ charge()
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombieHippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.text=\n\ Act\ -\ do\ whatever\ the\ ZombieHippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment5.params=
 comment5.target=void\ targetClosestChildren()
 comment6.params=

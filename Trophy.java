@@ -16,6 +16,7 @@ public class Trophy extends Icon
     private boolean unlock;
     private GreenfootImage grey = new GreenfootImage("golden_cup1.png");
     private GreenfootImage gold = new GreenfootImage("golden_cup2.png");
+    private GreenfootSound achievement;
     
     public Trophy(){
         unlock = false;
@@ -30,11 +31,13 @@ public class Trophy extends Icon
         }
     }
     
-    /**
-     * Sets an achievement as "achieved", turning the trophy from silver to gold
-     */
     public void setAchieved(){
         unlock = true;
-        Greenfoot.playSound("achievement.mp3");
+<<<<<<< Updated upstream
+=======
+        achievement = new GreenfootSound ("achievement.mp3");
+        achievement.play();
+        achievement.setVolume(50);
+>>>>>>> Stashed changes
     }
 }

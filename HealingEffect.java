@@ -10,6 +10,7 @@ import java.util.List;
 public class HealingEffect extends Effect
 {
     private int healingLevel;
+    private GreenfootSound healingSound;
     /**
      * creates a new healing effect that is the specified size and level
      * @param size      how big the effect will be
@@ -22,6 +23,8 @@ public class HealingEffect extends Effect
         getImage().fillOval(0,0,size,size);
         
         healingLevel = level;
+        
+        Greenfoot.playSound("healpop.mp3");
     }
     /**
      * @override
