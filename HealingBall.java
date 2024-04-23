@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HealingBall extends Projectile
 {
+    public static int healingInstances = 0;
     private int healingValue;
     /**
      * constructs a new HealingBall with a speed, direction, and healing value
@@ -32,10 +33,17 @@ public class HealingBall extends Projectile
         getImage().scale(20, 20);
         healingValue = healing;
     }
+    /**
+     * Creates a new HealingEffect when this expires
+     */
     public void expire(){
         getWorld().addObject(new HealingEffect(50, healingValue), getX(), getY());
+        healingInstances++;
         getWorld().removeObject(this);
     }
+    /**
+     * Slightly pushes the child touched, expiring this
+     */
     public void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){

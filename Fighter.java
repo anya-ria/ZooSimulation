@@ -34,7 +34,7 @@ public class Fighter extends Child
 
     public void act(){
         if(!super.update()) return;
-        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+        double[] enemyDetails = detectNearestEntity(Zombie.class, 500);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
         chaseZombies(enemyDetails);
     }

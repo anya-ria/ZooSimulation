@@ -34,9 +34,6 @@ public class ZombieMonkey extends Zombie
         animCounter = 0;
         maxIndex = walkRight.length;
         initImages();
-    }
-    
-    public void addedToWorld(World world){
         setImage("zombieMonkeyWalkToward/walkToward1.png");
     }
     

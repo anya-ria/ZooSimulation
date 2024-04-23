@@ -35,9 +35,6 @@ public class ZombiePenguin extends Zombie
         maxIndex = walkRight.length;
         maxSlideIndex = slideRight.length;
         initImages();
-    }
-    
-    public void addedToWorld(World world){
         setImage("zombiePenguinWalkToward/walkToward1.png");
     }
 

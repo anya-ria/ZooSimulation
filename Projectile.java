@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Projectile extends SuperSmoothMover
 {
-    protected double maxActs = 500;
-    protected double acts = 0;
+    private double maxActs = 500;
+    private double acts = 0;
     protected double vx, vy;
     protected boolean expired = false;
     private int downTime = 12;
