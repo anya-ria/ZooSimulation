@@ -25,6 +25,8 @@ public class ZombieHippo extends Zombie
     private int direction;
     private Child targetChild;
     private ArrayList<Child> children;
+    private int MAX_COOLDOWN = 30;
+    private int chargeCooldown = MAX_COOLDOWN;
     
     public ZombieHippo() {
         super(100);
@@ -104,6 +106,10 @@ public class ZombieHippo extends Zombie
         animate();
         charge();
         Greenfoot.playSound("hippo1.mp3");
+        if (chargeCooldown > 0) 
+        {
+            chargeCooldown--; // Decrement cooldown time
+        }
     }
     
     private void targetClosestChildren ()
@@ -140,9 +146,13 @@ public class ZombieHippo extends Zombie
             }
             turnTowards(targetChild.getX(), targetChild.getY());
         }
-        if (isTouching(Child.class))
+        if (chargeCooldown <= 0) 
         {
-            targetChild.takeDamage(3);
+            if (isTouching(Child.class))
+            {
+                targetChild.takeDamage(3);
+                chargeCooldown = MAX_COOLDOWN;
+            }
         }
     }
 
