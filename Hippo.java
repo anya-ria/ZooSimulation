@@ -67,6 +67,7 @@ public class Hippo extends Animal
         if (isInfected)
         {
             charge();
+            Greenfoot.playSound("hippo1.mp3");
         }
     }
     private void moveAround()

@@ -105,6 +105,7 @@ public class ZombieHippo extends Animal
         if(!super.update()) return;
         animate();
         charge();
+        Greenfoot.playSound("hippo1.mp3");
     }
     
     protected void animate() {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Traitor
-comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 2024/4/8\r\n
+comment0.text=\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks\n\ \n\ @author\ Anya\ Shah\ |\ Animations\n\ @author\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 2024/4/8\n
 comment1.params=
 comment1.target=Traitor()
 comment10.params=
@@ -9,7 +9,7 @@ comment11.params=
 comment11.target=void\ revive()
 comment12.params=
 comment12.target=void\ die()
-comment12.text=\r\n\ @override,\ gives\ traitor\ ability\ to\ revive\ once\r\n
+comment12.text=\n\ @override,\ gives\ traitor\ ability\ to\ revive\ once\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

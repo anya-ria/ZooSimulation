@@ -13,7 +13,7 @@ public class Zoo extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    
+
     HomeButton homeButton = new HomeButton();
     
     public Zoo()
@@ -36,5 +36,4 @@ public class Zoo extends World
         
         setBackground("zoo.jpg");
     }
-
 }
