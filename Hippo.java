@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hippo here.
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
  * @version 04/12/2024
  */
 
@@ -58,6 +58,7 @@ public class Hippo extends Animal
     {
         if(!super.update()) return;
         moveAround();
+        animate();
     }
     private void moveAround()
     {
@@ -114,6 +115,7 @@ public class Hippo extends Animal
             turn(180);
         }
     }
+
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 

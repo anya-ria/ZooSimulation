@@ -13,6 +13,7 @@ public class Zoo extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+
     private GreenfootSound lightningS;
     private GreenfootImage lightningI;
     private int actCount;
@@ -26,6 +27,7 @@ public class Zoo extends World
     private static int numZombie = 0;
     private static int numAnimals = 25;
     
+
     HomeButton homeButton = new HomeButton();
     
     public Zoo()
@@ -38,12 +40,28 @@ public class Zoo extends World
         
         addObject(homeButton,79,739);
         homeButton.setLocation(72,754);
+
+        addObject(new Healer(), 600, 200);
+        addObject(new Healer(), 400, 200);
+        addObject(new Fighter(), 800, 150);
+        addObject(new Hippo(), 850, 150);
+        addObject(new Hippo(), 750, 250);
+        addObject(new Penguin(), 750, 600);
+        addObject(new Penguin(), 850, 650);
+        addObject(new Monkey(), 150, 50);
+        addObject(new Monkey(), 250, 250);
+        
+        // for(Animal a: getObjects(Animal.class)){
+            // a.zombify();
+        // }
+
         
         lightningS = new GreenfootSound("lightning.mp3");
         lightningI = new GreenfootImage("darkOverlay.png");
         setBackground("zoo.jpg");
     }
     
+
     public void act(){
         actCount++;
         spawn();
@@ -134,5 +152,10 @@ public class Zoo extends World
     
     public static void setNumZombie(int x){
         numZombie = x;
+
+    public static double getDistance (Actor a, Actor b)
+    {
+        return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
+
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
  * 
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Functions
- * @version 2024/4/8
+ * @version 04/08/2024
  */
 public class Traitor extends Child
 {
@@ -242,6 +242,7 @@ public class Traitor extends Child
             getWorld().addObject(new Banana(i, 8), getX(), getY());
             getWorld().addObject(new Pencil(20, 150, i+5, 8), getX(), getY());
         }
+        Greenfoot.playSound("sinisterLaugh.mp3");
     }
     
     /**
@@ -254,5 +255,6 @@ public class Traitor extends Child
         } else {
             super.die();
         }
+        Greenfoot.playSound("dyingGrunt.mp3");
     }
 }
