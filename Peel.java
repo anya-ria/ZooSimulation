@@ -10,12 +10,20 @@ public class Peel extends Projectile
 {
     private GreenfootImage[] peel = new GreenfootImage[14];
     private int animCounter, animDelay, animIndex; 
-    
+    private boolean expiring = false;
     public Peel(){
         super(0,0);
-        
+        getImage().scale(30, 30);
         animCounter = 0;
         initImages();
+    }
+    
+    public void act(){
+        if(expiring){
+            animate();
+        } else {
+            super.act();
+        }
     }
     
     private void initImages() {
@@ -25,13 +33,9 @@ public class Peel extends Projectile
         }
         
         animIndex = 0;
-        animDelay = 2;
+        animDelay = 1;
         animCounter = animDelay;
     }
-    
-    // public void act() {
-        // animate();
-    // }
     
     private void animate() {
         if(animCounter == 0) {
@@ -39,6 +43,8 @@ public class Peel extends Projectile
             animIndex++;
             if(animIndex >= peel.length) {
                 animIndex = 0;
+                expiring = false;
+                expired = true;
             }
             setImage(peel[animIndex]);
         }
@@ -47,11 +53,14 @@ public class Peel extends Projectile
         }
     }
     
+    /**
+     * Makes the child that touched this slip, expiring this
+     */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
             touched.slip();
-            expired = true;
+            expiring = true;
         }        
     }
     protected void expire(){

@@ -5,6 +5,7 @@ import java.util.List;
  * by the healer
  * 
  * @author Lucas
+ * @version 2024/4/10
  */
 public class HealingEffect extends Effect
 {

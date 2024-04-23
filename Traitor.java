@@ -2,10 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * The traitor is a child that no longer wants to cooperate with other children.
- * This character will imitate all other characters' attacks
+ * <li> This character will imitate all other characters' attacks.
+ * <li> Also has his own special move: Ground Pound
  * 
- * @author Anya Shah | Animations
- * @author Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Functions
  * @version 2024/4/8
  */
 public class Traitor extends Child
@@ -151,10 +152,10 @@ public class Traitor extends Child
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
                 case 0:
-                    throwBanana((int)direction, 4);
+                    throwBanana((int)direction, 6);
                     break;
                 case 1:
-                    throwPencil((int)direction, 4);
+                    throwPencil((int)direction, 6);
                     break;
             }
             punching = true;
@@ -165,7 +166,7 @@ public class Traitor extends Child
             punching = true;
         }
         throwCooldown--; healCooldown--; smashCooldown--;
-        if(distance < 10){
+        if(distance < 15){
             punch();
             punching = true;
             setLocation(getX(), getY());
