@@ -7,4 +7,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ setAchieved()
+comment3.text=\r\n\ Sets\ an\ achievement\ as\ "achieved",\ turning\ the\ trophy\ from\ silver\ to\ gold\r\n
 numComments=4

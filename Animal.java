@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Animal here.
+ * Animals are the residents of the zoo, wandering aimlessly in their pen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas
+ * @version 2024/4/23
  */
 public abstract class Animal extends Entity
 {
@@ -19,6 +19,9 @@ public abstract class Animal extends Entity
         enableStaticRotation();
     }
     
+    /**
+     * This animal has turned into a zombie! removes the previous animal and replace with the zombie form
+     */
     public void zombify()
     {
         if(this instanceof Hippo) getWorld().addObject(new ZombieHippo(), getX(), getY());
@@ -27,6 +30,10 @@ public abstract class Animal extends Entity
         getWorld().removeObject(this);
     }
     
+    /**
+     * @override
+     * When dying, remove the static rotation aspect so that this actually looks dead
+     */
     protected void die(){
         disableStaticRotation();
         super.die();

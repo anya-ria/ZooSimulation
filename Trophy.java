@@ -30,6 +30,9 @@ public class Trophy extends Icon
         }
     }
     
+    /**
+     * Sets an achievement as "achieved", turning the trophy from silver to gold
+     */
     public void setAchieved(){
         unlock = true;
     }
