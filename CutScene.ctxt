@@ -1,12 +1,15 @@
 #BlueJ class context
 comment0.target=CutScene
-comment0.text=\n\ A\ cutscene\ that\ introduces\ the\ inciting\ incident;\ lightning\ turns\ zoo\ animals\ to\ zombies.\n\ \n\ @author\ Megan\n\ @version\ April\ 2024\n
+comment0.text=\r\n\ A\ cutscene\ that\ introduces\ the\ inciting\ incident;\ lightning\ turns\ zoo\ animals\ to\ zombies.\r\n\ \r\n\ @author\ Megan\r\n\ @version\ April\ 2024\r\n
 comment1.params=
 comment1.target=CutScene()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ CutScene.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CutScene.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawnAnimals()
-comment3.text=\n\ Spawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens\n
-numComments=4
+comment3.text=\r\n\ Spawns\ 3\ of\ each\ type\ of\ animals\ in\ initial\ location\ within\ their\ respective\ pens\r\n
+comment4.params=
+comment4.target=void\ removeAnimals()
+comment4.text=\r\n\ Removes\ all\ animals\ from\ screen\ to\ disappear\ during\ special\ effects\r\n
+numComments=5

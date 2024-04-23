@@ -3,9 +3,9 @@ import java.util.ArrayList;
 /**
  * Write a description of class ZombiePenguin here.
  * 
- * @author <li> Luke Xiao -- Movements
- * @author <li> Anya Shah -- Animations
- * @version (a version number or a date)
+ * @author <li> Luke Xiao | Movements
+ * @author <li> Anya Shah | Animations
+ * @version 04/23/2024
  */
 public class ZombiePenguin extends Zombie
 {

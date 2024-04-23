@@ -3,27 +3,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Lightning here.
  * 
- * @author Megan  
+ * @author Megan
  * @version April 2024
  */
-public class Lightning extends Effect
+public class Lightning extends SuperSmoothMover
 {
     public static final Color WHITE = new Color (255,255,255);
     private GreenfootImage[] lightningStrike = new GreenfootImage[3];
-    private int imageIndex = 0, actCount = 0;
-
-    public Lightning(GreenfootSound sound, GreenfootImage image, int fadeIn, int duration, int fadeOut){
-        super(sound, image, fadeIn, duration, fadeOut);
-
+    private int imageIndex = 0, actCount = 0, duration;
+    private GreenfootSound sound;
+    
+    
+    /**
+     * Creates a new Lightning with specified sound and duration
+     */
+    public Lightning(GreenfootSound sound, int duration){
+        this.duration = duration;
+        this.sound = sound;
+        
+        
         for(int i=1; i<4;i++) {
             lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
         }
     }
 
     public void act(){
+        // first 120 acts is the sky turning dark
         if(actCount < 121){
             if(actCount == 0 || actCount == 80) {
                 setImage(new GreenfootImage("darkOverlay.png"));
+                if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
             }
             else if(actCount  == 20){
                 setImage(new GreenfootImage("darkOverlay.png"));
@@ -31,8 +40,10 @@ public class Lightning extends Effect
                 flash.setColor(WHITE);
                 flash.fill();
                 setImage(flash);
+                ((CutScene)getWorld()).removeAnimals();
             }
         }
+        // after those first few acts, lighning strikes every 45 acts, 3 times
         else if(actCount % 45 == 0 && actCount < 300){
             if(imageIndex < 3){
                 setImage(lightningStrike[imageIndex]);
@@ -42,8 +53,9 @@ public class Lightning extends Effect
                 setImage(new GreenfootImage("darkOverlay.png"));
             }
         }
-
-        if(actCount == allActs[0] + allActs[1] + allActs[2]){
+    
+        // after completely finishing acting, removes this effect
+        if(actCount == duration){
             getWorld().removeObject(this);
             return;
         }

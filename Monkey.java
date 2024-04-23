@@ -19,11 +19,6 @@ public class Monkey extends Animal
     private int maxIndex;
     private boolean right, left, away, toward, zombie;
 
-    private boolean isInfected;
-    private double speed;
-    private double maxSpeed;
-    private int direction;
-
     public Monkey()
     {
         super(100);
