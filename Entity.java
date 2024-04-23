@@ -174,6 +174,13 @@ public abstract class Entity extends SuperSmoothMover
             if(exactY<050) tempVy += 1;
             if(exactY>750) tempVy -= 1;
         }
+        // artificial temp velocity for zombies too, but a bit less
+        if(this instanceof Zombie){
+            if(exactX<100) tempVx += 0.5;
+            if(exactX>924) tempVx -= 0.5;
+            if(exactY<050) tempVy += 0.5;
+            if(exactY>750) tempVy -= 0.5;
+        }
         super.setLocation(exactX, exactY);
     }
     /**
