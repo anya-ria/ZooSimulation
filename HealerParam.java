@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class HealerParam here.
+ * HealerParam.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
+ * @version April 2024
  */
 public class HealerParam extends Icon
 {
@@ -34,6 +35,9 @@ public class HealerParam extends Icon
         index = x;
     }
     
+    /**
+     * If a button is clicked (option is choosen), set to 'clicked' image and reset all other options to 'unclicked'.
+     */
     public void act(){
         if(!isClicked){ //false
             setImage(list[this.index]);
@@ -56,6 +60,9 @@ public class HealerParam extends Icon
         }
     }
     
+    /**
+     * Set value according to the choosen option
+     */
     public void setValue(){
         if(index == 1){
             value = 0;

@@ -107,9 +107,6 @@ public class ZombieHippo extends Zombie
         animate();
         charge();
 
-        Greenfoot.playSound("hippo1.mp3");
-
-
         //Greenfoot.playSound("hippo1.mp3");
 
         if (chargeCooldown > 0) 

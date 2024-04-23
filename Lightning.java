@@ -38,7 +38,7 @@ public class Lightning extends SuperSmoothMover
                 flash.setColor(WHITE);
                 flash.fill();
                 setImage(flash);
-                ((CutScene)getWorld()).removeAnimals();
+                ((CutScene)getWorld()).removeAnimals(); //ERROR 
             }
         }
         // after those first few acts, lighning strikes every 45 acts, 3 times
@@ -59,5 +59,4 @@ public class Lightning extends SuperSmoothMover
         }
         actCount++;
     }
-
 }

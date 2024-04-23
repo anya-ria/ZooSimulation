@@ -6,11 +6,4 @@ comment1.target=Lightning(greenfoot.GreenfootSound,\ int)
 comment1.text=\n\ Creates\ a\ new\ Lightning\ with\ specified\ sound\ and\ duration\n
 comment2.params=
 comment2.target=void\ act()
-<<<<<<< Updated upstream
 numComments=3
-=======
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ Lightning\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment3.params=
-comment3.target=void\ sound()
-numComments=4
->>>>>>> Stashed changes

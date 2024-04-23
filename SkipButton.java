@@ -14,6 +14,9 @@ public class SkipButton extends Icon
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
     
+    /**
+     * If the button is clicked, go to zoo world and play sound effect
+     */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             Zoo zoo = new Zoo();

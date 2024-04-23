@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class ChildParam here.
+ * ChildParam.
+ * Player set the values.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
+ * @version 2024/04
  */
 public class ChildParam extends Icon
 {
@@ -34,6 +36,9 @@ public class ChildParam extends Icon
         index = x;
     }
     
+    /**
+     * If a button is clicked (option is choosen), set to 'clicked' image and reset all other options to 'unclicked'.
+     */
     public void act(){
         if(!isClicked){ //false
             setImage(list[this.index]);
@@ -57,6 +62,9 @@ public class ChildParam extends Icon
         }
     }
     
+    /**
+     * Set value according to the choosen option
+     */
     public void setValue(){
         if(index == 1){
             value = 20;

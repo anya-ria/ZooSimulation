@@ -1,18 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class ChildParam here.
+ * ZombieParam
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
+ * @version April 2024
  */
 public class ZombieParam extends Icon
 {
-    /**
-     * Act - do whatever the ChildParam wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;
@@ -35,6 +31,9 @@ public class ZombieParam extends Icon
         index = x;
     }
     
+    /**
+     * If a button is clicked (option is choosen), set to 'clicked' image and reset all other options to 'unclicked'.
+     */
     public void act(){
         if(!isClicked){ //false
             setImage(list[this.index]);
@@ -47,16 +46,19 @@ public class ZombieParam extends Icon
             ArrayList<ZombieParam> y = (ArrayList<ZombieParam>)getWorld().getObjects(ZombieParam.class);
             for(ZombieParam other: y)
             {
-               if(other != this)
+               if(other != this)//Check for pervious clicked option
               {
-                 other.setClicked(false);
+                 other.setClicked(false);//unclick perviously chose option
               }
             }
             this.setClicked(true);
-            setValue();
+            setValue();//set corresponding value
         }
     }
     
+    /**
+     * Set value according to the choosen option
+     */
     public void setValue(){
         if(index == 1){
             value = 3;

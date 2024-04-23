@@ -1,22 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GoldCup here.
+ * Trophy.
+ * Indication of an achievement get completed or not
  * 
- * @author Megan Lee
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
  * @version April 2024
  */
 public class Trophy extends Icon
 {
-    /**
-     * Act - do whatever the GoldCup wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
-    private boolean unlock;
     private GreenfootImage grey = new GreenfootImage("golden_cup1.png");
     private GreenfootImage gold = new GreenfootImage("golden_cup2.png");
+    
+    //Init sound effect
     private GreenfootSound achievement;
+    
+    private boolean unlock;
     
     public Trophy(){
         unlock = false;
@@ -24,6 +24,9 @@ public class Trophy extends Icon
         grey.scale(70, 70);
     }
     
+    /**
+     * If boolean 'unlock' is true, change grey trophy to gold trophy. 
+     */
     public void act(){
         if(unlock){
             setImage(gold);
@@ -31,6 +34,9 @@ public class Trophy extends Icon
         }
     }
     
+    /**
+     * Set unlock to true and play sound effect.
+     */
     public void setAchieved(){
         unlock = true;
         achievement = new GreenfootSound ("achievement.mp3");

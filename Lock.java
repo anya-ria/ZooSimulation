@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lock here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Lock Icon 
+ * 
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
+ * @version April 2024
  */
 public class Lock extends Icon
 {
