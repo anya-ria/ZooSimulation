@@ -3,10 +3,10 @@ import java.util.ArrayList;
 /**
  * Write a description of class ZombieHippo here.
  * 
- * @author <li> Luke Xiao -- Movements
- * @author <li> Anya Shah -- Animations
+ * @author <li> Luke Xiao | Movements
+ * @author <li> Anya Shah | Animations
  * 
- * @version (2024.04.18)
+ * @version 04/18/2024
  */
 public class ZombieHippo extends Zombie
 {
