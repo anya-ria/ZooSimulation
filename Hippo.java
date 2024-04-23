@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Hippo here.
+ * Attacks children including the fighter children.
+ * Charges towards children and attacks
  * 
  * @author Luke Xiao | Functions
  * @author Anya Shah | Animations
@@ -19,6 +20,12 @@ public class Hippo extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
+
+    private boolean isInfected;
+    private int direction;
+    //private double speed;
+    //private double maxSpeed;
+    //private int direction;
 
     public Hippo() {
         super(200);
@@ -59,7 +66,12 @@ public class Hippo extends Animal
         if(!super.update()) return;
         moveAround();
         animate();
+        if (isInfected)
+        {
+            charge();
+        }
     }
+    
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -91,14 +103,30 @@ public class Hippo extends Animal
         }
         if (getX() <= 700 || getX() >= 985)
         {
-            turn(180);
+            setRotation(180);
         }
         if (getY() <= 30 || getY() >= 280)
+        {
+            setRotation(180);
+        }
+    }
+    
+    public void charge()
+    {
+        move(4);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            turn(Greenfoot.getRandomNumber(90) - 45);
+        }
+        if (getX() <= 685 || getX() >= 1000)
+        {
+            turn(180);
+        }
+        if (getY() <= 30 || getY() >= 290)
         {
             turn(180);
         }
     }
-
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 

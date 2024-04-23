@@ -28,6 +28,7 @@ public class HealingEffect extends Effect
     }
     /**
      * @override
+     * gets touching children, and heals them
      */
     public void addedToWorld(World world){
         List<Child> children = getIntersectingObjects(Child.class);

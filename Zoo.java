@@ -43,6 +43,7 @@ public class Zoo extends World
         // }
         
         setBackground("zoo.jpg");
+        Greenfoot.playSound("backgroundMusic.mp3");
     }
     
     public static double getDistance (Actor a, Actor b)

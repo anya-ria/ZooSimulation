@@ -25,6 +25,7 @@ public class SmashEffect extends Effect
     }
     /**
      * @override
+     * Gets all touching children when added to world, making them take damage
      */
     public void addedToWorld(World world){
         List<Child> children = getIntersectingObjects(Child.class);
