@@ -3,4 +3,6 @@ comment0.target=Zoo
 comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Zoo()
-numComments=2
+comment2.params=a\ b
+comment2.target=double\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
+numComments=3

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class ZombiePenguin here.
  * 
@@ -27,10 +27,11 @@ public class ZombiePenguin extends Zombie
     private boolean right, left, away, toward, sliding;
 
     private int direction;
+    private Child targetChild;
+    private ArrayList<Child> children;
     
     public ZombiePenguin() {
         super(100);
-
         animCounter = 0;
         maxIndex = walkRight.length;
         maxSlideIndex = slideRight.length;
@@ -124,6 +125,44 @@ public class ZombiePenguin extends Zombie
         if (getY() <= 20 || getY() >= 780)
         {
             setRotation(180);
+        }
+        targetClosestChildren();
+    }
+    
+    private void targetClosestChildren ()
+    {
+        double closestTargetDistance = 0;
+        double distanceToActor;
+        // Get a list of all children in the World, cast it to ArrayList
+        // for easy management
+        children = (ArrayList<Child>)getObjectsInRange(40, Child.class);
+        if (children.size() == 0){
+            children = (ArrayList<Child>)getObjectsInRange(140, Child.class);
+        } 
+        if (children.size() == 0){
+            children = (ArrayList<Child>)getObjectsInRange(350, Child.class);
+        } 
+        if (children.size() > 0)
+        {
+            // set the first one as my target
+            targetChild = children.get(0);
+            // Use method to get distance to target. This will be used
+            // to check if any other targets are closer
+            closestTargetDistance = Zoo.getDistance (this, targetChild);
+            for (Child o : children)
+            {
+                distanceToActor = Zoo.getDistance(this, o);
+                if (distanceToActor < closestTargetDistance)
+                {
+                    targetChild = o;
+                    closestTargetDistance = distanceToActor;
+                }
+            }
+            turnTowards(targetChild.getX(), targetChild.getY());
+        }
+        if (isTouching(Child.class))
+        {
+            targetChild.takeDamage(1);
         }
     }
     
