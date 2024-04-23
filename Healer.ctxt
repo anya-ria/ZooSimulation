@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Healer
-comment0.text=\r\n\ The\ healer\ likes\ to\ help\ fellow\ children\ with\ some\ clerical\ magic\r\n\ \r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/12/2024\r\n
+comment0.text=\n\ The\ healer\ likes\ to\ help\ fellow\ children\ with\ some\ clerical\ magic\n\ \n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 04/12/2024\n
 comment1.params=
 comment1.target=Healer()
 comment2.params=

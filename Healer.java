@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The healer likes to help fellow children with some clerical magic
  * 
- * @author Anya Shah | Animations
- * @author Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Functions
  * @version 04/12/2024
  */
 public class Healer extends Child

@@ -37,4 +37,8 @@ public class Zoo extends World
         setBackground("zoo.jpg");
     }
 
+    public static double getDistance (Actor a, Actor b)
+    {
+        return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
+    }
 }

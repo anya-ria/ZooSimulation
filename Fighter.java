@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Fights zombies...
  * 
- * @author Anya Shah | Animations
- * @author Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Functions
  * @version 2024/4/8
  */
 public class Fighter extends Child
@@ -34,7 +34,7 @@ public class Fighter extends Child
 
     public void act(){
         if(!super.update()) return;
-        double[] enemyDetails = detectNearestEntity(Animal.class, 500);
+        double[] enemyDetails = detectNearestEntity(Zombie.class, 500);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
         chaseZombies(enemyDetails);
     }

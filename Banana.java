@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Banana extends Projectile
 {
+    private GreenfootImage[] banana = new GreenfootImage[5];
+    private int animCounter, animDelay, animIndex; 
     private int damage = 15;
+
     /**
      * constructs a new Banana with a speed and direction
      * @param angle the direction in degrees
@@ -25,8 +28,44 @@ public class Banana extends Projectile
      */
     public Banana(double vx, double vy){
         super(vx,vy);
-        getImage().scale(20, 20);
+        getImage().scale(30, 30);
+        initImages();
+        
+        animCounter = 0;
+    } 
+    
+    public void act(){
+        super.act();
+        animate();
     }
+    
+    private void initImages() {
+        for(int i = 0; i < banana.length; i++) {
+            banana[i] = new GreenfootImage("bananaSprites/banana" + i + ".png");
+            banana[i].scale(30, 30);
+        }
+        
+        animIndex = 0;
+        animDelay = 5;
+        animCounter = animDelay;
+    }
+    
+    private void animate() {
+        if(animCounter == 0) {
+            animCounter = animDelay;
+            animIndex++;
+            if(animIndex >= banana.length) {
+                animIndex = 0;
+            }
+            setImage(banana[animIndex]);
+        }
+        else {
+            animCounter--;
+        }
+    }
+    /**
+     * Does damage and minor pushing to the child touching this, expiring this
+     */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
@@ -35,6 +74,9 @@ public class Banana extends Projectile
             expired = true;
         }
     }
+    /**
+     * Creates a peel when expired
+     */
     protected void expire(){
         getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
         getWorld().removeObject(this);
