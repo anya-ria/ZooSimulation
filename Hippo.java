@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hippo here.
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
  * @version 04/12/2024
  */
 
@@ -19,6 +19,12 @@ public class Hippo extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
+
+    private boolean isInfected;
+    private int direction;
+    //private double speed;
+    //private double maxSpeed;
+    //private int direction;
 
     public Hippo() {
         super(200);
@@ -58,6 +64,11 @@ public class Hippo extends Animal
     {
         if(!super.update()) return;
         moveAround();
+        if (isInfected)
+        {
+            charge();
+            Greenfoot.playSound("hippo1.mp3");
+        }
     }
     private void moveAround()
     {
