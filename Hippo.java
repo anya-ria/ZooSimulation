@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Hippo here.
+ * Attacks children including the fighter children.
+ * Charges towards children and attacks
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
+ * @author Luke Xiao | Functions
+ * @author Anya Shah | Animations
  * @version 04/12/2024
  */
 
@@ -19,6 +20,12 @@ public class Hippo extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
+
+    private boolean isInfected;
+    private int direction;
+    //private double speed;
+    //private double maxSpeed;
+    //private int direction;
 
     public Hippo() {
         super(200);
@@ -58,16 +65,13 @@ public class Hippo extends Animal
     {
         if(!super.update()) return;
         moveAround();
-<<<<<<< Updated upstream
-=======
         animate();
         if (isInfected)
         {
             charge();
-            Greenfoot.playSound("Hippo1.mp3");
         }
->>>>>>> Stashed changes
     }
+    
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -109,7 +113,6 @@ public class Hippo extends Animal
     
     public void charge()
     {
-        Greenfoot.playSound("Hippo1.mp3");
         move(4);
         if (Greenfoot.getRandomNumber(100) < 10)
         {

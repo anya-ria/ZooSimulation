@@ -103,6 +103,7 @@ public class ZombieHippo extends Zombie
         if(!super.update()) return;
         animate();
         charge();
+        Greenfoot.playSound("hippo1.mp3");
     }
     
     private void targetClosestChildren ()
