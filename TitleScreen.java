@@ -18,7 +18,7 @@ public class TitleScreen extends World
     private AchieveButton achieveButton;
     private EndButton endButton;
     private StartButton startButton;
-    
+    private GreenfootSound music;
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -33,6 +33,8 @@ public class TitleScreen extends World
         
         EndButton endButton = new EndButton();
         addObject(endButton,400,680);
+        
+        music = new GreenfootSound ("backgroundMusic.mp3");
     }
 
     public void act(){
@@ -41,7 +43,11 @@ public class TitleScreen extends World
             Customization game = new Customization();
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
+            music.playLoop();
         }
     }
-
+    
+    public void getStarted (){
+        music.playLoop();
+    }
 }
