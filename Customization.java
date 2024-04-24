@@ -39,6 +39,7 @@ public class Customization extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
+            resetVariables();
             setValue();
             //Go to CutScene
             Greenfoot.setWorld(game);
@@ -52,12 +53,12 @@ public class Customization extends World
      * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
      */
     public void setValue(){
-        ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
-        for(ChildParam other: y)
+        //ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
+        for(ChildParam other: getObjects(ChildParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.numChildren = other.getValue(); //Set number of Children in Zoo according player's choice
+                Zoo.numChildren = other.getValue();//Set number of Children in Zoo according player's choice
             }
         }
         //ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
@@ -104,6 +105,13 @@ public class Customization extends World
         
         addObject(new FighterParam(1),getWidth()/2+180,480);
         addObject(new FighterParam(2),getWidth()/2+280,480);
+    }
+    
+    public void resetVariables(){
+        Zoo.numChildren = 5;
+        Zoo.numHealer = 2;
+        Zoo.numFighter = 1;
+        Zoo.numZombie = 0;
     }
     
 }

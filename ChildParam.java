@@ -77,7 +77,7 @@ public class ChildParam extends Icon
         else if(index == 2){
             value = 25;
         }
-        else{
+        else if(index == 3){
             value = 30;
         }
     }
