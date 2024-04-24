@@ -30,6 +30,10 @@ public abstract class Entity extends SuperSmoothMover
     // might as well declare this for all subclasses
     protected Random rand = new Random();
     
+    // number of entities healed
+    private int numHeal;
+    
+    private boolean check = false; //Check if an entity is being counted
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the entity can have
@@ -117,6 +121,9 @@ public abstract class Entity extends SuperSmoothMover
             wound[1] = duration;
         }
     }
+    /**
+     * Updates the wound, taking damage if the wound timer is a multiple of 30 acts
+     */
     private void updateWound(){
         if(wound[1]>0){
             if(wound[1]%30==0) takeDamage(wound[0]);
@@ -134,6 +141,7 @@ public abstract class Entity extends SuperSmoothMover
             hp += healing;
             if(hp>maxHp) hp = maxHp;
             hpBar.update(hp);
+            Zoo.healed();//number of healed children increases by 1
         }
     }
     protected void die(){
@@ -174,6 +182,13 @@ public abstract class Entity extends SuperSmoothMover
             if(exactY<050) tempVy += 1;
             if(exactY>750) tempVy -= 1;
         }
+        // artificial temp velocity for animals too, but a bit less
+        if(this instanceof Animal){
+            if(exactX<100) tempVx += 0.5;
+            if(exactX>924) tempVx -= 0.5;
+            if(exactY<050) tempVy += 0.5;
+            if(exactY>750) tempVy -= 0.5;
+        }
         super.setLocation(exactX, exactY);
     }
     /**
@@ -195,10 +210,20 @@ public abstract class Entity extends SuperSmoothMover
         setRotation(180);
         slippedDuration = 200;
     }
+    /**
+     * The Entity got pushed! Adds temporary x-velocity and y-velocity
+     * @param vx    x-velocity
+     * @param vy    y-velocity
+     */
     public void push(double vx, double vy){
         tempVx += vx;
         tempVy += vy;
     }
+    /**
+     * Pushes the entity at a fixed speed towards a direction
+     * @param angle     direction of push
+     * @param speed     speed of push
+     */
     public void push(int angle, double speed){
         push(Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
@@ -206,6 +231,10 @@ public abstract class Entity extends SuperSmoothMover
     public boolean isAwake(){
         return awake;
     }
+    /**
+     * Is this slipping?
+     * @return boolean -- whether this is slipping
+     */
     private boolean checkSlipping(){
         if(slippedDuration>0){
             slippedDuration--;
@@ -216,5 +245,12 @@ public abstract class Entity extends SuperSmoothMover
             slippedDuration--; // effectively only makes this code run once
         }        
         return false;
+    }
+    
+    public boolean isCounted(){ //check if the entity is counted as dead in Zoo world
+        return check;
+    }
+    public void counted(){
+        check = true;
     }
 }

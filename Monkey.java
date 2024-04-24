@@ -19,11 +19,6 @@ public class Monkey extends Animal
     private int maxIndex;
     private boolean right, left, away, toward, zombie;
 
-    private boolean isInfected;
-    private double speed;
-    private double maxSpeed;
-    private int direction;
-
     public Monkey()
     {
         super(100);
@@ -49,8 +44,8 @@ public class Monkey extends Animal
         for(int i = 0; i < maxIndex; i++) 
         {
             walkToward[i] = new GreenfootImage("monkeyWalkToward/monkeyWalkToward" + i + ".png");
+            walkToward[i].scale((int)(walkToward[i].getWidth()*1.3),(int)(walkToward[i].getHeight()*1.3));
         }
-
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;

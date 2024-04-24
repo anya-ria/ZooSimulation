@@ -20,7 +20,6 @@ public class ZombieHippo extends Zombie
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
-    
     // Movement Variables
     private int direction;
     private Child targetChild;
@@ -45,9 +44,11 @@ public class ZombieHippo extends Zombie
         }
         for(int i = 0; i < maxIndex; i++) {
             walkRight[i] = new GreenfootImage("zombieHippoWalkRight/walkRight" + i + ".png");
+            walkRight[i].scale(85,43);
         }
         for(int i = 0; i < maxIndex; i++) {
             walkLeft[i] = new GreenfootImage("zombieHippoWalkRight/walkRight" + i + ".png");
+            walkLeft[i].scale(85,43);
             walkLeft[i].mirrorHorizontally();
         }
         
@@ -107,10 +108,12 @@ public class ZombieHippo extends Zombie
         charge();
         Greenfoot.playSound("hippo1.mp3");
         //takeDamage(1);
+        //Greenfoot.playSound("hippo1.mp3");
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
         }
+
     }
     
     private void targetClosestChildren ()

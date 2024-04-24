@@ -18,7 +18,6 @@ public class Regular extends Child
 
     public Regular(){
         super(100);
-
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(3);
         maxIndex = walkAway.length;
@@ -82,7 +81,6 @@ public class Regular extends Child
                 walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
-
         animIndex = 0; 
         animDelay = 8; // # of acts in between each image
         animCounter = animDelay; 
@@ -151,4 +149,5 @@ public class Regular extends Child
             animCounter--; 
         }
     }
+
 }

@@ -1,6 +1,18 @@
 #BlueJ class context
 comment0.target=EndingScreen
-comment0.text=\n\ Write\ a\ description\ of\ class\ EndingScreen\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Ending\ screen\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 2024/04\n
 comment1.params=
 comment1.target=EndingScreen()
-numComments=2
+comment2.params=
+comment2.target=void\ ending1()
+comment2.text=\n\ Call\ "Ending\ 1"\ and\ stop\ the\ game.\ \n
+comment3.params=
+comment3.target=void\ ending2()
+comment3.text=\n\ Call\ "Ending\ 2"\ and\ stop\ the\ game.\ \n
+comment4.params=
+comment4.target=void\ ending3()
+comment4.text=\n\ Call\ "Ending\ 3"\ and\ stop\ the\ game.\ \n
+comment5.params=
+comment5.target=void\ timeElasped()
+comment5.text=\n\ Record\ and\ show\ the\ time\ used\ to\ complete\ the\ game\n
+numComments=6
