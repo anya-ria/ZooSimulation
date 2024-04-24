@@ -91,11 +91,12 @@ public class Penguin extends Animal
     public void act()
     {
         if(!super.update()) return;
-        if(sliding) slide();
+        //if(sliding) slide();
         moveAround();
         animate();
     }
     
+    // Moving in random motion within its fences
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -122,7 +123,6 @@ public class Penguin extends Animal
                 away = true;
             }
         }
-
         if (getX() <= 695 || getX() >= 970)
 
         if(Greenfoot.getRandomNumber(500) < 5){
@@ -143,26 +143,6 @@ public class Penguin extends Animal
         animate();
     }
 
-    
-    public void slide()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(3);
-        if (Greenfoot.getRandomNumber(100) < 10)
-        {
-            setRotation(direction);
-        }
-        if (getX() <= 685 || getX() >= 970)
-        {
-            turn(180);
-            move(10);
-        }
-        if (getY() <= 500 || getY() >= 750)
-        {
-            turn(180);
-            move(10);
-        }
-    }
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;

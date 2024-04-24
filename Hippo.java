@@ -20,12 +20,9 @@ public class Hippo extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
     private boolean right, left, away, toward;
-
-    private boolean isInfected;
+    
+    // Movement variables
     private int direction;
-    //private double speed;
-    //private double maxSpeed;
-    //private int direction;
 
     public Hippo() {
         super(200);
@@ -66,10 +63,6 @@ public class Hippo extends Animal
         if(!super.update()) return;
         moveAround();
         animate();
-        if (isInfected)
-        {
-            charge();
-        }
     }
     
     private void moveAround()
@@ -101,7 +94,7 @@ public class Hippo extends Animal
                 away = true;
             }
         }
-        if (getX() <= 700 || getX() >= 985)
+        if (getX() <= 700 || getX() >= 985) // Move away from the fences
         {
             turn(180);
         }
@@ -111,24 +104,7 @@ public class Hippo extends Animal
         }
     }
     
-    public void charge()
-    {
-        move(4);
-        if (Greenfoot.getRandomNumber(100) < 10)
-        {
-            turn(Greenfoot.getRandomNumber(90) - 45);
-        }
-        if (getX() <= 685 || getX() >= 1000)
-        {
-            turn(180);
-        }
-        if (getY() <= 30 || getY() >= 290)
-        {
-            turn(180);
-        }
-    }
-
-
+    // Determining the animation needed for each directions
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
@@ -139,7 +115,6 @@ public class Hippo extends Animal
             if(right && away){
                 setImage(walkRight[animIndex]);
             } 
-
             else if (!right && !away){
                 setImage(walkLeft[animIndex]);
             } 
@@ -151,7 +126,6 @@ public class Hippo extends Animal
                 setImage(walkLeft[animIndex]);
             } 
             else if(toward){
-
                 setImage(walkToward[animIndex]); 
             } 
             else if(away){
