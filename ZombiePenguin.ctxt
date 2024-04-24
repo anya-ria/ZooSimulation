@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=ZombiePenguin
-<<<<<<< Updated upstream
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-=======
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
->>>>>>> Stashed changes
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombiePenguin\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @version\ 04/23/2024\n
 comment1.params=
 comment1.target=ZombiePenguin()
 comment2.params=
@@ -13,12 +9,7 @@ comment3.params=
 comment3.target=void\ act()
 comment3.text=\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment4.params=
-<<<<<<< Updated upstream
 comment4.target=void\ slide()
-=======
-comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ ZombiePenguin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
->>>>>>> Stashed changes
 comment5.params=
 comment5.target=void\ targetClosestChildren()
 comment6.params=

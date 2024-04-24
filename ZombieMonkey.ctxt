@@ -1,25 +1,14 @@
 #BlueJ class context
 comment0.target=ZombieMonkey
-<<<<<<< Updated upstream
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ --\ Movements\n\ @author\ <li>\ Anya\ Shah\ --\ Animations\n\ @author\ <li>\ Lucas\ Fu\ --\ ThrowBananas\n\ \n\ @version\ (2024.04.18)\n
-=======
-comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
->>>>>>> Stashed changes
+comment0.text=\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @author\ <li>\ Lucas\ Fu\ |\ ThrowBananas\n\ \n\ @version\ 04/18/2024\n
 comment1.params=
 comment1.target=ZombieMonkey()
 comment2.params=
 comment2.target=void\ initImages()
 comment3.params=
-<<<<<<< Updated upstream
 comment3.target=void\ throwBananas()
 comment4.params=direction\ speed
 comment4.target=void\ throwBanana(int,\ int)
-=======
-comment3.target=void\ initImages()
-comment4.params=
-comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ ZombieMonkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
->>>>>>> Stashed changes
 comment5.params=
 comment5.target=void\ act()
 comment5.text=\n\ Act\ -\ do\ whatever\ the\ ZombieMonkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n

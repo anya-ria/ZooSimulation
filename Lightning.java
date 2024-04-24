@@ -10,18 +10,16 @@ public class Lightning extends SuperSmoothMover
 {
     public static final Color WHITE = new Color (255,255,255);
     private GreenfootImage[] lightningStrike = new GreenfootImage[3];
+
     private int imageIndex = 0, actCount = 0, duration;
     private GreenfootSound sound;
-    
-    
+
     /**
      * Creates a new Lightning with specified sound and duration
      */
     public Lightning(GreenfootSound sound, int duration){
         this.duration = duration;
         this.sound = sound;
-        
-        
         for(int i=1; i<4;i++) {
             lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
         }
@@ -32,7 +30,7 @@ public class Lightning extends SuperSmoothMover
         if(actCount < 121){
             if(actCount == 0 || actCount == 80) {
                 setImage(new GreenfootImage("darkOverlay.png"));
-                if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
+                //if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
             }
             else if(actCount  == 20){
                 setImage(new GreenfootImage("darkOverlay.png"));
@@ -40,7 +38,7 @@ public class Lightning extends SuperSmoothMover
                 flash.setColor(WHITE);
                 flash.fill();
                 setImage(flash);
-                ((CutScene)getWorld()).removeAnimals();
+                //((CutScene)getWorld()).removeAnimals(); //ERROR 
             }
         }
         // after those first few acts, lighning strikes every 45 acts, 3 times
@@ -60,5 +58,13 @@ public class Lightning extends SuperSmoothMover
             return;
         }
         actCount++;
+    }
+    
+    public void removeAnimals(){
+        
+    }
+    
+    public void turnintoZombie(){
+        
     }
 }

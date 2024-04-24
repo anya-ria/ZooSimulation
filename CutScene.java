@@ -22,7 +22,7 @@ public class CutScene extends World
         Greenfoot.setSpeed(50);
         
         setBackground("zoo.jpg");
-        setPaintOrder (Icon.class, Effect.class, Animal.class);
+        setPaintOrder (Icon.class, Effect.class, Lightning.class, Animal.class);
         actCount = 0;
 
         addObject(new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60), 512, 400);
@@ -57,7 +57,6 @@ public class CutScene extends World
      * Spawns 3 of each type of animals in initial location within their respective pens
     */
     public void spawnAnimals(){
-
         addObject(new Monkey(), 80, 100);
         addObject(new Monkey(), 290, 155);
         addObject(new Monkey(), 175, 230);
