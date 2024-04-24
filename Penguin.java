@@ -93,16 +93,15 @@ public class Penguin extends Animal
                 away = true;
             }
         }
-        if (getX() <= 695 || getX() >= 970)
-
+        if (getX() <= 695 || getX() >= 970){
             if(Greenfoot.getRandomNumber(500) < 5){
                 sliding = true;
             }
+        }
         if(Greenfoot.getRandomNumber(500) < 5){
             sliding = false;
         }
         if (getX() <= 695 || getX() >= 980)
-
         {
             turn(180);
         }
