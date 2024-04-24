@@ -51,12 +51,9 @@ public class Monkey extends Animal
         animCounter = animDelay;
     }
 
-    /**
-     * Act - do whatever the Monkey wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
+        // calls the update method from the Entity class, which returns whether this should continue acting
         if(!super.update()) return;
         moveAround();
         animate();

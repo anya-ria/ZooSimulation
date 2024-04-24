@@ -43,21 +43,18 @@ public class Lightning extends SuperSmoothMover
     }
 
     public void act(){
+        // first 40% of the acts
         lightning.playLoop();
-        
-        //For the first 120 acts
-        if(actCount < 121){
-            //At time intervals, 0-20 & 80-135, screen has a dark transparent overlay
-            if(actCount == 0 || actCount == 80) {
-                //Set image as an already made dark transparent overlay
+        if(actCount < duration*0.4){
+            // at time intervals 0 to duration*0.1 and duration*0.2 to duration*0.4
+            if(actCount == 0 || actCount == duration*0.2) {
                 setImage(new GreenfootImage("darkOverlay.png"));
+                if(actCount == duration*0.2) turnIntoZombie();
             }
-            //At time interval, 20-80, screen has an opaque white flash
-            else if(actCount  == 20){
-                //Creates flash, a GreenfootImage with dimensions of the world
-                GreenfootImage flash = new GreenfootImage(1024, 800);
-            
-                //Fill flash as opaque white
+            // At time intervals duration*0.1 to duration*0.2 screen has an opaque white flash
+            else if(actCount  == duration*0.1){
+                setImage(new GreenfootImage("darkOverlay.png"));
+                GreenfootImage flash = new  GreenfootImage(1024, 800);
                 flash.setColor(WHITE);
                 flash.fill();
                 
@@ -65,9 +62,8 @@ public class Lightning extends SuperSmoothMover
                 setImage(flash);
             }
         }
-        //After the first 120 acts, at time intervals of 45 seconds
-        //First time it runs is at 135 acts (135 % 45 == 0)
-        else if(actCount % 45 == 0){
+        // after those first 40% of acts, lightning animation happens
+        else if(actCount % (duration/6) == 0 && actCount < duration){
             //Set image as appropriate lightning animation (3 images)
             if(imageIndex < 3){
                 setImage(lightningStrike[imageIndex]);
@@ -99,6 +95,7 @@ public class Lightning extends SuperSmoothMover
                 Zoo.numAnimals--;
             }
         }
+    /** 
      * Method that pauses lightning sound.
      */
     public static void pauseSound(){

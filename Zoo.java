@@ -3,12 +3,12 @@ import java.util.*;
 /**
  * The Zoo:)
  * 
- * @author Vanessa Huo
- * @author Lucas Fu
- * @author Anya Shah
- * @author Megan Lee
- * @author Gennie Won
- * @author Luke Xiao
+ * @author <li> Vanessa Huo
+ * @author <li> Lucas Fu
+ * @author <li> Anya Shah
+ * @author <li> Megan Lee
+ * @author <li> Gennie Won
+ * @author <li> Luke Xiao
  * 
  * @version April 2024
  *  * 
@@ -119,7 +119,7 @@ public class Zoo extends World
         
         //Add lightning. Error
         if (actCount % 720 == 0){
-            Lightning lightning = new Lightning(300);
+            Lightning lightning = new Lightning(100);
             addObject(lightning, 512, 400);
         }
     }
