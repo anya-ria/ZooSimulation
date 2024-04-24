@@ -36,6 +36,11 @@ public class TitleScreen extends World
         
         //Preload background music
         music = new GreenfootSound ("backgroundMusic.mp3");
+        music.setVolume(70);
+        
+        // Initialize sounds
+        HealingEffect.init();
+        Pencil.init();
     }
     
     /**
@@ -46,11 +51,14 @@ public class TitleScreen extends World
             Customization game = new Customization();
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
-            music.playLoop();
         }
     }
     
-    public void getStarted (){
+    public void started (){
         music.playLoop();
+    }
+    
+    public void stopped() {
+        music.pause();
     }
 }
