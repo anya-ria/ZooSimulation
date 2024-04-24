@@ -37,7 +37,7 @@ public class Zoo extends World
     public static int numHealer = 2;
     public static int numFighter = 1;
     public static int numZombie = 0;
-    public static int numAnimals = 25; //Total animals
+    public static int numAnimals = 15; //Total animals
     
     //Counters use to detect if a achievement is completed
     private static int numHealed; //number of children healed
@@ -159,11 +159,13 @@ public class Zoo extends World
             Collections.unlockEnd2();
             world.ending2();
         }
+        /*
         if(numZombie == 0 && actCount > 1000){
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
         }
+        */
     }
     
     /**
@@ -200,13 +202,25 @@ public class Zoo extends World
     public static int healed(){ //number of children get healed
         return numHealed++;
     }
-    
-    //public static int dead(){ //number of dead children
-        //return numDead++;
-    //}
+
     public static int hit(){ //get hit by banana
         return numHit++;
     }
+    
+    public int getNumZombie(){
+        int x = numZombie;
+        return x;
+    }
+    
+    public int getNumChild(){
+        int x = numChildren;
+        return x;
+    } 
+    
+    public int getNumAnimal(){
+        int x = numAnimals;
+        return x;
+    } 
     
     public static double getDistance (Actor a, Actor b)
     {

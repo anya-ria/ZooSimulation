@@ -61,16 +61,12 @@ public class Lightning extends SuperSmoothMover
         actCount++;
     }
     
-    public void removeAnimals(){
-        
-    }
-    
     /**
      * When lightning strikes, animals hace a chance to turn into zombies!
      */
     public void turnIntoZombie(){
         for(Animal a: getWorld().getObjects(Animal.class)){
-            if(Greenfoot.getRandomNumber(3) == 0){ //1/3 chance of turning into a zombie
+            if(Greenfoot.getRandomNumber(3) == 0 && a.isAwake()){ //1/3 chance of turning into a zombie
                 a.zombify();
                 Zoo.numZombie++;
                 Zoo.numAnimals--;
