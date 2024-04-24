@@ -9,5 +9,6 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ removeAnimals()
 comment4.params=
-comment4.target=void\ turnintoZombie()
+comment4.target=void\ turnIntoZombie()
+comment4.text=\n\ When\ lightning\ strikes,\ animals\ hace\ a\ chance\ to\ turn\ into\ zombies\!\n
 numComments=5

@@ -8,4 +8,5 @@ comment2.target=void\ act()
 comment2.text=\n\ If\ a\ button\ is\ clicked\ (option\ is\ choosen),\ set\ to\ 'clicked'\ image\ and\ reset\ all\ other\ options\ to\ 'unclicked'.\n
 comment3.params=
 comment3.target=void\ setValue()
+comment3.text=\n\ Set\ value\ according\ to\ the\ choosen\ option\n
 numComments=4

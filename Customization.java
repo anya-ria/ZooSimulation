@@ -57,31 +57,31 @@ public class Customization extends World
         {
             if(other.getClicked())
             {
-                Zoo.setNumChild(other.getValue()); //Set number of Children in Zoo according player's choice
+                Zoo.numChildren = other.getValue(); //Set number of Children in Zoo according player's choice
             }
         }
-        ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
-        for(FighterParam other: y1)
+        //ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
+        for(FighterParam other: getObjects(FighterParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumFighter(other.getValue());
+                Zoo.numFighter = other.getValue();
             }
         }
-        ArrayList<HealerParam> y2 = (ArrayList<HealerParam>)getObjects(HealerParam.class);
-        for(HealerParam other: y2)
+        //ArrayList<HealerParam> y2 = (ArrayList<HealerParam>)getObjects(HealerParam.class);
+        for(HealerParam other: getObjects(HealerParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumHealer(other.getValue());
+                Zoo.numHealer = other.getValue();
             }
         }
-        ArrayList<ZombieParam> y3 = (ArrayList<ZombieParam>)getObjects(ZombieParam.class);
-        for(ZombieParam other: y3)
+        //ArrayList<ZombieParam> y3 = (ArrayList<ZombieParam>)getObjects(ZombieParam.class);
+        for(ZombieParam other: getObjects(ZombieParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumZombie(other.getValue());
+                Zoo.numZombie = other.getValue();
             }
         }
     }

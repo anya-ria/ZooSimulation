@@ -30,7 +30,8 @@ public class Lightning extends SuperSmoothMover
         if(actCount < 121){
             if(actCount == 0 || actCount == 80) {
                 setImage(new GreenfootImage("darkOverlay.png"));
-                //if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
+                if(actCount == 80) turnIntoZombie();//
+                //((CutScene)getWorld()).spawnAnimals();
             }
             else if(actCount  == 20){
                 setImage(new GreenfootImage("darkOverlay.png"));
@@ -64,7 +65,16 @@ public class Lightning extends SuperSmoothMover
         
     }
     
-    public void turnintoZombie(){
-        
+    /**
+     * When lightning strikes, animals hace a chance to turn into zombies!
+     */
+    public void turnIntoZombie(){
+        for(Animal a: getWorld().getObjects(Animal.class)){
+            if(Greenfoot.getRandomNumber(3) == 0){ //1/3 chance of turning into a zombie
+                a.zombify();
+                Zoo.numZombie++;
+                Zoo.numAnimals--;
+            }
+        }
     }
 }
