@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * The pencil is a projectile that does DOT upon impact
  * 
@@ -12,6 +12,10 @@ public class Pencil extends Projectile
     private int animCounter, animDelay, animIndex; 
     private int dot; // damage
     private int duration; // how many acts (divide by 30 for number of ticks)
+    
+    private static GreenfootSound[] pencilSound;
+    private static int pencilSoundIndex;
+    
     /**
      * Constructs a new Pencil using angle and speed
      * @param dmg       the damage to be taken every tick (30 acts)
@@ -44,6 +48,23 @@ public class Pencil extends Projectile
     public void act() {
         super.act();
         animate();
+    }
+    
+    public static void init() {
+        pencilSoundIndex = 0;
+        pencilSound = new GreenfootSount[20];
+        for(int i = 0; i < pencilSound.length; i++) {
+            pencilSound[i] = new GreenfootSound("pencilThrow2.mp3");
+        }
+    }
+    
+    public static void playPencilSound() {
+        pencilSound[pencilSoundIndex].setVolume(50);
+        pencilSound[pencilSoundIndex].play();
+        pencilSoundIndex++;
+        if(pencilSoundIndex >= pencilSound.length) {
+            pencilSoundIndex = 0;
+        }
     }
     
     private void initImages() {
