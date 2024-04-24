@@ -1,11 +1,15 @@
 #BlueJ class context
 comment0.target=TitleScreen
+<<<<<<< Updated upstream
 comment0.text=\n\ Title\ Screen\n\ The\ player\ can\:\n\ \ \ \ \ \ Start\ the\ game\n\ \ \ \ \ \ View\ Game\ Achievements\n\ \ \ \ \ \ View\ Game\ Endings\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 2024/04\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ TitleScreen\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=TitleScreen()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\n
 comment3.params=
-comment3.target=void\ getStarted()
+comment3.target=void\ stopped()
 numComments=4

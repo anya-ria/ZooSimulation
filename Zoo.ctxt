@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Zoo
+<<<<<<< Updated upstream
 comment0.text=\n\ The\ Zoo\:)\n\ \n\ @author\ Vanessa\ Huo\n\ @author\ Lucas\ Fu\n\ @author\ Anya\ Shah\n\ @author\ Megan\ Lee\n\ @author\ Gennie\ Won\n\ @author\ Luke\ Xiao\n\ \n\ @version\ April\ 2024\n\ \ *\ \n\ Credits\:\ \n\ images\:\ \n\ \ children\:\ \n\ \ \ \ \ \ https\://\n\ \ \ \ \ \ author\:\ \n\ sounds\:\ \n\ \ lightning\:\n\ \ \ \ \ \ https\://\n\ \ \ \ \ \ author\:\ \n\ Code\:\ \n\ \ \ \ \ \ author\:\ Jordan\ Cohen\n\n\ Description\:\ \n\ \n\ Known\ bugs\:\n\ \n\ \n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=Zoo()
 comment10.params=x

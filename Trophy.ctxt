@@ -8,7 +8,11 @@ comment2.target=void\ act()
 comment2.text=\n\ If\ boolean\ 'unlock'\ is\ true,\ change\ grey\ trophy\ to\ gold\ trophy.\ \n
 comment3.params=
 comment3.target=void\ setAchieved()
+<<<<<<< Updated upstream
 comment3.text=\n\ Set\ unlock\ to\ true\ and\ play\ sound\ effect.\n
 comment4.params=
 comment4.target=boolean\ getUnlock()
 numComments=5
+=======
+numComments=4
+>>>>>>> Stashed changes

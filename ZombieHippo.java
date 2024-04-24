@@ -104,16 +104,22 @@ public class ZombieHippo extends Zombie
     public void act()
     {
         if(!super.update()) return;
+<<<<<<< Updated upstream
         animate();
         charge();
 
         //Greenfoot.playSound("hippo1.mp3");
 
+=======
+>>>>>>> Stashed changes
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
     
     private void targetClosestChildren ()

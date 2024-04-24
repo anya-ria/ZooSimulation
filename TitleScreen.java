@@ -36,11 +36,15 @@ public class TitleScreen extends World
         
         //Preload background music
         music = new GreenfootSound ("backgroundMusic.mp3");
+        music.setVolume(70);
     }
     
+<<<<<<< Updated upstream
     /**
      * When 'Start' button gets pressed, go to Customization screen and play the sound effect
      */
+=======
+>>>>>>> Stashed changes
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
             Customization game = new Customization();
@@ -50,7 +54,11 @@ public class TitleScreen extends World
         }
     }
     
-    public void getStarted (){
-        music.playLoop();
+    // public void getStarted (){
+        // music.playLoop();
+    // }
+    
+    public void stopped() {
+        music.pause();
     }
 }

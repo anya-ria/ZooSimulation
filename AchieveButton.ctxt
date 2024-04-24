@@ -1,8 +1,15 @@
 #BlueJ class context
 comment0.target=AchieveButton
+<<<<<<< Updated upstream
 comment0.text=\n\ AchieveButton.\n\ \n\ @author\ Megan\ Lee\ |\ Art\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ April\ 2024\n
 comment1.params=
 comment1.target=AchieveButton()
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ AchieveButton\ here.\n\ \n\ @author\ Megan\ Lee\n\ @version\ April\ 2024\n
+comment1.params=
+comment1.target=AchieveButton()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ AchieveButton\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+>>>>>>> Stashed changes
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ If\ the\ button\ is\ clicked,\ go\ to\ achievement\ screen\ and\ play\ sound\ effect\n

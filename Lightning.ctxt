@@ -6,8 +6,12 @@ comment1.target=Lightning(greenfoot.GreenfootSound,\ int)
 comment1.text=\n\ Creates\ a\ new\ Lightning\ with\ specified\ sound\ and\ duration\n
 comment2.params=
 comment2.target=void\ act()
+<<<<<<< Updated upstream
 comment3.params=
 comment3.target=void\ removeAnimals()
 comment4.params=
 comment4.target=void\ turnintoZombie()
 numComments=5
+=======
+numComments=3
+>>>>>>> Stashed changes
