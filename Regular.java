@@ -27,7 +27,7 @@ public class Regular extends Child
     public void act()
     {   
         if(!super.update()) return;
-        double[] enemyDetails = detectNearestEntity(Animal.class, 400);
+        double[] enemyDetails = detectNearestEntity(Zombie.class, 400);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 200);
         runAway(enemyDetails); 
     }
