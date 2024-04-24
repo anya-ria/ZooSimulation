@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Transition
-comment0.text=\r\n\ Black\ Overlay\ that\ fades\ overtime.\r\n\ \r\n\ @author\ Megan\ Lee\r\n\ @version\ April\ 2024\r\n
-comment1.params=sound\ image\ fadeIn\ duration\ fadeOut
-comment1.target=Transition(greenfoot.GreenfootSound,\ greenfoot.GreenfootImage,\ int,\ int,\ int)
-comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Fade\ \ -\ do\ whatever\ the\ Transition\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=3

@@ -58,16 +58,20 @@ public class ZombiePenguin extends Zombie
         // Initializing sliding images
         for(int i = 0; i < maxSlideIndex; i++) {
             slideRight[i] = new GreenfootImage("zombiePenguinSlideRight/slideRight" + i + ".png");
+            slideRight[i].scale((int)(slideRight[i].getWidth()*1.5),(int)(slideRight[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxSlideIndex; i++) {
             slideLeft[i] = new GreenfootImage("zombiePenguinSlideRight/slideRight" + i + ".png");
+            slideLeft[i].scale((int)(slideLeft[i].getWidth()*1.5),(int)(slideLeft[i].getHeight()*1.5));
             slideLeft[i].mirrorHorizontally();
         }
         for(int i = 0; i < maxSlideIndex; i++) {
             slideAway[i] = new GreenfootImage("zombiePenguinSlideAway/slideAway" + i + ".png");
+            slideAway[i].scale((int)(slideAway[i].getWidth()*1.5),(int)(slideAway[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxSlideIndex; i++) {
             slideToward[i] = new GreenfootImage("zombiePenguinSlideToward/slideToward" + i + ".png");
+            slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
         }
 
         animIndex = 0;

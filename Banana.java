@@ -72,6 +72,7 @@ public class Banana extends Projectile
             touched.takeDamage(damage);
             touched.push( vx*0.2 , vy*0.2 );
             expired = true;
+            Zoo.hit();
         }
     }
     /**

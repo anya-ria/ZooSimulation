@@ -1,23 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndButton here.
+ * EndButton 
+ * Go to the collections screen 
+ * View Ending completion 
  * 
- * @author Megan Lee
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
  * @version April 2024
  */
 public class EndButton extends Icon
 {
-    /**
-     * Act - do whatever the EndButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public EndButton(){
         setImage("endingsButton.png");
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
     
+    /**
+     * If the button is clicked, go to collections screen and play sound effect
+     */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             Collections collec1 = new Collections();
@@ -25,4 +27,5 @@ public class EndButton extends Icon
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
+    
 }

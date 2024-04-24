@@ -1,23 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.World;
 /**
- * Write a description of class AchieveButton here.
+ * AchieveButton.
  * 
- * @author Megan Lee
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
  * @version April 2024
  */
 public class AchieveButton extends Icon
 {
-    /**
-     * Act - do whatever the AchieveButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public AchieveButton(){
         setImage("achievementsButton.png");
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
     
+    /**
+     * If the button is clicked, go to achievement screen and play sound effect
+     */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             Achievement achi1 = new Achievement();
@@ -25,5 +25,4 @@ public class AchieveButton extends Icon
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
-
 }

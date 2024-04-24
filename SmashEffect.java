@@ -21,9 +21,11 @@ public class SmashEffect extends Effect
         getImage().fillOval(0,0,size,size);
         
         damage = dmg;
+        Greenfoot.playSound("heal.mp3");
     }
     /**
      * @override
+     * Gets all touching children when added to world, making them take damage
      */
     public void addedToWorld(World world){
         List<Child> children = getIntersectingObjects(Child.class);

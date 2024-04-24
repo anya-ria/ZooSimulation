@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartButton here.
+ * Click to start the game
  * 
- * @author Megan Lee
+ * @author Megan Lee | Art
+ * @author Vanessa Huo | Functions
  * @version April 2024
  */
 public class StartButton extends Icon
@@ -22,4 +23,8 @@ public class StartButton extends Icon
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
+    
+    public void setValue(){
+        
+    }
 }

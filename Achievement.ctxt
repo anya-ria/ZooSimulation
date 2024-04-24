@@ -1,8 +1,22 @@
 #BlueJ class context
 comment0.target=Achievement
-comment0.text=\n\ Write\ a\ description\ of\ class\ Achievement\ here.\n\ \n\ @author\ Vanessa\n\ @version\ 2024/4/19\n
+comment0.text=\n\ Show\ a\ list\ of\ achievements\n\ Gold\ Trophy\ -\ completed\n\ Grey\ Trophy\ -\ not\ completed\ yet\n\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/4\n
 comment1.params=
 comment1.target=Achievement()
 comment2.params=
 comment2.target=void\ addCups()
-numComments=3
+comment2.text=\n\ Adds\ the\ achievement\ cups\ to\ the\ Achievement\ screen\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ If\ an\ achievement\ is\ completed,\ shows\ gold\ trophy\n
+comment4.params=
+comment4.target=void\ completeAchi0()
+comment5.params=
+comment5.target=void\ completeAchi1()
+comment6.params=
+comment6.target=void\ completeAchi2()
+comment7.params=
+comment7.target=void\ completeAchi3()
+comment8.params=
+comment8.target=void\ completeAchi4()
+numComments=9
