@@ -16,9 +16,6 @@ public class TitleScreen extends World
     private AchieveButton achieveButton;
     private EndButton endButton;
     private StartButton startButton;
-
-    //Init music
-    private GreenfootSound music;
         
     public TitleScreen()
     {    
@@ -33,9 +30,6 @@ public class TitleScreen extends World
         addObject(achieveButton,662,430);
         EndButton endButton = new EndButton();
         addObject(endButton,362,430);
-        
-        //Preload background music
-        music = new GreenfootSound ("backgroundMusic.mp3");
     }
     
     /**
@@ -46,11 +40,6 @@ public class TitleScreen extends World
             Customization game = new Customization();
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
-            music.playLoop();
         }
-    }
-    
-    public void getStarted (){
-        music.playLoop();
     }
 }

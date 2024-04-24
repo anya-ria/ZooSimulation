@@ -17,6 +17,9 @@ public class Customization extends World
     private HealerParam h1, h2; //2 choices
     private FighterParam f1, f2;
     
+    //Init music
+    private GreenfootSound music;
+    
     CutScene game = new CutScene();
     public Customization()
     {    
@@ -30,9 +33,12 @@ public class Customization extends World
         setBackground("userSelectScreen.jpg");
         
         createParams();
+        
+        //Preload background music
+        music = new GreenfootSound ("backgroundMusic.mp3");
+        music.playLoop();
     }
 
-    
     /**
      * When 'Start' button gets pressed, set initial number of each actor in Zoo
      * Go to CutScene world and play sound effect
@@ -40,6 +46,7 @@ public class Customization extends World
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
             setValue();
+            music.stop();
             //Go to CutScene
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");

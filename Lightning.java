@@ -34,7 +34,7 @@ public class Lightning extends SuperSmoothMover
         actCount = 0;
         
         //Set sound as lightning
-        lightning = new GreenfootSound("lightning.mp3");
+        lightning = new GreenfootSound("lightning.wav");
 
         //Store lightning sprites into array
         for(int i=1; i<4;i++) {

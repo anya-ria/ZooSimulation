@@ -6,6 +6,4 @@ comment1.target=TitleScreen()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\r\n
-comment3.params=
-comment3.target=void\ getStarted()
-numComments=4
+numComments=3
