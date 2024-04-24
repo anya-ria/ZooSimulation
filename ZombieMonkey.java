@@ -77,14 +77,14 @@ public class ZombieMonkey extends Zombie
             throwCooldown = maxThrowCooldown;
         }
         throwCooldown--;
-        if(distance < 10){
+        if(distance < 30){
             return;
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
         direction = Greenfoot.getRandomNumber(361);
         move(1);
         
-        // 
+        // movement
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
