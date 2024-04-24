@@ -9,12 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Penguin extends Animal
 {
-    // Penguin slide sprites
-    private GreenfootImage[] slideRight = new GreenfootImage[3];
-    private GreenfootImage[] slideLeft = new GreenfootImage[3];
-    private GreenfootImage[] slideAway = new GreenfootImage[3];
-    private GreenfootImage[] slideToward = new GreenfootImage[3];
-
     // Penguin walk sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];
     private GreenfootImage[] walkLeft = new GreenfootImage[3];
@@ -30,36 +24,12 @@ public class Penguin extends Animal
     {
         super(100);
         animCounter = 0;
-        maxSlideIndex = slideRight.length;
         maxWalkIndex = walkRight.length;
         initImages();
     }
 
     private void initImages()
     {
-        // Initializing sliding images
-        for(int i = 0; i < maxSlideIndex; i++)
-        {
-            slideRight[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
-            slideRight[i].scale((int)(slideRight[i].getWidth()*1.5),(int)(slideRight[i].getHeight()*1.5));
-        }
-        for(int i = 0; i < maxSlideIndex; i++)
-        {
-            slideLeft[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
-            slideLeft[i].scale((int)(slideLeft[i].getWidth()*1.5),(int)(slideLeft[i].getHeight()*1.5));
-            slideLeft[i].mirrorHorizontally();
-        }
-        for(int i = 0; i < maxSlideIndex; i++)
-        {
-            slideAway[i] = new GreenfootImage("penguinSlideAway/slideAway" + i + ".png");
-            slideAway[i].scale((int)(slideAway[i].getWidth()*1.5),(int)(slideAway[i].getHeight()*1.5));
-        }
-        for(int i = 0; i < maxSlideIndex; i++)
-        {
-            slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
-            slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
-        }
-
         // Initializing walking images
         for(int i = 0; i < maxWalkIndex; i++)
         {
@@ -91,11 +61,10 @@ public class Penguin extends Animal
     public void act()
     {
         if(!super.update()) return;
-        //if(sliding) slide();
         moveAround();
         animate();
     }
-    
+
     // Moving in random motion within its fences
     private void moveAround()
     {
@@ -125,9 +94,9 @@ public class Penguin extends Animal
         }
         if (getX() <= 695 || getX() >= 970)
 
-        if(Greenfoot.getRandomNumber(500) < 5){
-            sliding = true;
-        }
+            if(Greenfoot.getRandomNumber(500) < 5){
+                sliding = true;
+            }
         if(Greenfoot.getRandomNumber(500) < 5){
             sliding = false;
         }
@@ -147,47 +116,24 @@ public class Penguin extends Animal
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(sliding) {
-                if(animIndex >= maxSlideIndex) {
-                    animIndex = 0;
-                }
-                if(right)
-                {
-                    setImage(slideRight[animIndex]);
-                }
-                else if(left)
-                {
-                    setImage(slideLeft[animIndex]);
-                }
-                else if(away)
-                {
-                    setImage(slideAway[animIndex]);
-                }
-                else if(toward)
-                {
-                    setImage(slideToward[animIndex]);
-                }
+            if(animIndex >= maxWalkIndex) {
+                animIndex = 0;
             }
-            else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right)
-                {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left)
-                {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away)
-                {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward)
-                {
-                    setImage(walkToward[animIndex]);
-                }
+            if(right)
+            {
+                setImage(walkRight[animIndex]);
+            }
+            else if(left)
+            {
+                setImage(walkLeft[animIndex]);
+            }
+            else if(away)
+            {
+                setImage(walkAway[animIndex]);
+            }
+            else if(toward)
+            {
+                setImage(walkToward[animIndex]);
             }
         }
         else
