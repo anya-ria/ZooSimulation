@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * A cutscene that introduces the inciting incident; lightning turns zoo animals to zombies.
+ * A cutscene introducing the inciting incident of this simulation.
+ * A teacher introduces her students to the zoo, suddenly lightning turns the animals into zombies.
  * 
  * @author Megan
  * @version April 2024
@@ -9,43 +10,49 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CutScene extends World
 {
     int actCount;
-
-    /**
-     * Constructor for objects of class CutScene.
-     * 
-     */
-    public CutScene()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    
+    public CutScene() {    
         super(1024, 800, 1); 
 
-        Greenfoot.setSpeed(50);
-        
-        setBackground("zoo.jpg");
+        //Set default speed of slider as 50
+        Greenfoot.setSpeed(50); 
+    
+        //Skip button can always be pressed, lightning appears above animals  
         setPaintOrder (Icon.class, Effect.class, Lightning.class, Animal.class);
-        actCount = 0;
-
-        addObject(new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60), 512, 400);
-        spawnAnimals();
         
+        //Adds transition effect, a black screen that fades out
+        Effect transition = new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60);
+        addObject(transition, 512, 400);
+        
+        //Adds button for user to skip through cutscene
         SkipButton skipButton = new SkipButton();
         addObject(skipButton,79,739);
         skipButton.setLocation(952,754);
+        
+        setBackground("zoo.jpg"); 
+        
+        actCount = 0;      
+        
+        spawnAnimals();
     }
 
     public void act(){        
+        //After transition effect, add first teacher dialogue
         if(actCount == 180){
             Effect teacherText1 = new Effect(null, new GreenfootImage("teacherText1.png"), 20, 180, 20);
             addObject(teacherText1, 512, 400); 
         }
+        //After first dialogue from teacher, add lightning effect
         if(actCount == 380){
-            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 300);
+            Lightning lightning = new Lightning(300);
             addObject(lightning, 512, 400); 
         }
+        //During lightning effect, add second teacher dialogue
         if(actCount == 460){
             Effect teacherText2 = new Effect(null, new GreenfootImage("teacherText2.png"), 20, 180, 20);
             addObject(teacherText2, 512, 400); 
         }
+        //After 680 acts, begin actual simulation in main world (zoo)
         if(actCount == 680){
             Zoo zoo = new Zoo();
             Greenfoot.setWorld(zoo);
@@ -54,8 +61,8 @@ public class CutScene extends World
     }
 
     /**
-     * Spawns 3 of each type of animals in initial location within their respective pens
-    */
+     * Method that spawns 3 of each type of animals in an initial location within their respective pens
+     */
     public void spawnAnimals(){
         addObject(new Monkey(), 80, 100);
         addObject(new Monkey(), 290, 155);
@@ -69,12 +76,22 @@ public class CutScene extends World
         addObject(new Penguin(), 850, 630);
         addObject(new Penguin(), 950, 710);
     }
+    
     /**
-     * Removes all animals from screen to disappear during special effects
+     * Method called by the Greenfoot system when the execution has started.
      */
-    public void removeAnimals(){
-        for(Animal a: getObjects(Animal.class)){
-            removeObject(a);
-        }
+    public void started() {
+        //starts or resumes lightning sound when simulation is started
+        super.started();
+        if(getObjects(Lightning.class).size()!=0) Lightning.playSound();
+    }
+
+    /**
+     * Method called by the Greenfoot system when the execution has stopped.
+     */
+    public void stopped() {
+        //pauses lightning sound when simulation is paused
+        super.stopped();
+        if((getObjects(Lightning.class).size()!=0)) Lightning.pauseSound();
     }
 }
