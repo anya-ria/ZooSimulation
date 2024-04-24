@@ -41,19 +41,23 @@ public class Penguin extends Animal
         for(int i = 0; i < maxSlideIndex; i++)
         {
             slideRight[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+            slideRight[i].scale((int)(slideRight[i].getWidth()*1.5),(int)(slideRight[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxSlideIndex; i++)
         {
             slideLeft[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+            slideLeft[i].scale((int)(slideLeft[i].getWidth()*1.5),(int)(slideLeft[i].getHeight()*1.5));
             slideLeft[i].mirrorHorizontally();
         }
         for(int i = 0; i < maxSlideIndex; i++)
         {
             slideAway[i] = new GreenfootImage("penguinSlideAway/slideAway" + i + ".png");
+            slideAway[i].scale((int)(slideAway[i].getWidth()*1.5),(int)(slideAway[i].getHeight()*1.5));
         }
         for(int i = 0; i < maxSlideIndex; i++)
         {
             slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
+            slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
         }
 
         // Initializing walking images

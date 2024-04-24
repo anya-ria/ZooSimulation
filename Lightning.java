@@ -30,7 +30,7 @@ public class Lightning extends SuperSmoothMover
         if(actCount < 121){
             if(actCount == 0 || actCount == 80) {
                 setImage(new GreenfootImage("darkOverlay.png"));
-                if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
+                //if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
             }
             else if(actCount  == 20){
                 setImage(new GreenfootImage("darkOverlay.png"));
@@ -38,7 +38,7 @@ public class Lightning extends SuperSmoothMover
                 flash.setColor(WHITE);
                 flash.fill();
                 setImage(flash);
-                ((CutScene)getWorld()).removeAnimals(); //ERROR 
+                //((CutScene)getWorld()).removeAnimals(); //ERROR 
             }
         }
         // after those first few acts, lighning strikes every 45 acts, 3 times
@@ -58,5 +58,13 @@ public class Lightning extends SuperSmoothMover
             return;
         }
         actCount++;
+    }
+    
+    public void removeAnimals(){
+        
+    }
+    
+    public void turnintoZombie(){
+        
     }
 }

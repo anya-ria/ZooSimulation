@@ -22,7 +22,7 @@ public class CutScene extends World
         Greenfoot.setSpeed(50);
         
         setBackground("zoo.jpg");
-        setPaintOrder (Icon.class, Effect.class, Animal.class);
+        setPaintOrder (Icon.class, Effect.class, Lightning.class, Animal.class);
         actCount = 0;
 
         addObject(new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60), 512, 400);
