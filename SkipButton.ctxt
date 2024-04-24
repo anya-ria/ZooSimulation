@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=SkipButton
-comment0.text=\n\ Button\ to\ skip\ cutscene.\n\ \n\ @author\ Megan\ Lee\n\ @version\ April\ 2024\n
+comment0.text=\r\n\ Button\ to\ skip\ cutscene.\r\n\ \r\n\ @author\ Megan\ Lee\r\n\ @version\ April\ 2024\r\n
 comment1.params=
 comment1.target=SkipButton()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ If\ the\ button\ is\ clicked,\ go\ to\ zoo\ world\ and\ play\ sound\ effect\n
+comment2.text=\r\n\ If\ the\ button\ is\ clicked,\ set\ world\ as\ the\ Zoo\ and\ play\ click\ sound\ effect.\r\n
 numComments=3

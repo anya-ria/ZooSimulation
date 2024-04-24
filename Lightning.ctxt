@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Lightning
-comment0.text=\n\ Write\ a\ description\ of\ class\ Lightning\ here.\n\ \n\ @author\ Megan\n\ @version\ April\ 2024\n
-comment1.params=sound\ duration
-comment1.target=Lightning(greenfoot.GreenfootSound,\ int)
-comment1.text=\n\ Creates\ a\ new\ Lightning\ with\ specified\ sound\ and\ duration\n
+comment0.text=\r\n\ Lightning\ is\ a\ visual\ effect\ that\ simulates\ a\ thunderstorm.\ \r\n\ It\ causes\ the\ scene\ to\ darken\ and\ then\ flashes\ white,\ followed\ by\ two\ lightning\ strikes.\ \r\n\ The\ minimum\ recommended\ duration\ for\ the\ entire\ intended\ animation\ is\ 300\ acts.\r\n\r\n\ @author\ Megan\r\n\ @version\ April\ 2024\r\n
+comment1.params=duration
+comment1.target=Lightning(int)
+comment1.text=\r\n\ Creates\ a\ lightning\ effect\ on\ screen.\ \ \ \r\n\ @param\ duration\ \ \ \ \ \ time\ length\ in\ \#\ of\ acts\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ removeAnimals()
+comment3.target=void\ pauseSound()
+comment3.text=\r\n\ Method\ that\ pauses\ lightning\ sound.\r\n
 comment4.params=
-comment4.target=void\ turnintoZombie()
+comment4.target=void\ playSound()
+comment4.text=\r\n\ Method\ that\ plays/resumes\ lightning\ sound.\r\n
 numComments=5

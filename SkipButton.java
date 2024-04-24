@@ -15,7 +15,7 @@ public class SkipButton extends Icon
     }  
     
     /**
-     * If the button is clicked, go to zoo world and play sound effect
+     * If the button is clicked, set world as the Zoo and play click sound effect.
      */
     public void act(){
         if(Greenfoot.mouseClicked(this)){

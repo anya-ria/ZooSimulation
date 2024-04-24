@@ -1,70 +1,104 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lightning here.
- * 
+ * Lightning is a visual effect that simulates a thunderstorm. 
+ * It causes the scene to darken and then flashes white, followed by two lightning strikes. 
+ * The minimum recommended duration for the entire intended animation is 300 acts.
+ *
  * @author Megan
  * @version April 2024
  */
 public class Lightning extends SuperSmoothMover
 {
+    //Colour constant, an opaque white
     public static final Color WHITE = new Color (255,255,255);
+    
+    //Class variables
+    private static boolean isStorming = false;
+    private static GreenfootSound lightning;
+    
+    //Instance variables
+    private int imageIndex, actCount, duration;
+    
+    //Array to store images for lightning animation
     private GreenfootImage[] lightningStrike = new GreenfootImage[3];
 
-    private int imageIndex = 0, actCount = 0, duration;
-    private GreenfootSound sound;
-
     /**
-     * Creates a new Lightning with specified sound and duration
+     * Creates a lightning effect on screen.   
+     * @param duration      time length in # of acts
      */
-    public Lightning(GreenfootSound sound, int duration){
+    public Lightning(int duration){
         this.duration = duration;
-        this.sound = sound;
+        
+        imageIndex = 0; //Tracks the current index of the lightning animation array to use
+        actCount = 0;
+        
+        //Set sound as lightning
+        lightning = new GreenfootSound("lightning.mp3");
+
+        //Store lightning sprites into array
         for(int i=1; i<4;i++) {
             lightningStrike[i-1] = new GreenfootImage("lightning" + i + ".png");
         }
     }
 
     public void act(){
-        // first 120 acts is the sky turning dark
+        lightning.playLoop();
+        
+        //For the first 120 acts
         if(actCount < 121){
+            //At time intervals, 0-20 & 80-135, screen has a dark transparent overlay
             if(actCount == 0 || actCount == 80) {
+                //Set image as an already made dark transparent overlay
                 setImage(new GreenfootImage("darkOverlay.png"));
-                //if(actCount == 80) ((CutScene)getWorld()).spawnAnimals();
             }
+            //At time interval, 20-80, screen has an opaque white flash
             else if(actCount  == 20){
-                setImage(new GreenfootImage("darkOverlay.png"));
-                GreenfootImage flash = new  GreenfootImage(1024, 800);
+                //Creates flash, a GreenfootImage with dimensions of the world
+                GreenfootImage flash = new GreenfootImage(1024, 800);
+            
+                //Fill flash as opaque white
                 flash.setColor(WHITE);
                 flash.fill();
+                
+                //Set image as the flash
                 setImage(flash);
-                //((CutScene)getWorld()).removeAnimals(); //ERROR 
             }
         }
-        // after those first few acts, lighning strikes every 45 acts, 3 times
-        else if(actCount % 45 == 0 && actCount < 300){
+        //After the first 120 acts, at time intervals of 45 seconds
+        //First time it runs is at 135 acts (135 % 45 == 0)
+        else if(actCount % 45 == 0){
+            //Set image as appropriate lightning animation (3 images)
             if(imageIndex < 3){
                 setImage(lightningStrike[imageIndex]);
                 imageIndex++;
             }
+            //Set image as an already made dark transparent overlay
             else{
                 setImage(new GreenfootImage("darkOverlay.png"));
             }
         }
     
-        // after completely finishing acting, removes this effect
+        //Remove itself from world when it reaches its duration 
         if(actCount == duration){
+            lightning.stop();
             getWorld().removeObject(this);
             return;
         }
         actCount++;
     }
     
-    public void removeAnimals(){
-        
+    /**
+     * Method that pauses lightning sound.
+     */
+    public static void pauseSound(){
+        lightning.pause();
     }
     
-    public void turnintoZombie(){
-        
+    /**
+     * Method that plays/resumes lightning sound.
+     */
+    public static void playSound(){
+        lightning.play();
     }
 }
