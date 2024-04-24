@@ -27,23 +27,21 @@ public class Lightning extends SuperSmoothMover
 
     public void act(){
         // first 120 acts is the sky turning dark
-        if(actCount < 121){
-            if(actCount == 0 || actCount == 80) {
+        if(actCount < duration*0.4){
+            if(actCount == 0 || actCount == duration/5) {
                 setImage(new GreenfootImage("darkOverlay.png"));
-                if(actCount == 80) turnIntoZombie();//
-                //((CutScene)getWorld()).spawnAnimals();
+                if(actCount == duration/5) turnIntoZombie();
             }
-            else if(actCount  == 20){
+            else if(actCount  == duration/10){
                 setImage(new GreenfootImage("darkOverlay.png"));
                 GreenfootImage flash = new  GreenfootImage(1024, 800);
                 flash.setColor(WHITE);
                 flash.fill();
                 setImage(flash);
-                //((CutScene)getWorld()).removeAnimals(); //ERROR 
             }
         }
-        // after those first few acts, lighning strikes every 45 acts, 3 times
-        else if(actCount % 45 == 0 && actCount < 300){
+        // after those first few acts, lighning happens
+        else if(actCount % (duration/6) == 0 && actCount < duration){
             if(imageIndex < 3){
                 setImage(lightningStrike[imageIndex]);
                 imageIndex++;

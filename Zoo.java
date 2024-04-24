@@ -119,7 +119,7 @@ public class Zoo extends World
         
         //Add lightning. Error
         if (actCount % 720 == 0){
-            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 250);
+            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 100);
             addObject(lightning, 512, 400);
         }
     }

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=SmashEffect
-comment0.text=\n\ The\ SmashEffect\ is\ an\ effect\ that\ deals\ damage\ in\ an\ aoe\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/16\n
+comment0.text=\r\n\ The\ SmashEffect\ is\ an\ effect\ that\ deals\ damage\ in\ an\ aoe\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/16\r\n
 comment1.params=size\ dmg
 comment1.target=SmashEffect(int,\ int)
-comment1.text=\n\ creates\ a\ new\ smash\ effect\ that\ is\ the\ specified\ size\ and\ damage\n\ @param\ size\ \ \ \ how\ big\ the\ effect\ will\ be\ (diameter)\n\ @param\ dmg\ \ \ \ \ how\ much\ damage\ is\ to\ be\ dealt\n
+comment1.text=\r\n\ creates\ a\ new\ smash\ effect\ that\ is\ the\ specified\ size\ and\ damage\r\n\ @param\ size\ \ \ \ how\ big\ the\ effect\ will\ be\ (diameter)\r\n\ @param\ dmg\ \ \ \ \ how\ much\ damage\ is\ to\ be\ dealt\r\n
 comment2.params=world
 comment2.target=void\ addedToWorld(greenfoot.World)
-comment2.text=\n\ @override\n\ Gets\ all\ touching\ children\ when\ added\ to\ world,\ making\ them\ take\ damage\n
+comment2.text=\r\n\ @override\r\n\ Gets\ all\ touching\ children\ when\ added\ to\ world,\ making\ them\ take\ damage\r\n
 numComments=3

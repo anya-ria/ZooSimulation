@@ -90,6 +90,7 @@ public class Penguin extends Animal
 
     public void act()
     {
+        // calls the update method from the Entity class, which returns whether this should continue acting
         if(!super.update()) return;
         if(sliding) slide();
         moveAround();
