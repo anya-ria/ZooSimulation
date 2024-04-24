@@ -2,24 +2,25 @@
 class.Achievement.image=AchievementsScreen.jpg
 class.Banana.image=banana0.png
 class.Customization.image=userSelectScreen.jpg
-class.EndingScreen.image=ending1Screen.png
 class.Fighter.image=fighterWalkToward0.png
 class.Healer.image=healToward0.png
+class.HealingBall.image=lemon.png
 class.Hippo.image=hippoWalkToward1.png
-class.Lock.image=locked.png
 class.Monkey.image=monkeyWalkToward1.png
-class.Peel.image=bananaPeel1.png
+class.Peel.image=peel0.png
 class.Pencil.image=pencil0.png
 class.Penguin.image=walkTowards1.png
 class.Regular.image=child1WalkToward0.png
 class.Traitor.image=walkToward0.png
+class.ZombieHippo.image=walkToward1.png
+class.ZombieMonkey.image=walkToward1.png
+class.ZombiePenguin.image=walkToward1.png
 dependency1.from=Customization
 dependency1.to=StartButton
 dependency1.type=UsesDependency
 dependency10.from=EndingScreen
 dependency10.to=Label
 dependency10.type=UsesDependency
-<<<<<<< Updated upstream
 dependency11.from=TitleScreen
 dependency11.to=AchieveButton
 dependency11.type=UsesDependency
@@ -37,47 +38,19 @@ dependency15.to=Effect
 dependency15.type=UsesDependency
 dependency16.from=CutScene
 dependency16.to=SkipButton
-=======
-dependency11.from=CutScene
-dependency11.to=Lightning
-dependency11.type=UsesDependency
-dependency12.from=CutScene
-dependency12.to=Zoo
-dependency12.type=UsesDependency
-dependency13.from=CutScene
-dependency13.to=Monkey
-dependency13.type=UsesDependency
-dependency14.from=CutScene
-dependency14.to=Hippo
-dependency14.type=UsesDependency
-dependency15.from=CutScene
-dependency15.to=Penguin
-dependency15.type=UsesDependency
-dependency16.from=CutScene
-dependency16.to=Animal
->>>>>>> Stashed changes
 dependency16.type=UsesDependency
 dependency17.from=CutScene
 dependency17.to=Lightning
 dependency17.type=UsesDependency
-<<<<<<< Updated upstream
 dependency18.from=CutScene
 dependency18.to=Zoo
 dependency18.type=UsesDependency
 dependency19.from=CutScene
 dependency19.to=Monkey
-=======
-dependency18.from=Achievement
-dependency18.to=Label
-dependency18.type=UsesDependency
-dependency19.from=Achievement
-dependency19.to=Trophy
->>>>>>> Stashed changes
 dependency19.type=UsesDependency
 dependency2.from=Customization
 dependency2.to=ChildParam
 dependency2.type=UsesDependency
-<<<<<<< Updated upstream
 dependency20.from=CutScene
 dependency20.to=Hippo
 dependency20.type=UsesDependency
@@ -107,53 +80,15 @@ dependency28.to=EndingScreen
 dependency28.type=UsesDependency
 dependency29.from=Zoo
 dependency29.to=HomeButton
-=======
-dependency20.from=Achievement
-dependency20.to=HomeButton
-dependency20.type=UsesDependency
-dependency21.from=Collections
-dependency21.to=Label
-dependency21.type=UsesDependency
-dependency22.from=Collections
-dependency22.to=HomeButton
-dependency22.type=UsesDependency
-dependency23.from=Collections
-dependency23.to=TitleScreen
-dependency23.type=UsesDependency
-dependency24.from=Zoo
-dependency24.to=HomeButton
-dependency24.type=UsesDependency
-dependency25.from=Zoo
-dependency25.to=Regular
-dependency25.type=UsesDependency
-dependency26.from=Zoo
-dependency26.to=Fighter
-dependency26.type=UsesDependency
-dependency27.from=Zoo
-dependency27.to=Traitor
-dependency27.type=UsesDependency
-dependency28.from=Zoo
-dependency28.to=Healer
-dependency28.type=UsesDependency
-dependency29.from=Zoo
-dependency29.to=Hippo
->>>>>>> Stashed changes
 dependency29.type=UsesDependency
 dependency3.from=Customization
 dependency3.to=ZombieParam
 dependency3.type=UsesDependency
 dependency30.from=Zoo
-<<<<<<< Updated upstream
 dependency30.to=Traitor
 dependency30.type=UsesDependency
 dependency31.from=Zoo
 dependency31.to=Regular
-=======
-dependency30.to=Penguin
-dependency30.type=UsesDependency
-dependency31.from=Zoo
-dependency31.to=Monkey
->>>>>>> Stashed changes
 dependency31.type=UsesDependency
 dependency32.from=Zoo
 dependency32.to=Healer
@@ -161,7 +96,6 @@ dependency32.type=UsesDependency
 dependency33.from=Zoo
 dependency33.to=Fighter
 dependency33.type=UsesDependency
-<<<<<<< Updated upstream
 dependency34.from=Zoo
 dependency34.to=ZombieHippo
 dependency34.type=UsesDependency
@@ -179,30 +113,10 @@ dependency38.to=Monkey
 dependency38.type=UsesDependency
 dependency39.from=Zoo
 dependency39.to=Penguin
-=======
-dependency34.from=Entity
-dependency34.to=Animal
-dependency34.type=UsesDependency
-dependency35.from=Entity
-dependency35.to=Utility
-dependency35.type=UsesDependency
-dependency36.from=Regular
-dependency36.to=Animal
-dependency36.type=UsesDependency
-dependency37.from=Regular
-dependency37.to=Traitor
-dependency37.type=UsesDependency
-dependency38.from=Regular
-dependency38.to=Utility
-dependency38.type=UsesDependency
-dependency39.from=Traitor
-dependency39.to=Pencil
->>>>>>> Stashed changes
 dependency39.type=UsesDependency
 dependency4.from=Customization
 dependency4.to=HealerParam
 dependency4.type=UsesDependency
-<<<<<<< Updated upstream
 dependency40.from=Zoo
 dependency40.to=Lightning
 dependency40.type=UsesDependency
@@ -232,42 +146,10 @@ dependency48.to=Utility
 dependency48.type=UsesDependency
 dependency49.from=Entity
 dependency49.to=Zoo
-=======
-dependency40.from=Traitor
-dependency40.to=Banana
-dependency40.type=UsesDependency
-dependency41.from=Traitor
-dependency41.to=HealingEffect
-dependency41.type=UsesDependency
-dependency42.from=Traitor
-dependency42.to=SmashEffect
-dependency42.type=UsesDependency
-dependency43.from=Traitor
-dependency43.to=Entity
-dependency43.type=UsesDependency
-dependency44.from=Traitor
-dependency44.to=Utility
-dependency44.type=UsesDependency
-dependency45.from=Fighter
-dependency45.to=Pencil
-dependency45.type=UsesDependency
-dependency46.from=Fighter
-dependency46.to=Entity
-dependency46.type=UsesDependency
-dependency47.from=Fighter
-dependency47.to=Zombie
-dependency47.type=UsesDependency
-dependency48.from=Fighter
-dependency48.to=Traitor
-dependency48.type=UsesDependency
-dependency49.from=Fighter
-dependency49.to=Utility
->>>>>>> Stashed changes
 dependency49.type=UsesDependency
 dependency5.from=Customization
 dependency5.to=FighterParam
 dependency5.type=UsesDependency
-<<<<<<< Updated upstream
 dependency50.from=Regular
 dependency50.to=Animal
 dependency50.type=UsesDependency
@@ -297,42 +179,10 @@ dependency58.to=Utility
 dependency58.type=UsesDependency
 dependency59.from=Fighter
 dependency59.to=Pencil
-=======
-dependency50.from=Fighter
-dependency50.to=Animal
-dependency50.type=UsesDependency
-dependency51.from=Healer
-dependency51.to=HealingEffect
-dependency51.type=UsesDependency
-dependency52.from=Healer
-dependency52.to=HealingBall
-dependency52.type=UsesDependency
-dependency53.from=Healer
-dependency53.to=Utility
-dependency53.type=UsesDependency
-dependency54.from=Animal
-dependency54.to=Hippo
-dependency54.type=UsesDependency
-dependency55.from=Animal
-dependency55.to=ZombieHippo
-dependency55.type=UsesDependency
-dependency56.from=Animal
-dependency56.to=Monkey
-dependency56.type=UsesDependency
-dependency57.from=Animal
-dependency57.to=ZombieMonkey
-dependency57.type=UsesDependency
-dependency58.from=Animal
-dependency58.to=Penguin
-dependency58.type=UsesDependency
-dependency59.from=Animal
-dependency59.to=ZombiePenguin
->>>>>>> Stashed changes
 dependency59.type=UsesDependency
 dependency6.from=Customization
 dependency6.to=CutScene
 dependency6.type=UsesDependency
-<<<<<<< Updated upstream
 dependency60.from=Fighter
 dependency60.to=Entity
 dependency60.type=UsesDependency
@@ -362,42 +212,10 @@ dependency68.to=Hippo
 dependency68.type=UsesDependency
 dependency69.from=Animal
 dependency69.to=ZombieHippo
-=======
-dependency60.from=ZombiePenguin
-dependency60.to=Child
-dependency60.type=UsesDependency
-dependency61.from=ZombiePenguin
-dependency61.to=Zoo
-dependency61.type=UsesDependency
-dependency62.from=ZombieMonkey
-dependency62.to=Banana
-dependency62.type=UsesDependency
-dependency63.from=ZombieMonkey
-dependency63.to=Child
-dependency63.type=UsesDependency
-dependency64.from=ZombieMonkey
-dependency64.to=Utility
-dependency64.type=UsesDependency
-dependency65.from=ZombieHippo
-dependency65.to=Child
-dependency65.type=UsesDependency
-dependency66.from=ZombieHippo
-dependency66.to=Zoo
-dependency66.type=UsesDependency
-dependency67.from=Peel
-dependency67.to=Child
-dependency67.type=UsesDependency
-dependency68.from=HealingBall
-dependency68.to=HealingEffect
-dependency68.type=UsesDependency
-dependency69.from=HealingBall
-dependency69.to=Child
->>>>>>> Stashed changes
 dependency69.type=UsesDependency
 dependency7.from=Customization
 dependency7.to=Zoo
 dependency7.type=UsesDependency
-<<<<<<< Updated upstream
 dependency70.from=Animal
 dependency70.to=Monkey
 dependency70.type=UsesDependency
@@ -463,91 +281,35 @@ dependency89.to=Utility
 dependency89.type=UsesDependency
 dependency9.from=EndingScreen
 dependency9.to=SimpleTimer
-=======
-dependency70.from=HealingBall
-dependency70.to=Utility
-dependency70.type=UsesDependency
-dependency71.from=Pencil
-dependency71.to=Entity
-dependency71.type=UsesDependency
-dependency72.from=Pencil
-dependency72.to=Utility
-dependency72.type=UsesDependency
-dependency73.from=Banana
-dependency73.to=Child
-dependency73.type=UsesDependency
-dependency74.from=Banana
-dependency74.to=Peel
-dependency74.type=UsesDependency
-dependency75.from=Banana
-dependency75.to=Utility
-dependency75.type=UsesDependency
-dependency76.from=Lightning
-dependency76.to=CutScene
-dependency76.type=UsesDependency
-dependency77.from=SmashEffect
-dependency77.to=Child
-dependency77.type=UsesDependency
-dependency78.from=HomeButton
-dependency78.to=TitleScreen
-dependency78.type=UsesDependency
-dependency79.from=EndButton
-dependency79.to=Collections
-dependency79.type=UsesDependency
-dependency8.from=TitleScreen
-dependency8.to=Customization
-dependency8.type=UsesDependency
-dependency80.from=AchieveButton
-dependency80.to=Achievement
-dependency80.type=UsesDependency
-dependency81.from=SkipButton
-dependency81.to=Zoo
-dependency81.type=UsesDependency
-dependency82.from=HealingEffect
-dependency82.to=Child
-dependency82.type=UsesDependency
-dependency9.from=CutScene
-dependency9.to=Effect
->>>>>>> Stashed changes
 dependency9.type=UsesDependency
 dependency90.from=Banana
 dependency90.to=Zoo
 dependency90.type=UsesDependency
-dependency91.from=Lightning
-dependency91.to=CutScene
+dependency91.from=HealingEffect
+dependency91.to=Child
 dependency91.type=UsesDependency
-dependency92.from=HealingEffect
+dependency92.from=SmashEffect
 dependency92.to=Child
 dependency92.type=UsesDependency
-dependency93.from=SmashEffect
-dependency93.to=Child
+dependency93.from=HomeButton
+dependency93.to=TitleScreen
 dependency93.type=UsesDependency
-dependency94.from=HomeButton
-dependency94.to=TitleScreen
+dependency94.from=EndButton
+dependency94.to=Collections
 dependency94.type=UsesDependency
-dependency95.from=EndButton
-dependency95.to=Collections
+dependency95.from=AchieveButton
+dependency95.to=Achievement
 dependency95.type=UsesDependency
-dependency96.from=AchieveButton
-dependency96.to=Achievement
+dependency96.from=SkipButton
+dependency96.to=Zoo
 dependency96.type=UsesDependency
-dependency97.from=SkipButton
-dependency97.to=Zoo
-dependency97.type=UsesDependency
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
-<<<<<<< Updated upstream
 editor.fx.0.y=0
-height=1011
-package.numDependencies=97
-package.numTargets=48
-=======
-editor.fx.0.y=37
 height=854
-package.numDependencies=82
-package.numTargets=42
->>>>>>> Stashed changes
+package.numDependencies=96
+package.numTargets=48
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -561,7 +323,7 @@ readme.name=@README
 readme.width=48
 readme.x=10
 readme.y=10
-simulation.speed=50
+simulation.speed=57
 target1.height=70
 target1.name=Trophy
 target1.showInterface=false
@@ -710,11 +472,7 @@ target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
-<<<<<<< Updated upstream
 target29.name=Zoo
-=======
-target29.name=Pencil
->>>>>>> Stashed changes
 target29.showInterface=false
 target29.type=ClassTarget
 target29.width=120
@@ -728,110 +486,70 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
-<<<<<<< Updated upstream
 target30.name=Icon
-=======
-target30.name=Healer
->>>>>>> Stashed changes
 target30.showInterface=false
 target30.type=AbstractTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
-<<<<<<< Updated upstream
 target31.name=HomeButton
-=======
-target31.name=ZombieHippo
->>>>>>> Stashed changes
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
 target32.height=70
-<<<<<<< Updated upstream
 target32.name=ZombieMonkey
-=======
-target32.name=SuperStatBar
->>>>>>> Stashed changes
 target32.showInterface=false
 target32.type=ClassTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
-<<<<<<< Updated upstream
 target33.name=FighterParam
-=======
-target33.name=Projectile
->>>>>>> Stashed changes
 target33.showInterface=false
-target33.type=AbstractTarget
+target33.type=ClassTarget
 target33.width=120
 target33.x=0
 target33.y=0
 target34.height=70
-<<<<<<< Updated upstream
 target34.name=Monkey
-=======
-target34.name=StartButton
->>>>>>> Stashed changes
 target34.showInterface=false
 target34.type=ClassTarget
 target34.width=120
 target34.x=0
 target34.y=0
 target35.height=70
-<<<<<<< Updated upstream
 target35.name=ChildParam
-=======
-target35.name=Banana
->>>>>>> Stashed changes
 target35.showInterface=false
 target35.type=ClassTarget
 target35.width=120
 target35.x=0
 target35.y=0
 target36.height=70
-<<<<<<< Updated upstream
 target36.name=Traitor
-=======
-target36.name=Lightning
->>>>>>> Stashed changes
 target36.showInterface=false
 target36.type=ClassTarget
 target36.width=120
 target36.x=0
 target36.y=0
 target37.height=70
-<<<<<<< Updated upstream
 target37.name=CutScene
-=======
-target37.name=Animal
->>>>>>> Stashed changes
 target37.showInterface=false
-target37.type=AbstractTarget
+target37.type=ClassTarget
 target37.width=120
 target37.x=0
 target37.y=0
 target38.height=70
-<<<<<<< Updated upstream
 target38.name=Peel
-=======
-target38.name=SkipButton
->>>>>>> Stashed changes
 target38.showInterface=false
 target38.type=ClassTarget
 target38.width=120
 target38.x=0
 target38.y=0
 target39.height=70
-<<<<<<< Updated upstream
 target39.name=HealingBall
-=======
-target39.name=SmashEffect
->>>>>>> Stashed changes
 target39.showInterface=false
 target39.type=ClassTarget
 target39.width=120
@@ -845,39 +563,26 @@ target4.width=130
 target4.x=0
 target4.y=0
 target40.height=70
-<<<<<<< Updated upstream
 target40.name=Fighter
-=======
-target40.name=Effect
->>>>>>> Stashed changes
 target40.showInterface=false
 target40.type=ClassTarget
 target40.width=120
 target40.x=0
 target40.y=0
 target41.height=70
-<<<<<<< Updated upstream
 target41.name=Pencil
-=======
-target41.name=Zoo
->>>>>>> Stashed changes
 target41.showInterface=false
 target41.type=ClassTarget
 target41.width=120
 target41.x=0
 target41.y=0
 target42.height=70
-<<<<<<< Updated upstream
 target42.name=SuperStatBar
-=======
-target42.name=Icon
->>>>>>> Stashed changes
 target42.showInterface=false
 target42.type=ClassTarget
 target42.width=120
 target42.x=0
 target42.y=0
-<<<<<<< Updated upstream
 target43.height=70
 target43.name=Projectile
 target43.showInterface=false
@@ -920,8 +625,6 @@ target48.type=ClassTarget
 target48.width=120
 target48.x=0
 target48.y=0
-=======
->>>>>>> Stashed changes
 target5.height=70
 target5.name=Regular
 target5.showInterface=false
@@ -947,7 +650,7 @@ target8.height=70
 target8.name=Hippo
 target8.showInterface=false
 target8.type=ClassTarget
-target8.width=120
+target8.width=130
 target8.x=0
 target8.y=0
 target9.height=70
@@ -958,7 +661,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-width=1507
-world.lastInstantiated=TitleScreen
-xPosition=23
-yPosition=25
+width=1356
+world.lastInstantiated=MyWorld
+xPosition=100
+yPosition=37
