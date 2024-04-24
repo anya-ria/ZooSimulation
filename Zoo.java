@@ -4,6 +4,12 @@ import java.util.*;
  * The Zoo:)
  * 
  * @author Vanessa Huo
+ * @author Lucas Fu
+ * @author Anya Shah
+ * @author Megan Lee
+ * @author Gennie Won
+ * @author Luke Xiao
+ * 
  * @version April 2024
  *  * 
  * Credits: 
@@ -105,11 +111,11 @@ public class Zoo extends World
             int x = Greenfoot.getRandomNumber(3);
             // Spawn random zombie animals
             if (x == 0){
-                addObject(new ZombieHippo(), Greenfoot.getRandomNumber(400)+100, Greenfoot.getRandomNumber(200)+400);
+                addObject(new ZombieHippo(), Greenfoot.getRandomNumber(250)+700, Greenfoot.getRandomNumber(250)+30);
             } else if (x == 1){
-                addObject(new ZombieMonkey(),Greenfoot.getRandomNumber(400)+100, Greenfoot.getRandomNumber(200)+400);
+                addObject(new ZombieMonkey(),Greenfoot.getRandomNumber(290)+30, Greenfoot.getRandomNumber(245)+45);
             } else if (x == 2){
-                addObject(new ZombiePenguin(), Greenfoot.getRandomNumber(400)+100, Greenfoot.getRandomNumber(200)+400);
+                addObject(new ZombiePenguin(), Greenfoot.getRandomNumber(280)+695, Greenfoot.getRandomNumber(250)+510);
             }
         }
         // Spawn random animals
