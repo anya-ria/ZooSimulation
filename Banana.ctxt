@@ -26,5 +26,5 @@ comment8.target=void\ detectCollision()
 comment8.text=\r\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ expiring\ this\r\n
 comment9.params=
 comment9.target=void\ expire()
-comment9.text=\r\n\ Creates\ a\ peel\ when\ expired\r\n
+comment9.text=\r\n\ Creates\ a\ peel\ behind\ the\ banana\ when\ expiring\r\n
 numComments=10
