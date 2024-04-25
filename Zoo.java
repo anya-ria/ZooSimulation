@@ -25,6 +25,12 @@ import java.util.*;
  *      author: Jordan Cohen -- (what code here)
  *
  * Description: 
+ * This simulation tells the story of a group of children who decided to go on a
+ * field trip to the zoo. Unfortunately, disaster struck, and they were forced to
+ * confront a traitor amongst them, as well as his undead creations.
+ * 
+ * Features:
+ * 
  * 
  * Known bugs:
  * 
