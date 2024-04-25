@@ -16,7 +16,8 @@ public class TitleScreen extends World
     private AchieveButton achieveButton;
     private EndButton endButton;
     private StartButton startButton;
-        
+    // music variable
+    private GreenfootSound music;
     public TitleScreen()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
