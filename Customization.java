@@ -14,8 +14,8 @@ public class Customization extends World
     private StartButton startButton;
     private ChildParam c1, c2, c3; //3 choices
     private ZombieParam z1, z2, z3; 
-    private HealerParam h1, h2; //2 choices
-    private FighterParam f1, f2;
+    private HealerParam h1, h2, h3; //2 choices
+    private FighterParam f1, f2, f3;
     
     CutScene game = new CutScene();
     public Customization()
@@ -102,9 +102,11 @@ public class Customization extends World
 
         addObject(new HealerParam(1),getWidth()/2-280,480);
         addObject(new HealerParam(2),getWidth()/2-180,480);
+        addObject(new HealerParam(3),getWidth()/2-80,480);
         
         addObject(new FighterParam(1),getWidth()/2+180,480);
         addObject(new FighterParam(2),getWidth()/2+280,480);
+        addObject(new FighterParam(3),getWidth()/2+380,480);
     }
     
     public void resetVariables(){
@@ -113,5 +115,4 @@ public class Customization extends World
         Zoo.numFighter = 1;
         Zoo.numZombie = 0;
     }
-    
 }

@@ -76,5 +76,8 @@ public class HealerParam extends Icon
         else if(index == 2){
             value = 1;
         }
+        else if(index == 3) {
+            value = 2;
+        }
     }
 }

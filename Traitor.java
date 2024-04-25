@@ -5,7 +5,7 @@ import java.util.List;
  * <li> This character will imitate all other characters' attacks.
  * <li> Also has his own special move: Ground Pound
  * 
- * @author <li> Anya Shah | Animations
+ * @author <li> Anya Shah | Animations + Sounds
  * @author <li> Lucas Fu  | Functions
  * @version 04/08/2024
  */
@@ -17,21 +17,33 @@ public class Traitor extends Child
     private GreenfootImage[] punchRight = new GreenfootImage[6];
     private GreenfootImage[] punchLeft = new GreenfootImage[6];
     
-    // Animation sprites
-    private int animCounter, animDelay, animIndex;
-    private int maxPunchIndex, maxWalkIndex;
-    private boolean right, left, away, toward, punching;
+    // Animation variables
+    private int maxPunchIndex;
+    private boolean punching;
     
+    // Sounds
+    private static GreenfootSound[] laughSound;
+    private static int laughSoundIndex;
+    private static GreenfootSound[] punchSound;
+    private static int punchSoundIndex;
+    private static GreenfootSound[] healMeSound;
+    private static int healMeSoundIndex;
+    private static GreenfootSound[] dyingSound;
+    private static int dyingSoundIndex;
+    
+    // Maximum attack cooldowns
     private final int MAX_THROW_COOLDOWN = 50;
     private final int MAX_HEAL_COOLDOWN = 100;
     private final int MAX_SMASH_COOLDOWN = 500;
     
+    // Attack cooldowns
     private int throwCooldown = MAX_THROW_COOLDOWN;
     private int healCooldown = MAX_HEAL_COOLDOWN;
-    private int smashCooldown = 0;
+    private int smashCooldown = MAX_SMASH_COOLDOWN;
     private int stunDuration = 0;
     
-    private int revives = 3;
+    // Revives
+    private int revives = 2;
     
     public Traitor(){
         super(200);
@@ -43,17 +55,84 @@ public class Traitor extends Child
     }
     
     public void act(){
+        // do not act if update methods returns false (check entity's update method)
         if(!super.update()) return;
-        if(stunDuration>0){ // currently stunned
+        // if currenly stunned
+        if(stunDuration>0){
             stunDuration--;
-            animCounter = 10; // make sure this guy isn't animating when stunned
-            setLocation(getX(), getY());
+            // make sure this guy isn't animating when stunned
+            animCounter = 10; 
+            // keep a setLocation without moving to keep physics working
+            setLocation(getX(), getY()); 
             return;
         }
+        // find nearest child
         double[] childDetails = detectNearestEntity(Child.class, 1000);
         chaseChildren(childDetails);
     }
     
+    
+    // **************************** SOUNDS ****************************
+    public static void init() {
+        // Laughing sounds
+        laughSoundIndex = 0;
+        laughSound = new GreenfootSound[20];
+        for(int i = 0; i < laughSound.length; i++) {
+            laughSound[i] = new GreenfootSound("sinisterLaugh.mp3");
+        }
+        // Punching sounds
+        punchSoundIndex = 0;
+        punchSound = new GreenfootSound[20];
+        for(int i = 0; i < punchSound.length; i++) {
+            punchSound[i] = new GreenfootSound("swishingPunch.mp3");
+        }
+        // Self healing sounds
+        healMeSoundIndex = 0;
+        healMeSound = new GreenfootSound[20];
+        for(int i = 0; i < healMeSound.length; i++) {
+            healMeSound[i] = new GreenfootSound("healup.mp3");
+        }
+        // Dying sounds
+        dyingSoundIndex = 0;
+        dyingSound = new GreenfootSound[20];
+        for(int i = 0; i < dyingSound.length; i++) {
+            dyingSound[i] = new GreenfootSound("dyingGrunt.mp3");
+        }
+    }
+    public static void playLaughSound() {
+        laughSound[laughSoundIndex].setVolume(50);
+        laughSound[laughSoundIndex].play();
+        laughSoundIndex++;
+        if(laughSoundIndex >= laughSound.length) {
+            laughSoundIndex = 0;
+        }
+    }
+    public static void playPunchSound() {
+        punchSound[punchSoundIndex].setVolume(50);
+        punchSound[punchSoundIndex].play();
+        punchSoundIndex++;
+        if(punchSoundIndex >= punchSound.length) {
+            punchSoundIndex = 0;
+        }
+    }
+    public static void playSelfHealSound() {
+        healMeSound[healMeSoundIndex].setVolume(50);
+        healMeSound[healMeSoundIndex].play();
+        healMeSoundIndex++;
+        if(healMeSoundIndex >= healMeSound.length) {
+            healMeSoundIndex = 0;
+        }
+    }
+    public static void playDyingSound() {
+        dyingSound[dyingSoundIndex].setVolume(50);
+        dyingSound[dyingSoundIndex].play();
+        dyingSoundIndex++;
+        if(dyingSoundIndex >= dyingSound.length) {
+            dyingSoundIndex = 0;
+        }
+    }
+    
+    // ********************* IMAGES AND ANIMATIONS ************************
     private void initImages() {
         // Initialize punching images
         for(int i = 0; i < maxPunchIndex; i++) {
@@ -89,7 +168,6 @@ public class Traitor extends Child
         animDelay = 8;
         animCounter = animDelay;
     }
-    
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -113,21 +191,7 @@ public class Traitor extends Child
                 }
             }
             else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right) {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left) {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away) {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward) {
-                    setImage(walkToward[animIndex]);
-                }
+                updateWalking();
             }
         }
         else {
@@ -174,38 +238,24 @@ public class Traitor extends Child
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
         // update facing direction
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            right = true;
-            left = false; toward = false; away = false;
-        }
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            left = true;
-            right = false; toward = false; away = false;
-        }
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            away = true;
-            left = false; right = false; toward = false;
-        }
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            toward = true; 
-            left = false; right = false; away = false;
-        }
+        updateDirection(vector);
     }
     
     // traitor moves
     private void throwPencil(int direction, int speed){
-        int modif = rand.nextInt(-10,11);
+        int modif = rand.nextInt(-10,11); // add some randomness to throwing
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
         Pencil.playPencilSound();
     }
     private void throwBanana(int direction, int speed){
-        int modif = rand.nextInt(-10,11);
+        int modif = rand.nextInt(-10,11); // add some randomness to throwing
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
         Banana.playBananaSound();
     }
     private void selfHeal(){
+        // heal of 40 hp in a tiny radius (20px)
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
-        Greenfoot.playSound("healup.mp3");
+        playSelfHealSound();
     }
     private void smash(){
         getWorld().addObject(new SmashEffect(200, 99), getX(), getY()); // deal damage
@@ -226,35 +276,39 @@ public class Traitor extends Child
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
-        Greenfoot.playSound("swishingPunch.mp3");
+        playPunchSound();
     }
     private void revive(){
         wound[0] = 0; wound[1] = 0;
-        for(int i=0; i<5; i++){
+        // heal for 200 hp
+        for(int i=0; i<5; i++){ 
             selfHeal();
         }
+        // push away everyone in range of 150px
         for(Entity e: getObjectsInRange(150, Entity.class)){
             double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
             double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
             e.push(vx, vy);
         }
+        // throw out a ring of bananas and pencils
         for(int i=0; i<360; i+=10){
             getWorld().addObject(new Banana(i, 8), getX(), getY());
             getWorld().addObject(new Pencil(20, 150, i+5, 8), getX(), getY());
         }
-        Greenfoot.playSound("sinisterLaugh.mp3");
+        playLaughSound();
     }
     
     /**
-     * @override, gives traitor ability to revive once
+     * @override, gives traitor ability to revive before dying
      */
     protected void die(){
+        // revives instead of dying as long as the traitor has revives
         if(revives>0){
             revives--;
             revive();
         } else {
             super.die();
         }
-        Greenfoot.playSound("dyingGrunt.mp3");
+        playDyingSound();
     }
 }

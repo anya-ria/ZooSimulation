@@ -30,6 +30,7 @@ public class HealingBall extends Projectile
      */
     public HealingBall(double vx, double vy, int healing){
         super(vx,vy);
+        setImage("yellowGlowingOrb.png");
         getImage().scale(20, 20);
         healingValue = healing;
     }
