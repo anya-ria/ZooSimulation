@@ -133,9 +133,9 @@ public class Healer extends Child
 
     private void followAlly(double[] details){
         double[] vector;
-        if(details[1] >= 95) // too far
+        if(details[1] >= 100) // too far
             vector = Utility.angleToVector(details[0]);
-        else if(details[1] <= 70 && details[1] != -1) // too close
+        else if(details[1] <= 75 && details[1] != -1) // too close
             vector = Utility.angleToVector(details[0]+180);
         else
             vector = new double[] {0, 0}; 
@@ -165,7 +165,7 @@ public class Healer extends Child
         double direction = details[0];
         double distance = details[1];
         if(distance<=100 && aoeCooldown<=0){
-            getWorld().addObject(new HealingEffect(200, 40), getX(), getY());
+            getWorld().addObject(new HealingEffect(220, 40), getX(), getY());
             aoeCooldown = MAX_AOE_COOLDOWN;
             stunDuration = 120;
         }

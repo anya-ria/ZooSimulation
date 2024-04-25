@@ -99,15 +99,18 @@ public class ZombieHippo extends Zombie
     public void act()
     {
         if(!super.update()) return;
-        animate();
-        charge();
-        // Greenfoot.playSound("hippo1.mp3");
         if (chargeCooldown > 0) 
         {
             chargeCooldown--; // Decrement cooldown time
         }
+        animate();
+        charge();
+        // Greenfoot.playSound("hippo1.mp3");
+        // if (chargeCooldown > 0) 
+        // {
+            // chargeCooldown--; // Decrement cooldown time
+        // }
         setLocation(getX(), getY());
-
     }
     
     private void dealDamage(){

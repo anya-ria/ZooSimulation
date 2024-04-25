@@ -12,14 +12,14 @@ public class Lightning extends SuperSmoothMover
 {
     //Colour constant, an opaque white
     public static final Color WHITE = new Color (255,255,255);
-    
+
     //Class variables
     private static boolean isStorming = false;
     private static GreenfootSound lightning;
-    
+
     //Instance variables
     private int imageIndex, actCount, duration;
-    
+
     //Array to store images for lightning animation
     private GreenfootImage[] lightningStrike = new GreenfootImage[3];
 
@@ -29,10 +29,10 @@ public class Lightning extends SuperSmoothMover
      */
     public Lightning(int duration){
         this.duration = duration;
-        
+
         imageIndex = 0; //Tracks the current index of the lightning animation array to use
         actCount = 0;
-        
+
         //Set sound as lightning
         lightning = new GreenfootSound("lightning.mp3");
 
@@ -57,7 +57,7 @@ public class Lightning extends SuperSmoothMover
                 GreenfootImage flash = new  GreenfootImage(1024, 800);
                 flash.setColor(WHITE);
                 flash.fill();
-                
+
                 //Set image as the flash
                 setImage(flash);
             }
@@ -74,7 +74,7 @@ public class Lightning extends SuperSmoothMover
                 setImage(new GreenfootImage("darkOverlay.png"));
             }
         }
-    
+
         //Remove itself from world when it reaches its duration 
         if(actCount == duration){
             lightning.stop();
@@ -83,7 +83,6 @@ public class Lightning extends SuperSmoothMover
         }
         actCount++;
     }
-    
     /**
      * When lightning strikes, animals hace a chance to turn into zombies!
      */
@@ -95,17 +94,17 @@ public class Lightning extends SuperSmoothMover
                 Zoo.numAnimals--;
             }
         }
-    /** 
-     * Method that pauses lightning sound.
-     */
-    public static void pauseSound(){
-        lightning.pause();
     }
-    
     /**
      * Method that plays/resumes lightning sound.
      */
     public static void playSound(){
         lightning.play();
+    }
+    /** 
+     * Method that pauses lightning sound.
+     */
+    public static void pauseSound(){
+        lightning.pause();
     }
 }

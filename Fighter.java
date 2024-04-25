@@ -22,6 +22,10 @@ public class Fighter extends Child
     // fighting variables
     private final int THROW_COOLDOWN = 50;
     private int cooldown = THROW_COOLDOWN;
+    
+    //healing variages
+    private static GreenfootSound[] pencilThrow;
+    private static GreenfootSound[] punch;
 
     public Fighter(){
         super(200);
@@ -168,7 +172,7 @@ public class Fighter extends Child
     private void throwPencil(int direction, int speed){
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Pencil(2, 150, direction+modif, speed), getX(), getY());
-        Greenfoot.playSound("pencilThrow1.mp3");
+        Pencil.playPencilSound();
     }
     
     private void punch(){
