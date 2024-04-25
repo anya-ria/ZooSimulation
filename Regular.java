@@ -94,24 +94,9 @@ public class Regular extends Child
         else {
             vector = new double[] {0, 0}; 
         }
-        setLocation(getX()-vector[0], getY()-vector[1]);
+        setLocation(getX()-vector[0]*2, getY()-vector[1]*2);
         // update facing direction
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            left = true;
-            right = false; toward = false; away = false;
-        }
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            right = true;
-            left = false; toward = false; away = false;
-        }
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            toward = true;
-            left = false; right = false; away = false;
-        }
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            away = true; 
-            left = false; right = false; toward = false;
-        }
+        updateDirection(vector);
     }
 
     protected void animate(){
@@ -132,17 +117,6 @@ public class Regular extends Child
             } 
             else if(away){
                 setImage(walkAway[animIndex]);
-            }
-            else {
-                // if(childNum == 0) {
-                    // setImage("child1WalkToward/child1WalkToward0.png");
-                // }
-                // if(childNum == 1) {
-                    // setImage("child2WalkToward/child2WalkToward0.png");
-                // }
-                // if(childNum == 2) {
-                    // setImage("child3WalkToward/child3WalkToward0.png");
-                // }
             }
         } 
         else {

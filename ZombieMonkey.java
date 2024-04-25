@@ -23,7 +23,7 @@ public class ZombieMonkey extends Zombie
     private int maxIndex;
     
     // Fighting variables
-    private final int maxThrowCooldown = 50;
+    private final int maxThrowCooldown = 100;
     private int throwCooldown = maxThrowCooldown;
     private int stunDuration = 0;
     
