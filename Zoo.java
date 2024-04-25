@@ -42,7 +42,7 @@ public class Zoo extends World
     //Counters use to detect if a achievement is completed
     private static int numHealed; //number of children healed
     private static int numHit; //number of children get hit by banana
-    //private static int numDead;//number of children dead
+    //private static int numDead; //number of children dead
     
     //Init button and world
     private EndingScreen world = new EndingScreen();

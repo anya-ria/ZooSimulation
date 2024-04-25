@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Standard projectile thrown by monkeys and traitors, leaves a banana peel when expiring
  * 
- * @author Lucas Fu | Functions
- * @author Anya Shah | Animations + Sounds
+ * @author <li> Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations + Sounds
  * @version 2024/4/9
  */
 public class Banana extends Projectile
@@ -17,6 +17,7 @@ public class Banana extends Projectile
     private static GreenfootSound[] bananaSound;
     private static int bananaSoundIndex;
     
+    // Damage
     private int damage = 15;
 
     /**
@@ -44,6 +45,8 @@ public class Banana extends Projectile
         super.act();
         animate();
     }
+    
+    // **************************** SOUNDS ******************************* \\
     /**
      * Initialize banana sounds
      */
@@ -65,6 +68,8 @@ public class Banana extends Projectile
             bananaSoundIndex = 0;
         }
     }
+    
+    // **************************** ANIMATION ***************************** \\
     /**
      * Initialize the banana images
      */
@@ -94,6 +99,8 @@ public class Banana extends Projectile
             animCounter--;
         }
     }
+    
+    // **************************** FUNCTION ***************************** \\
     /**
      * Does damage and minor pushing to the child touching this, expiring this
      */
