@@ -39,7 +39,7 @@ public class Trophy extends Icon
      */
     public void setAchieved(){
         unlock = true;
-        achievement = new GreenfootSound ("achievement.mp3");
+        GreenfootSound ("achievement.mp3");
         achievement.play();
         achievement.setVolume(50);
     }
