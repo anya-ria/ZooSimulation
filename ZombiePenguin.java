@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class ZombiePenguin here.
+ * A penguin turned zombie, slides towards children, dealing damage and bouncing around
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Cleanup
  * @version 04/23/2024
  */
 public class ZombiePenguin extends Zombie

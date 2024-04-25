@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Attacks children including the fighter children.
- * Charges towards children and attacks
+ * Hippos are our special imports from from the savannas of Africa. Look at those cute little giants!
  * 
  * @author <li> Luke Xiao  | Functions
  * @author <li> Anya Shah  | Animations
  * @author <li> Gennie Won | Sounds
+ * @author <li> Lucas Fu   | Cleanup
  * @version 04/12/2024
  */
 

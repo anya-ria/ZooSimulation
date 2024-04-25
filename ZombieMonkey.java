@@ -2,11 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.Random;
 /**
- * Write a description of class ZombieMonkey here.
+ * A monkey turned zombie, throws bananas at children, causing them to slip
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
- * @author <li> Lucas Fu | ThrowBanana, "chaseChildren" from Traitor class, code fixes
+ * @author <li> Lucas Fu  | ThrowBanana, "chaseChildren" from Traitor class, code fixes
  * 
  * @version 04/18/2024
  */
@@ -68,9 +68,11 @@ public class ZombieMonkey extends Zombie
         }
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
+                // sometimes throws bananas slower
                 case 0:
                     throwBanana((int)direction, 4);
                     break;
+                // sometimes throws bananas faster
                 case 1:
                     throwBanana((int)direction, 8);
                     break;

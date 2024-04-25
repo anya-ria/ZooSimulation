@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Monkey here.
+ * Monkeys are part of our natural fauna in our country. Look at them cutely walking around!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Cleanup
  * @version 04/12/2024
  */
 public class Monkey extends Animal
