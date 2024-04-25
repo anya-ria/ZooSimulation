@@ -13,8 +13,8 @@ public class FighterParam extends Icon
      * Act - do whatever the FighterParam wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private GreenfootImage[]list=new GreenfootImage[3];
-    private GreenfootImage[]clicked=new GreenfootImage[3];
+    private GreenfootImage[]list=new GreenfootImage[4];
+    private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;
     
     public FighterParam(int x){
@@ -75,7 +75,10 @@ public class FighterParam extends Icon
             value = 0;
         }
         else if(index == 2){
-            value = 15;
+            value = 6;
+        }
+        else if(index == 3){
+            value = 12;
         }
     }
 }

@@ -11,6 +11,7 @@ import java.util.Random;
  */
 public abstract class Entity extends SuperSmoothMover
 {
+    // hp variables
     private int maxHp;
     protected int hp;
     protected int[] wound = new int[] {0, 0};
@@ -19,21 +20,22 @@ public abstract class Entity extends SuperSmoothMover
     // physics variables
     private double tempVx = 0; // temporary vx added from push
     private double tempVy = 0; // temporary vy added from push
-    protected double friction = 0.95;
+    protected double friction = 0.95; // lower is more friction
     
     // stun due to slipping on a banana or anything else
     private double slippedDuration = 0;
     
-    // euphemism for "is this dead"
+    // "is this still alive"
     private boolean awake = true;
     
-    // might as well declare this for all subclasses
+    // declare this for all subclasses
     protected Random rand = new Random();
     
     // number of entities healed
     private int numHeal;
     
-    private boolean check = false; //Check if an entity is being counted
+    //Check if an entity is being counted
+    private boolean check = false;
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the entity can have
@@ -75,23 +77,40 @@ public abstract class Entity extends SuperSmoothMover
      * @return double[] --  The details (direction, distance) of the enemy found, returns {0, -1} if not found
      */
     protected double[] detectNearestEntity(Class type, int detectRadius){
-        double[] enemyDetails = new double[] {0, -1}; // {enemy direction, enemy distance}
+        // enemy details: {enemy direction, enemy distance}
+        double[] enemyDetails = new double[] {0, -1}; 
         Entity nearestEnemy = null;
-        for(double i=0; i<=detectRadius; i+=5){
+        
+        // checks for entities in an increasing radius (quite CPU-consuming)
+        detection: // <-- this is a label
+        for(double i=5; i<=detectRadius; i+=5){
+            // define list of enemies in range
             List<Entity> enemiesInRange = getObjectsInRange((int)i, type);
+            // while there's still enemies in the list
             while(enemiesInRange.size()>0){
+                // define nearest enemy as the first enemy on the list
                 nearestEnemy = (Entity) enemiesInRange.get(0);
+                // if that enemy is dead...
                 if(!nearestEnemy.isAwake()){
+                    // remove that enemy from the list
                     enemiesInRange.remove(0);
+                    // reset nearest enemy
                     nearestEnemy = null;
+                    // skip the rest of the loop
                     continue;
                 }
-                enemyDetails[1] = i;
-                enemyDetails[0] = Utility.vectorToAngle(nearestEnemy.getX()-getX(), nearestEnemy.getY()-getY());
-                i = detectRadius;
-                break;
+                // defining some helper variables
+                int x = nearestEnemy.getX(); int y = nearestEnemy.getY();
+                // sets enemy distance to precise distance
+                enemyDetails[1] = Math.sqrt((x-getX())*(x-getX())+(y-getY())*(y-getY()));
+                // sets enemy direction according to position
+                enemyDetails[0] = Utility.vectorToAngle(x-getX(), y-getY());
+                // breaks the outer loop
+                break detection;
             }
         }
+        // if no enemy was found, return details with angle 0 and distance -1
+        // seeing a "-1" in distance should mean NO ENTITY FOUND
         if(nearestEnemy==null) return new double[] {0, -1};
         return enemyDetails;
     }
@@ -100,12 +119,16 @@ public abstract class Entity extends SuperSmoothMover
      * @param dmg   the damage to be taken
      */
     public void takeDamage(int dmg){
+        // decrease hp
         hp -= dmg;
+        // if that kills the entity
         if(hp<0){
+            // set hp bar to 0
             hpBar.update(0);
             die();
             return;
         }
+        // otherwise update the hp bar with the current hp value
         hpBar.update(hp);
     }
     /**
@@ -114,9 +137,14 @@ public abstract class Entity extends SuperSmoothMover
      * @param duration    The length, in acts
      */
     public void getWounded(int dmg, int duration){
-        if(dmg > wound[0]){ // replace the previous wound stack
+        // if the dot dmg exceeds the current wound damage...
+        if(dmg > wound[0]){ 
+            // replace the previous wound stack
             wound[0] = dmg; wound[1] = duration;
-        } else { // refresh the wound and increase damage
+        } 
+        // otherwise...
+        else { 
+            // refresh the wound and increase damage
             wound[0]++;
             wound[1] = duration;
         }
@@ -131,8 +159,7 @@ public abstract class Entity extends SuperSmoothMover
         }        
     }
     /**
-     * heals the entity, but also checks
-     * if the entity is still alive
+     * heals the entity, but also checks if the entity is still alive
      * 
      * @param healing   the amount to be healed
      */
@@ -141,7 +168,8 @@ public abstract class Entity extends SuperSmoothMover
             hp += healing;
             if(hp>maxHp) hp = maxHp;
             hpBar.update(hp);
-            Zoo.healed();//number of healed children increases by 1
+            //number of healed children increases by 1
+            Zoo.healed();
         }
     }
     protected void die(){
@@ -164,9 +192,11 @@ public abstract class Entity extends SuperSmoothMover
      */
     public void setLocation(double x, double y) 
     {
-        exactX = x+tempVx; // add temporary speed to new position
+        // add temporary speed to new position
+        exactX = x+tempVx;
         exactY = y+tempVy; 
-        tempVx *= friction; // reduce temporary speed
+        // reduce temporary speed by value of friction
+        tempVx *= friction; 
         tempVy *= friction;
         // bounce back if hitting border
         if(exactX<=0||exactX>=getWorld().getWidth()-1)
@@ -236,21 +266,28 @@ public abstract class Entity extends SuperSmoothMover
      * @return boolean -- whether this is slipping
      */
     private boolean checkSlipping(){
+        // if this hasn't finished slipping...
         if(slippedDuration>0){
             slippedDuration--;
+            // keep using setLocation to keep the physics running
             setLocation(getX(), getY());
+            // yes this is slipping
             return true;
-        } else if(slippedDuration==0){
+        } 
+        // otherwise...
+        else if(slippedDuration==0){
+            // set rotation back to normal
             setRotation(0);
             slippedDuration--; // effectively only makes this code run once
         }        
+        // no this is not slipping
         return false;
     }
     protected boolean isPushed(){
         return (tempVx!=0 || tempVy!=0);
     }
-    
-    public boolean isCounted(){ //check if the entity is counted as dead in Zoo world
+    //check if the entity is counted as dead in Zoo world
+    public boolean isCounted(){ 
         return check;
     }
     public void counted(){

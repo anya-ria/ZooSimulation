@@ -14,8 +14,8 @@ public class Customization extends World
     private StartButton startButton;
     private ChildParam c1, c2, c3; //3 choices
     private ZombieParam z1, z2, z3; 
-    private HealerParam h1, h2; //2 choices
-    private FighterParam f1, f2;
+    private HealerParam h1, h2, h3; //2 choices
+    private FighterParam f1, f2, f3;
     
     CutScene game = new CutScene();
     public Customization()
@@ -32,7 +32,6 @@ public class Customization extends World
         createParams();
     }
 
-    
     /**
      * When 'Start' button gets pressed, set initial number of each actor in Zoo
      * Go to CutScene world and play sound effect
@@ -92,19 +91,21 @@ public class Customization extends World
      */
     private void createParams()
     {
-        addObject(new ChildParam(1),getWidth()/2-100,318);
-        addObject(new ChildParam(2),getWidth()/2,318);
-        addObject(new ChildParam(3), getWidth()/2+100,318);
-
-        addObject(new ZombieParam(1),getWidth()/2-100,650);
-        addObject(new ZombieParam(2),getWidth()/2,650);
-        addObject(new ZombieParam(3), getWidth()/2+100,650);
-
-        addObject(new HealerParam(1),getWidth()/2-280,480);
-        addObject(new HealerParam(2),getWidth()/2-180,480);
+        addObject(new ChildParam(1), 460, 268);
+        addObject(new ChildParam(2), 614, 268);
+        addObject(new ChildParam(3), 766, 268);
         
-        addObject(new FighterParam(1),getWidth()/2+180,480);
-        addObject(new FighterParam(2),getWidth()/2+280,480);
+        addObject(new HealerParam(1), 460, 391);
+        addObject(new HealerParam(2), 614, 391);
+        addObject(new HealerParam(3), 766, 391);
+        
+        addObject(new FighterParam(1), 460, 514);
+        addObject(new FighterParam(2), 614, 514);
+        addObject(new FighterParam(3), 766, 514);
+        
+        addObject(new ZombieParam(1), 460, 637);
+        addObject(new ZombieParam(2), 614, 637);
+        addObject(new ZombieParam(3), 766, 637);
     }
     
     public void resetVariables(){
@@ -113,5 +114,4 @@ public class Customization extends World
         Zoo.numFighter = 1;
         Zoo.numZombie = 0;
     }
-    
 }

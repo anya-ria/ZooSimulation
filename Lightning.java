@@ -34,7 +34,7 @@ public class Lightning extends SuperSmoothMover
         actCount = 0;
 
         //Set sound as lightning
-        lightning = new GreenfootSound("lightning.mp3");
+        lightning = new GreenfootSound("lightning.wav");
 
         //Store lightning sprites into array
         for(int i=1; i<4;i++) {
@@ -88,7 +88,7 @@ public class Lightning extends SuperSmoothMover
      */
     public void turnIntoZombie(){
         for(Animal a: getWorld().getObjects(Animal.class)){
-            if(Greenfoot.getRandomNumber(3) == 0 && a.isAwake()){ //1/3 chance of turning into a zombie
+            if(!(a instanceof Zombie)&&Greenfoot.getRandomNumber(3) == 0 && a.isAwake()){ //1/3 chance of turning into a zombie
                 a.zombify();
                 Zoo.numZombie++;
                 Zoo.numAnimals--;

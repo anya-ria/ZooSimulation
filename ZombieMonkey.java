@@ -1,12 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
-import java.util.Random;
 /**
- * Write a description of class ZombieMonkey here.
+ * A monkey turned zombie, throws bananas at children, causing them to slip
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
- * @author <li> Lucas Fu | ThrowBanana, "chaseChildren" from Traitor class
+ * @author <li> Lucas Fu  | ThrowBanana, "chaseChildren" from Traitor class, code fixes
  * 
  * @version 04/18/2024
  */
@@ -21,13 +20,11 @@ public class ZombieMonkey extends Zombie
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-    private boolean right, left, away, toward;
     
-    private final int maxThrowCooldown = 50;
+    // Fighting variables
+    private final int maxThrowCooldown = 100;
     private int throwCooldown = maxThrowCooldown;
     private int stunDuration = 0;
-    
-    private Random rand = new Random();
     
     public ZombieMonkey() {
         super(100);
@@ -67,9 +64,11 @@ public class ZombieMonkey extends Zombie
         }
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
+                // sometimes throws bananas slower
                 case 0:
                     throwBanana((int)direction, 4);
                     break;
+                // sometimes throws bananas faster
                 case 1:
                     throwBanana((int)direction, 8);
                     break;
@@ -87,32 +86,19 @@ public class ZombieMonkey extends Zombie
         // movement
         if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setRotation(direction);
-            left = false; right = false; away = false; toward = false;
-            if (direction >= 315 || direction <= 45) // right
-            {
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // up
-            {   
-                away = true;
-            }
-            if (direction > 135 && direction <= 225) // left
-            {
-                left = true;
-            }
-            if (direction > 225 && direction <= 315) // down
-            {
-                toward = true; 
-            }
+            adjustDirection();
         }
-        if (getX() <= 20 || getX() >= 1004)
+        if (getX() <= 100 || getX() >= 924)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
-        if (getY() <= 20 || getY() >= 780)
+        if (getY() <= 50 || getY() >= 750)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
     }
     private void throwBanana(int direction, int speed){

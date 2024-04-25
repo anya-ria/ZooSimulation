@@ -8,9 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Animal extends Entity
 {
+    // animation variables
     protected int direction;
+
     private boolean isZombie = false;
 
+
+    protected boolean left, right, away, toward;
+    
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the child can have
@@ -38,5 +43,29 @@ public abstract class Animal extends Entity
     protected void die(){
         disableStaticRotation();
         super.die();
+    }
+    
+    /**
+     * Changes the image according to the rotation, and changes rotation to direction value
+     */
+    protected void adjustDirection(){
+        setRotation(direction);
+        left = false; right = false; away = false; toward = false;
+        if (direction >= 315 || direction <= 45) // right
+        {
+            right = true;
+        }
+        if (direction > 45 && direction <= 135) // down
+        {   
+            toward = true;
+        }
+        if (direction > 135 && direction <= 225) // left
+        {
+            left = true;
+        }
+        if (direction > 225 && direction <= 315) // up
+        {
+            away = true; 
+        }
     }
 }

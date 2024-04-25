@@ -54,5 +54,5 @@ comment8.target=void\ updateWound()
 comment8.text=\r\n\ Updates\ the\ wound,\ taking\ damage\ if\ the\ wound\ timer\ is\ a\ multiple\ of\ 30\ acts\r\n
 comment9.params=healing
 comment9.target=void\ heal(int)
-comment9.text=\r\n\ heals\ the\ entity,\ but\ also\ checks\r\n\ if\ the\ entity\ is\ still\ alive\r\n\ \r\n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\r\n
+comment9.text=\r\n\ heals\ the\ entity,\ but\ also\ checks\ if\ the\ entity\ is\ still\ alive\r\n\ \r\n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\r\n
 numComments=21

@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Attacks children including the fighter children.
- * Charges towards children and attacks
+ * Hippos are our special imports from from the savannas of Africa. Look at those cute little giants!
  * 
- * @author Luke Xiao | Functions
- * @author Anya Shah | Animations
+ * @author <li> Luke Xiao  | Functions
+ * @author <li> Anya Shah  | Animations
+ * @author <li> Gennie Won | Sounds
+ * @author <li> Lucas Fu   | Cleanup
  * @version 04/12/2024
  */
 
@@ -19,14 +20,10 @@ public class Hippo extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-    private boolean right, left, away, toward;
-
-    private boolean isInfected;
-    private int direction;
-    //private double speed;
-    //private double maxSpeed;
-    //private int direction;
-
+    //Sound intialization
+    private static GreenfootSound[] hippoSound;
+    private static int hippoSoundIndex;
+    //Sound intialization
     public Hippo() {
         super(200);
         animCounter = 0;
@@ -57,19 +54,30 @@ public class Hippo extends Animal
         animCounter = animDelay;
     }
 
-    /**
-     * Act - do whatever the Hippo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         // calls the update method from the Entity class, which returns whether this should continue acting
         if(!super.update()) return;
         moveAround();
         animate();
-        if (isInfected)
-        {
-            charge();
+    }
+    
+    public static void init()
+    {
+        hippoSoundIndex = 0;
+        hippoSound = new GreenfootSound[20];
+        for(int i = 0; i < hippoSound.length; i++) {
+            hippoSound[i] = new GreenfootSound("hippo1.mp3");
+        }
+    }
+    
+    public static void playHippoSound()
+    {
+        hippoSound[hippoSoundIndex].setVolume(50);
+        hippoSound[hippoSoundIndex].play();
+        hippoSoundIndex++;
+        if(hippoSoundIndex >= hippoSound.length) {
+            hippoSoundIndex = 0;
         }
     }
     
@@ -80,28 +88,8 @@ public class Hippo extends Animal
         setLocation(getX(), getY());
         if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setRotation(direction);
-            // The initial orientation of the images are facing RIGHT
-            if (direction >= 315 || direction <= 45) // Right
-            {
-                away = true;
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // Down
-            {   
-                right = true;
-                away = false;
-            }
-            if (direction > 135 && direction <= 225) // Left
-            {
-                right = false;
-                away = false;
-            }
-            if (direction > 225 && direction <= 315) // Up
-            {
-                right = false;
-                away = true;
-            }
+            // changes direction at random times
+            adjustDirection();
         }
         if (getX() <= 700 || getX() >= 985)
         {
@@ -112,24 +100,6 @@ public class Hippo extends Animal
             turn(180);
         }
     }
-    
-    public void charge()
-    {
-        move(4);
-        if (Greenfoot.getRandomNumber(100) < 10)
-        {
-            turn(Greenfoot.getRandomNumber(90) - 45);
-        }
-        if (getX() <= 685 || getX() >= 1000)
-        {
-            turn(180);
-        }
-        if (getY() <= 30 || getY() >= 290)
-        {
-            turn(180);
-        }
-    }
-
 
     protected void animate() {
         if(animCounter == 0){
@@ -138,22 +108,13 @@ public class Hippo extends Animal
             if(animIndex >= maxIndex){
                 animIndex = 0; 
             }
-            if(right && away){
+            if(right){
                 setImage(walkRight[animIndex]);
             } 
-
-            else if (!right && !away){
-                setImage(walkLeft[animIndex]);
-            } 
-            else if(right && !away)
-            {
-                setImage(walkToward[animIndex]);
-            }
             else if (left){
                 setImage(walkLeft[animIndex]);
             } 
             else if(toward){
-
                 setImage(walkToward[animIndex]); 
             } 
             else if(away){

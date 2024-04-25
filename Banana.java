@@ -3,7 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Standard projectile thrown by monkeys and traitors, leaves a banana peel when expiring
  * 
- * @author Lucas
+ * @author <li> Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations + Sounds
  * @version 2024/4/9
  */
 public class Banana extends Projectile
@@ -16,6 +17,7 @@ public class Banana extends Projectile
     private static GreenfootSound[] bananaSound;
     private static int bananaSoundIndex;
     
+    // Damage
     private int damage = 15;
 
     /**
@@ -43,6 +45,8 @@ public class Banana extends Projectile
         super.act();
         animate();
     }
+    
+    // **************************** SOUNDS ******************************* \\
     /**
      * Initialize banana sounds
      */
@@ -64,6 +68,8 @@ public class Banana extends Projectile
             bananaSoundIndex = 0;
         }
     }
+    
+    // **************************** ANIMATION ***************************** \\
     /**
      * Initialize the banana images
      */
@@ -93,20 +99,27 @@ public class Banana extends Projectile
             animCounter--;
         }
     }
+    
+    // **************************** FUNCTION ***************************** \\
     /**
      * Does damage and minor pushing to the child touching this, expiring this
      */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
+        // if touching a child that is still alive
         if(touched!=null&&touched.isAwake()){
+            // that child take damage
             touched.takeDamage(damage);
+            // that child gets pushed
             touched.push( vx*0.2 , vy*0.2 );
+            // this expires
             expired = true;
+            // the Zoo counts a hit
             Zoo.hit();
         }
     }
     /**
-     * Creates a peel when expired
+     * Creates a peel behind the banana when expiring
      */
     protected void expire(){
         getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));

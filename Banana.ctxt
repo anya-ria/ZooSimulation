@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Banana
-comment0.text=\r\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/9\r\n
+comment0.text=\r\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\r\n\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\r\n\ @version\ 2024/4/9\r\n
 comment1.params=angle\ speed
 comment1.target=Banana(int,\ double)
 comment1.text=\r\n\ constructs\ a\ new\ Banana\ with\ a\ speed\ and\ direction\r\n\ @param\ angle\ the\ direction\ in\ degrees\r\n\ @param\ speed\ the\ magnitude\ of\ speed\r\n
@@ -26,5 +26,5 @@ comment8.target=void\ detectCollision()
 comment8.text=\r\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ expiring\ this\r\n
 comment9.params=
 comment9.target=void\ expire()
-comment9.text=\r\n\ Creates\ a\ peel\ when\ expired\r\n
+comment9.text=\r\n\ Creates\ a\ peel\ behind\ the\ banana\ when\ expiring\r\n
 numComments=10

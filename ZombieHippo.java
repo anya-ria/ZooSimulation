@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
 /**
- * Write a description of class ZombieHippo here.
+ * A hippo turned zombie, charges towards children until hitting a wall
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
@@ -20,14 +19,14 @@ public class ZombieHippo extends Zombie
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-    private boolean right, left, away, toward;
     // Movement Variables
-    private int direction;
-    private Child targetChild;
-    private ArrayList<Child> children;
     private boolean lockedDirection = false;
+
     private int chargeCooldown = 20;
     protected double friction = 0.5; // override from Entity
+
+    protected double friction = 0.25; // override from Entity
+
     
     public ZombieHippo() {
         super(100);
@@ -68,25 +67,9 @@ public class ZombieHippo extends Zombie
         }
         direction = getRotation();
         move(3);
-        // The facing direction
-        right = false; left = false; away = false; toward = false;
-        if (direction >= 315 || direction <= 45) // Right
-        {
-            right = true;
-        }
-        if (direction > 45 && direction <= 135) // Down
-        {   
-            toward = true;
-        }
-        if (direction > 135 && direction <= 225) // Left
-        {
-            left = true;
-        }
-        if (direction > 225 && direction <= 315) // Up
-        {
-            away = true;
-        }
-        // stop charging
+        // adjusts the facing direction
+        adjustDirection();
+        // stop charging to change direction
         if(getX()<100||getX()>924||getY()<50||getY()>750){
             lockedDirection = false;
         }
@@ -103,12 +86,7 @@ public class ZombieHippo extends Zombie
         animate();
         charge();
         // Greenfoot.playSound("hippo1.mp3");
-        // if (chargeCooldown > 0) 
-        // {
-            // chargeCooldown--; // Decrement cooldown time
-        // }
         setLocation(getX(), getY());
-
     }
     
     private void dealDamage(){
