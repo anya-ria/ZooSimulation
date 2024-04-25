@@ -1,16 +1,14 @@
 #BlueJ class context
 comment0.target=Collections
 comment0.text=\n\ Show\ a\ list\ of\ endings\n\ Unlocked\ -\ completed\n\ Locked\ -\ not\ completed\ yet\n\ \n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/04\n
-comment0.text=\n\ Write\ a\ description\ of\ class\ Collections\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment0.text=\r\n\ Show\ a\ list\ of\ endings\r\n\ Unlocked\ -\ completed\r\n\ Locked\ -\ not\ completed\ yet\r\n\ \r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 2024/04\r\n
 comment1.params=
 comment1.target=Collections()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ If\ an\ endng\ is\ completed,\ shows\ "unlock"\ icon\ \r\n
+comment2.text=\n\ If\ an\ endng\ is\ completed,\ shows\ "unlock"\ icon\ \n
 comment3.params=
 comment3.target=void\ addLocks()
-comment3.text=\r\n\ Adds\ the\ locks\ to\ the\ Collections\ screen\r\n
+comment3.text=\n\ Adds\ the\ locks\ to\ the\ Collections\ screen\n
 comment4.params=
 comment4.target=void\ unlockEnd1()
 comment5.params=
