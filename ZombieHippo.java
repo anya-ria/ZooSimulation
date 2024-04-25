@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
 /**
  * A hippo turned zombie, charges towards children until hitting a wall
  * 
