@@ -3,12 +3,16 @@ import java.util.List;
 /**
  * The SmashEffect is an effect that deals damage in an aoe
  * 
- * @author Lucas
+ * @author Lucas Fu | Functions
+ * @author Anya Shah | Sounds
  * @version 2024/4/16
  */
 public class SmashEffect extends Effect
 {
     private int damage;
+    private static GreenfootSound[] healingSound;
+    private static int healingSoundIndex;
+    
     /**
      * creates a new smash effect that is the specified size and damage
      * @param size    how big the effect will be (diameter)
@@ -21,7 +25,7 @@ public class SmashEffect extends Effect
         getImage().fillOval(0,0,size,size);
         
         damage = dmg;
-        Greenfoot.playSound("heal.mp3");
+        playHealingSound();
     }
     /**
      * @override
@@ -31,6 +35,21 @@ public class SmashEffect extends Effect
         List<Child> children = getIntersectingObjects(Child.class);
         for(Child c : children){
             c.takeDamage(damage);
+        }
+    }
+    public static void init() {
+        healingSoundIndex = 0;
+        healingSound = new GreenfootSound[20];
+        for(int i = 0; i < healingSound.length; i++) {
+            healingSound[i] = new GreenfootSound("heal.mp3");
+        }
+    }
+    public static void playHealingSound() {
+        healingSound[healingSoundIndex].setVolume(50);
+        healingSound[healingSoundIndex].play();
+        healingSoundIndex++;
+        if(healingSoundIndex >= healingSound.length) {
+            healingSoundIndex = 0;
         }
     }
 }

@@ -64,6 +64,14 @@ public class Zoo extends World
         setPaintOrder (Lightning.class, Banana.class, Pencil.class);
         
         setBackground("zoo.jpg");
+        
+        // Initialize sounds
+        HealingEffect.init();
+        Pencil.init();
+        Banana.init();
+        Traitor.init();
+        Fighter.init();
+        Hippo.init();
     }
     
     public void act(){

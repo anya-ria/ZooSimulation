@@ -22,8 +22,8 @@ public class Hippo extends Animal
     private int maxIndex;
     //Sound intialization
     private static GreenfootSound[] hippoSound;
-    private static int hippoSoundIndex = 0;
-    
+    private static int hippoSoundIndex;
+    //Sound intialization
     public Hippo() {
         super(200);
         animCounter = 0;
@@ -61,8 +61,8 @@ public class Hippo extends Animal
         moveAround();
         animate();
     }
-
-    private void init()
+    
+    public static void init()
     {
         hippoSoundIndex = 0;
         hippoSound = new GreenfootSound[20];
@@ -71,7 +71,7 @@ public class Hippo extends Animal
         }
     }
     
-    private void playHippoSound()
+    public static void playHippoSound()
     {
         hippoSound[hippoSoundIndex].setVolume(50);
         hippoSound[hippoSoundIndex].play();
