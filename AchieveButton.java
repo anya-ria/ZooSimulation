@@ -21,6 +21,10 @@ public class AchieveButton extends Icon
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             Achievement achi1 = new Achievement();
+            
+            (getWorld()).stopped();
+            achi1.started();
+            
             Greenfoot.setWorld(achi1);
             Greenfoot.playSound("mouseClick.mp3");
         }
