@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -31,8 +30,6 @@ public class Fighter extends Child
     private static GreenfootSound[] pencilThrow;
     private static GreenfootSound[] punch;
 
-    // Randomness
-    Random rand = new Random();
     // makes fighters stand at different spots when moving towards a enemy
     private int directionAdjustment = rand.nextInt(-30, 31);
     public Fighter(){
