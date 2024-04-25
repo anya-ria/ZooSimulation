@@ -16,8 +16,9 @@ public class Pencil extends Projectile
     private static GreenfootSound[] pencilSound;
     private static int pencilSoundIndex;
     
+    // Damage
     private int dot; // damage
-    private int duration; // how many acts (divide by 30 for number of ticks)
+    private int duration; // how many acts (divide by 30 for number of damage ticks)
     
     /**
      * Constructs a new Pencil using angle and speed
@@ -28,7 +29,7 @@ public class Pencil extends Projectile
      */
     public Pencil(int dmg, int duration, int angle, double speed){
         this(dmg, duration,
-            Utility.angleToVector(angle)[0]*speed, 
+             Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
     }
     /**
@@ -53,6 +54,7 @@ public class Pencil extends Projectile
         animate();
     }
     
+    // ***************************** SOUNDS ******************************* \\
     public static void init() {
         pencilSoundIndex = 0;
         pencilSound = new GreenfootSound[20];
@@ -70,6 +72,7 @@ public class Pencil extends Projectile
         }
     }
     
+    // *************************** ANIMATION ****************************** \\
     private void initImages() {
         for(int i = 0; i < pencil.length; i++) {
             pencil[i] = new GreenfootImage("pencilSprites/pencil" + i + ".png");
@@ -95,12 +98,15 @@ public class Pencil extends Projectile
         }
     }
     
+    // *************************** FUNCTIONS ****************************** \\
     /**
      * Wounds the touched entity when touching them, also expires this
      */
     protected void detectCollision(){
         Entity touched = (Entity) getOneIntersectingObject(Entity.class);
+        // if touching child is still alive
         if(touched!=null&&touched.isAwake()){
+            // that child gets wounded
             touched.getWounded(dot, duration);
             expired = true;
         }        
