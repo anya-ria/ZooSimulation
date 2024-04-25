@@ -30,7 +30,11 @@ import java.util.*;
  * confront a traitor amongst them, as well as his undead creations.
  * 
  * Features:
- * 
+ * <li> Smooth pushing effects on all entities
+ * <li> Fancy combat mechanics, such as pushing, slipping, and damage over time
+ * <li> Children split into classes that focus on specific tasks
+ * <li> An evil traitor that uses a combination of attacks to defeat children
+ * <li> An utility class that converts an angle into a vector and vice versa
  * 
  * Known bugs:
  * 
