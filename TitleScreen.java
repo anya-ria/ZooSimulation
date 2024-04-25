@@ -42,6 +42,8 @@ public class TitleScreen extends World
         HealingEffect.init();
         Pencil.init();
         Banana.init();
+        Traitor.init();
+        Fighter.init();
     }
     
     /**

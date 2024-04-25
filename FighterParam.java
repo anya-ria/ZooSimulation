@@ -75,7 +75,11 @@ public class FighterParam extends Icon
             value = 0;
         }
         else if(index == 2){
-            value = 15;
+            //value = 15;
+            value = 6;
+        }
+        else if(index == 3){
+            value = 12;
         }
     }
 }
