@@ -7,7 +7,7 @@ import java.util.List;
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | ThrowBanana, "chaseChildren" from Traitor class, code fixes
  * 
- * @version 04/18/2024
+ * @version 04/25/2024
  */
 public class ZombieMonkey extends Zombie
 {
@@ -33,7 +33,9 @@ public class ZombieMonkey extends Zombie
         initImages();
         setImage("zombieMonkeyWalkToward/walkToward1.png");
     }
-    
+    /**
+     * Initialize zombie monkey images
+     */
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("zombieMonkeyWalkAway/walkAway" + i + ".png");

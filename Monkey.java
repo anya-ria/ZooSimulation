@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Monkey extends Animal
 {
@@ -26,7 +26,16 @@ public class Monkey extends Animal
         maxIndex = walkRight.length;
         initImages();
     }
-
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        moveAround();
+        animate();
+    }
+    /**
+     * Initialize monkey images
+     */
     private void initImages() {
         // Initialize monkey images
         for(int i = 0; i < maxIndex; i++) {
@@ -50,34 +59,6 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
-    }
-
-    private void moveAround()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(1);
-        if (Greenfoot.getRandomNumber(240) < 10)
-        {
-            // changes direction at random times
-            adjustDirection();
-        }
-        if (getX() <= 30 || getX() >= 320)
-        {
-            turn(180);
-        }
-        if (getY() <= 45 || getY() >= 290)
-        {
-            turn(180);
-        }
-    }
-    
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -100,6 +81,25 @@ public class Monkey extends Animal
         }
         else {
             animCounter--;
+        }
+    }
+
+    private void moveAround()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(240) < 10)
+        {
+            // changes direction at random times
+            adjustDirection();
+        }
+        if (getX() <= 30 || getX() >= 320)
+        {
+            turn(180);
+        }
+        if (getY() <= 45 || getY() >= 290)
+        {
+            turn(180);
         }
     }
 }

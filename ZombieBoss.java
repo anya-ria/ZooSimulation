@@ -3,17 +3,19 @@ import java.util.ArrayList;
 /**
  * Write a description of class Boss here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo
+ * @version 04/25/2024
  */
 public class ZombieBoss extends Entity
 {
+    // Animation variables
+    private int animCounter, animDelay, animIndex; 
+    private int maxIndex;    
     private GreenfootImage LImage, RImage;
+    
     private SuperStatBar hpBar;
     private boolean awake = true;
     private int maxHp;
-    private int animCounter, animDelay, animIndex; 
-    private int maxIndex;
     private final int maxThrowCooldown = 20;
     private int throwCooldown = maxThrowCooldown;
     private int stunDuration;
@@ -26,7 +28,6 @@ public class ZombieBoss extends Entity
         throwFireBalls();
         stunDuration--;
     }
-    
     public ZombieBoss(){
         super(1000);
         LImage = new GreenfootImage("boss.png");

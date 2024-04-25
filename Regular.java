@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Functions
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Regular extends Child
 {
@@ -118,5 +118,4 @@ public class Regular extends Child
             animCounter--; 
         }
     }
-
 }

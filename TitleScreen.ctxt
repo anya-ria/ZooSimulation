@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ Title\ Screen\r\n\ The\ player\ can\:\r\n\ \ \ \ \ \ Start\ the\ game\r\n\ \ \ \ \ \ View\ Game\ Achievements\r\n\ \ \ \ \ \ View\ Game\ Endings\r\n\ \r\n\ @author\ Vanessa\ Huo\r\n\ @version\ 2024/04\r\n
+comment0.text=\r\n\ Title\ Screen\r\n\ The\ player\ can\:\r\n\ \ \ \ \ \ Start\ the\ game\r\n\ \ \ \ \ \ View\ Game\ Achievements\r\n\ \ \ \ \ \ View\ Game\ Endings\r\n\ \r\n\ @author\ Vanessa\ Huo\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=TitleScreen()
 comment2.params=

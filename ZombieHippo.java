@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Fixes
  * 
- * @version 04/18/2024
+ * @version 04/25/2024
  */
 public class ZombieHippo extends Zombie
 {
@@ -35,7 +35,9 @@ public class ZombieHippo extends Zombie
         initImages();
         setImage("zombieHippoWalkToward/walkToward1.png");
     }
-    
+    /**
+     * Initialize zombie hippo images
+     */
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("zombieHippoWalkAway/walkAway" + i + ".png");

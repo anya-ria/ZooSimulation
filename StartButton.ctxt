@@ -1,11 +1,6 @@
 #BlueJ class context
 comment0.target=StartButton
-comment0.text=\n\ Click\ to\ start\ the\ game\n\ \n\ @author\ Megan\ Lee\ |\ Art\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ April\ 2024\n
+comment0.text=\r\n\ Click\ to\ start\ the\ game\r\n\ \r\n\ @author\ <li>\ Megan\ Lee\ |\ Art\r\n\ @author\ <li>\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ StartButton\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=
-comment2.target=StartButton()
-comment3.params=
-comment3.target=void\ setValue()
-numComments=4
+comment1.target=StartButton()
+numComments=2

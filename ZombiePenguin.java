@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/23/2024
+ * @version 04/25/2024
  */
 public class ZombiePenguin extends Zombie
 {
@@ -35,7 +35,9 @@ public class ZombiePenguin extends Zombie
         initImages();
         setImage("zombiePenguinWalkToward/walkToward1.png");
     }
-
+    /**
+     * Initialize zombie penguin images
+     */
     private void initImages() {
         // Initialize walking images
         for(int i = 0; i < maxIndex; i++) {

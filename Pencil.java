@@ -3,8 +3,8 @@ import java.util.List;
 /**
  * The pencil is a projectile that does DOT upon impact
  * 
- * @author Lucas
- * @version 2024/4/12
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public class Pencil extends Projectile
 {
@@ -62,7 +62,6 @@ public class Pencil extends Projectile
             pencilSound[i] = new GreenfootSound("pencilThrow2.mp3");
         }
     }
-    
     public static void playPencilSound() {
         pencilSound[pencilSoundIndex].setVolume(50);
         pencilSound[pencilSoundIndex].play();
@@ -83,7 +82,6 @@ public class Pencil extends Projectile
         animDelay = 3; // smaller value: goes faster || larger value: goes slower
         animCounter = animDelay;
     }
-    
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -111,7 +109,6 @@ public class Pencil extends Projectile
             expired = true;
         }        
     }
-
     protected void expire(){
         getWorld().removeObject(this);
     }
