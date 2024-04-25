@@ -45,6 +45,7 @@ public class Customization extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
+            resetVariables();
             setValue();
             music.stop();
             //Go to CutScene
@@ -59,36 +60,36 @@ public class Customization extends World
      * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
      */
     public void setValue(){
-        ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
-        for(ChildParam other: y)
+        //ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
+        for(ChildParam other: getObjects(ChildParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumChild(other.getValue()); //Set number of Children in Zoo according player's choice
+                Zoo.numChildren = other.getValue();//Set number of Children in Zoo according player's choice
             }
         }
-        ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
-        for(FighterParam other: y1)
+        //ArrayList<FighterParam> y1 = (ArrayList<FighterParam>)getObjects(FighterParam.class);
+        for(FighterParam other: getObjects(FighterParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumFighter(other.getValue());
+                Zoo.numFighter = other.getValue();
             }
         }
-        ArrayList<HealerParam> y2 = (ArrayList<HealerParam>)getObjects(HealerParam.class);
-        for(HealerParam other: y2)
+        //ArrayList<HealerParam> y2 = (ArrayList<HealerParam>)getObjects(HealerParam.class);
+        for(HealerParam other: getObjects(HealerParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumHealer(other.getValue());
+                Zoo.numHealer = other.getValue();
             }
         }
-        ArrayList<ZombieParam> y3 = (ArrayList<ZombieParam>)getObjects(ZombieParam.class);
-        for(ZombieParam other: y3)
+        //ArrayList<ZombieParam> y3 = (ArrayList<ZombieParam>)getObjects(ZombieParam.class);
+        for(ZombieParam other: getObjects(ZombieParam.class))
         {
             if(other.getClicked())
             {
-                Zoo.setNumZombie(other.getValue());
+                Zoo.numZombie = other.getValue();
             }
         }
     }
@@ -111,6 +112,13 @@ public class Customization extends World
         
         addObject(new FighterParam(1),getWidth()/2+180,480);
         addObject(new FighterParam(2),getWidth()/2+280,480);
+    }
+    
+    public void resetVariables(){
+        Zoo.numChildren = 5;
+        Zoo.numHealer = 2;
+        Zoo.numFighter = 1;
+        Zoo.numZombie = 0;
     }
     
 }

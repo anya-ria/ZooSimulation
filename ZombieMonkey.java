@@ -6,7 +6,7 @@ import java.util.Random;
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
- * @author <li> Lucas Fu | ThrowBananas
+ * @author <li> Lucas Fu | ThrowBanana, "chaseChildren" from Traitor class
  * 
  * @version 04/18/2024
  */
@@ -56,7 +56,7 @@ public class ZombieMonkey extends Zombie
         animCounter = animDelay;
     }
     
-    public void throwBananas(){
+    public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
@@ -76,45 +76,34 @@ public class ZombieMonkey extends Zombie
             }
             throwCooldown = maxThrowCooldown;
         }
-        // // this isn't a banana
-        // if(distance>=10 && distance<100 && hp>=100){
-            // getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
-            // for(Entity e: getObjectsInRange(150, Entity.class)){
-                // double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
-                // double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
-                // e.push(vx, vy);
-            // }
-            // stunDuration = 200;
-        // }
         throwCooldown--;
-        if(distance < 10){
+        if(distance < 30){
             return;
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        
+        // movement
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
-            if (direction >= 315 || direction <= 45)
+            left = false; right = false; away = false; toward = false;
+            if (direction >= 315 || direction <= 45) // right
             {
-                away = true;
                 right = true;
             }
-            if (direction > 45 && direction <= 135)
+            if (direction > 45 && direction <= 135) // up
             {   
-                right = true;
-                away = false;
-            }
-            if (direction > 135 && direction <= 225)
-            {
-                right = false;
-                away = false;
-            }
-            if (direction > 225 && direction <= 315)
-            {
-                right = false;
                 away = true;
+            }
+            if (direction > 135 && direction <= 225) // left
+            {
+                left = true;
+            }
+            if (direction > 225 && direction <= 315) // down
+            {
+                toward = true; 
             }
         }
         if (getX() <= 20 || getX() >= 1004)
@@ -138,7 +127,8 @@ public class ZombieMonkey extends Zombie
     {
         if(!super.update()) return;
         animate();
-        throwBananas();
+        setLocation(getX(), getY()); // to enable push physics
+        chaseChildren();
     }
     
     protected void animate() {

@@ -48,8 +48,7 @@ public class ChildParam extends Icon
         }
         
         if(Greenfoot.mouseClicked(this)){ //true
-            ArrayList<ChildParam> y = (ArrayList<ChildParam>)getWorld().getObjects(ChildParam.class);
-            for(ChildParam other: y)
+            for(ChildParam other: getWorld().getObjects(ChildParam.class))
             {
                if(other != this)
               {
@@ -57,8 +56,14 @@ public class ChildParam extends Icon
                  other.reset();
               }
             }
-            this.setClicked(true);
-            setValue();
+            if(!isClicked){
+                this.setClicked(true);
+                setValue();
+            }
+            else{
+                this.setClicked(false);
+                value = 0;
+            }
         }
     }
     
@@ -72,7 +77,7 @@ public class ChildParam extends Icon
         else if(index == 2){
             value = 25;
         }
-        else{
+        else if(index == 3){
             value = 30;
         }
     }

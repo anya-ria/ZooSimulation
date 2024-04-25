@@ -63,6 +63,7 @@ public class Hippo extends Animal
      */
     public void act()
     {
+        // calls the update method from the Entity class, which returns whether this should continue acting
         if(!super.update()) return;
         moveAround();
         animate();
@@ -76,6 +77,7 @@ public class Hippo extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        setLocation(getX(), getY());
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);

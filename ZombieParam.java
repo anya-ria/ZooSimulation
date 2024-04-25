@@ -51,8 +51,14 @@ public class ZombieParam extends Icon
                  other.setClicked(false);//unclick perviously chose option
               }
             }
-            this.setClicked(true);
-            setValue();//set corresponding value
+            if(!isClicked){
+                this.setClicked(true);
+                setValue();
+            }
+            else{
+                this.setClicked(false);
+                value = 0;
+            }//set corresponding value
         }
     }
     

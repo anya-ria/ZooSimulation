@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=ZombieMonkey
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ |\ ThrowBananas\r\n\ \r\n\ @version\ 04/18/2024\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieMonkey\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ |\ ThrowBanana,\ "chaseChildren"\ from\ Traitor\ class\r\n\ \r\n\ @version\ 04/18/2024\r\n
 comment1.params=
 comment1.target=ZombieMonkey()
 comment2.params=
 comment2.target=void\ initImages()
 comment3.params=
-comment3.target=void\ throwBananas()
+comment3.target=void\ chaseChildren()
 comment4.params=direction\ speed
 comment4.target=void\ throwBanana(int,\ int)
 comment5.params=
