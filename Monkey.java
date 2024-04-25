@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Monkey here.
+ * Monkeys are part of our natural fauna in our country. Look at them cutely walking around!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
+ * @author <li> Lucas Fu  | Cleanup
  * @version 04/12/2024
  */
 public class Monkey extends Animal
@@ -17,7 +18,6 @@ public class Monkey extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, left, away, toward, zombie;
 
     public Monkey()
     {
@@ -65,27 +65,8 @@ public class Monkey extends Animal
         move(1);
         if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setRotation(direction);
-            if (direction >= 315 || direction <= 45)
-            {
-                away = true;
-                right = true;
-            }
-            if (direction > 45 && direction <= 135)
-            {   
-                right = true;
-                away = false;
-            }
-            if (direction > 135 && direction <= 225)
-            {
-                right = false;
-                away = false;
-            }
-            if (direction > 225 && direction <= 315)
-            {
-                right = false;
-                away = true;
-            }
+            // changes direction at random times
+            adjustDirection();
         }
         if (getX() <= 30 || getX() >= 320)
         {
@@ -104,30 +85,18 @@ public class Monkey extends Animal
             if(animIndex >= maxIndex) {
                 animIndex = 0;
             }
-            if(right && away)
-            {
+            if(right){
                 setImage(walkRight[animIndex]);
             } 
-            else if (!right && !away)
-            {
-                setImage(walkLeft[animIndex]);
-            }
-            else if(left) 
-            {
+            else if (left){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(right && !away)
-            {
+            else if(toward){
                 setImage(walkToward[animIndex]); 
             } 
-            else 
-            {
+            else if(away){
                 setImage(walkAway[animIndex]);
             }
-        }
-        else if(toward)
-        {
-            setImage(walkToward[animIndex]);
         }
         else {
             animCounter--;

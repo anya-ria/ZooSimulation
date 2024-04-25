@@ -76,5 +76,4 @@ public class ZombieParam extends Icon
             value = 9;
         }
     }
-    
 }

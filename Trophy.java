@@ -22,6 +22,7 @@ public class Trophy extends Icon
         unlock = false;
         setImage(grey);
         grey.scale(70, 70);
+        achievement = new GreenfootSound("achievement.mp3");
     }
     
     /**
@@ -39,13 +40,11 @@ public class Trophy extends Icon
      */
     public void setAchieved(){
         unlock = true;
-        Greenfoot.playSound ("achievement.mp3");
-        achievement.play();
         achievement.setVolume(50);
+        achievement.play();
     }
     
     public boolean getUnlock(){
         return unlock;
     }
-    
 }

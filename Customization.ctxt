@@ -1,13 +1,8 @@
 #BlueJ class context
 comment0.target=Customization
-comment0.text=\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\n\ Different\ values\ may\ lead\ to\ different\ endings\n\ \n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/04\n
 comment0.text=\r\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\r\n\ Different\ values\ may\ lead\ to\ different\ endings\r\n\ \r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 2024/04\r\n
 comment1.params=
 comment1.target=Customization()
-comment0.text=\n\ Write\ a\ description\ of\ class\ Customization\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Customization()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Customization.\n\ \n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ When\ 'Start'\ button\ gets\ pressed,\ set\ initial\ number\ of\ each\ actor\ in\ Zoo\r\n\ Go\ to\ CutScene\ world\ and\ play\ sound\ effect\r\n

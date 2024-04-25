@@ -30,6 +30,9 @@ public class TitleScreen extends World
         addObject(achieveButton,662,430);
         EndButton endButton = new EndButton();
         addObject(endButton,362,430);
+        //Preload background music
+        music = new GreenfootSound ("backgroundMusic.mp3");
+        music.setVolume(70);
     }
     
     /**

@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Penguin here.
+ * Penguins are cute little birds at our zoo :) Look at them slide!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
@@ -24,7 +24,7 @@ public class Penguin extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
-    private boolean right, left, away, toward, sliding;
+    private boolean sliding;
 
     public Penguin()
     {
@@ -103,25 +103,8 @@ public class Penguin extends Animal
         move(1);
         if (Greenfoot.getRandomNumber(500) < 10)
         {
-            setRotation(direction);
-            right = false; away = false; left = false; toward = false;
-            // The initial orientation of the images are facing RIGHT
-            if (direction >= 315 || direction <= 45) // Right
-            {
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // Down
-            {   
-                toward = true;
-            }
-            if (direction > 135 && direction <= 225) // Left
-            {
-                left = true;
-            }
-            if (direction > 225 && direction <= 315) // Up
-            {
-                away = true;
-            }
+            // changes direction at random times
+            adjustDirection();
         }
 
         if (getX() <= 695 || getX() >= 970)

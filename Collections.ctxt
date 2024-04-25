@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=Collections
-comment0.text=\n\ Show\ a\ list\ of\ endings\n\ Unlocked\ -\ completed\n\ Locked\ -\ not\ completed\ yet\n\ \n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/04\n
-comment0.text=\n\ Write\ a\ description\ of\ class\ Collections\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment0.text=\r\n\ Show\ a\ list\ of\ endings\r\n\ Unlocked\ -\ completed\r\n\ Locked\ -\ not\ completed\ yet\r\n\ \r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 2024/04\r\n
 comment1.params=
 comment1.target=Collections()
