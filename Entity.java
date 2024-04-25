@@ -19,7 +19,7 @@ public abstract class Entity extends SuperSmoothMover
     // physics variables
     private double tempVx = 0; // temporary vx added from push
     private double tempVy = 0; // temporary vy added from push
-    private double friction = 0.95;
+    protected double friction = 0.95;
     
     // stun due to slipping on a banana or anything else
     private double slippedDuration = 0;
@@ -33,6 +33,7 @@ public abstract class Entity extends SuperSmoothMover
     // number of entities healed
     private int numHeal;
     
+    private boolean check = false; //Check if an entity is being counted
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the entity can have
@@ -140,7 +141,7 @@ public abstract class Entity extends SuperSmoothMover
             hp += healing;
             if(hp>maxHp) hp = maxHp;
             hpBar.update(hp);
-            Zoo.healed();
+            Zoo.healed();//number of healed children increases by 1
         }
     }
     protected void die(){
@@ -244,5 +245,15 @@ public abstract class Entity extends SuperSmoothMover
             slippedDuration--; // effectively only makes this code run once
         }        
         return false;
+    }
+    protected boolean isPushed(){
+        return (tempVx!=0 || tempVy!=0);
+    }
+    
+    public boolean isCounted(){ //check if the entity is counted as dead in Zoo world
+        return check;
+    }
+    public void counted(){
+        check = true;
     }
 }

@@ -8,8 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Banana extends Projectile
 {
+    // Animation/Images
     private GreenfootImage[] banana = new GreenfootImage[5];
-    private int animCounter, animDelay, animIndex; 
+    private int animCounter, animDelay, animIndex;
+    
+    // Sounds
+    private static GreenfootSound[] bananaSound;
+    private static int bananaSoundIndex;
+    
     private int damage = 15;
 
     /**
@@ -33,12 +39,34 @@ public class Banana extends Projectile
         
         animCounter = 0;
     } 
-    
     public void act(){
         super.act();
         animate();
     }
-    
+    /**
+     * Initialize banana sounds
+     */
+    public static void init() {
+        bananaSoundIndex = 0;
+        bananaSound = new GreenfootSound[20];
+        for(int i = 0; i < bananaSound.length; i++) {
+            bananaSound[i] = new GreenfootSound("throwBanana.mp3");
+        }
+    }
+    /**
+     * Plays banana sounds
+     */
+    public static void playBananaSound() {
+        bananaSound[bananaSoundIndex].setVolume(50);
+        bananaSound[bananaSoundIndex].play();
+        bananaSoundIndex++;
+        if(bananaSoundIndex >= bananaSound.length) {
+            bananaSoundIndex = 0;
+        }
+    }
+    /**
+     * Initialize the banana images
+     */
     private void initImages() {
         for(int i = 0; i < banana.length; i++) {
             banana[i] = new GreenfootImage("bananaSprites/banana" + i + ".png");
@@ -49,7 +77,9 @@ public class Banana extends Projectile
         animDelay = 5;
         animCounter = animDelay;
     }
-    
+    /**
+     * Animate the banana
+     */
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
