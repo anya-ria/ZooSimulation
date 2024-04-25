@@ -54,12 +54,14 @@ public class TitleScreen extends World
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
-    
-    public void started (){
-        music.playLoop();
-    }
+    // public void getStarted (){
+        // music.playLoop();
+    // }
     
     public void stopped() {
         music.pause();
+    }
+    public void started (){
+        music.playLoop();
     }
 }
