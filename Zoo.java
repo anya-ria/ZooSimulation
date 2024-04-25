@@ -82,6 +82,7 @@ public class Zoo extends World
         Traitor.init();
         Fighter.init();
         Hippo.init();
+        SmashEffect.init();
     }
     
     public void act(){
@@ -92,12 +93,19 @@ public class Zoo extends World
         check();
     }
     
+    // public void stopped() {
+        // music.stop();
+    // }
+    // public void started (){
+        // music.playLoop();
+    // }
+    
     /**
      * A method that spawn animals and children according to preset values in the Customization screen.
      * If there is no preset value, then spawn default number of actors. 
      */
     public void spawn(){
-        //Spawn Chidlren according to set values(20 or 25 or 30)
+        //Spawn Children according to set values(20 or 25 or 30)
         if(getObjects(Regular.class).size() < numChildren){
             addObject(new Regular(), Greenfoot.getRandomNumber(600)+100, Greenfoot.getRandomNumber(300)+300);
         }
@@ -133,6 +141,10 @@ public class Zoo extends World
                 addObject(new Penguin(), Greenfoot.getRandomNumber(280)+695, Greenfoot.getRandomNumber(250)+510);
             }
         }
+        // Spawn boss
+        // if((getObjects(ZombieHippo.class).size() + getObjects(Monkey.class).size() + getObjects(ZombiePenguin.class).size()) == numAnimals) {
+            // //addObject(new ZombieBoss(), getWidth() / 2, getHeight() / 2);
+        // }
         
         //Add lightning. Error
         if (actCount % 720 == 0){
