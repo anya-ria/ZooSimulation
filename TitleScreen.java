@@ -28,14 +28,20 @@ public class TitleScreen extends World
 
         //Add buttons
         startButton = new StartButton();
-        addObject(startButton,400,480);
+        addObject(startButton,512,430);
         achieveButton = new AchieveButton();
-        addObject(achieveButton,400,580);
+        addObject(achieveButton,662,430);
         EndButton endButton = new EndButton();
-        addObject(endButton,400,680);
+        addObject(endButton,362,430);
         
         //Preload background music
         music = new GreenfootSound ("backgroundMusic.mp3");
+        music.setVolume(70);
+        
+        // Initialize sounds
+        HealingEffect.init();
+        Pencil.init();
+        Banana.init();
     }
     
     /**
@@ -46,11 +52,14 @@ public class TitleScreen extends World
             Customization game = new Customization();
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
-            music.playLoop();
         }
     }
     
-    public void getStarted (){
+    public void started (){
         music.playLoop();
+    }
+    
+    public void stopped() {
+        music.pause();
     }
 }

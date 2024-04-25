@@ -10,7 +10,7 @@ import greenfoot.World;
 public class AchieveButton extends Icon
 {
     public AchieveButton(){
-        setImage("achievementsButton.png");
+        setImage("achievementButton.png");
         GreenfootImage image = getImage();
         image.scale((int)(image.getWidth()*0.9), (int)(image.getHeight()*0.9));
     }  
