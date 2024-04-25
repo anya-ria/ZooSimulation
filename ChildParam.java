@@ -72,17 +72,13 @@ public class ChildParam extends Icon
      */
     public void setValue(){
         if(index == 1){
-            //value = 20;
             value = 5;
         }
         else if(index == 2){
-            //value = 25;
             value = 8;
         }
         else if(index == 3){
-            //value = 30;
             value = 10;
         }
     }
-    
 }
