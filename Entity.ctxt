@@ -55,4 +55,4 @@ comment8.text=\r\n\ Updates\ the\ wound,\ taking\ damage\ if\ the\ wound\ timer\
 comment9.params=healing
 comment9.target=void\ heal(int)
 comment9.text=\r\n\ heals\ the\ entity,\ but\ also\ checks\r\n\ if\ the\ entity\ is\ still\ alive\r\n\ \r\n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\r\n
-numComments=20
+numComments=21

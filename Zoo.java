@@ -72,6 +72,7 @@ public class Zoo extends World
         Traitor.init();
         Fighter.init();
         Hippo.init();
+        SmashEffect.init();
     }
     
     public void act(){
@@ -82,12 +83,19 @@ public class Zoo extends World
         check();
     }
     
+    // public void stopped() {
+        // music.stop();
+    // }
+    // public void started (){
+        // music.playLoop();
+    // }
+    
     /**
      * A method that spawn animals and children according to preset values in the Customization screen.
      * If there is no preset value, then spawn default number of actors. 
      */
     public void spawn(){
-        //Spawn Chidlren according to set values(20 or 25 or 30)
+        //Spawn Children according to set values(20 or 25 or 30)
         if(getObjects(Regular.class).size() < numChildren){
             addObject(new Regular(), Greenfoot.getRandomNumber(600)+100, Greenfoot.getRandomNumber(300)+300);
         }
