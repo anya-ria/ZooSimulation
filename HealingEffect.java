@@ -42,7 +42,9 @@ public class HealingEffect extends Effect
             Greenfoot.delay(1);
             healingSound[i].stop();
         }
+        playHealingSound();
     }
+    
     /**
      * @override
      * gets touching children, and heals them
@@ -51,6 +53,23 @@ public class HealingEffect extends Effect
         List<Child> children = getIntersectingObjects(Child.class);
         for(Child c : children){
             c.heal(healingLevel);
+        }
+    }
+    
+    public static void init() {
+        healingSoundIndex = 0;
+        healingSound = new GreenfootSound[20];
+        for(int i = 0; i < healingSound.length; i++) {
+            healingSound[i] = new GreenfootSound("healpop.mp3");
+        }
+    }
+    
+    public void playHealingSound() {
+        healingSound[healingSoundIndex].setVolume(50);
+        healingSound[healingSoundIndex].play();
+        healingSoundIndex++;
+        if(healingSoundIndex >= healingSound.length) {
+            healingSoundIndex = 0;
         }
     }
 }

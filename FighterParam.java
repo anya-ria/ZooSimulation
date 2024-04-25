@@ -56,8 +56,14 @@ public class FighterParam extends Icon
                  other.reset();
               }
             }
-            this.setClicked(true);
-            setValue();
+            if(!isClicked){
+                this.setClicked(true);
+                setValue();
+            }
+            else{
+                this.setClicked(false);
+                value = 0;
+            }
         }
     }
     

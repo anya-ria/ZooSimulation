@@ -87,89 +87,58 @@ public class ZombiePenguin extends Zombie
     {
         if(!super.update()) return;
         animate();
+        setLocation(getX(), getY());
         slide();
     }
 
     private void slide()
     {
-        direction = Greenfoot.getRandomNumber(361);
-        move(1);
+        double[] childDetails = detectNearestEntity(Child.class, 500);
+        if(childDetails[1]!=-1)
+            direction = (int)childDetails[0];
+        move(3);
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             setRotation(direction);
-            if (direction >= 315 || direction <= 45)
+            left = false; right = false; away = false; toward = false;
+            if (direction >= 315 || direction <= 45) // right
             {
-                away = true;
                 right = true;
                 sliding = true;
             }
-            if (direction > 45 && direction <= 135)
+            if (direction > 45 && direction <= 135) // up
             {   
-                right = true;
-                away = false;
-                sliding = true;
-            }
-            if (direction > 135 && direction <= 225)
-            {
-                right = false;
-                away = false;
-                sliding = true;
-            }
-            if (direction > 225 && direction <= 315)
-            {
-                right = false;
                 away = true;
+                sliding = true;
+            }
+            if (direction > 135 && direction <= 225) // left
+            {
+                left = true;
+                sliding = true;
+            }
+            if (direction > 225 && direction <= 315) // down
+            {
+                toward = true; 
                 sliding = true;
             }
         }
         if (getX() <= 20 || getX() >= 1004)
         {
-            setRotation(180);
+            turn(180);
         }
         if (getY() <= 20 || getY() >= 780)
         {
-            setRotation(180);
+            turn(180);
         }
-        targetClosestChildren();
+        dealDamage();
     }
-    
-    private void targetClosestChildren ()
-    {
-        double closestTargetDistance = 0;
-        double distanceToActor;
-        // Get a list of all children in the World, cast it to ArrayList
-        // for easy management
-        children = (ArrayList<Child>)getObjectsInRange(40, Child.class);
-        if (children.size() == 0){
-            children = (ArrayList<Child>)getObjectsInRange(140, Child.class);
-        } 
-        if (children.size() == 0){
-            children = (ArrayList<Child>)getObjectsInRange(350, Child.class);
-        } 
-        if (children.size() > 0)
-        {
-            // set the first one as my target
-            targetChild = children.get(0);
-            // Use method to get distance to target. This will be used
-            // to check if any other targets are closer
-            closestTargetDistance = Zoo.getDistance (this, targetChild);
-            for (Child o : children)
-            {
-                distanceToActor = Zoo.getDistance(this, o);
-                if (distanceToActor < closestTargetDistance)
-                {
-                    targetChild = o;
-                    closestTargetDistance = distanceToActor;
-                }
-            }
-            turnTowards(targetChild.getX(), targetChild.getY());
+    private void dealDamage(){
+        for(Child c: getIntersectingObjects(Child.class)){
+            c.takeDamage(10);
         }
-        if (isTouching(Child.class))
-        {
-            targetChild.takeDamage(1);
-        }
+        if(detectNearestEntity(Child.class, 10)[1]!=-1)
+            turn(Greenfoot.getRandomNumber(60)+180);
     }
-    
     protected void animate() {
         if(animCounter == 0){
             if(sliding) {

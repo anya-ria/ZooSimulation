@@ -15,7 +15,6 @@ public class Regular extends Child
     private boolean right, left, away, toward;
     
     private int childNum;
-    private boolean check = false;
 
     public Regular(){
         super(100);
@@ -28,7 +27,7 @@ public class Regular extends Child
     public void act()
     {   
         if(!super.update()) return;
-        double[] enemyDetails = detectNearestEntity(Animal.class, 400);
+        double[] enemyDetails = detectNearestEntity(Zombie.class, 400);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 200);
         runAway(enemyDetails); 
     }
@@ -150,12 +149,5 @@ public class Regular extends Child
             animCounter--; 
         }
     }
-    
-    public boolean getCheck(){
-        return check;
-    }
-    
-    public void setCheck(){
-        check = true;
-    }
+
 }

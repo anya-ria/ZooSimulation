@@ -12,6 +12,7 @@ public abstract class Child extends Entity
     protected GreenfootImage[] walkRight = new GreenfootImage[9];
     protected GreenfootImage[] walkLeft = new GreenfootImage[9];
     protected GreenfootImage[] walkToward = new GreenfootImage[9];
+    
     public Child(int maxHp){
         super(maxHp);
     }

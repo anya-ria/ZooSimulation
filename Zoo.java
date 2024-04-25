@@ -3,12 +3,12 @@ import java.util.*;
 /**
  * The Zoo:)
  * 
- * @author Vanessa Huo
- * @author Lucas Fu
- * @author Anya Shah
- * @author Megan Lee
- * @author Gennie Won
- * @author Luke Xiao
+ * @author <li> Vanessa Huo
+ * @author <li> Lucas Fu
+ * @author <li> Anya Shah
+ * @author <li> Megan Lee
+ * @author <li> Gennie Won
+ * @author <li> Luke Xiao
  * 
  * @version April 2024
  *  * 
@@ -33,16 +33,16 @@ import java.util.*;
 public class Zoo extends World
 { 
     //Default setting for each param
-    private static int numChildren = 5;
-    private static int numHealer = 2;
-    private static int numFighter = 1;
-    private static int numZombie = 0;
-    private static int numAnimals = 25; //Total animals
+    public static int numChildren = 5;
+    public static int numHealer = 2;
+    public static int numFighter = 1;
+    public static int numZombie = 0;
+    public static int numAnimals = 15; //Total animals
     
     //Counters use to detect if a achievement is completed
-    private static int numHealed = 0; //number of children healed
-    private static int numHit = 0; //number of children get hit by banana
-    private static int numDead = 0;//number of children dead
+    private static int numHealed; //number of children healed
+    private static int numHit; //number of children get hit by banana
+    //private static int numDead;//number of children dead
     
     //Init button and world
     private EndingScreen world = new EndingScreen();
@@ -60,20 +60,6 @@ public class Zoo extends World
         addObject(new Traitor(), 800, 600);
         addObject(homeButton,79,739);
         homeButton.setLocation(72,754);
-
-        //addObject(new Healer(), 600, 200);
-        //addObject(new Healer(), 400, 200);
-        //addObject(new Fighter(), 800, 150);
-        //addObject(new Hippo(), 850, 150);
-        //addObject(new Hippo(), 750, 250);
-        //addObject(new Penguin(), 750, 600);
-        //addObject(new Penguin(), 850, 650);
-        //addObject(new Monkey(), 150, 50);
-        //addObject(new Monkey(), 250, 250);
-        
-        // for(Animal a: getObjects(Animal.class)){
-            // a.zombify();
-        // }
         
         setPaintOrder (Lightning.class, Banana.class, Pencil.class);
         
@@ -130,32 +116,30 @@ public class Zoo extends World
             }
         }
         
-    
         //Add lightning. Error
-        if (actCount % 600 == 0){
-            Lightning lightning = new Lightning(new GreenfootSound ("lightning.mp3"), 250);
+        if (actCount % 720 == 0){
+            Lightning lightning = new Lightning(100);
             addObject(lightning, 512, 400);
         }
-
     }
     
     /**
      * If an achievement is completed, called the static method to unlock achievement
      */
     public void checkAchi(){
-        if(numHealed >= 15){
+        if(numHealed >= 15){ //cure 15 children
             Achievement.completeAchi0();
         }
-        if(numHit >= 10){
+        if(numHit >= 10){ //get hit by 10 bananas
             Achievement.completeAchi1();
         }
-        if(numFighter == 0){
+        if(numFighter == 0){ //have no fighter children
             Achievement.completeAchi2();
         }
-        if(numChildren == 0){
+        if(numChildren == 0){ //all children became zombies
             Achievement.completeAchi3();
         }
-        if(numAnimals == 0){
+        if(numAnimals == 0 && numZombie > 0){ //all animals became zombies
             Achievement.completeAchi4();
         }
     }
@@ -164,34 +148,51 @@ public class Zoo extends World
      * If an ending is completed, called the static method to unlock ending
      */
     public void checkEnd(){
-        if(numDead == numChildren){
+        if(numChildren == 0){
             Greenfoot.setWorld(world);
             Collections.unlockEnd1();
             world.ending1();
         }
-        if(numZombie == 0){
+        if(numZombie == 0 && actCount > 1000){
             Greenfoot.setWorld(world);
             Collections.unlockEnd2();
             world.ending2();
         }
-        if(numZombie == 0){
+        /*
+        if(numZombie == 0 && actCount > 1000){
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
         }
+        */
     }
     
     /**
      * Count the number of dead children
      */
     public void check(){
-        ArrayList<Regular> y = (ArrayList<Regular>)getObjects(Regular.class);
-        for(Regular other: y)
+        for(Regular other: getObjects(Regular.class))
         {
-            if(!other.isAwake() && !other.getCheck())
+            if(!other.isAwake() && !other.isCounted())
             {
-                numDead++;
-                other.setCheck();
+                numChildren--;
+                other.counted();
+            }
+        }
+        for(Fighter other: getObjects(Fighter.class))
+        {
+            if(!other.isAwake() && !other.isCounted())
+            {
+                numFighter--;
+                other.counted();
+            }
+        }
+        for(Zombie other: getObjects(Zombie.class))
+        {
+            if(!other.isAwake() && !other.isCounted())
+            {
+                numZombie--;
+                other.counted();
             }
         }
     }
@@ -200,29 +201,25 @@ public class Zoo extends World
     public static int healed(){ //number of children get healed
         return numHealed++;
     }
-    public static int dead(){ //number of dead children
-        return numDead++;
-    }
+
     public static int hit(){ //get hit by banana
         return numHit++;
     }
     
-    //Set the static variables 
-    public static void setNumChild(int x){
-        numChildren = x;
+    public int getNumZombie(){
+        int x = numZombie;
+        return x;
     }
-    public static int getNumChild(){
-        return numChildren;
+    
+    public int getNumChild(){
+        int x = numChildren;
+        return x;
     } 
-    public static void setNumHealer(int x){
-        numHealer = x;
-    }
-    public static void setNumFighter(int x){
-        numFighter = x;
-    }
-    public static void setNumZombie(int x){
-        numZombie = x;
-    }
+    
+    public int getNumAnimal(){
+        int x = numAnimals;
+        return x;
+    } 
     
     public static double getDistance (Actor a, Actor b)
     {
