@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Monkey
-comment0.text=\r\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Cleanup\r\n\ @version\ 04/12/2024\r\n
+comment0.text=\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Cleanup\n\ @version\ 04/12/2024\n
 comment1.params=
 comment1.target=Monkey()
 comment2.params=

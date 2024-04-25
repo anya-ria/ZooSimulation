@@ -23,7 +23,7 @@ public class ZombieHippo extends Zombie
     private boolean lockedDirection = false;
 
     private int chargeCooldown = 20;
-    protected double friction = 0.5; // override from Entity
+    //protected double friction = 0.5; // override from Entity
 
     protected double friction = 0.25; // override from Entity
 

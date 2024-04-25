@@ -9,16 +9,16 @@ import java.util.ArrayList;
 public class ZombieBoss extends Entity
 {
     private GreenfootImage LImage, RImage;
-    private SuperStatBar hpBar;
-    private boolean awake = true;
-    private int maxHp;
+    
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
+    
     private final int maxThrowCooldown = 20;
     private int throwCooldown = maxThrowCooldown;
+    
     private int stunDuration;
     private boolean turn;
-    private int movingSpeed = 3;
+    
     public void act()
     {
         if(!super.update()) return;
@@ -33,6 +33,7 @@ public class ZombieBoss extends Entity
         setImage(LImage);
         maxIndex = 5;
         animCounter = 0;
+        stunDuration = 20;
         
         animIndex = 0;
         animDelay = 30;

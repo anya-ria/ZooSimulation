@@ -26,7 +26,7 @@ public class FireBall extends Projectile
      */
     public FireBall(double vx, double vy){
         super(vx,vy);
-        getImage().scale(20, 20);
+        getImage().scale(40, 40);
         
         animIndex = 0;
         animDelay = 5;

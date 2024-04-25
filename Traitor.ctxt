@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Traitor
-comment0.text=\r\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\r\n\ <li>\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks.\r\n\ <li>\ Also\ has\ his\ own\ special\ move\:\ Ground\ Pound\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/08/2024\r\n
+comment0.text=\n\ The\ traitor\ is\ a\ child\ that\ no\ longer\ wants\ to\ cooperate\ with\ other\ children.\n\ <li>\ This\ character\ will\ imitate\ all\ other\ characters'\ attacks.\n\ <li>\ Also\ has\ his\ own\ special\ move\:\ Ground\ Pound\n\ \n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 04/08/2024\n
 comment1.params=
 comment1.target=Traitor()
 comment10.params=enemyDetails
@@ -19,7 +19,7 @@ comment16.params=
 comment16.target=void\ revive()
 comment17.params=
 comment17.target=void\ die()
-comment17.text=\r\n\ @override,\ gives\ traitor\ ability\ to\ revive\ before\ dying\r\n
+comment17.text=\n\ @override,\ gives\ traitor\ ability\ to\ revive\ before\ dying\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

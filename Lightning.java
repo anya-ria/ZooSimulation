@@ -84,7 +84,7 @@ public class Lightning extends SuperSmoothMover
         actCount++;
     }
     /**
-     * When lightning strikes, animals hace a chance to turn into zombies!
+     * When lightning strikes, animals have a chance to turn into zombies!
      */
     public void turnIntoZombie(){
         for(Animal a: getWorld().getObjects(Animal.class)){
@@ -100,18 +100,11 @@ public class Lightning extends SuperSmoothMover
      */
     public static void pauseSound(){
         lightning.pause();
-
     }
     /**
      * Method that plays/resumes lightning sound.
      */
     public static void playSound(){
         lightning.play();
-    }
-    /** 
-     * Method that pauses lightning sound.
-     */
-    public static void pauseSound(){
-        lightning.pause();
     }
 }

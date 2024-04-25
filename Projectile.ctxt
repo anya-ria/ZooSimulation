@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Projectile
-comment0.text=\r\n\ General\ class\ of\ projectiles,\ objects\ that\ fly\ at\ a\ constant\ speed\ to\ hit\ something\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/9\r\n
+comment0.text=\n\ General\ class\ of\ projectiles,\ objects\ that\ fly\ at\ a\ constant\ speed\ to\ hit\ something\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/9\n
 comment1.params=vx\ vy
 comment1.target=Projectile(double,\ double)
-comment1.text=\r\n\ Creates\ a\ new\ projectile\r\n\ @param\ vx\ \ \ \ the\ x-velocity\r\n\ @param\ vy\ \ \ \ the\ y-velocity\r\n
+comment1.text=\n\ Creates\ a\ new\ projectile\n\ @param\ vx\ \ \ \ the\ x-velocity\n\ @param\ vy\ \ \ \ the\ y-velocity\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
