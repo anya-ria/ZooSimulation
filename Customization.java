@@ -18,7 +18,7 @@ public class Customization extends World
     private FighterParam f1, f2, f3;
     
     //Init music
-    private GreenfootSound music;
+    private GreenfootSound musicBG;
     
     CutScene game = new CutScene();
     public Customization()
@@ -35,8 +35,8 @@ public class Customization extends World
         createParams();
         
         //Preload background music
-        music = new GreenfootSound ("backgroundMusic.mp3");
-        music.playLoop();
+        musicBG = new GreenfootSound ("backgroundMusic.mp3");
+        musicBG.playLoop();
     }
 
     /**
@@ -47,7 +47,8 @@ public class Customization extends World
         if(Greenfoot.mouseClicked(startButton)){
             resetVariables();
             setValue();
-            music.stop();
+            musicBG.stop();
+            game.started();
             //Go to CutScene
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
@@ -121,5 +122,13 @@ public class Customization extends World
         Zoo.numHealer = 2;
         Zoo.numFighter = 1;
         Zoo.numZombie = 0;
+    }
+    
+    public void stopped() {
+        musicBG.stop();
+    }
+    
+    public void started (){
+        musicBG.playLoop();
     }
 }

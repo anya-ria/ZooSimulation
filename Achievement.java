@@ -21,7 +21,8 @@ public class Achievement extends World
     //Init instances 
     private Trophy[] arr = new Trophy[5];
     private HomeButton returnKey;
-
+    private GreenfootSound musicBG;
+    
     public Achievement()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -33,6 +34,9 @@ public class Achievement extends World
         addObject(returnKey, getWidth()-80, 750);
         
         addCups();
+        
+        musicBG = new GreenfootSound ("backgroundMusic.mp3");
+        musicBG.setVolume(70);
     }
     
     /**
@@ -81,5 +85,13 @@ public class Achievement extends World
     }
     public static void completeAchi4(){
         achi4 = true;
+    }
+    
+    public void stopped() {
+        musicBG.stop();
+    }
+    
+    public void started (){
+        musicBG.playLoop();
     }
 }

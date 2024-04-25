@@ -10,7 +10,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HomeButton extends Icon
 {
-    
     public HomeButton(){
         setImage("homeButton.png");
         GreenfootImage image = getImage();
@@ -23,9 +22,12 @@ public class HomeButton extends Icon
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             TitleScreen game = new TitleScreen();
+            
+            (getWorld()).stopped();
+            game.started();
+            
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
         }
     }
- 
 }

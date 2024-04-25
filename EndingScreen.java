@@ -11,7 +11,6 @@ public class EndingScreen extends World
     //Init button and timer
     private HomeButton homeButton = new HomeButton();
     private SimpleTimer gameTimer = new SimpleTimer();
-    
     private int timeElasped;
     public EndingScreen()
     {    
