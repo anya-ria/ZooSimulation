@@ -16,14 +16,14 @@ public class Healer extends Child
     private GreenfootImage[] healToward = new GreenfootImage[7];
 
     // Animation variables
-    private int animCounter, animDelay, animIndex;
-    private int maxHealIndex, maxWalkIndex;
-    private boolean right, left, away, toward, healing;
+    private int maxHealIndex;
+    private boolean healing;
 
-    // healing variables
+    // healing max cooldowns
     private final int MAX_AOE_COOLDOWN = 200;
     private final int MAX_PROJ_COOLDOWN = 80;
 
+    // healing cooldowns
     private int aoeCooldown = MAX_AOE_COOLDOWN;
     private int projCooldown = MAX_PROJ_COOLDOWN;
     private int stunDuration = 0;
@@ -109,21 +109,7 @@ public class Healer extends Child
                     setImage(healToward[animIndex]);
                 }
             } else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right) {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left) {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away) {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward) {
-                    setImage(walkToward[animIndex]);
-                }
+                updateWalking();
             }
         }
         else {

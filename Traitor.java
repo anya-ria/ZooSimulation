@@ -17,10 +17,9 @@ public class Traitor extends Child
     private GreenfootImage[] punchRight = new GreenfootImage[6];
     private GreenfootImage[] punchLeft = new GreenfootImage[6];
     
-    // Animation sprites
-    private int animCounter, animDelay, animIndex;
-    private int maxPunchIndex, maxWalkIndex;
-    private boolean right, left, away, toward, punching;
+    // Animation variables
+    private int maxPunchIndex;
+    private boolean punching;
     
     // Sounds
     private static GreenfootSound[] laughSound;
@@ -32,15 +31,18 @@ public class Traitor extends Child
     private static GreenfootSound[] dyingSound;
     private static int dyingSoundIndex;
     
+    // Maximum attack cooldowns
     private final int MAX_THROW_COOLDOWN = 50;
     private final int MAX_HEAL_COOLDOWN = 100;
     private final int MAX_SMASH_COOLDOWN = 500;
     
+    // Attack cooldowns
     private int throwCooldown = MAX_THROW_COOLDOWN;
     private int healCooldown = MAX_HEAL_COOLDOWN;
     private int smashCooldown = MAX_SMASH_COOLDOWN;
     private int stunDuration = 0;
     
+    // Revives
     private int revives = 2;
     
     public Traitor(){
@@ -53,17 +55,24 @@ public class Traitor extends Child
     }
     
     public void act(){
+        // do not act if update methods returns false (check entity's update method)
         if(!super.update()) return;
-        if(stunDuration>0){ // currently stunned
+        // if currenly stunned
+        if(stunDuration>0){
             stunDuration--;
-            animCounter = 10; // make sure this guy isn't animating when stunned
-            setLocation(getX(), getY());
+            // make sure this guy isn't animating when stunned
+            animCounter = 10; 
+            // keep a setLocation without moving to keep physics working
+            setLocation(getX(), getY()); 
             return;
         }
+        // find nearest child
         double[] childDetails = detectNearestEntity(Child.class, 1000);
         chaseChildren(childDetails);
     }
     
+    
+    // **************************** SOUNDS ****************************
     public static void init() {
         // Laughing sounds
         laughSoundIndex = 0;
@@ -90,7 +99,6 @@ public class Traitor extends Child
             dyingSound[i] = new GreenfootSound("dyingGrunt.mp3");
         }
     }
-    
     public static void playLaughSound() {
         laughSound[laughSoundIndex].setVolume(50);
         laughSound[laughSoundIndex].play();
@@ -124,6 +132,7 @@ public class Traitor extends Child
         }
     }
     
+    // ********************* IMAGES AND ANIMATIONS ************************
     private void initImages() {
         // Initialize punching images
         for(int i = 0; i < maxPunchIndex; i++) {
@@ -159,7 +168,6 @@ public class Traitor extends Child
         animDelay = 8;
         animCounter = animDelay;
     }
-    
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -183,21 +191,7 @@ public class Traitor extends Child
                 }
             }
             else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right) {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left) {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away) {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward) {
-                    setImage(walkToward[animIndex]);
-                }
+                updateWalking();
             }
         }
         else {

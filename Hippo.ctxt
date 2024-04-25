@@ -1,13 +1,12 @@
 #BlueJ class context
 comment0.target=Hippo
-comment0.text=\r\n\ Attacks\ children\ including\ the\ fighter\ children.\r\n\ Charges\ towards\ children\ and\ attacks\r\n\ \r\n\ @author\ Luke\ Xiao\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @author\ Gennie\ Won\ |\ Sounds\r\n\ @version\ 04/12/2024\r\n
+comment0.text=\r\n\ Attacks\ children\ including\ the\ fighter\ children.\r\n\ Charges\ towards\ children\ and\ attacks\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\r\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\r\n\ @version\ 04/12/2024\r\n
 comment1.params=
 comment1.target=Hippo()
 comment2.params=
 comment2.target=void\ initImages()
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Hippo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment4.params=
 comment4.target=void\ init()
 comment5.params=
@@ -15,7 +14,5 @@ comment5.target=void\ playHippoSound()
 comment6.params=
 comment6.target=void\ moveAround()
 comment7.params=
-comment7.target=void\ charge()
-comment8.params=
-comment8.target=void\ animate()
-numComments=9
+comment7.target=void\ animate()
+numComments=8

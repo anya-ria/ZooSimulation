@@ -16,9 +16,8 @@ public class Fighter extends Child
     private GreenfootImage[] fightToward = new GreenfootImage[6];
 
     // Animation variables
-    private int animCounter, animDelay, animIndex;
-    private int maxFightIndex, maxWalkIndex;
-    private boolean right, left, away, toward, fighting;
+    private int maxFightIndex;
+    private boolean fighting;
     
     // Sounds
     private static GreenfootSound[] punchSound;
@@ -125,21 +124,7 @@ public class Fighter extends Child
                 }
             }
             else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right) {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left) {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away) {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward) {
-                    setImage(walkToward[animIndex]);
-                }
+                updateWalking();
             }
         }
         else {

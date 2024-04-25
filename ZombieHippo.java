@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class ZombieHippo here.
+ * A hippo turned zombie, charges towards children until hitting a wall
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
@@ -63,9 +63,9 @@ public class ZombieHippo extends Zombie
         }
         direction = getRotation();
         move(3);
-        // The facing direction
+        // adjusts the facing direction
         adjustDirection();
-        // stop charging
+        // stop charging to change direction
         if(getX()<100||getX()>924||getY()<50||getY()>750){
             lockedDirection = false;
         }

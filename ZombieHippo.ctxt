@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ZombieHippo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ZombieHippo\ here.\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Fixes\r\n\ \r\n\ @version\ 04/18/2024\r\n
+comment0.text=\r\n\ A\ hippo\ turned\ zombie,\ charges\ towards\ children\ until\ it\ hits\ a\ wall\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Fixes\r\n\ \r\n\ @version\ 04/18/2024\r\n
 comment1.params=
 comment1.target=ZombieHippo()
 comment2.params=

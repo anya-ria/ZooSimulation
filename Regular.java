@@ -9,18 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Regular extends Child
 {
-    // Animation variables
-    private int animCounter, animDelay, animIndex;
-    private int maxIndex;
-    private boolean right, left, away, toward;
-    
+    // which child is this?
     private int childNum;
 
     public Regular(){
         super(100);
         animCounter = 0;
         childNum = Greenfoot.getRandomNumber(3);
-        maxIndex = walkAway.length;
+        maxWalkIndex = walkAway.length;
         initImages();
     }
 
@@ -35,49 +31,49 @@ public class Regular extends Child
     private void initImages(){
         // Initialize child 1
         if(childNum == 0) {
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkRight[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkLeft[i] = new GreenfootImage("child1WalkRight/child1WalkRight" + i + ".png");
                 walkLeft[i].mirrorHorizontally();
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkAway[i] = new GreenfootImage("child1WalkAway/child1WalkAway" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkToward[i] = new GreenfootImage("child1WalkToward/child1WalkToward" + i + ".png");
             }
         }
         // Initialize child 2
         if(childNum == 1) {
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkRight[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkLeft[i] = new GreenfootImage("child2WalkRight/child2WalkRight" + i + ".png");
                 walkLeft[i].mirrorHorizontally();
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkAway[i] = new GreenfootImage("child2WalkAway/child2WalkAway" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkToward[i] = new GreenfootImage("child2WalkToward/child2WalkToward" + i + ".png");
             }
         }
         // Initialize child 3
         if(childNum == 2) {
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkRight[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkLeft[i] = new GreenfootImage("child3WalkRight/child3WalkRight" + i + ".png");
                 walkLeft[i].mirrorHorizontally();
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkAway[i] = new GreenfootImage("child3WalkAway/child3WalkAway" + i + ".png");
             }
-            for(int i = 0; i < maxIndex; i++) {
+            for(int i = 0; i < maxWalkIndex; i++) {
                 walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
@@ -103,21 +99,7 @@ public class Regular extends Child
         if(animCounter == 0){
             animCounter = animDelay; 
             animIndex++; 
-            if(animIndex == maxIndex){
-                animIndex = 0; 
-            }
-            if(right){
-                setImage(walkRight[animIndex]);
-            } 
-            else if (left){
-                setImage(walkLeft[animIndex]);
-            } 
-            else if(toward){
-                setImage(walkToward[animIndex]); 
-            } 
-            else if(away){
-                setImage(walkAway[animIndex]);
-            }
+            updateWalking();
         } 
         else {
             animCounter--; 
