@@ -28,7 +28,7 @@ public class Traitor extends Child
     
     private int throwCooldown = MAX_THROW_COOLDOWN;
     private int healCooldown = MAX_HEAL_COOLDOWN;
-    private int smashCooldown = 0;
+    private int smashCooldown = MAX_SMASH_COOLDOWN;
     private int stunDuration = 0;
     
     private int revives = 3;

@@ -57,7 +57,7 @@ public class Zoo extends World
         
         actCount=1;
         
-        addObject(new Traitor(), 800, 600);
+        addObject(new Traitor(), 600, 600);
         addObject(homeButton,79,739);
         homeButton.setLocation(72,754);
         

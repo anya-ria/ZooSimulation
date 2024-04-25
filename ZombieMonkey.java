@@ -6,7 +6,7 @@ import java.util.Random;
  * 
  * @author <li> Luke Xiao | Movements
  * @author <li> Anya Shah | Animations
- * @author <li> Lucas Fu | ThrowBanana, "chaseChildren" from Traitor class
+ * @author <li> Lucas Fu | ThrowBanana, "chaseChildren" from Traitor class, code fixes
  * 
  * @version 04/18/2024
  */
@@ -21,12 +21,13 @@ public class ZombieMonkey extends Zombie
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-    private boolean right, left, away, toward;
     
+    // Fighting variables
     private final int maxThrowCooldown = 50;
     private int throwCooldown = maxThrowCooldown;
     private int stunDuration = 0;
     
+    // Random
     private Random rand = new Random();
     
     public ZombieMonkey() {
@@ -87,32 +88,19 @@ public class ZombieMonkey extends Zombie
         // movement
         if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setRotation(direction);
-            left = false; right = false; away = false; toward = false;
-            if (direction >= 315 || direction <= 45) // right
-            {
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // up
-            {   
-                away = true;
-            }
-            if (direction > 135 && direction <= 225) // left
-            {
-                left = true;
-            }
-            if (direction > 225 && direction <= 315) // down
-            {
-                toward = true; 
-            }
+            adjustDirection();
         }
-        if (getX() <= 20 || getX() >= 1004)
+        if (getX() <= 100 || getX() >= 924)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
-        if (getY() <= 20 || getY() >= 780)
+        if (getY() <= 50 || getY() >= 750)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
     }
     private void throwBanana(int direction, int speed){

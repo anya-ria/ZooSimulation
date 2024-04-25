@@ -24,11 +24,7 @@ public class ZombiePenguin extends Zombie
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex, maxSlideIndex;
-    private boolean right, left, away, toward, sliding;
-
-    private int direction;
-    private Child targetChild;
-    private ArrayList<Child> children;
+    private boolean sliding;
     
     public ZombiePenguin() {
         super(100);
@@ -97,47 +93,36 @@ public class ZombiePenguin extends Zombie
         if(childDetails[1]!=-1)
             direction = (int)childDetails[0];
         move(3);
-        if (Greenfoot.getRandomNumber(240) < 10)
+        sliding = true;
+        if (Greenfoot.getRandomNumber(100) < 1)
         {
-            setRotation(direction);
-            left = false; right = false; away = false; toward = false;
-            if (direction >= 315 || direction <= 45) // right
-            {
-                right = true;
-                sliding = true;
-            }
-            if (direction > 45 && direction <= 135) // up
-            {   
-                away = true;
-                sliding = true;
-            }
-            if (direction > 135 && direction <= 225) // left
-            {
-                left = true;
-                sliding = true;
-            }
-            if (direction > 225 && direction <= 315) // down
-            {
-                toward = true; 
-                sliding = true;
-            }
+            adjustDirection();
         }
-        if (getX() <= 20 || getX() >= 1004)
+        if (getX() <= 100 || getX() >= 924)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
-        if (getY() <= 20 || getY() >= 780)
+        if (getY() <= 50 || getY() >= 750)
         {
             turn(180);
+            direction = getRotation();
+            adjustDirection();
         }
         dealDamage();
     }
     private void dealDamage(){
         for(Child c: getIntersectingObjects(Child.class)){
-            c.takeDamage(10);
+            c.takeDamage(5);
         }
-        if(detectNearestEntity(Child.class, 10)[1]!=-1)
+        if(isTouching(Child.class)&&((Child)getOneIntersectingObject(Child.class)).isAwake()){
             turn(Greenfoot.getRandomNumber(60)+180);
+            move(4);
+            // adjust direction
+            direction = getRotation();
+            adjustDirection();
+        }
     }
     protected void animate() {
         if(animCounter == 0){

@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -19,10 +20,13 @@ public class Fighter extends Child
     private int maxFightIndex, maxWalkIndex;
     private boolean right, left, away, toward, fighting;
 
-    // fighting variables
+    // Fighting variables
     private final int THROW_COOLDOWN = 50;
     private int cooldown = THROW_COOLDOWN;
 
+    // Randomness
+    Random rand = new Random();
+    private int directionAdjustment = rand.nextInt(-30, 31);
     public Fighter(){
         super(200);
 
@@ -122,7 +126,7 @@ public class Fighter extends Child
     
     // **************************** FIGHTING ****************************** \\
     private void chaseZombies(double[] enemyDetails){
-        double direction = enemyDetails[0];
+        double direction = enemyDetails[0] + directionAdjustment;
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
         fighting = false;
