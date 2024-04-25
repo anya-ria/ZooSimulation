@@ -83,7 +83,6 @@ public class ZombieHippo extends Zombie
         charge();
         // Greenfoot.playSound("hippo1.mp3");
         setLocation(getX(), getY());
-
     }
     
     private void dealDamage(){

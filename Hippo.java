@@ -3,8 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Attacks children including the fighter children.
  * Charges towards children and attacks
  * 
- * @author Luke Xiao | Functions
- * @author Anya Shah | Animations
+ * @author <li> Luke Xiao  | Functions
+ * @author <li> Anya Shah  | Animations
+ * @author <li> Gennie Won | Sounds
  * @version 04/12/2024
  */
 
@@ -19,7 +20,10 @@ public class Hippo extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
-
+    //Sound intialization
+    private static GreenfootSound[] hippoSound;
+    private static int hippoSoundIndex = 0;
+    
     public Hippo() {
         super(200);
         animCounter = 0;
@@ -50,16 +54,31 @@ public class Hippo extends Animal
         animCounter = animDelay;
     }
 
-    /**
-     * Act - do whatever the Hippo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         // calls the update method from the Entity class, which returns whether this should continue acting
         if(!super.update()) return;
         moveAround();
         animate();
+    }
+
+    private void init()
+    {
+        hippoSoundIndex = 0;
+        hippoSound = new GreenfootSound[20];
+        for(int i = 0; i < hippoSound.length; i++) {
+            hippoSound[i] = new GreenfootSound("hippo1.mp3");
+        }
+    }
+    
+    private void playHippoSound()
+    {
+        hippoSound[hippoSoundIndex].setVolume(50);
+        hippoSound[hippoSoundIndex].play();
+        hippoSoundIndex++;
+        if(hippoSoundIndex >= hippoSound.length) {
+            hippoSoundIndex = 0;
+        }
     }
     
     private void moveAround()

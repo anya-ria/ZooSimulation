@@ -12,7 +12,6 @@ public class HealingEffect extends Effect
     private int healingLevel;
     private static GreenfootSound[] healingSound;
     private static int healingSoundIndex = 0;
-    
     /**
      * creates a new healing effect that is the specified size and level
      * @param size      how big the effect will be

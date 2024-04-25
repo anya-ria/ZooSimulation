@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * Fights zombies...
  * 
- * @author <li> Anya Shah | Animations
+ * @author <li> Anya Shah | Animations + Sounds
  * @author <li> Lucas Fu  | Functions
  * @version 04/08/2024
  */
@@ -19,10 +19,18 @@ public class Fighter extends Child
     private int animCounter, animDelay, animIndex;
     private int maxFightIndex, maxWalkIndex;
     private boolean right, left, away, toward, fighting;
+    
+    // Sounds
+    private static GreenfootSound[] punchSound;
+    private static int punchSoundIndex;
 
     // Fighting variables
     private final int THROW_COOLDOWN = 50;
     private int cooldown = THROW_COOLDOWN;
+    
+    //healing variages
+    private static GreenfootSound[] pencilThrow;
+    private static GreenfootSound[] punch;
 
     // Randomness
     Random rand = new Random();
@@ -41,6 +49,22 @@ public class Fighter extends Child
         double[] enemyDetails = detectNearestEntity(Zombie.class, 500);
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
         chaseZombies(enemyDetails);
+    }
+    
+    public static void init() {
+        punchSoundIndex = 0;
+        punchSound = new GreenfootSound[20];
+        for(int i = 0; i < punchSound.length; i++) {
+            punchSound[i] = new GreenfootSound("punch2.mp3");
+        }
+    }
+    public static void playPunchSound() {
+        punchSound[punchSoundIndex].setVolume(50);
+        punchSound[punchSoundIndex].play();
+        punchSoundIndex++;
+        if(punchSoundIndex >= punchSound.length) {
+            punchSoundIndex = 0;
+        }
     }
 
     private void initImages() {
@@ -168,7 +192,6 @@ public class Fighter extends Child
         Entity enemy = getObjectsInRange(10, Entity.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
-        Greenfoot.playSound("punch2.mp3");
+        playPunchSound();
     }
 }
-

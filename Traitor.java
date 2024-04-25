@@ -5,7 +5,7 @@ import java.util.List;
  * <li> This character will imitate all other characters' attacks.
  * <li> Also has his own special move: Ground Pound
  * 
- * @author <li> Anya Shah | Animations
+ * @author <li> Anya Shah | Animations + Sounds
  * @author <li> Lucas Fu  | Functions
  * @version 04/08/2024
  */
@@ -21,6 +21,16 @@ public class Traitor extends Child
     private int animCounter, animDelay, animIndex;
     private int maxPunchIndex, maxWalkIndex;
     private boolean right, left, away, toward, punching;
+    
+    // Sounds
+    private static GreenfootSound[] laughSound;
+    private static int laughSoundIndex;
+    private static GreenfootSound[] punchSound;
+    private static int punchSoundIndex;
+    private static GreenfootSound[] healMeSound;
+    private static int healMeSoundIndex;
+    private static GreenfootSound[] dyingSound;
+    private static int dyingSoundIndex;
     
     private final int MAX_THROW_COOLDOWN = 50;
     private final int MAX_HEAL_COOLDOWN = 100;
@@ -52,6 +62,66 @@ public class Traitor extends Child
         }
         double[] childDetails = detectNearestEntity(Child.class, 1000);
         chaseChildren(childDetails);
+    }
+    
+    public static void init() {
+        // Laughing sounds
+        laughSoundIndex = 0;
+        laughSound = new GreenfootSound[20];
+        for(int i = 0; i < laughSound.length; i++) {
+            laughSound[i] = new GreenfootSound("sinisterLaugh.mp3");
+        }
+        // Punching sounds
+        punchSoundIndex = 0;
+        punchSound = new GreenfootSound[20];
+        for(int i = 0; i < punchSound.length; i++) {
+            punchSound[i] = new GreenfootSound("swishingPunch.mp3");
+        }
+        // Self healing sounds
+        healMeSoundIndex = 0;
+        healMeSound = new GreenfootSound[20];
+        for(int i = 0; i < healMeSound.length; i++) {
+            healMeSound[i] = new GreenfootSound("healup.mp3");
+        }
+        // Dying sounds
+        dyingSoundIndex = 0;
+        dyingSound = new GreenfootSound[20];
+        for(int i = 0; i < dyingSound.length; i++) {
+            dyingSound[i] = new GreenfootSound("dyingGrunt.mp3");
+        }
+    }
+    
+    public static void playLaughSound() {
+        laughSound[laughSoundIndex].setVolume(50);
+        laughSound[laughSoundIndex].play();
+        laughSoundIndex++;
+        if(laughSoundIndex >= laughSound.length) {
+            laughSoundIndex = 0;
+        }
+    }
+    public static void playPunchSound() {
+        punchSound[punchSoundIndex].setVolume(50);
+        punchSound[punchSoundIndex].play();
+        punchSoundIndex++;
+        if(punchSoundIndex >= punchSound.length) {
+            punchSoundIndex = 0;
+        }
+    }
+    public static void playSelfHealSound() {
+        healMeSound[healMeSoundIndex].setVolume(50);
+        healMeSound[healMeSoundIndex].play();
+        healMeSoundIndex++;
+        if(healMeSoundIndex >= healMeSound.length) {
+            healMeSoundIndex = 0;
+        }
+    }
+    public static void playDyingSound() {
+        dyingSound[dyingSoundIndex].setVolume(50);
+        dyingSound[dyingSoundIndex].play();
+        dyingSoundIndex++;
+        if(dyingSoundIndex >= dyingSound.length) {
+            dyingSoundIndex = 0;
+        }
     }
     
     private void initImages() {
@@ -191,7 +261,7 @@ public class Traitor extends Child
     private void selfHeal(){
         // heal of 40 hp in a tiny radius (20px)
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
-        Greenfoot.playSound("healup.mp3");
+        playSelfHealSound();
     }
     private void smash(){
         getWorld().addObject(new SmashEffect(200, 99), getX(), getY()); // deal damage
@@ -212,7 +282,7 @@ public class Traitor extends Child
         Child enemy = getObjectsInRange(10, Child.class).get(0);
         enemy.takeDamage(10);
         enemy.push((int)enemyDetails[0], 10);
-        Greenfoot.playSound("swishingPunch.mp3");
+        playPunchSound();
     }
     private void revive(){
         wound[0] = 0; wound[1] = 0;
@@ -231,7 +301,7 @@ public class Traitor extends Child
             getWorld().addObject(new Banana(i, 8), getX(), getY());
             getWorld().addObject(new Pencil(20, 150, i+5, 8), getX(), getY());
         }
-        Greenfoot.playSound("sinisterLaugh.mp3");
+        playLaughSound();
     }
     
     /**
@@ -245,6 +315,6 @@ public class Traitor extends Child
         } else {
             super.die();
         }
-        Greenfoot.playSound("dyingGrunt.mp3");
+        playDyingSound();
     }
 }

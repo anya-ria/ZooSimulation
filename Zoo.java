@@ -64,7 +64,6 @@ public class Zoo extends World
         setPaintOrder (Lightning.class, Banana.class, Pencil.class);
         
         setBackground("zoo.jpg");
-        Greenfoot.playSound("backgroundMusic.mp3");
     }
     
     public void act(){
