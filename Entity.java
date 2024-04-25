@@ -19,7 +19,7 @@ public abstract class Entity extends SuperSmoothMover
     // physics variables
     private double tempVx = 0; // temporary vx added from push
     private double tempVy = 0; // temporary vy added from push
-    protected double friction = 0.95;
+    protected double friction = 0.95; // lower is more friction
     
     // stun due to slipping on a banana or anything else
     private double slippedDuration = 0;

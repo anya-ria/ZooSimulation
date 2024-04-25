@@ -88,7 +88,7 @@ public class Lightning extends SuperSmoothMover
      */
     public void turnIntoZombie(){
         for(Animal a: getWorld().getObjects(Animal.class)){
-            if(Greenfoot.getRandomNumber(3) == 0 && a.isAwake()){ //1/3 chance of turning into a zombie
+            if(!(a instanceof Zombie)&&Greenfoot.getRandomNumber(3) == 0 && a.isAwake()){ //1/3 chance of turning into a zombie
                 a.zombify();
                 Zoo.numZombie++;
                 Zoo.numAnimals--;

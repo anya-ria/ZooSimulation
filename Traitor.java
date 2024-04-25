@@ -38,10 +38,10 @@ public class Traitor extends Child
     
     private int throwCooldown = MAX_THROW_COOLDOWN;
     private int healCooldown = MAX_HEAL_COOLDOWN;
-    private int smashCooldown = 0;
+    private int smashCooldown = MAX_SMASH_COOLDOWN;
     private int stunDuration = 0;
     
-    private int revives = 3;
+    private int revives = 2;
     
     public Traitor(){
         super(200);
@@ -244,36 +244,22 @@ public class Traitor extends Child
         }
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
         // update facing direction
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            right = true;
-            left = false; toward = false; away = false;
-        }
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            left = true;
-            right = false; toward = false; away = false;
-        }
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            away = true;
-            left = false; right = false; toward = false;
-        }
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            toward = true; 
-            left = false; right = false; away = false;
-        }
+        updateDirection(vector);
     }
     
     // traitor moves
     private void throwPencil(int direction, int speed){
-        int modif = rand.nextInt(-10,11);
+        int modif = rand.nextInt(-10,11); // add some randomness to throwing
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
         Pencil.playPencilSound();
     }
     private void throwBanana(int direction, int speed){
-        int modif = rand.nextInt(-10,11);
+        int modif = rand.nextInt(-10,11); // add some randomness to throwing
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
         Banana.playBananaSound();
     }
     private void selfHeal(){
+        // heal of 40 hp in a tiny radius (20px)
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
         playSelfHealSound();
     }
@@ -300,14 +286,17 @@ public class Traitor extends Child
     }
     private void revive(){
         wound[0] = 0; wound[1] = 0;
-        for(int i=0; i<5; i++){
+        // heal for 200 hp
+        for(int i=0; i<5; i++){ 
             selfHeal();
         }
+        // push away everyone in range of 150px
         for(Entity e: getObjectsInRange(150, Entity.class)){
             double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
             double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
             e.push(vx, vy);
         }
+        // throw out a ring of bananas and pencils
         for(int i=0; i<360; i+=10){
             getWorld().addObject(new Banana(i, 8), getX(), getY());
             getWorld().addObject(new Pencil(20, 150, i+5, 8), getX(), getY());
@@ -316,9 +305,10 @@ public class Traitor extends Child
     }
     
     /**
-     * @override, gives traitor ability to revive once
+     * @override, gives traitor ability to revive before dying
      */
     protected void die(){
+        // revives instead of dying as long as the traitor has revives
         if(revives>0){
             revives--;
             revive();

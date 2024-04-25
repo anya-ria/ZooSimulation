@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
 /**
  * Fights zombies...
  * 
@@ -23,7 +24,7 @@ public class Fighter extends Child
     private static GreenfootSound[] punchSound;
     private static int punchSoundIndex;
 
-    // fighting variables
+    // Fighting variables
     private final int THROW_COOLDOWN = 50;
     private int cooldown = THROW_COOLDOWN;
     
@@ -31,6 +32,9 @@ public class Fighter extends Child
     private static GreenfootSound[] pencilThrow;
     private static GreenfootSound[] punch;
 
+    // Randomness
+    Random rand = new Random();
+    private int directionAdjustment = rand.nextInt(-30, 31);
     public Fighter(){
         super(200);
 
@@ -146,7 +150,7 @@ public class Fighter extends Child
     
     // **************************** FIGHTING ****************************** \\
     private void chaseZombies(double[] enemyDetails){
-        double direction = enemyDetails[0];
+        double direction = enemyDetails[0] + directionAdjustment;
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
         fighting = false;
@@ -168,24 +172,8 @@ public class Fighter extends Child
             setLocation(getX(), getY());
             return;
         }
-        
-        // update facing direction
-        if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            right = true;
-            left = false; toward = false; away = false;
-        }
-        else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-            left = true;
-            right = false; toward = false; away = false;
-        }
-        else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            away = true;
-            left = false; right = false; toward = false;
-        }
-        else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-            toward = true; 
-            left = false; right = false; away = false;
-        }
+        // update direction variables
+        updateDirection(vector);
         setLocation(getX()+vector[0], getY()+vector[1]);
     }
     

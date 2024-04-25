@@ -141,23 +141,8 @@ public class Healer extends Child
             vector = new double[] {0, 0}; 
         if(stunDuration<=0){
             setLocation(getX()+vector[0], getY()+vector[1]);
-            // update facing direction
-            if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-                right = true;
-                left = false; toward = false; away = false;
-            }
-            else if(vector[0]<0 && Math.abs(vector[0])>Math.abs(vector[1])) {
-                left = true;
-                right = false; toward = false; away = false;
-            }
-            else if(vector[1]<0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-                away = true;
-                left = false; right = false; toward = false;
-            }
-            else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
-                toward = true; 
-                left = false; right = false; away = false;
-            }
+            // update direction variables
+            updateDirection(vector);
         }
     }
 
