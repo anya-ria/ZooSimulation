@@ -3,7 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Standard projectile thrown by monkeys and traitors, leaves a banana peel when expiring
  * 
- * @author Lucas
+ * @author Lucas Fu | Functions
+ * @author Anya Shah | Animations + Sounds
  * @version 2024/4/9
  */
 public class Banana extends Projectile
