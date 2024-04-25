@@ -39,19 +39,31 @@ public class Healer extends Child
 
     public void act(){
         if(!super.update()) return;
+        // if this is stunned (because recovering from AOE healing)
         if(stunDuration>0){
+            // count down stun duration
             stunDuration--;
+            // still call a setLocation for physics to still run
             setLocation(getX(), getY());
+            // toggles healing flag for animation
             healing = true;
+            // skips the rest of the act method
             return;
-        } else {
+        } 
+        // if not stunned..
+        else {
+            // un-toggles the healing flag for animation
             healing = false;
         }
+        // finds nearest child
         double[] allyDetails = detectNearestEntity(Child.class, 2000);
+        // follow them
         followAlly(allyDetails);
+        // heal them
         checkHeal(allyDetails);
     }
 
+    // ********************** IMAGES AND ANIMATIONS ********************** \\
     private void initImages() {
         // Initialize healing images 
         for(int i = 0; i < maxHealIndex; i++) {
@@ -117,33 +129,55 @@ public class Healer extends Child
         }
     }
 
+    // ************************* HEALING SECTION ************************** \\
     private void followAlly(double[] details){
+        // vector is an array comprising of x-velocity and y-velocity
         double[] vector;
-        if(details[1] >= 100) // too far
+        // if target is too far (out of AOE healing range)
+        if(details[1] >= 100)
+            // move towards the target
             vector = Utility.angleToVector(details[0]);
-        else if(details[1] <= 75 && details[1] != -1) // too close
+            
+        // if target is too close but still exists (healing ball cannot hit)
+        else if(details[1] <= 75 && details[1] != -1)
+            // move away from the target
             vector = Utility.angleToVector(details[0]+180);
+            
+        // if target does not exist
         else
+            // do not move
             vector = new double[] {0, 0}; 
-        if(stunDuration<=0){
-            setLocation(getX()+vector[0], getY()+vector[1]);
-            // update direction variables
-            updateDirection(vector);
-        }
+           
+        // updates location
+        setLocation(getX()+vector[0], getY()+vector[1]);
+        // update direction variables for animation
+        updateDirection(vector);
     }
 
     private void checkHeal(double[] details){
+        // parse the details array
         double direction = details[0];
         double distance = details[1];
+        
+        // if the target is close enough to heal using aoe heal, and it's off cooldown
         if(distance<=100 && aoeCooldown<=0){
+            // creates the aoe healing effect
             getWorld().addObject(new HealingEffect(220, 40), getX(), getY());
+            // resets the cooldown
             aoeCooldown = MAX_AOE_COOLDOWN;
+            // stuns the healer for 120 acts
             stunDuration = 120;
         }
+        
+        // if the target is withing throwing range and that's off cooldown
         if(distance>=65 && distance < 500 && projCooldown<=0){
+            // launches a healing ball that flies at 8px/s and heals for 10hp
             getWorld().addObject(new HealingBall((int)direction, 8, 10), getX(), getY());
+            // resets the cooldown
             projCooldown = MAX_PROJ_COOLDOWN;
         }
+        
+        // reduces the cooldown at the end each act
         aoeCooldown--; projCooldown--;
     }
 }
