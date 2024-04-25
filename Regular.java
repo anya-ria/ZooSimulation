@@ -133,17 +133,6 @@ public class Regular extends Child
             else if(away){
                 setImage(walkAway[animIndex]);
             }
-            else {
-                // if(childNum == 0) {
-                    // setImage("child1WalkToward/child1WalkToward0.png");
-                // }
-                // if(childNum == 1) {
-                    // setImage("child2WalkToward/child2WalkToward0.png");
-                // }
-                // if(childNum == 2) {
-                    // setImage("child3WalkToward/child3WalkToward0.png");
-                // }
-            }
         } 
         else {
             animCounter--; 

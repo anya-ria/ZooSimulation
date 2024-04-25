@@ -4,14 +4,16 @@ import java.util.List;
  * An effect that heals children whenever it appears. This effect is only used
  * by the healer
  * 
- * @author Lucas
+ * @author Lucas Fu | Functions
+ * @author Anya Shah | Sounds
  * @version 2024/4/10
  */
 public class HealingEffect extends Effect
 {
     private int healingLevel;
     private static GreenfootSound[] healingSound;
-    private static int healingSoundIndex = 0;
+    private static int healingSoundIndex;
+    
     /**
      * creates a new healing effect that is the specified size and level
      * @param size      how big the effect will be
@@ -46,7 +48,7 @@ public class HealingEffect extends Effect
         }
     }
     
-    public void playHealingSound() {
+    public static void playHealingSound() {
         healingSound[healingSoundIndex].setVolume(50);
         healingSound[healingSoundIndex].play();
         healingSoundIndex++;

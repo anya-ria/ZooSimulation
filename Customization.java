@@ -14,8 +14,8 @@ public class Customization extends World
     private StartButton startButton;
     private ChildParam c1, c2, c3; //3 choices
     private ZombieParam z1, z2, z3; 
-    private HealerParam h1, h2; //2 choices
-    private FighterParam f1, f2;
+    private HealerParam h1, h2, h3; //2 choices
+    private FighterParam f1, f2, f3;
     
     CutScene game = new CutScene();
     public Customization()
@@ -115,5 +115,4 @@ public class Customization extends World
         Zoo.numFighter = 1;
         Zoo.numZombie = 0;
     }
-    
 }

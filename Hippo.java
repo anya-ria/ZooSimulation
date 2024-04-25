@@ -29,7 +29,7 @@ public class Hippo extends Animal
     //private int direction;
     
     private static GreenfootSound[] hippoSound;
-    private static int hippoSoundIndex = 0;
+    private static int hippoSoundIndex;
     //Sound intialization
     public Hippo() {
         super(200);
@@ -78,7 +78,7 @@ public class Hippo extends Animal
         }
     }
     
-    private void init()
+    public static void init()
     {
         hippoSoundIndex = 0;
         hippoSound = new GreenfootSound[20];
@@ -87,7 +87,7 @@ public class Hippo extends Animal
         }
     }
     
-    private void playHippoSound()
+    public static void playHippoSound()
     {
         hippoSound[hippoSoundIndex].setVolume(50);
         hippoSound[hippoSoundIndex].play();
@@ -177,7 +177,6 @@ public class Hippo extends Animal
                 setImage(walkLeft[animIndex]);
             } 
             else if(toward){
-
                 setImage(walkToward[animIndex]); 
             } 
             else if(away){
