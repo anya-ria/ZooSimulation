@@ -8,13 +8,16 @@ import java.util.List;
  */
 public class Pencil extends Projectile
 {
+    // Animation/Images
     private GreenfootImage[] pencil = new GreenfootImage[13];
     private int animCounter, animDelay, animIndex; 
-    private int dot; // damage
-    private int duration; // how many acts (divide by 30 for number of ticks)
     
+    // Sounds
     private static GreenfootSound[] pencilSound;
     private static int pencilSoundIndex;
+    
+    private int dot; // damage
+    private int duration; // how many acts (divide by 30 for number of ticks)
     
     /**
      * Constructs a new Pencil using angle and speed
@@ -25,7 +28,7 @@ public class Pencil extends Projectile
      */
     public Pencil(int dmg, int duration, int angle, double speed){
         this(dmg, duration,
-             Utility.angleToVector(angle)[0]*speed, 
+            Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
     }
     /**
@@ -52,7 +55,7 @@ public class Pencil extends Projectile
     
     public static void init() {
         pencilSoundIndex = 0;
-        pencilSound = new GreenfootSount[20];
+        pencilSound = new GreenfootSound[20];
         for(int i = 0; i < pencilSound.length; i++) {
             pencilSound[i] = new GreenfootSound("pencilThrow2.mp3");
         }
@@ -102,6 +105,7 @@ public class Pencil extends Projectile
             expired = true;
         }        
     }
+
     protected void expire(){
         getWorld().removeObject(this);
     }

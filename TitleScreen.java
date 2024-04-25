@@ -41,6 +41,7 @@ public class TitleScreen extends World
         // Initialize sounds
         HealingEffect.init();
         Pencil.init();
+        Banana.init();
     }
     
     /**
