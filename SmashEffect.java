@@ -22,6 +22,7 @@ public class SmashEffect extends Effect
         super(null, new GreenfootImage("empty.png"),10,10,100);
         getImage().scale(size,size);
         getImage().setColor(Color.GRAY);
+        // creates a new circle on the image that has a diameter of "size"
         getImage().fillOval(0,0,size,size);
         
         damage = dmg;
@@ -37,6 +38,8 @@ public class SmashEffect extends Effect
             c.takeDamage(damage);
         }
     }
+    
+    // **************************** SOUNDS ******************************** \\
     public static void init() {
         healingSoundIndex = 0;
         healingSound = new GreenfootSound[20];

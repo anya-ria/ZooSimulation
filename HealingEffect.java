@@ -31,7 +31,7 @@ public class HealingEffect extends Effect
     
     /**
      * @override
-     * gets touching children, and heals them
+     * heals all touching children
      */
     public void addedToWorld(World world){
         List<Child> children = getIntersectingObjects(Child.class);
@@ -40,6 +40,8 @@ public class HealingEffect extends Effect
         }
     }
     
+    
+    // ***************************** SOUNDS ******************************* \\
     public static void init() {
         healingSoundIndex = 0;
         healingSound = new GreenfootSound[20];
