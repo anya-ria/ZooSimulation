@@ -48,7 +48,7 @@ public class Hippo extends Animal
             walkLeft[i] = new GreenfootImage("hippoWalkRight/walkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-
+        setImage(walkToward[0]);
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;

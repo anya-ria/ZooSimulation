@@ -27,7 +27,8 @@ import java.util.*;
  * Description: 
  * This simulation tells the story of a group of children who decided to go on a
  * field trip to the zoo. Unfortunately, disaster struck, and they were forced to
- * confront a traitor amongst them, as well as his undead creations.
+ * confront a traitor amongst them, as well as his undead creations. It is either
+ * survival or death. But wait, it seems like something big is about to happen...
  * 
  * Features:
  * <li> Smooth pushing effects on all entities
@@ -35,6 +36,10 @@ import java.util.*;
  * <li> Children split into classes that focus on specific tasks
  * <li> An evil traitor that uses a combination of attacks to defeat children
  * <li> An utility class that converts an angle into a vector and vice versa
+ * <li> Customizations are allowed for four types of variables. 
+ * <li> Five achievements and three endings waiting to unlock. 
+ * <li> The lightning has a chance to change normal animals into ZOMBIES!
+ * <li> Fighter children attack the zombies. Don't lose them. 
  * 
  * Known bugs:
  * 

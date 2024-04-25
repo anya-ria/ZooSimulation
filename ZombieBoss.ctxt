@@ -7,6 +7,7 @@ comment2.params=
 comment2.target=ZombieBoss()
 comment3.params=
 comment3.target=void\ animate()
+comment3.text=\n\ This\ method\ animates\ the\ ZombieBoss\ \n
 comment4.params=
 comment4.target=void\ throwFireBalls()
 comment5.params=direction\ speed
