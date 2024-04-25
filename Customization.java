@@ -49,7 +49,7 @@ public class Customization extends World
     /**
      * A method that checks which button player clicked for each variable. 
      * Set the initial number of Children, Fighter, Healer and Zombie according to player's choice. 
-     * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
+     * If player did not make a choice, then no values are set. The Zoo world will create actors according to the default numbers.
      */
     public void setValue(){
         //ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);

@@ -95,6 +95,13 @@ public class Lightning extends SuperSmoothMover
             }
         }
     }
+    /** 
+     * Method that pauses lightning sound.
+     */
+    public static void pauseSound(){
+        lightning.pause();
+
+    }
     /**
      * Method that plays/resumes lightning sound.
      */

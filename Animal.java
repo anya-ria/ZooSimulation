@@ -10,6 +10,10 @@ public abstract class Animal extends Entity
 {
     // animation variables
     protected int direction;
+
+    private boolean isZombie = false;
+
+
     protected boolean left, right, away, toward;
     
     /**
@@ -26,9 +30,9 @@ public abstract class Animal extends Entity
      */
     public void zombify()
     {
-        if(this instanceof Hippo) getWorld().addObject(new ZombieHippo(), getX(), getY());
-        if(this instanceof Monkey) getWorld().addObject(new ZombieMonkey(), getX(), getY());
-        if(this instanceof Penguin) getWorld().addObject(new ZombiePenguin(), getX(), getY());
+        if(this instanceof Hippo) getWorld().addObject(new ZombieHippo(), getX(), getY()); this.isZombie = true;
+        if(this instanceof Monkey) getWorld().addObject(new ZombieMonkey(), getX(), getY()); this.isZombie = true;
+        if(this instanceof Penguin) getWorld().addObject(new ZombiePenguin(), getX(), getY()); this.isZombie = true;
         getWorld().removeObject(this);
     }
     

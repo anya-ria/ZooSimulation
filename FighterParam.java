@@ -36,7 +36,7 @@ public class FighterParam extends Icon
     }
     
     /**
-     * If a button is clicked (option is choosen), set to 'clicked' image and reset all other options to 'unclicked'.
+     * If a button is clicked (option is chosen), set to 'clicked' image and reset all other options to 'unclicked'.
      */
     public void act(){
         if(!isClicked){ //false
@@ -68,7 +68,7 @@ public class FighterParam extends Icon
     }
     
     /**
-     * Set value according to the choosen option
+     * Set value according to the chosen option
      */
     public void setValue(){
         if(index == 1){
