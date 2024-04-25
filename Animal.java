@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Animal extends Entity
 {
+    // animation variables
     protected int direction;
-    protected boolean left, right, away, toward; // animation directions
+    protected boolean left, right, away, toward;
+    
     /**
      * When constructed, sets the max hp and the hp
      * @param maxHp   the maximum hp the child can have

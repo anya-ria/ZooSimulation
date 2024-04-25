@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Penguin here.
+ * Penguins are cute little birds at our zoo :) Look at them slide!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
