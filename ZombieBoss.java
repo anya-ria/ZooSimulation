@@ -98,5 +98,4 @@ public class ZombieBoss extends Entity
             getWorld().addObject(new FireBall(direction+modif, speed), getX()+40, getY());
         }
     }
-    
 }
