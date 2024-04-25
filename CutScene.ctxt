@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.target=CutScene
-comment0.text=\r\n\ A\ cutscene\ introducing\ the\ inciting\ incident\ of\ this\ simulation.\r\n\ A\ teacher\ introduces\ her\ students\ to\ the\ zoo,\ suddenly\ lightning\ turns\ the\ animals\ into\ zombies.\r\n\ \r\n\ @author\ Megan\r\n\ @version\ April\ 2024\r\n
+comment0.text=\n\ A\ cutscene\ introducing\ the\ inciting\ incident\ of\ this\ simulation.\n\ A\ teacher\ introduces\ her\ students\ to\ the\ zoo,\ suddenly\ lightning\ turns\ the\ animals\ into\ zombies.\n\ \n\ @author\ Megan\n\ @version\ April\ 2024\n
 comment1.params=
 comment1.target=CutScene()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ spawnAnimals()
-comment3.text=\r\n\ Method\ that\ spawns\ 3\ of\ each\ type\ of\ animals\ in\ an\ initial\ location\ within\ their\ respective\ pens\r\n
+comment3.text=\n\ Method\ that\ spawns\ 3\ of\ each\ type\ of\ animals\ in\ an\ initial\ location\ within\ their\ respective\ pens\n
 comment4.params=
 comment4.target=void\ started()
-comment4.text=\r\n\ Method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ started.\r\n
+comment4.text=\n\ Method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ started.\n
 comment5.params=
 comment5.target=void\ stopped()
-comment5.text=\r\n\ Method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped.\r\n
+comment5.text=\n\ Method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped.\n
 numComments=6

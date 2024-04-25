@@ -5,6 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Luke Xiao | Functions
  * @author Anya Shah | Animations
+ * @author Gennie Won | Sounds
  * @version 04/12/2024
  */
 
@@ -26,7 +27,10 @@ public class Hippo extends Animal
     //private double speed;
     //private double maxSpeed;
     //private int direction;
-
+    
+    private static GreenfootSound[] hippoSound;
+    private static int hippoSoundIndex = 0;
+    //Sound intialization
     public Hippo() {
         super(200);
         animCounter = 0;
@@ -70,6 +74,26 @@ public class Hippo extends Animal
         if (isInfected)
         {
             charge();
+            playHippoSound();
+        }
+    }
+    
+    private void init()
+    {
+        hippoSoundIndex = 0;
+        hippoSound = new GreenfootSound[20];
+        for(int i = 0; i < hippoSound.length; i++) {
+            hippoSound[i] = new GreenfootSound("hippo1.mp3");
+        }
+    }
+    
+    private void playHippoSound()
+    {
+        hippoSound[hippoSoundIndex].setVolume(50);
+        hippoSound[hippoSoundIndex].play();
+        hippoSoundIndex++;
+        if(hippoSoundIndex >= hippoSound.length) {
+            hippoSoundIndex = 0;
         }
     }
     
