@@ -31,7 +31,6 @@ public abstract class Child extends Entity
      * @param vector    the movement vectors that will determine the facing direction
      */
     protected void updateDirection(double[] vector){
-        // update facing direction
         left = false; right = false; toward = false; away = false;
         if(vector[0]>0 && Math.abs(vector[0])>Math.abs(vector[1])) {
             right = true;
