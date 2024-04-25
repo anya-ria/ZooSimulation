@@ -131,6 +131,10 @@ public class Zoo extends World
                 addObject(new Penguin(), Greenfoot.getRandomNumber(280)+695, Greenfoot.getRandomNumber(250)+510);
             }
         }
+        // Spawn boss
+        // if((getObjects(ZombieHippo.class).size() + getObjects(Monkey.class).size() + getObjects(ZombiePenguin.class).size()) == numAnimals) {
+            // //addObject(new ZombieBoss(), getWidth() / 2, getHeight() / 2);
+        // }
         
         //Add lightning. Error
         if (actCount % 720 == 0){
