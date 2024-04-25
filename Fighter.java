@@ -22,6 +22,10 @@ public class Fighter extends Child
     // fighting variables
     private final int THROW_COOLDOWN = 50;
     private int cooldown = THROW_COOLDOWN;
+    
+    //healing variages
+    private static GreenfootSound[] pencilThrow;
+    private static GreenfootSound[] punch;
 
     public Fighter(){
         super(200);
