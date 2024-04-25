@@ -33,6 +33,7 @@ public class Fighter extends Child
 
     // Randomness
     Random rand = new Random();
+    // makes fighters stand at different spots when moving towards a enemy
     private int directionAdjustment = rand.nextInt(-30, 31);
     public Fighter(){
         super(200);
@@ -45,11 +46,14 @@ public class Fighter extends Child
 
     public void act(){
         if(!super.update()) return;
+        // finds nearest zombie
         double[] enemyDetails = detectNearestEntity(Zombie.class, 500);
+        // if couldn't find one, finds nearest traitor
         if(enemyDetails[1]==-1) enemyDetails = detectNearestEntity(Traitor.class, 500);
-        chaseZombies(enemyDetails);
+        chaseEnemies(enemyDetails);
     }
     
+    // **************************** SOUNDS ****************************
     public static void init() {
         punchSoundIndex = 0;
         punchSound = new GreenfootSound[20];
@@ -66,6 +70,7 @@ public class Fighter extends Child
         }
     }
 
+    // ******************** IMAGES AND ANIMATIONS *********************
     private void initImages() {
         // Initialize 4 fighting images
         for(int i = 0; i < maxFightIndex; i++) {
@@ -101,7 +106,6 @@ public class Fighter extends Child
         animDelay = 5;
         animCounter = animDelay;
     }
-    
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -134,12 +138,17 @@ public class Fighter extends Child
 
     
     // **************************** FIGHTING ****************************** \\
-    private void chaseZombies(double[] enemyDetails){
+    /**
+     * Follows enemies and throws out attacks
+     */
+    private void chaseEnemies(double[] enemyDetails){
         double direction = enemyDetails[0] + directionAdjustment;
         double distance = enemyDetails[1];
+        // vector array stores vx (vector[0]) and vy (vector[1])
         double[] vector = Utility.angleToVector(direction);
         fighting = false;
-        if(distance == -1){ // couldn't find anything
+        // if nothing was found, don't move
+        if(distance == -1){ 
             vector[0] = 0;
             vector[1] = 0;
         }
@@ -163,20 +172,29 @@ public class Fighter extends Child
     }
     
     private void throwPencil(int direction, int speed){
+        // a bit of randomness on throwing direction
         int modif = rand.nextInt(-10,11);
+        // launches a pencil that does a DOT of 2dmg lasting 150 acts
         getWorld().addObject(new Pencil(2, 150, direction+modif, speed), getX(), getY());
         Pencil.playPencilSound();
     }
     
     private void punch(){
-        double[] enemyDetails = detectNearestEntity(Animal.class, 10);
+        // finds a zombie withing 15px?
+        double[] enemyDetails = detectNearestEntity(Zombie.class, 15);
+        // if unfound, is there a traitor within 15px?
         if(enemyDetails[1] == -1){
-            enemyDetails = detectNearestEntity(Traitor.class, 10);
+            enemyDetails = detectNearestEntity(Traitor.class, 15);
+            // if still unfound, don't punch
             if(enemyDetails[1] == -1) return;
         }
-        Entity enemy = getObjectsInRange(10, Entity.class).get(0);
+        // grabs the information of that enemy found
+        Entity enemy = getObjectsInRange(15, Entity.class).get(0);
+        // they take 10 dmg
         enemy.takeDamage(10);
+        // they're pushed further away from this fighter, with a push speed of 10px/s
         enemy.push((int)enemyDetails[0], 10);
+        // punch sound
         playPunchSound();
     }
 }
