@@ -39,13 +39,6 @@ public class TitleScreen extends World
         musicBG.setVolume(70);
     }
     
-    public void stopped() {
-        music.pause();
-    }
-    public void started (){
-        music.playLoop();
-    }
-    
     /**
      * When 'Start' button gets pressed, go to Customization screen and play the sound effect
      */
@@ -61,7 +54,6 @@ public class TitleScreen extends World
     public void stopped() {
         musicBG.pause();
     }
-    
     public void started (){
         musicBG.playLoop();
     }

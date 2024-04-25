@@ -87,8 +87,12 @@ public class CutScene extends World
     public void started() {
         //starts or resumes lightning sound when simulation is started
         super.started();
-        if(actCount >  180 && actCount < 380) happyMusic.play();
-        if(getObjects(Lightning.class).size()!=0) Lightning.playSound();
+        if(actCount >  180 && actCount < 380){
+            happyMusic.play();
+        }
+        if(getObjects(Lightning.class).size()!=0) {
+            Lightning.playSound();
+        }
     }
 
     /**
@@ -98,6 +102,8 @@ public class CutScene extends World
         //pauses lightning sound when simulation is paused
         super.stopped();
         happyMusic.pause();
-        if((getObjects(Lightning.class).size()!=0)) Lightning.pauseSound();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.pauseSound();
+        }
     }
 }
