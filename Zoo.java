@@ -27,7 +27,8 @@ import java.util.*;
  * Description: 
  * This simulation tells the story of a group of children who decided to go on a
  * field trip to the zoo. Unfortunately, disaster struck, and they were forced to
- * confront a traitor amongst them, as well as his undead creations.
+ * confront a traitor amongst them, as well as his undead creations. It is either
+ * survival or death. But wait, it seems like something big is about to happen...
  * 
  * Features:
  * <li> Smooth pushing effects on all entities
@@ -35,6 +36,10 @@ import java.util.*;
  * <li> Children split into classes that focus on specific tasks
  * <li> An evil traitor that uses a combination of attacks to defeat children
  * <li> An utility class that converts an angle into a vector and vice versa
+ * <li> Customizations are allowed for four types of variables. 
+ * <li> Five achievements and three endings waiting to unlock. 
+ * <li> The lightning has a chance to change normal animals into ZOMBIES!
+ * <li> Fighter children attack the zombies. Don't lose them. 
  * 
  * Known bugs:
  * 
@@ -57,9 +62,14 @@ public class Zoo extends World
     //Init button and world
     private EndingScreen world = new EndingScreen();
     private HomeButton homeButton = new HomeButton();
+    private ZombieBoss boss = new ZombieBoss();
     
     private int actCount;
+    
+    private boolean bossFight; 
+
     private GreenfootSound musicBG;
+
 
     public Zoo()
     {    
@@ -75,6 +85,7 @@ public class Zoo extends World
         setPaintOrder (Lightning.class, Banana.class, Pencil.class);
         
         setBackground("zoo.jpg");
+        bossFight = false;
         
         musicBG = new GreenfootSound("backgroundMusic.mp3");
         // Initialize sounds
@@ -91,8 +102,8 @@ public class Zoo extends World
         actCount++;
         spawn();
         checkAchi();
-        checkEnd();
         check();
+        checkEnd();
     }
     
     // public void stopped() {
@@ -143,12 +154,16 @@ public class Zoo extends World
                 addObject(new Penguin(), Greenfoot.getRandomNumber(280)+695, Greenfoot.getRandomNumber(250)+510);
             }
         }
-        // Spawn boss
-        // if((getObjects(ZombieHippo.class).size() + getObjects(Monkey.class).size() + getObjects(ZombiePenguin.class).size()) == numAnimals) {
-            // //addObject(new ZombieBoss(), getWidth() / 2, getHeight() / 2);
-        // }
         
-        //Add lightning. Error
+        if(numAnimals == 0 && numZombie > 0 && bossFight != false){
+            for(Zombie a: getObjects(Zombie.class))
+            {
+                removeObject(a);
+            }
+            addObject(boss, getWidth()/2, getHeight()/2);
+            bossFight = true;
+        }
+        
         if (actCount % 720 == 0){
             Lightning lightning = new Lightning(100);
             addObject(lightning, 512, 400);
@@ -185,22 +200,20 @@ public class Zoo extends World
             Collections.unlockEnd1();
             world.ending1();
         }
-        if(numZombie == 0 && actCount > 1000){
+        if(numZombie == 0 && actCount > 1000 && numAnimals > 0){
             Greenfoot.setWorld(world);
             Collections.unlockEnd2();
             world.ending2();
         }
-        /*
-        if(numZombie == 0 && actCount > 1000){
+        if(!boss.isAwake()){
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
         }
-        */
     }
     
     /**
-     * Count the number of dead children
+     * Keep track of the number of children, fighters and zombies
      */
     public void check(){
         for(Regular other: getObjects(Regular.class))

@@ -81,6 +81,7 @@ public class Regular extends Child
                 walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
+        setImage(walkToward[0]);
         animIndex = 0; 
         animDelay = 8; // # of acts in between each image
         animCounter = animDelay; 

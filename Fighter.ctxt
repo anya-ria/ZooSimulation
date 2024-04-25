@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Fighter
+
+comment0.text=\n\ Fights\ zombies...\n\ \n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n\ @version\ 04/08/2024\n
+
 comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/25/2024\r\n
+
 comment1.params=
 comment1.target=Fighter()
 comment2.params=
@@ -15,7 +19,7 @@ comment6.params=
 comment6.target=void\ animate()
 comment7.params=enemyDetails
 comment7.target=void\ chaseEnemies(double[])
-comment7.text=\r\n\ Follows\ enemies\ and\ throws\ out\ attacks\r\n
+comment7.text=\n\ Follows\ enemies\ and\ throws\ out\ attacks\n
 comment8.params=direction\ speed
 comment8.target=void\ throwPencil(int,\ int)
 comment9.params=

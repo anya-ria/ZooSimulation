@@ -5,5 +5,5 @@ comment1.params=
 comment1.target=EndButton()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ If\ the\ button\ is\ clicked,\ go\ to\ collections\ screen\ and\ play\ sound\ effect\r\n
+comment2.text=\n\ If\ the\ button\ is\ clicked,\ go\ to\ collections\ screen\ and\ play\ sound\ effect\n
 numComments=3
