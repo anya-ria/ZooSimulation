@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=HealingEffect
 comment0.text=\r\n\ An\ effect\ that\ heals\ children\ whenever\ it\ appears.\ This\ effect\ is\ only\ used\r\n\ by\ the\ healer\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/10\r\n
-comment1.params=
-comment1.target=void\ init()
-comment2.params=size\ level
-comment2.target=HealingEffect(int,\ int)
-comment2.text=\r\n\ creates\ a\ new\ healing\ effect\ that\ is\ the\ specified\ size\ and\ level\r\n\ @param\ size\ \ \ \ \ \ how\ big\ the\ effect\ will\ be\r\n\ @param\ level\ \ \ \ \ how\ much\ healing\ is\ to\ be\ dealt\r\n
-comment3.params=world
-comment3.target=void\ addedToWorld(greenfoot.World)
-comment3.text=\r\n\ @override\r\n\ gets\ touching\ children,\ and\ heals\ them\r\n
+comment1.params=size\ level
+comment1.target=HealingEffect(int,\ int)
+comment1.text=\r\n\ creates\ a\ new\ healing\ effect\ that\ is\ the\ specified\ size\ and\ level\r\n\ @param\ size\ \ \ \ \ \ how\ big\ the\ effect\ will\ be\r\n\ @param\ level\ \ \ \ \ how\ much\ healing\ is\ to\ be\ dealt\r\n
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment2.text=\r\n\ @override\r\n\ gets\ touching\ children,\ and\ heals\ them\r\n
+comment3.params=
+comment3.target=void\ init()
 comment4.params=
 comment4.target=void\ playHealingSound()
 numComments=5
