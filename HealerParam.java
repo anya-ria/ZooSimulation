@@ -3,9 +3,9 @@ import java.util.*;
 /**
  * HealerParam.
  * 
- * @author Megan Lee | Art
- * @author Vanessa Huo | Functions
- * @version April 2024
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
+ * @version 04/25/2024
  */
 public class HealerParam extends Icon
 {
@@ -13,8 +13,8 @@ public class HealerParam extends Icon
      * Act - do whatever the HealerParam wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private GreenfootImage[]list=new GreenfootImage[3];
-    private GreenfootImage[]clicked=new GreenfootImage[3];
+    private GreenfootImage[]list=new GreenfootImage[4];
+    private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;
     
     public HealerParam(int x){

@@ -4,8 +4,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A cutscene introducing the inciting incident of this simulation.
  * A teacher introduces her students to the zoo, suddenly lightning turns the animals into zombies.
  * 
- * @author Megan
- * @version April 2024
+ * @author Megan Lee
+ * @version 04/25/2024
  */
 public class CutScene extends World
 {

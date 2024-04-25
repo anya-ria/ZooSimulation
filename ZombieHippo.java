@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
 /**
  * A hippo turned zombie, charges towards children until hitting a wall
  * 
@@ -7,7 +6,7 @@ import java.util.ArrayList;
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Fixes
  * 
- * @version 04/18/2024
+ * @version 04/25/2024
  */
 public class ZombieHippo extends Zombie
 {
@@ -22,7 +21,12 @@ public class ZombieHippo extends Zombie
     private int maxIndex;
     // Movement Variables
     private boolean lockedDirection = false;
-    protected double friction = 0.25; // override from Entity
+
+    private int chargeCooldown = 20;
+    protected double friction = 0.5; // override from Entity
+
+    //protected double friction = 0.25; // override from Entity
+
     
     public ZombieHippo() {
         super(100);
@@ -31,7 +35,9 @@ public class ZombieHippo extends Zombie
         initImages();
         setImage("zombieHippoWalkToward/walkToward1.png");
     }
-    
+    /**
+     * Initialize zombie hippo images
+     */
     private void initImages() {
         for(int i = 0; i < maxIndex; i++) {
             walkAway[i] = new GreenfootImage("zombieHippoWalkAway/walkAway" + i + ".png");

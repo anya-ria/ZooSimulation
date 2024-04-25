@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=ZombieBoss
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Boss\ here.\r\n\ \r\n\ @author\ Vanessa\ Huo\r\n\ @version\ 04/25/2024\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=ZombieBoss()
+comment3.params=
+comment3.target=void\ animate()
+comment4.params=
+comment4.target=void\ throwFireBalls()
+comment5.params=direction\ speed
+comment5.target=void\ throwFireBall(int,\ int)
+numComments=6

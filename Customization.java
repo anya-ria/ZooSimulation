@@ -6,7 +6,7 @@ import java.util.*;
  * Different values may lead to different endings
  * 
  * @author Vanessa Huo | Functions
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class Customization extends World
 {
@@ -32,7 +32,6 @@ public class Customization extends World
         createParams();
     }
 
-    
     /**
      * When 'Start' button gets pressed, set initial number of each actor in Zoo
      * Go to CutScene world and play sound effect
@@ -50,7 +49,7 @@ public class Customization extends World
     /**
      * A method that checks which button player clicked for each variable. 
      * Set the initial number of Children, Fighter, Healer and Zombie according to player's choice. 
-     * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
+     * If player did not make a choice, then no values are set. The Zoo world will create actors according to the default numbers.
      */
     public void setValue(){
         //ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
@@ -92,21 +91,21 @@ public class Customization extends World
      */
     private void createParams()
     {
-        addObject(new ChildParam(1),getWidth()/2-100,318);
-        addObject(new ChildParam(2),getWidth()/2,318);
-        addObject(new ChildParam(3), getWidth()/2+100,318);
-
-        addObject(new ZombieParam(1),getWidth()/2-100,650);
-        addObject(new ZombieParam(2),getWidth()/2,650);
-        addObject(new ZombieParam(3), getWidth()/2+100,650);
-
-        addObject(new HealerParam(1),getWidth()/2-280,480);
-        addObject(new HealerParam(2),getWidth()/2-180,480);
-        addObject(new HealerParam(3),getWidth()/2-80,480);
+        addObject(new ChildParam(1), 460, 268);
+        addObject(new ChildParam(2), 614, 268);
+        addObject(new ChildParam(3), 766, 268);
         
-        addObject(new FighterParam(1),getWidth()/2+180,480);
-        addObject(new FighterParam(2),getWidth()/2+280,480);
-        addObject(new FighterParam(3),getWidth()/2+380,480);
+        addObject(new HealerParam(1), 460, 391);
+        addObject(new HealerParam(2), 614, 391);
+        addObject(new HealerParam(3), 766, 391);
+        
+        addObject(new FighterParam(1), 460, 514);
+        addObject(new FighterParam(2), 614, 514);
+        addObject(new FighterParam(3), 766, 514);
+        
+        addObject(new ZombieParam(1), 460, 637);
+        addObject(new ZombieParam(2), 614, 637);
+        addObject(new ZombieParam(3), 766, 637);
     }
     
     public void resetVariables(){

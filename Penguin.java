@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Penguin extends Animal
 {
@@ -34,7 +34,18 @@ public class Penguin extends Animal
         maxWalkIndex = walkRight.length;
         initImages();
     }
-
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        if(sliding) slide();
+        moveAround();
+        animate();
+    }
+    
+    /**
+     * Initialize penguin images
+     */
     private void initImages()
     {
         // Initializing sliding images
@@ -87,66 +98,6 @@ public class Penguin extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        if(sliding) slide();
-        moveAround();
-        animate();
-    }
-    
-    private void moveAround()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(1);
-        if (Greenfoot.getRandomNumber(500) < 10)
-        {
-            // changes direction at random times
-            adjustDirection();
-        }
-
-        if (getX() <= 695 || getX() >= 970)
-
-        if(Greenfoot.getRandomNumber(500) < 5){
-            sliding = true;
-        }
-        if(Greenfoot.getRandomNumber(500) < 5){
-            sliding = false;
-        }
-        if (getX() <= 695 || getX() >= 980)
-
-        {
-            turn(180);
-        }
-        if (getY() <= 510 || getY() >= 760)
-        {
-            turn(180);
-        }
-        animate();
-    }
-
-    
-    public void slide()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(3);
-        if (Greenfoot.getRandomNumber(100) < 10)
-        {
-            setRotation(direction);
-        }
-        if (getX() <= 685 || getX() >= 970)
-        {
-            turn(180);
-            move(10);
-        }
-        if (getY() <= 500 || getY() >= 750)
-        {
-            turn(180);
-            move(10);
-        }
-    }
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -197,6 +148,54 @@ public class Penguin extends Animal
         else
         {
             animCounter--;
+        }
+    }
+    
+    private void moveAround()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if (Greenfoot.getRandomNumber(500) < 10)
+        {
+            // changes direction at random times
+            adjustDirection();
+        }
+
+        if (getX() <= 695 || getX() >= 970)
+
+        if(Greenfoot.getRandomNumber(500) < 5){
+            sliding = true;
+        }
+        if(Greenfoot.getRandomNumber(500) < 5){
+            sliding = false;
+        }
+        if (getX() <= 695 || getX() >= 980)
+        {
+            turn(180);
+        }
+        if (getY() <= 510 || getY() >= 760)
+        {
+            turn(180);
+        }
+        animate();
+    }
+    public void slide()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(3);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            setRotation(direction);
+        }
+        if (getX() <= 685 || getX() >= 970)
+        {
+            turn(180);
+            move(10);
+        }
+        if (getY() <= 500 || getY() >= 750)
+        {
+            turn(180);
+            move(10);
         }
     }
 }

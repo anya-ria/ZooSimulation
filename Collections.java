@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Locked - not completed yet
  * 
  * @author Vanessa Huo | Functions
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class Collections extends World
 {

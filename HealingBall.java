@@ -4,12 +4,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The healing ball is a projectile shot by the healer to heal children.
  * Creates a healing effect when expiring.
  * 
- * @author Lucas 
- * @version 2024/4/10
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public class HealingBall extends Projectile
 {
-    public static int healingInstances = 0;
     private int healingValue;
     /**
      * constructs a new HealingBall with a speed, direction, and healing value
@@ -37,17 +36,18 @@ public class HealingBall extends Projectile
     /**
      * Creates a new HealingEffect when this expires
      */
-    public void expire(){
+    protected void expire(){
         getWorld().addObject(new HealingEffect(50, healingValue), getX(), getY());
-        healingInstances++;
         getWorld().removeObject(this);
     }
     /**
      * Slightly pushes the child touched, expiring this
      */
-    public void detectCollision(){
+    protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
+        // if touching child is still alive
         if(touched!=null&&touched.isAwake()){
+            // pushes that child a little bit
             touched.push( vx*0.4 , vy*0.4 );
             expired = true;
         }

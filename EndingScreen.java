@@ -4,7 +4,7 @@ import greenfoot.World;
  * Ending screen
  * 
  * @author Vanessa Huo
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class EndingScreen extends World
 {

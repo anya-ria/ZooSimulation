@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SmashEffect
-comment0.text=\r\n\ The\ SmashEffect\ is\ an\ effect\ that\ deals\ damage\ in\ an\ aoe\r\n\ \r\n\ @author\ Lucas\ Fu\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Sounds\r\n\ @version\ 2024/4/16\r\n
+comment0.text=\r\n\ The\ SmashEffect\ is\ an\ effect\ that\ deals\ damage\ in\ an\ aoe\r\n\ \r\n\ @author\ <li>\ Lucas\ Fu\ |\ Functions\r\n\ @author\ Anya\ Shah\ |\ Sounds\r\n\ @version\ 04/25/2024\r\n
 comment1.params=size\ dmg
 comment1.target=SmashEffect(int,\ int)
 comment1.text=\r\n\ creates\ a\ new\ smash\ effect\ that\ is\ the\ specified\ size\ and\ damage\r\n\ @param\ size\ \ \ \ how\ big\ the\ effect\ will\ be\ (diameter)\r\n\ @param\ dmg\ \ \ \ \ how\ much\ damage\ is\ to\ be\ dealt\r\n

@@ -148,7 +148,6 @@ public class Traitor extends Child
             punchLeft[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
             punchLeft[i].mirrorHorizontally();
         }
-        
         // Initialize walking images
         for(int i = 0; i < maxWalkIndex; i++) {
             walkAway[i] = new GreenfootImage("traitorWalkAway/walkAway" + i + ".png");
@@ -199,21 +198,32 @@ public class Traitor extends Child
         }
     }
     
+    // ************************ FIGHTING SECTION ************************* \\
     private void chaseChildren(double[] enemyDetails){
         double direction = enemyDetails[0];
         double distance = enemyDetails[1];
         double[] vector = Utility.angleToVector(direction);
+        // if enemy does not exist
         if(distance == -1){
+            // set x-velocity and y-velocity back to 0
             vector[0] = 0;
             vector[1] = 0;
         }
+        
+        // if below 75% hp and off cooldown
         if(hp<150 && healCooldown<=0){
+            // stops punching animation
             punching = false;
+            // heals himself
             selfHeal();
+            // resets cooldown for both healing and throwing
             healCooldown = MAX_HEAL_COOLDOWN;
             throwCooldown = MAX_HEAL_COOLDOWN;
         }
+        
+        // if within throwing range and off cooldown
         if(distance<500 && distance>50 && throwCooldown<=0){
+            // randomly throws a banana or a pencil
             switch(rand.nextInt(2)){
                 case 0:
                     throwBanana((int)direction, 6);
@@ -222,63 +232,91 @@ public class Traitor extends Child
                     throwPencil((int)direction, 6);
                     break;
             }
+            // starts punching animation
             punching = true;
+            // resets cooldown
             throwCooldown = MAX_THROW_COOLDOWN;
         }
+        
+        // if within smashing distance, with enough hp, and off cooldown
         if(distance>=10 && distance<100 && hp>=100 && smashCooldown<=0){
+            // smash
             smash();
+            // start punching animation
             punching = true;
         }
+        
+        // reduce all cooldowns
         throwCooldown--; healCooldown--; smashCooldown--;
+        
+        // if within punching distance        
         if(distance < 15){
+            // punch
             punch();
+            // start punching animation
             punching = true;
+            // still use setLocation to keep the physics running
             setLocation(getX(), getY());
+            // skip the movement part
             return;
         }
+        // move according to vector values
         setLocation(getX()+vector[0]*1.2, getY()+vector[1]*1.2);
         // update facing direction
         updateDirection(vector);
     }
     
-    // traitor moves
+    // ** traitor moves ** 
     private void throwPencil(int direction, int speed){
-        int modif = rand.nextInt(-10,11); // add some randomness to throwing
+        // add some randomness to throwing
+        int modif = rand.nextInt(-10,11); 
+        // launches a new pencil with dot of 5dmg lasting 150 acts 
         getWorld().addObject(new Pencil(5, 150, direction+modif, speed), getX(), getY());
         Pencil.playPencilSound();
     }
     private void throwBanana(int direction, int speed){
-        int modif = rand.nextInt(-10,11); // add some randomness to throwing
+        // add some randomness to throwing
+        int modif = rand.nextInt(-10,11); 
+        // launches a new Banana in the specified direction with the specified speed
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
         Banana.playBananaSound();
     }
     private void selfHeal(){
-        // heal of 40 hp in a tiny radius (20px)
+        // heals 40 hp in a tiny radius (20px) centered on the traitor
         getWorld().addObject(new HealingEffect(20, 40), getX(), getY());
         playSelfHealSound();
     }
     private void smash(){
-        getWorld().addObject(new SmashEffect(200, 99), getX(), getY()); // deal damage
-        selfHeal(); selfHeal(); // heal self
-        // deal knockback
+        // creates a new smash effect of radius 200 dealing 99dmg to all affected
+        getWorld().addObject(new SmashEffect(200, 99), getX(), getY());
+        // heals self once
+        selfHeal(); 
+        // deal knockback inversely proportional to distance from traitor
         for(Entity e: getObjectsInRange(150, Entity.class)){
             double vx = (150-Math.abs(e.getX()-getX()))*Math.signum(e.getX()-getX())/8.0;
             double vy = (150-Math.abs(e.getY()-getY()))*Math.signum(e.getY()-getY())/8.0;
             e.push(vx, vy);
         }
+        // resets cooldown
         smashCooldown = MAX_SMASH_COOLDOWN;
+        // stuns for 200 acts (exhaution)
         stunDuration = 200;
     }
     private void punch(){
-        punching = true;
-        double[] enemyDetails = detectNearestEntity(Child.class, 10);
+        // finds the details of the nearest child within 15px
+        double[] enemyDetails = detectNearestEntity(Child.class, 15);
+        // if nothing is found for some reason, do not punch
         if(enemyDetails[1] == -1) return;
-        Child enemy = getObjectsInRange(10, Child.class).get(0);
+        // gets a child within 15px
+        Child enemy = getObjectsInRange(15, Child.class).get(0);
+        // they take 10dmg
         enemy.takeDamage(10);
+        // they get pushed away from this traitor
         enemy.push((int)enemyDetails[0], 10);
         playPunchSound();
     }
     private void revive(){
+        // resets all wounds
         wound[0] = 0; wound[1] = 0;
         // heal for 200 hp
         for(int i=0; i<5; i++){ 
@@ -308,7 +346,7 @@ public class Traitor extends Child
             revive();
         } else {
             super.die();
+            playDyingSound();
         }
-        playDyingSound();
     }
 }

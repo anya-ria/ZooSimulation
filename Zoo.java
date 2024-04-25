@@ -3,14 +3,14 @@ import java.util.*;
 /**
  * The Zoo:)
  * 
- * @author Vanessa Huo
- * @author Lucas Fu
- * @author Anya Shah
- * @author Megan Lee
- * @author Gennie Won
- * @author Luke Xiao
+ * @author <li> Vanessa Huo
+ * @author <li> Lucas Fu
+ * @author <li> Anya Shah
+ * @author <li> Megan Lee
+ * @author <li> Gennie Won
+ * @author <li> Luke Xiao
  * 
- * @version April 2024
+ * @version 04/25/2024
  *  
  * Credits: 
  * images: 
@@ -25,6 +25,16 @@ import java.util.*;
  *      author: Jordan Cohen -- (what code here)
  *
  * Description: 
+ * This simulation tells the story of a group of children who decided to go on a
+ * field trip to the zoo. Unfortunately, disaster struck, and they were forced to
+ * confront a traitor amongst them, as well as his undead creations.
+ * 
+ * Features:
+ * <li> Smooth pushing effects on all entities
+ * <li> Fancy combat mechanics, such as pushing, slipping, and damage over time
+ * <li> Children split into classes that focus on specific tasks
+ * <li> An evil traitor that uses a combination of attacks to defeat children
+ * <li> An utility class that converts an angle into a vector and vice versa
  * 
  * Known bugs:
  * 
@@ -42,7 +52,7 @@ public class Zoo extends World
     //Counters use to detect if a achievement is completed
     private static int numHealed; //number of children healed
     private static int numHit; //number of children get hit by banana
-    //private static int numDead;//number of children dead
+    //private static int numDead; //number of children dead
     
     //Init button and world
     private EndingScreen world = new EndingScreen();
@@ -72,6 +82,7 @@ public class Zoo extends World
         Traitor.init();
         Fighter.init();
         Hippo.init();
+        SmashEffect.init();
     }
     
     public void act(){
@@ -82,12 +93,19 @@ public class Zoo extends World
         check();
     }
     
+    // public void stopped() {
+        // music.stop();
+    // }
+    // public void started (){
+        // music.playLoop();
+    // }
+    
     /**
      * A method that spawn animals and children according to preset values in the Customization screen.
      * If there is no preset value, then spawn default number of actors. 
      */
     public void spawn(){
-        //Spawn Chidlren according to set values(20 or 25 or 30)
+        //Spawn Children according to set values(20 or 25 or 30)
         if(getObjects(Regular.class).size() < numChildren){
             addObject(new Regular(), Greenfoot.getRandomNumber(600)+100, Greenfoot.getRandomNumber(300)+300);
         }
@@ -123,6 +141,10 @@ public class Zoo extends World
                 addObject(new Penguin(), Greenfoot.getRandomNumber(280)+695, Greenfoot.getRandomNumber(250)+510);
             }
         }
+        // Spawn boss
+        // if((getObjects(ZombieHippo.class).size() + getObjects(Monkey.class).size() + getObjects(ZombiePenguin.class).size()) == numAnimals) {
+            // //addObject(new ZombieBoss(), getWidth() / 2, getHeight() / 2);
+        // }
         
         //Add lightning. Error
         if (actCount % 720 == 0){
