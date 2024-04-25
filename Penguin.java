@@ -116,7 +116,6 @@ public class Penguin extends Animal
             sliding = false;
         }
         if (getX() <= 695 || getX() >= 980)
-
         {
             turn(180);
         }

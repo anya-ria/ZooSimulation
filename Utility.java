@@ -13,7 +13,8 @@ public class Utility
      * @return int[] -- the x-value and the y-value
      */
     public static double[] angleToVector(double angle){
-        return new double[] {Math.cos(angle*Math.PI/180), Math.sin(angle*Math.PI/180)};
+        return new double[] {Math.cos(angle*Math.PI/180), 
+                             Math.sin(angle*Math.PI/180)};
     }
     /**
      * converts x-value and y-value into angle
