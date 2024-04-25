@@ -13,6 +13,10 @@ public abstract class Child extends Entity
     protected GreenfootImage[] walkLeft = new GreenfootImage[9];
     protected GreenfootImage[] walkToward = new GreenfootImage[9];
     
+    // Walking variables
+    protected int animCounter, animDelay, animIndex;
+    protected int maxWalkIndex;
+    
     // Direction animation variables
     protected boolean left, right, toward, away;
     public Child(int maxHp){
@@ -24,6 +28,7 @@ public abstract class Child extends Entity
     protected abstract void animate();
     /**
      * updates the facing direction variables 
+     * @param vector    the movement vectors that will determine the facing direction
      */
     protected void updateDirection(double[] vector){
         // update facing direction
@@ -39,6 +44,26 @@ public abstract class Child extends Entity
         }
         else if(vector[1]>0 && Math.abs(vector[0])<Math.abs(vector[1])) {
             toward = true; 
+        }
+    }
+    /**
+     * updates walking direction
+     */
+    protected void updateWalking(){
+        if(animIndex >= maxWalkIndex) {
+                    animIndex = 0;
+                }
+        if(right) {
+            setImage(walkRight[animIndex]);
+        }
+        else if(left) {
+            setImage(walkLeft[animIndex]);
+        }
+        else if(away) {
+            setImage(walkAway[animIndex]);
+        }
+        else if(toward) {
+            setImage(walkToward[animIndex]);
         }
     }
 }

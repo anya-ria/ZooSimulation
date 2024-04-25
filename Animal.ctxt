@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Animal
-comment0.text=\n\ Animals\ are\ the\ residents\ of\ the\ zoo,\ wandering\ aimlessly\ in\ their\ pen\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/23\n
+comment0.text=\r\n\ Animals\ are\ the\ residents\ of\ the\ zoo,\ wandering\ aimlessly\ in\ their\ pen\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/23\r\n
 comment1.params=maxHp
 comment1.target=Animal(int)
-comment1.text=\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ child\ can\ have\n
+comment1.text=\r\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\r\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ child\ can\ have\r\n
 comment2.params=
 comment2.target=void\ zombify()
-comment2.text=\n\ This\ animal\ has\ turned\ into\ a\ zombie\!\ removes\ the\ previous\ animal\ and\ replace\ with\ the\ zombie\ form\n
+comment2.text=\r\n\ This\ animal\ has\ turned\ into\ a\ zombie\!\ removes\ the\ previous\ animal\ and\ replace\ with\ the\ zombie\ form\r\n
 comment3.params=
 comment3.target=void\ die()
 comment3.text=\r\n\ @override\r\n\ When\ dying,\ remove\ the\ static\ rotation\ aspect\ so\ that\ this\ actually\ looks\ dead\r\n

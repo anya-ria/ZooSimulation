@@ -3,15 +3,15 @@ import java.util.*;
 /**
  * The Zoo:)
  * 
- * @author <li> Vanessa Huo
- * @author <li> Lucas Fu
- * @author <li> Anya Shah
- * @author <li> Megan Lee
- * @author <li> Gennie Won
- * @author <li> Luke Xiao
+ * @author Vanessa Huo
+ * @author Lucas Fu
+ * @author Anya Shah
+ * @author Megan Lee
+ * @author Gennie Won
+ * @author Luke Xiao
  * 
  * @version April 2024
- *  * 
+ *  
  * Credits: 
  * images: 
  *  children: 
@@ -22,7 +22,7 @@ import java.util.*;
  *      https://
  *      author: 
  * Code: 
- *      author: Jordan Cohen
+ *      author: Jordan Cohen -- (what code here)
  *
  * Description: 
  * 
