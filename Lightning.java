@@ -95,6 +95,7 @@ public class Lightning extends SuperSmoothMover
                 Zoo.numAnimals--;
             }
         }
+    }
     /** 
      * Method that pauses lightning sound.
      */
