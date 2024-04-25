@@ -106,15 +106,20 @@ public class Banana extends Projectile
      */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
+        // if touching a child that is still alive
         if(touched!=null&&touched.isAwake()){
+            // that child take damage
             touched.takeDamage(damage);
+            // that child gets pushed
             touched.push( vx*0.2 , vy*0.2 );
+            // this expires
             expired = true;
+            // the Zoo counts a hit
             Zoo.hit();
         }
     }
     /**
-     * Creates a peel when expired
+     * Creates a peel behind the banana when expiring
      */
     protected void expire(){
         getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
