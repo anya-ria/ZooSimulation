@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=CutScene
+
 comment0.text=\n\ A\ cutscene\ introducing\ the\ inciting\ incident\ of\ this\ simulation.\n\ A\ teacher\ introduces\ her\ students\ to\ the\ zoo,\ suddenly\ lightning\ turns\ the\ animals\ into\ zombies.\n\ \n\ @author\ Megan\n\ @version\ April\ 2024\n
+
+comment0.text=\r\n\ A\ cutscene\ introducing\ the\ inciting\ incident\ of\ this\ simulation.\r\n\ A\ teacher\ introduces\ her\ students\ to\ the\ zoo,\ suddenly\ lightning\ turns\ the\ animals\ into\ zombies.\r\n\ \r\n\ @author\ Megan\r\n\ @version\ 04/25/2024\r\n
+
 comment1.params=
 comment1.target=CutScene()
 comment2.params=

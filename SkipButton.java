@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Button to skip cutscene.
  * 
  * @author Megan Lee
- * @version April 2024
+ * @version 04/25/2024
  */
 public class SkipButton extends Icon
 {

@@ -148,7 +148,6 @@ public class Traitor extends Child
             punchLeft[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
             punchLeft[i].mirrorHorizontally();
         }
-        
         // Initialize walking images
         for(int i = 0; i < maxWalkIndex; i++) {
             walkAway[i] = new GreenfootImage("traitorWalkAway/walkAway" + i + ".png");

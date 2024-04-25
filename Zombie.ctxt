@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Zombie
-comment0.text=\n\ A\ category\ class\ used\ to\ identify\ zombies\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/19\n
+comment0.text=\r\n\ A\ category\ class\ used\ to\ identify\ zombies\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
 comment1.params=maxHp
 comment1.target=Zombie(int)
 numComments=2

@@ -1,6 +1,9 @@
 #BlueJ class context
-comment0.target=Achievement
+
 comment0.text=\n\ Show\ a\ list\ of\ achievements\n\ Gold\ Trophy\ -\ completed\n\ Grey\ Trophy\ -\ not\ completed\ yet\n\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/4\n
+
+comment0.text=\r\n\ Show\ a\ list\ of\ achievements\r\n\ Gold\ Trophy\ -\ completed\r\n\ Grey\ Trophy\ -\ not\ completed\ yet\r\n\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
+
 comment1.params=
 comment1.target=Achievement()
 comment2.params=

@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Child
+
 comment0.text=\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\n\ \n\ @author\ <li>\ Lucas\ |\ the\ class\n\ @author\ <li>\ Anya\ \ |\ the\ animation\ stuff\ that\ Lucas\ brought\ from\ subclasses\n\ @version\ 2024/4/4\n
+
+comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Class\r\n\ @author\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/25/2024\r\n
+
 comment1.params=maxHp
 comment1.target=Child(int)
 comment2.params=

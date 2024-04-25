@@ -4,9 +4,9 @@ import java.util.List;
  * An effect that heals children whenever it appears. This effect is only used
  * by the healer
  * 
- * @author Lucas Fu | Functions
- * @author Anya Shah | Sounds
- * @version 2024/4/10
+ * @author <li> Lucas Fu | Functions
+ * @author <li> Anya Shah | Sounds
+ * @version 04/25/2024
  */
 public class HealingEffect extends Effect
 {

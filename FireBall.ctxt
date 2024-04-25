@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.target=FireBall
-comment0.text=\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/9\n
+comment0.text=\r\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 04/25/2024\r\n
 comment1.params=angle\ speed
 comment1.target=FireBall(int,\ double)
-comment1.text=\n\ constructs\ a\ new\ FireBall\ with\ a\ speed\ and\ direction\n\ @param\ angle\ the\ direction\ in\ degrees\n\ @param\ speed\ the\ magnitude\ of\ speed\n
+comment1.text=\r\n\ constructs\ a\ new\ FireBall\ with\ a\ speed\ and\ direction\r\n\ @param\ angle\ the\ direction\ in\ degrees\r\n\ @param\ speed\ the\ magnitude\ of\ speed\r\n
 comment2.params=vx\ vy
 comment2.target=FireBall(double,\ double)
-comment2.text=\n\ constructs\ a\ new\ banana\ directly\ using\ vx\ and\ vy\n\ @param\ vx\ the\ x-speed\n\ @param\ vy\ the\ y-speed\n
+comment2.text=\r\n\ constructs\ a\ new\ banana\ directly\ using\ vx\ and\ vy\r\n\ @param\ vx\ the\ x-speed\r\n\ @param\ vy\ the\ y-speed\r\n
 comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ animate()
 comment5.params=
 comment5.target=void\ detectCollision()
-comment5.text=\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ expiring\ this\n
+comment5.text=\r\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ expiring\ this\r\n
 comment6.params=
 comment6.target=void\ expire()
-comment6.text=\n\ Creates\ a\ peel\ when\ expired\n
+comment6.text=\r\n\ Creates\ a\ peel\ when\ expired\r\n
 numComments=7

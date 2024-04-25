@@ -3,14 +3,14 @@ import java.util.*;
 /**
  * The Zoo:)
  * 
- * @author Vanessa Huo
- * @author Lucas Fu
- * @author Anya Shah
- * @author Megan Lee
- * @author Gennie Won
- * @author Luke Xiao
+ * @author <li> Vanessa Huo
+ * @author <li> Lucas Fu
+ * @author <li> Anya Shah
+ * @author <li> Megan Lee
+ * @author <li> Gennie Won
+ * @author <li> Luke Xiao
  * 
- * @version April 2024
+ * @version 04/25/2024
  *  
  * Credits: 
  * images: 

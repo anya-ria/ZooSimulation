@@ -5,8 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * It causes the scene to darken and then flashes white, followed by two lightning strikes. 
  * The minimum recommended duration for the entire intended animation is 300 acts.
  *
- * @author Megan
- * @version April 2024
+ * @author Megan Lee
+ * @version 04/25/2024
  */
 public class Lightning extends SuperSmoothMover
 {
@@ -84,7 +84,7 @@ public class Lightning extends SuperSmoothMover
         actCount++;
     }
     /**
-     * When lightning strikes, animals have a chance to turn into zombies!
+     * When lightning strikes, animals hace a chance to turn into zombies!
      */
     public void turnIntoZombie(){
         for(Animal a: getWorld().getObjects(Animal.class)){
@@ -106,5 +106,8 @@ public class Lightning extends SuperSmoothMover
      */
     public static void playSound(){
         lightning.play();
+    }
+    public void stopped() {
+        lightning.pause();
     }
 }

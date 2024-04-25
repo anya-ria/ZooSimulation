@@ -8,7 +8,7 @@ import greenfoot.World;
  *      View Game Endings
  * 
  * @author Vanessa Huo
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class TitleScreen extends World
 {

@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Banana
 comment0.text=\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\n\ \n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\n\ @version\ 2024/4/9\n
+comment0.text=\r\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\r\n\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\r\n\ @version\ 04/25/2024\r\n
 comment1.params=angle\ speed
 comment1.target=Banana(int,\ double)
 comment1.text=\n\ constructs\ a\ new\ Banana\ with\ a\ speed\ and\ direction\n\ @param\ angle\ the\ direction\ in\ degrees\n\ @param\ speed\ the\ magnitude\ of\ speed\n

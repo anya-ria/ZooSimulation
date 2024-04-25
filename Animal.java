@@ -3,18 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Animals are the residents of the zoo, wandering aimlessly in their pen
  * 
- * @author Lucas
- * @version 2024/4/23
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public abstract class Animal extends Entity
 {
     // animation variables
-    protected int direction;
-
-    private boolean isZombie = false;
-
-
     protected boolean left, right, away, toward;
+    protected int direction;
+    
+    private boolean isZombie = false;
     
     /**
      * When constructed, sets the max hp and the hp

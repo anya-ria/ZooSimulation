@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author <li> Lucas Fu  | Functions
  * @author <li> Anya Shah | Animations + Sounds
- * @version 2024/4/9
+ * @version 04/25/2024
  */
 public class Banana extends Projectile
 {

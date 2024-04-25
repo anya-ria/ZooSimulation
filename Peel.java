@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The banana peel is a non-moving "projectile" that makes characters slip when they step on it
  * 
- * @author Lucas
- * @version 2024/4/16
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public class Peel extends Projectile
 {
@@ -43,7 +43,6 @@ public class Peel extends Projectile
         animDelay = 1;
         animCounter = animDelay;
     }
-    
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;

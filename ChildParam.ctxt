@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=ChildParam
+
 comment0.text=\n\ ChildParam.\n\ Player\ set\ the\ values.\n\ \n\ @author\ Megan\ Lee\ |\ Art\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 2024/04\n
+
+comment0.text=\r\n\ ChildParam.\r\n\ Player\ set\ the\ values.\r\n\ \r\n\ @author\ <li>\ Megan\ Lee\ |\ Art\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 2024/04\r\n
+
 comment1.params=x
 comment1.target=ChildParam(int)
 comment2.params=
