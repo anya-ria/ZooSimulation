@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
-import java.util.Random;
 /**
  * A monkey turned zombie, throws bananas at children, causing them to slip
  * 
@@ -26,9 +25,6 @@ public class ZombieMonkey extends Zombie
     private final int maxThrowCooldown = 100;
     private int throwCooldown = maxThrowCooldown;
     private int stunDuration = 0;
-    
-    // Random
-    private Random rand = new Random();
     
     public ZombieMonkey() {
         super(100);
