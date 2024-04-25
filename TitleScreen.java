@@ -16,9 +16,6 @@ public class TitleScreen extends World
     private AchieveButton achieveButton;
     private EndButton endButton;
     private StartButton startButton;
-
-    //Init music
-    private GreenfootSound music;
         
     public TitleScreen()
     {    
@@ -33,7 +30,6 @@ public class TitleScreen extends World
         addObject(achieveButton,662,430);
         EndButton endButton = new EndButton();
         addObject(endButton,362,430);
-        
         //Preload background music
         music = new GreenfootSound ("backgroundMusic.mp3");
         music.setVolume(70);
@@ -51,9 +47,9 @@ public class TitleScreen extends World
     }
     
     public void stopped() {
-        music.pause();
+        //music.pause();
     }
     public void started (){
-        music.playLoop();
+        //music.playLoop();
     }
 }
