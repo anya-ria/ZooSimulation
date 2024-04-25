@@ -59,6 +59,7 @@ public class Zoo extends World
     private HomeButton homeButton = new HomeButton();
     
     private int actCount;
+    private GreenfootSound musicBG;
 
     public Zoo()
     {    
@@ -75,6 +76,7 @@ public class Zoo extends World
         
         setBackground("zoo.jpg");
         
+        musicBG = new GreenfootSound("backgroundMusic.mp3");
         // Initialize sounds
         HealingEffect.init();
         Pencil.init();
@@ -256,4 +258,11 @@ public class Zoo extends World
         return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
     }
 
+    public void stopped() {
+        musicBG.stop();
+    }
+    
+    public void started (){
+        musicBG.playLoop();
+    }
 }

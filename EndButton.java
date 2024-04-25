@@ -22,6 +22,7 @@ public class EndButton extends Icon
      */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
+            (getWorld()).stopped();
             Collections collec1 = new Collections();
             Greenfoot.setWorld(collec1);
             Greenfoot.playSound("mouseClick.mp3");

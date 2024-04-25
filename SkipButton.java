@@ -19,6 +19,7 @@ public class SkipButton extends Icon
      */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
+            (getWorld()).stopped();
             Zoo zoo = new Zoo();
             Greenfoot.setWorld(zoo);
             Greenfoot.playSound("mouseClick.mp3");

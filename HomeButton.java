@@ -22,6 +22,10 @@ public class HomeButton extends Icon
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             TitleScreen game = new TitleScreen();
+            
+            (getWorld()).stopped();
+            game.started();
+            
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
         }

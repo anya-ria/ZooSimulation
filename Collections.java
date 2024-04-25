@@ -18,6 +18,9 @@ public class Collections extends World
     private HomeButton returnKey;
     private Lock[] arr = new Lock[3];
 
+    //Init music
+    private GreenfootSound musicBG;
+    
     public Collections()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -29,6 +32,10 @@ public class Collections extends World
         addObject(returnKey, getWidth()-80, 750);
         
         addLocks();
+        
+        musicBG = new GreenfootSound ("backgroundMusic.mp3");
+        musicBG.setVolume(70);
+        musicBG.playLoop();
     }
 
     /**
@@ -65,5 +72,13 @@ public class Collections extends World
     }
     public static void unlockEnd3(){
         end3 = true;
+    }
+    
+    public void stopped() {
+        musicBG.stop();
+    }
+    
+    public void started (){
+        musicBG.playLoop();
     }
 }
