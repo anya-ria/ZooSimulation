@@ -281,17 +281,6 @@ public class Zoo extends World
         }
     }
 
-    //Increase the counter
-    //number of children get healed
-    public static int healed(){ 
-        return numHealed++;
-    }
-
-    // got hit by banana
-    public static int hit(){
-        return numHit++;
-    }
-
     /**
      * Returns the number of zombie in Zoo.
      * @return int   Number of zombie in Zoo
