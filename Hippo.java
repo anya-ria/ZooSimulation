@@ -50,7 +50,7 @@ public class Hippo extends Animal
     }
     public static void playHippoSound()
     {
-        hippoSound[hippoSoundIndex].setVolume(50);
+        hippoSound[hippoSoundIndex].setVolume(40);
         hippoSound[hippoSoundIndex].play();
         hippoSoundIndex++;
         if(hippoSoundIndex >= hippoSound.length) {
@@ -111,6 +111,10 @@ public class Hippo extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playHippoSound();
+        }
+        
         setLocation(getX(), getY());
         if (Greenfoot.getRandomNumber(240) < 10)
         {
