@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Utility
-comment0.text=\r\n\ A\ class\ to\ provide\ static\ methods\ for\ calculations\r\n\ \r\n\ @author\ Lucas\ \r\n\ @version\ 2024/4/4\r\n
+comment0.text=\n\ A\ class\ to\ provide\ static\ methods\ for\ calculations\n\ \n\ @author\ Lucas\ \n\ @version\ 2024/4/4\n
 comment1.params=angle
 comment1.target=double[]\ angleToVector(double)
-comment1.text=\r\n\ converts\ angle\ into\ x-value\ and\ y-value\r\n\ @param\ angle\ \ \ \ \ The\ angle\r\n\ @return\ int[]\ --\ the\ x-value\ and\ the\ y-value\r\n
+comment1.text=\n\ converts\ angle\ into\ x-value\ and\ y-value\n\ @param\ angle\ \ \ \ \ The\ angle\n\ @return\ int[]\ --\ the\ x-value\ and\ the\ y-value\n
 comment2.params=x\ y
 comment2.target=double\ vectorToAngle(double,\ double)
-comment2.text=\r\n\ converts\ x-value\ and\ y-value\ into\ angle\r\n\ @param\ x\ \ \ \ \ \ \ \ \ \ The\ x-value\r\n\ @param\ y\ \ \ \ \ \ \ \ \ \ The\ y-value\r\n\ @return\ double\ --\ The\ angle\r\n
+comment2.text=\n\ converts\ x-value\ and\ y-value\ into\ angle\n\ @param\ x\ \ \ \ \ \ \ \ \ \ The\ x-value\n\ @param\ y\ \ \ \ \ \ \ \ \ \ The\ y-value\n\ @return\ double\ --\ The\ angle\n
 numComments=3

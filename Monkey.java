@@ -84,6 +84,8 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
+
+    // Moving around in random motions in within its fences
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -106,6 +108,8 @@ public class Monkey extends Animal
             turn(180);
         }
     }
+    
+    // Determining the animation needed for each directions
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
