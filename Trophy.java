@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Megan Lee | Art
  * @author Vanessa Huo | Functions
+ * @author Gennie Won | Sounds 
  * @version April 2024
  */
 public class Trophy extends Icon

@@ -2,9 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Monkeys are part of our natural fauna in our country. Look at them cutely walking around!
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
- * @author <li> Lucas Fu  | Cleanup
+ * @author <li> Luke Xiao  | Functions
+ * @author <li> Anya Shah  | Animations
+ * @author <li> Gennie Won | Sounds 
+ * @author <li> Lucas Fu   | Cleanup
  * @version 04/12/2024
  */
 public class Monkey extends Animal
@@ -18,6 +19,9 @@ public class Monkey extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
+    
+    private static GreenfootSound[] monkeySound;
+    private static int monkeySoundIndex;
 
     public Monkey()
     {
@@ -26,7 +30,23 @@ public class Monkey extends Animal
         maxIndex = walkRight.length;
         initImages();
     }
-
+    
+    public static void init() {
+        monkeySoundIndex = 0;
+        monkeySound = new GreenfootSound[20];
+        for(int i = 0; i < monkeySound.length; i++) {
+            monkeySound[i] = new GreenfootSound("monkey.mp3");
+        }
+    }
+    
+    public static void playMonkeySound() {
+        monkeySound[monkeySoundIndex].setVolume(50);
+        monkeySound[monkeySoundIndex].play();
+        monkeySoundIndex++;
+        if(monkeySoundIndex >= monkeySound.length) {
+            monkeySoundIndex = 0;
+        }
+    }
     private void initImages() {
         // Initialize monkey images
         for(int i = 0; i < maxIndex; i++) {
@@ -63,6 +83,7 @@ public class Monkey extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        playMonkeySound();
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             // changes direction at random times

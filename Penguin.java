@@ -4,6 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
+ * @author <li> Gennie Won| Sounds
  * @author <li> Lucas Fu  | Cleanup
  * @version 04/12/2024
  */
@@ -25,7 +26,13 @@ public class Penguin extends Animal
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
     private boolean sliding;
-
+    
+    // Intialization of penguin sounds
+    private static GreenfootSound[] penguinSound;
+    private static int penguinSoundIndex;
+    private static GreenfootSound[] slidingSound;
+    private static int slidingSoundIndex;
+    
     public Penguin()
     {
         super(100);
@@ -95,6 +102,41 @@ public class Penguin extends Animal
         if(sliding) slide();
         moveAround();
         animate();
+        playPenguinSound();
+        playSlidingSound();
+    }
+    
+    public static void init1() {
+        penguinSoundIndex = 0;
+        penguinSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            penguinSound[i] = new GreenfootSound("penguin.mp3");
+        }
+    }
+    
+    public static void playPenguinSound() {
+        penguinSound[penguinSoundIndex].setVolume(50);
+        penguinSound[penguinSoundIndex].play();
+        penguinSoundIndex++;
+        if(penguinSoundIndex >= penguinSound.length) {
+            penguinSoundIndex = 0;
+        }
+    }
+    
+    public static void init2() {
+        slidingSoundIndex = 0;
+        slidingSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            slidingSound[i] = new GreenfootSound("slide.mp3");
+        }
+    }
+    public static void playSlidingSound() {
+       slidingSound[slidingSoundIndex].setVolume(50);
+       slidingSound[slidingSoundIndex].play();
+       slidingSoundIndex++;
+       if(slidingSoundIndex >= slidingSound.length) {
+           slidingSoundIndex = 0;
+       }
     }
     
     private void moveAround()

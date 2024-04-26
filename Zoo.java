@@ -49,7 +49,11 @@ public class Zoo extends World
     private HomeButton homeButton = new HomeButton();
     
     private int actCount;
-
+    
+    //Init music
+    private static GreenfootSound[] music;
+    private static int musicSoundIndex;
+    
     public Zoo()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -72,8 +76,27 @@ public class Zoo extends World
         Traitor.init();
         Fighter.init();
         Hippo.init();
+        
+        //play background music (already been intialized)
+        playMusic();
     }
     
+    public static void init() {
+       musicSoundIndex = 0;
+       music = new GreenfootSound[20];
+       for(int i = 0; i < music.length; i++) {
+           music[i] = new GreenfootSound("backgroundMusic.mp3");
+       }
+    }
+    
+    public static void playMusic() {
+        music[musicSoundIndex].setVolume(70);
+        music[musicSoundIndex].play();
+        musicSoundIndex++;
+        if(musicSoundIndex >= music.length) {
+            musicSoundIndex = 0;
+        }
+    }
     public void act(){
         actCount++;
         spawn();
