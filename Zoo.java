@@ -65,10 +65,6 @@ public class Zoo extends World
     // private static GreenfootSound[] music;
     // private static int musicSoundIndex;
 
-    private boolean bossFight; 
-
-    private GreenfootSound musicBG;
-
     private boolean bossFight; //boss level achieved or not
 
     private GreenfootSound musicBG; //background music
@@ -107,43 +103,12 @@ public class Zoo extends World
         Fighter.init();
     }
 
-    // public static void init() {
-    // musicSoundIndex = 0;
-    // music = new GreenfootSound[20];
-    // for(int i = 0; i < music.length; i++) {
-    // music[i] = new GreenfootSound("backgroundMusic.mp3");
-    // }
-    // }
-
-    // public static void playMusic() {
-    // music[musicSoundIndex].setVolume(70);
-    // music[musicSoundIndex].play();
-    // musicSoundIndex++;
-    // if(musicSoundIndex >= music.length) {
-    // musicSoundIndex = 0;
-    // }
-    // }
-
     public void act(){
         actCount++;
         spawn();
         checkAchi();
         check();
         checkEnd();
-    }
-
-    public void stopped() {
-        musicBG.pause();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.pauseSound();
-        }
-    }
-
-    public void started (){
-        musicBG.playLoop();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.playSound();
-        }
     }
 
     /**

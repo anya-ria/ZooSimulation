@@ -66,7 +66,6 @@ public class FireBall extends Projectile
      */
     protected void expire(){
         getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
-
         getWorld().removeObject(this);
     }
 }
