@@ -59,6 +59,7 @@ public class CutScene extends World
         if(actCount == 680){
             Lightning.stopSound();
             Zoo zoo = new Zoo();
+            zoo.started();
             Greenfoot.setWorld(zoo);
         }
         actCount++;
