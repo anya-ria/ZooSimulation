@@ -84,13 +84,6 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
-    }
 
     // Moving around in random motions in within its fences
     private void moveAround()

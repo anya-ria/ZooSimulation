@@ -17,6 +17,11 @@ public class Penguin extends Animal
     private GreenfootImage[] walkAway = new GreenfootImage[3];
     private GreenfootImage[] walkToward = new GreenfootImage[3];
 
+    private GreenfootImage[] slideRight = new GreenfootImage[3];
+    private GreenfootImage[] slideLeft = new GreenfootImage[3];
+    private GreenfootImage[] slideAway = new GreenfootImage[3];
+    private GreenfootImage[] slideToward = new GreenfootImage[3];
+    
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
@@ -135,13 +140,6 @@ public class Penguin extends Animal
         animIndex = 0;
         animDelay = 10;
         animCounter = animDelay;
-    }
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
     }
 
     // Moving in random motion within its fences

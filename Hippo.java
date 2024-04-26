@@ -33,13 +33,6 @@ public class Hippo extends Animal
         initImages();
     }
     
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
-    }
     /**
      * Initialize the hippo sounds
      */
@@ -168,26 +161,6 @@ public class Hippo extends Animal
         } 
         else {
             animCounter--;
-        }
-    }
-    
-    private void moveAround()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(1);
-        setLocation(getX(), getY());
-        if (Greenfoot.getRandomNumber(240) < 10)
-        {
-            // changes direction at random times
-            adjustDirection();
-        }
-        if (getX() <= 700 || getX() >= 985)
-        {
-            turn(180);
-        }
-        if (getY() <= 30 || getY() >= 280)
-        {
-            turn(180);
         }
     }
 }

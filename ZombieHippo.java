@@ -68,7 +68,7 @@ public class ZombieHippo extends Zombie
             lockedDirection = true;
         }
         direction = getRotation();
-        move(3);
+        move(2);
         // adjusts the facing direction
         adjustDirection();
         // stop charging to change direction
