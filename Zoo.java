@@ -68,11 +68,6 @@ public class Zoo extends World
     private boolean bossFight; 
 
     private GreenfootSound musicBG;
-
-    private boolean bossFight; //boss level achieved or not
-
-    private GreenfootSound musicBG; //background music
-    
     
     /**
      * A constructor for the simulation's Zoo to set up the world and initalize objects.
@@ -129,13 +124,21 @@ public class Zoo extends World
         checkEnd();
     }
 
+    /**
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void stopped() {
         musicBG.pause();
         if((getObjects(Lightning.class).size()!=0)) {
             Lightning.pauseSound();
         }
     }
-
+    
+    /**
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void started (){
         musicBG.playLoop();
         if((getObjects(Lightning.class).size()!=0)) {
@@ -328,25 +331,5 @@ public class Zoo extends World
         return numHit++;
     }
     
-    /**
-     * Pauses longer sounds that were being played.
-     * A method called by the Greenfoot system when the execution has stopped/paused.
-     */
-    public void stopped() {
-        musicBG.pause();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.pauseSound();
-        }
-    }
     
-    /**
-     * Resumes longer sounds that were being played.
-     * A method called by the Greenfoot system when the execution has stopped/paused.
-     */
-    public void started (){
-        musicBG.playLoop();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.playSound();
-        }
-    }
 }
