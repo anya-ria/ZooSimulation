@@ -2,9 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * A child is an abstact class that represents all the children attending the zoo.
  * 
- * @author <li> Lucas | the class
- * @author <li> Anya  | the animation stuff that Lucas brought from subclasses
- * @version 2024/4/4
+ * @author <li> Lucas Fu  | Class
+ * @author <li> Anya Shah | Animations
+ * @version 04/25/2024
  */
 public abstract class Child extends Entity
 {
@@ -13,20 +13,23 @@ public abstract class Child extends Entity
     protected GreenfootImage[] walkRight = new GreenfootImage[9];
     protected GreenfootImage[] walkLeft = new GreenfootImage[9];
     protected GreenfootImage[] walkToward = new GreenfootImage[9];
-    
+
     // Walking variables
     protected int animCounter, animDelay, animIndex;
     protected int maxWalkIndex;
-    
+
     // Direction animation variables
     protected boolean left, right, toward, away;
     public Child(int maxHp){
         super(maxHp);
     }
+
     public boolean update(){
         return super.update();
     }
+
     protected abstract void animate();
+
     /**
      * updates the facing direction variables 
      * @param vector    the movement vectors that will determine the facing direction
@@ -46,13 +49,14 @@ public abstract class Child extends Entity
             toward = true; 
         }
     }
+
     /**
      * updates walking direction
      */
     protected void updateWalking(){
         if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
+            animIndex = 0;
+        }
         if(right) {
             setImage(walkRight[animIndex]);
         }

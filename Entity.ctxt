@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Entity
+<<<<<<< HEAD
 comment0.text=\n\ The\ Entity\ is\ an\ abstract\ class\ that\ encompasses\ animals\ and\ children.\n\ <li>\ manages\ the\ hp\ mechanics\n\ <li>\ manages\ physics-y\ push\ mechanics\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/12\n
+=======
+comment0.text=\r\n\ The\ Entity\ is\ an\ abstract\ class\ that\ encompasses\ animals\ and\ children.\r\n\ <li>\ manages\ the\ hp\ mechanics\r\n\ <li>\ manages\ physics-y\ push\ mechanics\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=maxHp
 comment1.target=Entity(int)
 comment1.text=\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ entity\ can\ have\n
@@ -54,5 +58,9 @@ comment8.target=void\ updateWound()
 comment8.text=\n\ Updates\ the\ wound,\ taking\ damage\ if\ the\ wound\ timer\ is\ a\ multiple\ of\ 30\ acts\n
 comment9.params=healing
 comment9.target=void\ heal(int)
+<<<<<<< HEAD
 comment9.text=\n\ heals\ the\ entity,\ but\ also\ checks\n\ if\ the\ entity\ is\ still\ alive\n\ \n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\n
+=======
+comment9.text=\r\n\ heals\ the\ entity,\ but\ also\ checks\ if\ the\ entity\ is\ still\ alive\r\n\ \r\n\ @param\ healing\ \ \ the\ amount\ to\ be\ healed\r\n
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 numComments=21

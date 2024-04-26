@@ -3,9 +3,9 @@ import greenfoot.World;
 /**
  * AchieveButton.
  * 
- * @author Megan Lee | Art
- * @author Vanessa Huo | Functions
- * @version April 2024
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
+ * @version 04/25/2024
  */
 public class AchieveButton extends Icon
 {
@@ -21,6 +21,10 @@ public class AchieveButton extends Icon
     public void act(){
         if(Greenfoot.mouseClicked(this)){
             Achievement achi1 = new Achievement();
+            
+            (getWorld()).stopped();
+            achi1.started();
+            
             Greenfoot.setWorld(achi1);
             Greenfoot.playSound("mouseClick.mp3");
         }

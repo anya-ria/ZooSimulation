@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Pencil
+<<<<<<< HEAD
 comment0.text=\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/12\n
+=======
+comment0.text=\r\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=dmg\ duration\ angle\ speed
 comment1.target=Pencil(int,\ int,\ int,\ double)
 comment1.text=\n\ Constructs\ a\ new\ Pencil\ using\ angle\ and\ speed\n\ @param\ dmg\ \ \ \ \ \ \ the\ damage\ to\ be\ taken\ every\ tick\ (30\ acts)\n\ @param\ duration\ \ the\ duration\ in\ terms\ of\ acts\n\ @param\ angle\ \ \ \ \ the\ direction\ in\ which\ to\ throw\n\ @param\ speed\ \ \ \ \ the\ speed\ at\ which\ the\ pencil\ moves\n

@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=HealerParam
+<<<<<<< HEAD
 comment0.text=\n\ HealerParam.\n\ \n\ @author\ Megan\ Lee\ |\ Art\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ April\ 2024\n
+=======
+comment0.text=\r\n\ HealerParam.\r\n\ \r\n\ @author\ <li>\ Megan\ Lee\ |\ Art\r\n\ @author\ <li>\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=x
 comment1.target=HealerParam(int)
 comment2.params=

@@ -1,8 +1,13 @@
 #BlueJ class context
 comment0.target=Peel
+<<<<<<< HEAD
 comment0.text=\n\ The\ banana\ peel\ is\ a\ non-moving\ "projectile"\ that\ makes\ characters\ slip\ when\ they\ step\ on\ it\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/16\n
+=======
+comment0.text=\r\n\ The\ banana\ peel\ is\ a\ non-moving\ "projectile"\ that\ makes\ characters\ slip\ when\ they\ step\ on\ it\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=
 comment1.target=Peel()
+comment1.text=\r\n\ Creates\ a\ new\ peel\ that\ does\ not\ move\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Functions
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Regular extends Child
 {
@@ -81,6 +81,7 @@ public class Regular extends Child
                 walkToward[i] = new GreenfootImage("child3WalkToward/child3WalkToward" + i + ".png");
             }
         }
+        setImage(walkToward[0]);
         animIndex = 0; 
         animDelay = 8; // # of acts in between each image
         animCounter = animDelay; 
@@ -118,5 +119,4 @@ public class Regular extends Child
             animCounter--; 
         }
     }
-
 }

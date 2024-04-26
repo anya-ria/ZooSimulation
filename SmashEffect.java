@@ -3,9 +3,9 @@ import java.util.List;
 /**
  * The SmashEffect is an effect that deals damage in an aoe
  * 
- * @author Lucas Fu | Functions
- * @author Anya Shah | Sounds
- * @version 2024/4/16
+ * @author <li> Lucas Fu | Functions
+ * @author <li> Anya Shah | Sounds
+ * @version 04/25/2024
  */
 public class SmashEffect extends Effect
 {
@@ -22,6 +22,7 @@ public class SmashEffect extends Effect
         super(null, new GreenfootImage("empty.png"),10,10,100);
         getImage().scale(size,size);
         getImage().setColor(Color.GRAY);
+        // creates a new circle on the image that has a diameter of "size"
         getImage().fillOval(0,0,size,size);
         
         damage = dmg;
@@ -37,6 +38,8 @@ public class SmashEffect extends Effect
             c.takeDamage(damage);
         }
     }
+    
+    // **************************** SOUNDS ******************************** \\
     public static void init() {
         healingSoundIndex = 0;
         healingSound = new GreenfootSound[20];

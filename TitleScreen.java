@@ -8,7 +8,7 @@ import greenfoot.World;
  *      View Game Endings
  * 
  * @author Vanessa Huo
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class TitleScreen extends World
 {
@@ -16,10 +16,10 @@ public class TitleScreen extends World
     private AchieveButton achieveButton;
     private EndButton endButton;
     private StartButton startButton;
-
+    
     //Init music
-    private GreenfootSound music;
-        
+    private GreenfootSound musicBG;
+    
     public TitleScreen()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -35,8 +35,8 @@ public class TitleScreen extends World
         addObject(endButton,362,430);
         
         //Preload background music
-        music = new GreenfootSound ("backgroundMusic.mp3");
-        music.setVolume(70);
+        musicBG = new GreenfootSound ("backgroundMusic.mp3");
+        musicBG.setVolume(70);
     }
     
     /**
@@ -44,6 +44,7 @@ public class TitleScreen extends World
      */
     public void act(){
         if(Greenfoot.mouseClicked(startButton)){
+            musicBG.stop();
             Customization game = new Customization();
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
@@ -51,9 +52,10 @@ public class TitleScreen extends World
     }
     
     public void stopped() {
-        music.pause();
+        musicBG.pause();
     }
+    
     public void started (){
-        music.playLoop();
+        musicBG.playLoop();
     }
 }
