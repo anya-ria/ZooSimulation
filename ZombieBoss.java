@@ -3,48 +3,54 @@ import java.util.ArrayList;
 /**
  * Write a description of class Boss here.
  * 
- * @author Vanessa Huo
- * @version 04/25/2024
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class ZombieBoss extends Entity
 {
-    // Animation variables
-    private int animCounter, animDelay, animIndex; 
-    private int maxIndex;    
     private GreenfootImage LImage, RImage;
     
-    private SuperStatBar hpBar;
-    private boolean awake = true;
-    private int maxHp;
+    //Animation variables
+    private int animCounter, animDelay, animIndex; 
+    private int maxIndex;
+    
+    //Cooldown variables
     private final int maxThrowCooldown = 20;
     private int throwCooldown = maxThrowCooldown;
-    private int stunDuration;
+    
+    //Facing
     private boolean turn;
-    private int movingSpeed = 3;
+    
     public void act()
     {
         if(!super.update()) return;
         animate();
         throwFireBalls();
-        stunDuration--;
     }
+    
     public ZombieBoss(){
-        super(1000);
+        super(800); //800Hp
         LImage = new GreenfootImage("boss.png");
         setImage(LImage);
-        maxIndex = 5;
-        animCounter = 0;
         
         animIndex = 0;
-        animDelay = 30;
+        maxIndex = 20;
+        animDelay = 60;
         animCounter = animDelay;
     }
     
+    /**
+     * This method animates the ZombieBoss 
+     */
     public void animate(){
         if(animCounter == 0){
             animCounter = animDelay; 
             if(animIndex >= maxIndex){
                 animIndex = 0; 
+            }
+            if (Greenfoot.getRandomNumber(240) < 10)
+            {
+                turn = !turn;
             }
             if(turn){
                 setImage(LImage);
@@ -57,6 +63,7 @@ public class ZombieBoss extends Entity
             animCounter--; 
         }
     }
+    
     
     private void throwFireBalls(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
@@ -83,20 +90,15 @@ public class ZombieBoss extends Entity
             return;
         }
         setLocation(getX()+vector[0]*1.5, getY()+vector[1]*1.5);
-        if (Greenfoot.getRandomNumber(240) < 10 && stunDuration == 0)
-        {
-            turn = !turn;
-            stunDuration = 60;
-        }
     }
     
     private void throwFireBall(int direction, int speed){
-        int modif = rand.nextInt(-10,11);
         if(turn){
-            getWorld().addObject(new FireBall(direction+modif, speed), getX()-40, getY());
+            getWorld().addObject(new FireBall(direction, speed), getX()-80, getY());
         }
         else if(!turn){
-            getWorld().addObject(new FireBall(direction+modif, speed), getX()+40, getY());
+            getWorld().addObject(new FireBall(direction, speed), getX()+80, getY());
         }
     }
+    
 }

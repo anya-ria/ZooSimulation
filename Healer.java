@@ -93,7 +93,7 @@ public class Healer extends Child
             walkLeft[i] = new GreenfootImage("healerWalkRight/healerWalkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-
+        setImage(walkToward[0]);
         animIndex = 0;
         animDelay = 8;
         animCounter = animDelay;
