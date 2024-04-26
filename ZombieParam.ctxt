@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=ZombieParam
-comment0.text=\n\ ZombieParam\n\ \n\ @author\ <li>\ Megan\ Lee\ |\ Art\n\ @author\ <li>\ Vanessa\ Huo\ |\ Functions\n\ @version\ 04/25/2024\n
+comment0.text=\r\n\ ZombieParam\r\n\ \r\n\ @author\ <li>\ Megan\ Lee\ |\ Art\r\n\ @author\ <li>\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
 comment1.params=x
 comment1.target=ZombieParam(int)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ If\ a\ button\ is\ clicked\ (option\ is\ choosen),\ set\ to\ 'clicked'\ image\ and\ reset\ all\ other\ options\ to\ 'unclicked'.\n
+comment2.text=\r\n\ If\ a\ button\ is\ clicked\ (option\ is\ choosen),\ set\ to\ 'clicked'\ image\ and\ reset\ all\ other\ options\ to\ 'unclicked'.\r\n
 comment3.params=
 comment3.target=void\ setValue()
-comment3.text=\n\ Set\ value\ according\ to\ the\ choosen\ option\n
+comment3.text=\r\n\ Set\ value\ according\ to\ the\ choosen\ option\r\n
 numComments=4

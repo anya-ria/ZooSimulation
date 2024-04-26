@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Monkey
-comment0.text=\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\n\ \n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\ \n\ @author\ <li>\ Lucas\ Fu\ \ \ |\ Cleanup\n\ @version\ 04/25/2024\n
+comment0.text=\r\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\r\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ \ |\ Cleanup\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=Monkey()
 comment2.params=
@@ -11,7 +11,7 @@ comment4.params=
 comment4.target=void\ playMonkeySound()
 comment5.params=
 comment5.target=void\ initImages()
-comment5.text=\n\ Initialize\ monkey\ images\n
+comment5.text=\r\n\ Initialize\ monkey\ images\r\n
 comment6.params=
 comment6.target=void\ moveAround()
 comment7.params=

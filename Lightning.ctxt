@@ -1,26 +1,21 @@
 #BlueJ class context
 comment0.target=Lightning
-comment0.text=\n\ Lightning\ is\ a\ visual\ effect\ that\ simulates\ a\ thunderstorm.\ \n\ It\ causes\ the\ scene\ to\ darken\ and\ then\ flashes\ white,\ followed\ by\ two\ lightning\ strikes.\ \n\ The\ minimum\ recommended\ duration\ for\ the\ entire\ intended\ animation\ is\ 300\ acts.\n\n\ @author\ Megan\ Lee\n\ @version\ 04/25/2024\n
+comment0.text=\r\n\ Lightning\ is\ a\ visual\ effect\ that\ simulates\ a\ thunderstorm.\ \r\n\ It\ causes\ the\ scene\ to\ darken\ and\ then\ flashes\ white,\ followed\ by\ two\ lightning\ strikes.\ \r\n\ The\ minimum\ recommended\ duration\ for\ the\ entire\ intended\ animation\ is\ 300\ acts.\r\n\r\n\ @author\ Megan\ Lee\r\n\ @version\ 04/25/2024\r\n
 comment1.params=duration
 comment1.target=Lightning(int)
-comment1.text=\n\ Creates\ a\ lightning\ effect\ on\ screen.\ \ \ \n\ @param\ duration\ \ \ \ \ \ time\ length\ in\ \#\ of\ acts\n
+comment1.text=\r\n\ Creates\ a\ lightning\ effect\ on\ screen.\ \ \ \r\n\ @param\ duration\ \ \ \ \ \ time\ length\ in\ \#\ of\ acts\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ turnIntoZombie()
-comment3.text=\n\ When\ lightning\ strikes,\ animals\ hace\ a\ chance\ to\ turn\ into\ zombies\!\n
-
 comment3.text=\r\n\ When\ lightning\ strikes,\ animals\ have\ a\ chance\ to\ turn\ into\ zombies\!\r\n
-
-comment3.text=\n\ When\ lightning\ strikes,\ animals\ have\ a\ chance\ to\ turn\ into\ zombies\!\n
-
 comment4.params=
 comment4.target=void\ pauseSound()
-comment4.text=\ \n\ Method\ that\ pauses\ lightning\ sound.\n
+comment4.text=\ \r\n\ Method\ that\ pauses\ lightning\ sound.\r\n
 comment5.params=
 comment5.target=void\ playSound()
-comment5.text=\ \n\ Method\ that\ plays\ lightning\ sound.\n
+comment5.text=\ \r\n\ Method\ that\ plays\ lightning\ sound.\r\n
 comment6.params=
 comment6.target=void\ stopSound()
-comment6.text=\ \n\ Method\ that\ stops\ lightning\ sound.\n
+comment6.text=\ \r\n\ Method\ that\ stops\ lightning\ sound.\r\n
 numComments=7

@@ -93,7 +93,6 @@ public class Monkey extends Animal
         if(Greenfoot.getRandomNumber(300) == 0) {
             playMonkeySound();
         }
-        
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             // changes direction at random times
