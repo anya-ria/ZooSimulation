@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=TitleScreen
+comment0.text=\n\ Title\ Screen\n\ The\ player\ can\:\n\ \ \ \ \ \ Start\ the\ game\n\ \ \ \ \ \ View\ Game\ Achievements\n\ \ \ \ \ \ View\ Game\ Endings\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 04/25/2024\n
 
 comment0.text=\r\n\ Title\ Screen\r\n\ The\ player\ can\:\r\n\ \ \ \ \ \ Start\ the\ game\r\n\ \ \ \ \ \ View\ Game\ Achievements\r\n\ \ \ \ \ \ View\ Game\ Endings\r\n\ \r\n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
@@ -13,7 +14,7 @@ comment1.text=\n\ A\ constructor\ for\ the\ simulation's\ title\ screen\ to\ set
 
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\r\n
+comment2.text=\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\n
 comment3.params=
 comment3.target=void\ stopped()
 

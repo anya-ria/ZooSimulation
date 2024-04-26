@@ -14,11 +14,11 @@ public class ChildParam extends Icon
      * Act - do whatever the ChildParam wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    //add new greenfoot images
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
     
-    public ChildParam(int x){
+    public ChildParam(int x){//sets the chlid params
         for(int i=1; i<list.length;i++){
             list[i]=new GreenfootImage("images/params/childParam"+i+".png");
             GreenfootImage image = getImage();

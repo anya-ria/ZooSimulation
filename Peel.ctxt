@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Peel
-comment0.text=\r\n\ The\ banana\ peel\ is\ a\ non-moving\ "projectile"\ that\ makes\ characters\ slip\ when\ they\ step\ on\ it\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\n\ The\ banana\ peel\ is\ a\ non-moving\ "projectile"\ that\ makes\ characters\ slip\ when\ they\ step\ on\ it\n\ \n\ @author\ Lucas\ Fu\n\ @version\ 04/25/2024\n
 comment1.params=
 comment1.target=Peel()
-comment1.text=\r\n\ Creates\ a\ new\ peel\ that\ does\ not\ move\r\n
+comment1.text=\n\ Creates\ a\ new\ peel\ that\ does\ not\ move\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
@@ -12,7 +12,7 @@ comment4.params=
 comment4.target=void\ animate()
 comment5.params=
 comment5.target=void\ detectCollision()
-comment5.text=\r\n\ Makes\ the\ child\ that\ touched\ this\ slip,\ expiring\ this\r\n
+comment5.text=\n\ Makes\ the\ child\ that\ touched\ this\ slip,\ expiring\ this\n
 comment6.params=
 comment6.target=void\ expire()
 numComments=7

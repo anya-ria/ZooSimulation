@@ -11,4 +11,6 @@ comment3.target=void\ setAchieved()
 comment3.text=\n\ Set\ unlock\ to\ true\ and\ play\ sound\ effect.\n
 comment4.params=
 comment4.target=boolean\ getUnlock()
-numComments=5
+comment5.params=
+comment5.target=void\ stopped()
+numComments=6
