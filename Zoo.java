@@ -14,11 +14,10 @@ import java.util.*;
  * <p>
  * <b> Credits: </b>
  * <p>
- * Art & Sound: 
- * <li> Listed in CREDITS.TXT
+ * Art & Sound - Listed in CREDITS.TXT
  * <p>
- * Code: 
- * <li> Author: Jordan Cohen -- 
+ * Code - Author: Jordan Cohen
+ * <li> (code) 
  *<p>
  * Description: 
  * This simulation tells the story of a group of children who decided to go on a
@@ -60,7 +59,7 @@ public class Zoo extends World
     private HomeButton homeButton = new HomeButton();
     private ZombieBoss boss = new ZombieBoss();
 
-    private int actCount;
+    private int actCount; // number of acts passed
 
     // //Init music
     // private static GreenfootSound[] music;
@@ -70,6 +69,14 @@ public class Zoo extends World
 
     private GreenfootSound musicBG;
 
+    private boolean bossFight; //boss level achieved or not
+
+    private GreenfootSound musicBG; //background music
+    
+    
+    /**
+     * A constructor for the simulation's Zoo to set up the world and initalize objects.
+     */
     public Zoo()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -87,10 +94,7 @@ public class Zoo extends World
         bossFight = false;
 
         musicBG = new GreenfootSound("backgroundMusic.mp3");
-
-        //play background music (already been intialized)
-        //playMusic();
-
+        
         // Initialize sounds
         Hippo.init();
         Monkey.init();
@@ -274,32 +278,78 @@ public class Zoo extends World
         }
     }
 
-    //Increase the counter
-    public static int healed(){ //number of children get healed
-        return numHealed++;
-    }
-
-    public static int hit(){ //get hit by banana
-        return numHit++;
-    }
-
+    /**
+     * Returns the number of zombie in Zoo.
+     * @return int   Number of zombie in Zoo
+     */
     public int getNumZombie(){
         int x = numZombie;
         return x;
     }
 
+    /**
+     * Returns the number of children in Zoo.
+     * @return int   Number of children in Zoo
+     */
     public int getNumChild(){
         int x = numChildren;
         return x;
     } 
 
+    /**
+     * Returns the number of animals in Zoo.
+     * @return int   Number of animals in Zoo
+     */
     public int getNumAnimal(){
         int x = numAnimals;
         return x;
     } 
 
+    /**
+     * Returns the distance between two actors.
+     * @param a         First actor
+     * @param b         Second actor
+     * @return double   Distance in pixels between actors
+     */
     public static double getDistance (Actor a, Actor b){
         return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
     }
+    
+    /**
+     * Returns the number of children healed for achievement 1.
+     * @return int   Number of children healed.
+     */
+    public static int healed(){ 
+        return numHealed++;
+    }
 
+    /**
+     * Returns the number of children hit by bananas for achievement 2
+     * @return int   Number of children hit by bananas.
+     */
+    public static int hit(){ 
+        return numHit++;
+    }
+    
+    /**
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
+    public void stopped() {
+        musicBG.pause();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.pauseSound();
+        }
+    }
+    
+    /**
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
+    public void started (){
+        musicBG.playLoop();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.playSound();
+        }
+    }
 }

@@ -5,6 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Unlocked - completed
  * Locked - not completed yet
  * 
+ * @author Megan Lee | Art & Sound
  * @author Vanessa Huo | Functions
  * @version 04/25/2024
  */
@@ -15,12 +16,13 @@ public class Collections extends World
     private static boolean end2 = false; //zombie animals were defeated 
     private static boolean end3 = false; //boss level was defeated 
     
-    private HomeButton returnKey;
-    private Lock[] arr = new Lock[3];
-
-    //Init music
-    private GreenfootSound musicBG;
+    private HomeButton returnKey; //home button
+    private Lock[] arr = new Lock[3]; //lock for each ending to indicate completion
+    private GreenfootSound musicBG; //background music
     
+    /**
+     * A constructor for the simulation's collections screen to set up the world and initalize objects.
+     */
     public Collections()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -63,21 +65,39 @@ public class Collections extends World
         }
     }
     
-    //Static methods that are called when an ending is completed (change boolean to true)
+    /**
+     * Static method called in the Zoo to set ending 1 to true.
+     */
     public static void unlockEnd1(){
         end1 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set ending 2 to true.
+     */
     public static void unlockEnd2(){
         end2 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set ending 3 to true.
+     */
     public static void unlockEnd3(){
         end3 = true;
     }
     
+    /**
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void stopped() {
         musicBG.stop();
     }
     
+    /**
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void started (){
         musicBG.playLoop();
     }
