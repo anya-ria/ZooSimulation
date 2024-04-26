@@ -29,10 +29,10 @@ public class Penguin extends Animal
     private boolean sliding;
 
     // Sounds
-    // private static GreenfootSound[] penguinSound;
-    // private static int penguinSoundIndex;
-    // private static GreenfootSound[] slidingSound;
-    // private static int slidingSoundIndex;
+    private static GreenfootSound[] penguinSound;
+    private static int penguinSoundIndex;
+    private static GreenfootSound[] slidingSound;
+    private static int slidingSoundIndex;
 
     public Penguin()
     {
@@ -56,36 +56,36 @@ public class Penguin extends Animal
     }
     
     // **************************** SOUNDS ****************************
-    // public static void init() {
-        // // Initialize penguin sounds
-        // penguinSoundIndex = 0;
-        // penguinSound = new GreenfootSound[20];
-        // for(int i = 0; i < penguinSound.length; i++) {
-            // penguinSound[i] = new GreenfootSound("penguin.mp3");
-        // }
-        // // Initialize sliding sounds
-        // slidingSoundIndex = 0;
-        // slidingSound = new GreenfootSound[20];
-        // for(int i = 0; i < penguinSound.length; i++) {
-            // slidingSound[i] = new GreenfootSound("slide.mp3");
-        // }
-    // }
-    // public static void playPenguinSound() {
-        // penguinSound[penguinSoundIndex].setVolume(50);
-        // penguinSound[penguinSoundIndex].play();
-        // penguinSoundIndex++;
-        // if(penguinSoundIndex >= penguinSound.length) {
-            // penguinSoundIndex = 0;
-        // }
-    // }
-    // public static void playSlidingSound() {
-        // slidingSound[slidingSoundIndex].setVolume(50);
-        // slidingSound[slidingSoundIndex].play();
-        // slidingSoundIndex++;
-        // if(slidingSoundIndex >= slidingSound.length) {
-            // slidingSoundIndex = 0;
-        // }
-    // }
+    public static void init() {
+        // Initialize penguin sounds
+        penguinSoundIndex = 0;
+        penguinSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            penguinSound[i] = new GreenfootSound("penguin.mp3");
+        }
+        // Initialize sliding sounds
+        slidingSoundIndex = 0;
+        slidingSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            slidingSound[i] = new GreenfootSound("slide.mp3");
+        }
+    }
+    public static void playPenguinSound() {
+        penguinSound[penguinSoundIndex].setVolume(70);
+        penguinSound[penguinSoundIndex].play();
+        penguinSoundIndex++;
+        if(penguinSoundIndex >= penguinSound.length) {
+            penguinSoundIndex = 0;
+        }
+    }
+    public static void playSlidingSound() {
+        slidingSound[slidingSoundIndex].setVolume(70);
+        slidingSound[slidingSoundIndex].play();
+        slidingSoundIndex++;
+        if(slidingSoundIndex >= slidingSound.length) {
+            slidingSoundIndex = 0;
+        }
+    }
     
     // **************************** ANIMATIONS ****************************
     /**
