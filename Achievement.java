@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * Grey Trophy - not completed yet
  *
  * @author Vanessa Huo | Functions
+ * @author Megan Lee | Art, Sounds, Cleanup
  * @version 04/25/2024
  */
 public class Achievement extends World
@@ -18,11 +19,13 @@ public class Achievement extends World
     private static boolean achi3 = false; //all children became zombie
     private static boolean achi4 = false; //all animals became zombie
     
-    //Init instances 
-    private Trophy[] arr = new Trophy[5];
-    private HomeButton returnKey;
-    private GreenfootSound musicBG;
+    private Trophy[] arr = new Trophy[5]; //trophy for each achievement to indicate completion
+    private HomeButton returnKey; //home button
+    private GreenfootSound musicBG; //background music
     
+    /**
+     * A constructor for the simulation's achievements scene to set up the world and initalize objects.
+     */
     public Achievement()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -50,7 +53,7 @@ public class Achievement extends World
     }
     
     /**
-     * If an achievement is completed, shows gold trophy
+     * If an achievement is completed, display a gold trophy instead.
      */
     public void act(){
         if(achi0){
@@ -70,27 +73,53 @@ public class Achievement extends World
         }
     }
     
-    //Static methods that are called when an achievement is completed (change boolean = true)
+    /**
+     * Static method called in the Zoo to set achievement 1 to true.
+     */
     public static void completeAchi0(){
         achi0 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set achievement 2 to true.
+     */
     public static void completeAchi1(){
         achi1 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set achievement 3 to true.
+     */
     public static void completeAchi2(){
         achi2 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set achievement 4 to true.
+     */
     public static void completeAchi3(){
         achi3 = true;
     }
+    
+    /**
+     * Static method called in the Zoo to set achievement 5 to true.
+     */
     public static void completeAchi4(){
         achi4 = true;
     }
     
+    /**
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void stopped() {
         musicBG.stop();
     }
     
+    /**
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void started (){
         musicBG.playLoop();
     }

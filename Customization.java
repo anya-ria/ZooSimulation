@@ -5,6 +5,7 @@ import java.util.*;
  * Customization screen where plays can set the initial number of Children, Fighers, Healers and Zombies in Zoo
  * Different values may lead to different endings
  * 
+ * @author Megan Lee | Art & Sound
  * @author Vanessa Huo | Functions
  * @author Gennie Won  | Sounds
  * @version 2024/04

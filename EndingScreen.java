@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.World;
 /**
- * Ending screen
+ * Ending screen that displays which ending was achieved, along with the time elapsed.
  * 
  * @author Vanessa Huo
  * @version 04/25/2024
@@ -11,10 +11,13 @@ public class EndingScreen extends World
     //Init button and timer
     private HomeButton homeButton = new HomeButton();
     private SimpleTimer gameTimer = new SimpleTimer();
-    private int timeElasped;
-    public EndingScreen()
-    {    
-        // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
+    
+    private int timeElasped; //time elapsed during simulation
+    
+    /**
+     * A constructor for the simulation's ending screen to set up the world and initalize objects.
+     */
+    public EndingScreen(){    
         super(1024, 800, 1); 
         
         addObject(homeButton,79,739);
@@ -29,7 +32,7 @@ public class EndingScreen extends World
     public void ending1(){
         setBackground("end1.png");
         timeElasped();
-        Greenfoot.stop();
+        Greenfoot.stop(); //transparent overlay onto Zoo
     }
     
     /**
@@ -38,7 +41,7 @@ public class EndingScreen extends World
     public void ending2(){
         setBackground("end2.png");
         timeElasped();
-        Greenfoot.stop();
+        Greenfoot.stop(); //transparent overlay onto Zoo
     }
     
     /**
@@ -47,7 +50,7 @@ public class EndingScreen extends World
     public void ending3(){
         setBackground("end3.png");
         timeElasped();
-        Greenfoot.stop();
+        Greenfoot.stop(); //transparent overlay onto Zoo
     }
     
     /**
