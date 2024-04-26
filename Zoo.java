@@ -93,8 +93,8 @@ public class Zoo extends World
 
         // Initialize sounds
         Hippo.init();
-        //Monkey.init();
-        //Penguin.init();
+        Monkey.init();
+        Penguin.init();
         HealingEffect.init();
         SmashEffect.init();
         Pencil.init();

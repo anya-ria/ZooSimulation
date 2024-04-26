@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * A hippo turned zombie, charges towards children until hitting a wall
  * 
- * @author <li> Luke Xiao | Movements
+ * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Fixes
  * 
@@ -68,7 +68,7 @@ public class ZombieHippo extends Zombie
             lockedDirection = true;
         }
         direction = getRotation();
-        move(3);
+        move(2);
         // adjusts the facing direction
         adjustDirection();
         // stop charging to change direction

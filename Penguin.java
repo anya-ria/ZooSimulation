@@ -11,34 +11,32 @@ import java.util.List;
  */
 public class Penguin extends Animal
 {
-    // Penguin slide sprites
-    private GreenfootImage[] slideRight = new GreenfootImage[3];
-    private GreenfootImage[] slideLeft = new GreenfootImage[3];
-    private GreenfootImage[] slideAway = new GreenfootImage[3];
-    private GreenfootImage[] slideToward = new GreenfootImage[3];
-
     // Penguin walk sprites
     private GreenfootImage[] walkRight = new GreenfootImage[3];
     private GreenfootImage[] walkLeft = new GreenfootImage[3];
     private GreenfootImage[] walkAway = new GreenfootImage[3];
     private GreenfootImage[] walkToward = new GreenfootImage[3];
 
+    private GreenfootImage[] slideRight = new GreenfootImage[3];
+    private GreenfootImage[] slideLeft = new GreenfootImage[3];
+    private GreenfootImage[] slideAway = new GreenfootImage[3];
+    private GreenfootImage[] slideToward = new GreenfootImage[3];
+    
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
     private boolean sliding;
 
     // Sounds
-    // private static GreenfootSound[] penguinSound;
-    // private static int penguinSoundIndex;
-    // private static GreenfootSound[] slidingSound;
-    // private static int slidingSoundIndex;
+    private static GreenfootSound[] penguinSound;
+    private static int penguinSoundIndex;
+    private static GreenfootSound[] slidingSound;
+    private static int slidingSoundIndex;
 
     public Penguin()
     {
         super(100);
         animCounter = 0;
-        maxSlideIndex = slideRight.length;
         maxWalkIndex = walkRight.length;
         initImages();
     }
@@ -56,36 +54,36 @@ public class Penguin extends Animal
     }
     
     // **************************** SOUNDS ****************************
-    // public static void init() {
-        // // Initialize penguin sounds
-        // penguinSoundIndex = 0;
-        // penguinSound = new GreenfootSound[20];
-        // for(int i = 0; i < penguinSound.length; i++) {
-            // penguinSound[i] = new GreenfootSound("penguin.mp3");
-        // }
-        // // Initialize sliding sounds
-        // slidingSoundIndex = 0;
-        // slidingSound = new GreenfootSound[20];
-        // for(int i = 0; i < penguinSound.length; i++) {
-            // slidingSound[i] = new GreenfootSound("slide.mp3");
-        // }
-    // }
-    // public static void playPenguinSound() {
-        // penguinSound[penguinSoundIndex].setVolume(50);
-        // penguinSound[penguinSoundIndex].play();
-        // penguinSoundIndex++;
-        // if(penguinSoundIndex >= penguinSound.length) {
-            // penguinSoundIndex = 0;
-        // }
-    // }
-    // public static void playSlidingSound() {
-        // slidingSound[slidingSoundIndex].setVolume(50);
-        // slidingSound[slidingSoundIndex].play();
-        // slidingSoundIndex++;
-        // if(slidingSoundIndex >= slidingSound.length) {
-            // slidingSoundIndex = 0;
-        // }
-    // }
+    public static void init() {
+        // Initialize penguin sounds
+        penguinSoundIndex = 0;
+        penguinSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            penguinSound[i] = new GreenfootSound("penguin.mp3");
+        }
+        // Initialize sliding sounds
+        slidingSoundIndex = 0;
+        slidingSound = new GreenfootSound[20];
+        for(int i = 0; i < penguinSound.length; i++) {
+            slidingSound[i] = new GreenfootSound("slide.mp3");
+        }
+    }
+    public static void playPenguinSound() {
+        penguinSound[penguinSoundIndex].setVolume(70);
+        penguinSound[penguinSoundIndex].play();
+        penguinSoundIndex++;
+        if(penguinSoundIndex >= penguinSound.length) {
+            penguinSoundIndex = 0;
+        }
+    }
+    public static void playSlidingSound() {
+        slidingSound[slidingSoundIndex].setVolume(70);
+        slidingSound[slidingSoundIndex].play();
+        slidingSoundIndex++;
+        if(slidingSoundIndex >= slidingSound.length) {
+            slidingSoundIndex = 0;
+        }
+    }
     
     // **************************** ANIMATIONS ****************************
     /**
@@ -115,6 +113,7 @@ public class Penguin extends Animal
             slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
             slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
         }
+
         // Initializing walking images
         for(int i = 0; i < maxWalkIndex; i++)
         {
@@ -143,6 +142,7 @@ public class Penguin extends Animal
         animCounter = animDelay;
     }
 
+    // Moving in random motion within its fences
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -153,6 +153,11 @@ public class Penguin extends Animal
             // changes direction at random times
             adjustDirection();
         }
+        if (getX() <= 695 || getX() >= 970){
+            if(Greenfoot.getRandomNumber(500) < 5){
+                sliding = true;
+            }
+        }
         if (getX() <= 695 || getX() >= 970)
 
             if(Greenfoot.getRandomNumber(500) < 5){
@@ -162,7 +167,6 @@ public class Penguin extends Animal
             sliding = false;
         }
         if (getX() <= 695 || getX() >= 980)
-
         {
             turn(180);
         }
@@ -191,52 +195,28 @@ public class Penguin extends Animal
             move(10);
         }
     }
-
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
             animIndex++;
-            if(sliding) {
-                if(animIndex >= maxSlideIndex) {
-                    animIndex = 0;
-                }
-                if(right)
-                {
-                    setImage(slideRight[animIndex]);
-                }
-                else if(left)
-                {
-                    setImage(slideLeft[animIndex]);
-                }
-                else if(away)
-                {
-                    setImage(slideAway[animIndex]);
-                }
-                else if(toward)
-                {
-                    setImage(slideToward[animIndex]);
-                }
+            if(animIndex >= maxWalkIndex) {
+                animIndex = 0;
             }
-            else {
-                if(animIndex >= maxWalkIndex) {
-                    animIndex = 0;
-                }
-                if(right)
-                {
-                    setImage(walkRight[animIndex]);
-                }
-                else if(left)
-                {
-                    setImage(walkLeft[animIndex]);
-                }
-                else if(away)
-                {
-                    setImage(walkAway[animIndex]);
-                }
-                else if(toward)
-                {
-                    setImage(walkToward[animIndex]);
-                }
+            if(right)
+            {
+                setImage(walkRight[animIndex]);
+            }
+            else if(left)
+            {
+                setImage(walkLeft[animIndex]);
+            }
+            else if(away)
+            {
+                setImage(walkAway[animIndex]);
+            }
+            else if(toward)
+            {
+                setImage(walkToward[animIndex]);
             }
         }
         else
