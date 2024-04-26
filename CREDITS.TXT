@@ -1,0 +1,381 @@
+ART CREDITS
+Buttons
+Artist: Megan Lee
+
+Home Icon
+https://www.tuktukdesign.com/home-icon/
+Artist: Wilson Joseph
+Note: Edited white
+
+Lock Icon
+https://www.vectorstock.com/royalty-free-vector/open-padlock-icon-unlocked-lock-on-transparent-vector-45768317
+Artist: khizar421
+Note: Edited white
+
+Trophy Icon
+https://www.iconexperience.com/g_collection/icons/?icon=trophy
+Artist: INCORS
+Note: Edited white
+
+Trophy
+https://www.redbubble.com/i/sticker/Trophy-Pixel-Art-by-RednGreen/90047425.EJUG5
+Artist: RednGreen
+Note: Edited silver
+
+Lock
+https://www.vecteezy.com/vector-art/41139407-opened-and-closed-gold-yellow-padlock-pixel-art-retro-vintage-video-game-bit-vector-illustration-with-simple-flat-cartoon-art-style-isolated-on-horizontal-white-background
+Artist: Kwee Amanda Alamsyah
+Note: Edited silver
+
+Hilly Landscape
+https://www.vectorstock.com/royalty-free-vector/green-hills-landscape-in-minimalist-style-boho-vector-35317395
+Artist: AndyVinnikov
+Note: Backdrop for title screen
+
+Monkey Cartoon
+https://classroomclipart.com/image/vector-clipart/cute-cartoon-monkey-sitting-down-57250.htm
+Artist: https://classroomclipart.com/
+Note: Edited into title screen
+
+Bus
+https://www.flaticon.com/free-icon/school-bus_8093511
+Artist: Mihimihi
+Note: Edited coloring and into title screen
+
+Teacher
+https://www.pngegg.com/en/png-ppykb
+Artist: N/A
+Note: Edited into “scared” version 
+
+Melting/Drip
+https://www.istockphoto.com/vector/melting-strawberry-chocolate-frame-gm1938836127-556466195
+Artist: AKO
+Note: Edited color & shading into blood for ending screen 1
+
+Falling Money
+https://www.vecteezy.com/vector-art/4348843-many-dollars-currency-falling-down-vector-illustration-isolated-cartoon-us-paper-money-on-white-background
+Artist: Oleg Blokhin
+Note: Edited color & shading into blood for ending screen 2
+
+Stars
+https://pngtree.com/freepng/hanging-stars_124266.html?share=3
+Artist:  起舞弄清影 
+Note: Edited with clouds into ending screen 3
+
+Clouds
+https://www.istockphoto.com/vector/a-vector-image-of-stars-clouds-and-a-crescent-moon-gm161952165-23165386?searchscope=image%2Cfilm
+Artist: dzm1try
+Note: Edited with stars into ending screen 3
+
+Banana
+https://www.freepik.com/premium-vector/pixel-banana-pattern_4831681.htm 
+Artist: angeltart
+
+Banana Peel
+https://www.freepik.com/premium-vector/banana-peel-with-pixel-art-style_19580307.htm
+Artist: pixeleart
+ 
+Pencil
+https://www.vecteezy.com/vector-art/30507229-pixel-art-illustration-pencil-pixelated-pencil-pencil-office-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro 
+Artist:collaborapix
+
+Fireball
+https://www.istockphoto.com/vector/falling-fiery-pixel-comet-flaming-asteroid-rushing-towards-planet-burning-fire-with-gm1317164844-404681732
+Artist: Iryna Palmina
+Note: Edited colour from orange to green
+
+Healing Orb
+Artist:Canva
+
+Boss
+https://fargosmods.wiki.gg/wiki/Moon_Lord_%28Eternity_Mode%29
+Artist: N/A
+Note: Edited shading 
+
+Hippo
+https://forums.rpgmakerweb.com/index.php?threads%2Fwhtdragons-animals-and-running-horses-now-with-more-dragons.53552%2F
+Artist: whtdragon
+Note: Edited into zombie
+
+Monkey
+https://forums.rpgmakerweb.com/index.php?threads%2Fwhtdragons-animals-and-running-horses-now-with-more-dragons.53552%2F
+Artist: whtdragon
+Note: Edited into zombie
+
+Penguin
+https://forums.rpgmakerweb.com/index.php?threads%2Fwhtdragons-animals-and-running-horses-now-with-more-dragons.53552%2F
+Artist: whtdragon
+
+Child 1
+Authors: bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Thane Brimhall (pennomi), thecilekli, Luke Mehl, ElizaWy, Mandi Paugh, William.Thompsonj, Joe White, Johannes Sjölund (wulax)
+- body/bodies/teen/universal/light.png: by bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - https://opengameart.org/content/lpc-jump-expanded
+- head/heads/human_female/universal/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/
+    - https://opengameart.org/content/lpc-character-bases
+- head/ears/big/light.png: by bluecarrot16, Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+    - http://opengameart.org/content/lpc-clothing-updates
+- head/nose/button/light.png: by Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+- eyes/male/blue.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hair/long_center_part/male/light_brown.png: by thecilekli, bluecarrot16. License(s): CC0. 
+    - https://opengameart.org/content/lpc-long-straight-hair-with-12-colors
+    - https://opengameart.org/content/lpc-hair
+- neck/necklace/female/silver.png: by bluecarrot16, Luke Mehl. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/female-mage-clothing-set
+    - http://opengameart.org/content/lpc-clothing-updates
+- torso/clothes/longsleeve/teen/pink.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- legs/leggings/female/black.png: by bluecarrot16, Mandi Paugh, Stephen Challener (Redshrike), William.Thompsonj. License(s): OGA-BY 3.0. 
+    - http://opengameart.org/content/sara-wizard
+    - https://opengameart.org/content/lpc-sara
+- feet/shoes/female/pink.png: by Joe White, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - http://opengameart.org/content/lpc-clothing-updates
+
+Child 2
+Authors: bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Thane Brimhall (pennomi), Manuel Riecke (MrBeast), Joe White, ElizaWy, Johannes Sjölund (wulax)
+- body/bodies/teen/universal/olive.png: by bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - https://opengameart.org/content/lpc-jump-expanded
+- head/heads/human_male/universal/olive.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-character-bases
+- head/ears/big/olive.png: by bluecarrot16, Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+    - http://opengameart.org/content/lpc-clothing-updates
+- head/nose/straight/olive.png: by Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+- eyes/male/green.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hair/plain/male/black.png: by Manuel Riecke (MrBeast), Joe White. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/ponytail-and-plain-hairstyles
+- torso/clothes/longsleeve/teen/green.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- legs/pants/teen/black.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- feet/shoes/female/forest.png: by Joe White, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - http://opengameart.org/content/lpc-clothing-updates
+
+Child 3
+Authors: bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Thane Brimhall (pennomi), Emilio J. Sanchez-Sierra, Luke Mehl, ElizaWy, Nila122
+- body/bodies/teen/universal/brown.png: by bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - https://opengameart.org/content/lpc-jump-expanded
+- head/heads/human_female/universal/brown.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/
+    - https://opengameart.org/content/lpc-character-bases
+- head/ears/big/brown.png: by bluecarrot16, Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+    - http://opengameart.org/content/lpc-clothing-updates
+- head/nose/straight/brown.png: by Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+- eyes/male/brown.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hair/pigtails_bangs/male/black.png: by Emilio J. Sanchez-Sierra, bluecarrot16. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/steampun-a-fy-with-concept-art
+    - https://opengameart.org/content/lpc-hair
+- neck/necklace/female/gold.png: by bluecarrot16, Luke Mehl. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/female-mage-clothing-set
+    - http://opengameart.org/content/lpc-clothing-updates
+- torso/clothes/longsleeve/teen/lavender.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- legs/skirts/legion/female/black.png: by bluecarrot16, Nila122. License(s): CC-BY-SA 3.0, GPL 2.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-roman-armor
+    - http://opengameart.org/content/lpc-clothing-updates
+- feet/boots/female/black.png: by bluecarrot16, Nila122. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 2.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-clothes-and-hair
+
+Healer
+Authors: bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Thane Brimhall (pennomi), JaidynReiman, Lanea Zimmerman (Sharm), Manuel Riecke (MrBeast), Marcel van de Steeg (MadMarcel), Michael Whitlock (bigbeargames), Johannes Sjölund (wulax), ElizaWy
+- body/bodies/teen/universal/light.png: by bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - https://opengameart.org/content/lpc-jump-expanded
+- head/heads/human_female/universal/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/
+    - https://opengameart.org/content/lpc-character-bases
+- head/nose/straight/light.png: by Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+- eyes/male/green.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hair/princess/male/platinum.png: by JaidynReiman, Lanea Zimmerman (Sharm), Manuel Riecke (MrBeast). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hat/cloth/male/bandana_red.png: by Matthew Krohn (makrohn), JaidynReiman, Marcel van de Steeg (MadMarcel). License(s): CC-BY-SA 3.0. 
+    - https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle
+    - https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75
+- neck/capetie/female/red.png: by bluecarrot16, JaidynReiman. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more
+- gloves/female/sky.png: by Michael Whitlock (bigbeargames), Matthew Krohn (makrohn), Johannes Sjölund (wulax), bluecarrot16. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - http://opengameart.org/content/lpc-clothing-updates
+- dress/kimono/normal/trim/universal/female/slate.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. 
+    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks
+- torso/clothes/longsleeve/teen/white.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- legs/pants/teen/slate.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- feet/boots_plating/universal/female/iron.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. 
+    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks
+
+Fighter
+Authors: bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Nila122, Johannes Sjölund (wulax), Michael Whitlock (bigbeargames), ElizaWy
+- body/bodies/teen/universal/olive.png: by bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - https://opengameart.org/content/lpc-jump-expanded
+- head/heads/human_male/universal/olive.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-character-bases
+- hair/single/male/dark_brown.png: by Nila122. License(s): CC-BY-SA 3.0, GPL 2.0, GPL 3.0. 
+    - https://opengameart.org/content/3-hairs-for-lpc
+- hat/cloth/male/hood_white.png: by Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. ? Recolor
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+- arms/armour/plate/female/steel.png: by Michael Whitlock (bigbeargames), Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-combat-armor-for-women
+    - http://opengameart.org/content/lpc-clothing-updates
+- torso/clothes/longsleeve/teen/black.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- legs/pants/teen/black.png: by bluecarrot16, ElizaWy, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-teen-unisex-base-clothes
+    - http://opengameart.org/content/lpc-clothing-updates
+- feet/boots/female/brown.png: by bluecarrot16, Nila122. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 2.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-clothes-and-hair
+
+Traitor
+Authors: bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Matthew Krohn (makrohn), Fabzy, Michael Whitlock (bigbeargames), Thane Brimhall (pennomi), Luke Mehl, JaidynReiman, Johannes Sjölund (wulax), laetissima, Joe White
+- body/bodies/male/universal/amber.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani
+    - https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle
+    - https://opengameart.org/content/lpc-revised-character-basics
+- head/heads/human_male/universal/amber.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-character-bases
+- eyes/male/blue.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+- hair/spiked_porcupine/male/raven.png: by Fabzy, bluecarrot16. License(s): CC-BY-SA 3.0. 
+    - https://opengameart.org/content/the-revolution-hair
+    - https://opengameart.org/content/lpc-hair
+- facial/sunglasses.png: by Michael Whitlock (bigbeargames), Thane Brimhall (pennomi). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-base-character-expressions
+- neck/necklace/female/gold.png: by bluecarrot16, Luke Mehl. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/female-mage-clothing-set
+    - http://opengameart.org/content/lpc-clothing-updates
+- torso/clothes/longsleeve/male/white.png: by JaidynReiman, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - http://opengameart.org/content/lpc-clothing-updates
+- torso/clothes/vest_open/male/black.png: by bluecarrot16, Thane Brimhall (pennomi), laetissima. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-2-characters
+    - https://opengameart.org/content/lpc-gentleman
+    - https://opengameart.org/content/lpc-pirates
+- legs/pants/male/black.png: by bluecarrot16, JaidynReiman, Joe White, Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+- feet/socks/tabi/universal/male/white.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. 
+    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks
+- feet/shoes/male/black.png: by bluecarrot16, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - http://opengameart.org/content/lpc-clothing-updates
+
+
+SOUND CREDITS
+Happy CutScene Music
+https://freesound.org/people/AudioCoffee/sounds/727739/
+Credits: AudioCoffee
+
+Lightning 
+https://pixabay.com/sound-effects/lightning-189909/
+Credits: samc44 via Pixabay
+
+Girl scream
+https://pixabay.com/sound-effects/girl-scream-6465/
+Credits: Pixabay via Pixabay
+
+Boy screaming
+https://pixabay.com/sound-effects/male-scream-in-fear-123079/
+Credits: UNIVERSFIELD via Pixabay
+
+Button click sound
+https://pixabay.com/sound-effects/sound-1-167181/
+Credits: Sub_0987654321 via Pixabay
+
+Hippo1
+https://pixabay.com/sound-effects/scary-monster-growl-roar-3-199376/\
+Credits: floraphonic via Pixabay
+
+Swishing punch
+https://pixabay.com/sound-effects/swing-whoosh-5-198498/
+Credits: floraphonic via Pixabay
+
+Heal
+https://pixabay.com/sound-effects/heal-up-39285/
+Credits: Pixabay via Pixabay
+
+Throw pencil
+https://pixabay.com/sound-effects/movement-swipe-whoosh-3-186577/
+Credits: floraphonic via Pixabay
+
+Throw banana
+https://pixabay.com/sound-effects/swing-whoosh-4-198496/
+Credits: floraphonic via Pixabay
+
+Healup
+https://pixabay.com/sound-effects/heal-up-39285/
+Credits: Pixabay via Pixabay
+
+Trophy achievement
+https://pixabay.com/sound-effects/ahhhh-37191/
+Credits: Pixabay via Pixabay
+
+Background music
+https://pixabay.com/sound-effects/creeping-dark-ambience-189391/
+Credits: gregoryallenbrown via Pixabay
+
+Sinister laugh
+https://pixabay.com/sound-effects/sinister-laugh-140131/
+Credits: UNIVERSFIELD via Pixabay
+
+Penguin
+https://pixabay.com/sound-effects/cute-animal-squeak-2-188095/
+Credits: floraphonic via Pixabay
+
+Slide 
+https://pixabay.com/sound-effects/book-foley-finger-slide-2-189802/
+Credits: floraphonic via Pixabay
+
