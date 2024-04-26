@@ -2,6 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
  * Icon abstract class
+ * Sets the variable, resets if a player chooses another option
+ * Check if the icon button gets clicked
  * 
  * @author Vanessa Huo 
  * @version 04/25/2024

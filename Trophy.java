@@ -17,19 +17,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Trophy extends Icon
 {
-    private GreenfootImage grey = new GreenfootImage("golden_cup1.png");
-    private GreenfootImage gold = new GreenfootImage("golden_cup2.png");
+    //create new greenfoot images 
+    private GreenfootImage grey = new GreenfootImage("golden_cup1.png");//unachieved cup
+    private GreenfootImage gold = new GreenfootImage("golden_cup2.png");//achieved cups
     
     //Init sound effect
     private GreenfootSound achievement;
     
+    //Create unlock
     private boolean unlock;
     
+    //Sets trophy as unachieved at first
     public Trophy(){
-        unlock = false;
+        unlock = false; //set unlock as false because the achievements were not accomplished
         setImage(grey);
         grey.scale(70, 70);
-        achievement = new GreenfootSound("achievement.mp3");
+        achievement = new GreenfootSound("achievement.mp3");//set new achievement sound
+        
     }
     
     /**
@@ -46,12 +50,16 @@ public class Trophy extends Icon
      * Set unlock to true and play sound effect.
      */
     public void setAchieved(){
-        unlock = true;
-        achievement.setVolume(50);
-        achievement.play();
+        unlock = true; //sets the unlock as true and play achievement sound
+        achievement.setVolume(50); //set the volume to half its sound
+        achievement.play(); //finally play the sound
     }
     
     public boolean getUnlock(){
-        return unlock;
+        return unlock; //sets unlock boolean
+    }
+    
+    public void stopped() {
+        achievement.pause(); //stops the sound after it is paused
     }
 }

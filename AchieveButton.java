@@ -9,6 +9,7 @@ import greenfoot.World;
  */
 public class AchieveButton extends Icon
 {
+    //Sets the achievement button
     public AchieveButton(){
         setImage("achievementButton.png");
         GreenfootImage image = getImage();
