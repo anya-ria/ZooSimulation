@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Fighter
-comment0.text=\n\ Fights\ zombies...\n\ \n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\ \n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\n<<<<<<<\ HEAD\n\ @author\ Gennie\ Won\ |\ Sounds\n\ @version\ 04/08/2024\n\=\=\=\=\=\=\=\n\ @version\ 04/25/2024\n>>>>>>>\ e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3\n
+comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n<<<<<<<\ HEAD\r\n\ @author\ Gennie\ Won\ |\ Sounds\r\n\ @version\ 04/08/2024\r\n\=\=\=\=\=\=\=\r\n\ @version\ 04/25/2024\r\n>>>>>>>\ e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3\r\n
 comment1.params=
 comment1.target=Fighter()
 comment2.params=
@@ -15,7 +15,7 @@ comment6.params=
 comment6.target=void\ animate()
 comment7.params=enemyDetails
 comment7.target=void\ chaseEnemies(double[])
-comment7.text=\n\ Follows\ enemies\ and\ throws\ out\ attacks\n
+comment7.text=\r\n\ Follows\ enemies\ and\ throws\ out\ attacks\r\n
 comment8.params=direction\ speed
 comment8.target=void\ throwPencil(int,\ int)
 comment9.params=

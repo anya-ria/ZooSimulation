@@ -91,46 +91,6 @@ public class Hippo extends Animal
         animate();
     }
     
-    private void moveAround()
-    {
-        direction = Greenfoot.getRandomNumber(361);
-        move(1);
-        setLocation(getX(), getY());
-        if (Greenfoot.getRandomNumber(240) < 10)
-        {
-            setRotation(direction);
-            // The initial orientation of the images are facing RIGHT
-            if (direction >= 315 || direction <= 45) // Right
-            {
-                away = true;
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // Down
-            {   
-                right = true;
-                away = false;
-            }
-            if (direction > 135 && direction <= 225) // Left
-            {
-                right = false;
-                away = false;
-            }
-            if (direction > 225 && direction <= 315) // Up
-            {
-                right = false;
-                away = true;
-            }
-        }
-        if (getX() <= 700 || getX() >= 985) // Move away from the fences
-        {
-            turn(180);
-        }
-        if (getY() <= 30 || getY() >= 280)
-        {
-            turn(180);
-        }
-    }
-    
     // Determining the animation needed for each directions
     protected void animate() {
         if(animCounter == 0){
@@ -171,7 +131,6 @@ public class Hippo extends Animal
         if(Greenfoot.getRandomNumber(300) == 0) {
             playHippoSound();
         }
-        
         setLocation(getX(), getY());
         if (Greenfoot.getRandomNumber(240) < 10)
         {

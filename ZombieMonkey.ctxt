@@ -1,18 +1,18 @@
 #BlueJ class context
 comment0.target=ZombieMonkey
-comment0.text=\n\ A\ monkey\ turned\ zombie,\ throws\ bananas\ at\ children,\ causing\ them\ to\ slip\n\ \n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\n\ @author\ <li>\ Lucas\ Fu\ \ |\ ThrowBanana,\ "chaseChildren"\ from\ Traitor\ class,\ code\ fixes\n\ \n\ @version\ 04/25/2024\n
+comment0.text=\r\n\ A\ monkey\ turned\ zombie,\ throws\ bananas\ at\ children,\ causing\ them\ to\ slip\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Movements\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ ThrowBanana,\ "chaseChildren"\ from\ Traitor\ class,\ code\ fixes\r\n\ \r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=ZombieMonkey()
 comment2.params=
 comment2.target=void\ initImages()
-comment2.text=\n\ Initialize\ zombie\ monkey\ images\n
+comment2.text=\r\n\ Initialize\ zombie\ monkey\ images\r\n
 comment3.params=
 comment3.target=void\ chaseChildren()
 comment4.params=direction\ speed
 comment4.target=void\ throwBanana(int,\ int)
 comment5.params=
 comment5.target=void\ act()
-comment5.text=\n\ Act\ -\ do\ whatever\ the\ ZombieMonkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ ZombieMonkey\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment6.params=
 comment6.target=void\ animate()
 numComments=7

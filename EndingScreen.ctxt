@@ -1,18 +1,19 @@
 #BlueJ class context
 comment0.target=EndingScreen
-comment0.text=\n\ Ending\ screen\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 04/25/2024\n
+comment0.text=\r\n\ Ending\ screen\ that\ displays\ which\ ending\ was\ achieved,\ along\ with\ the\ time\ elapsed.\r\n\ \r\n\ @author\ Vanessa\ Huo\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=EndingScreen()
+comment1.text=\r\n\ A\ constructor\ for\ the\ simulation's\ ending\ screen\ to\ set\ up\ the\ world\ and\ initalize\ objects.\r\n
 comment2.params=
 comment2.target=void\ ending1()
-comment2.text=\n\ Call\ "Ending\ 1"\ and\ stop\ the\ game.\ \n
+comment2.text=\r\n\ Call\ "Ending\ 1"\ and\ stop\ the\ game.\ \r\n
 comment3.params=
 comment3.target=void\ ending2()
-comment3.text=\n\ Call\ "Ending\ 2"\ and\ stop\ the\ game.\ \n
+comment3.text=\r\n\ Call\ "Ending\ 2"\ and\ stop\ the\ game.\ \r\n
 comment4.params=
 comment4.target=void\ ending3()
-comment4.text=\n\ Call\ "Ending\ 3"\ and\ stop\ the\ game.\ \n
+comment4.text=\r\n\ Call\ "Ending\ 3"\ and\ stop\ the\ game.\ \r\n
 comment5.params=
 comment5.target=void\ timeElasped()
-comment5.text=\n\ Record\ and\ show\ the\ time\ used\ to\ complete\ the\ game\n
+comment5.text=\r\n\ Record\ and\ show\ the\ time\ used\ to\ complete\ the\ game\r\n
 numComments=6
