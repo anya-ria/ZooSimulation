@@ -34,27 +34,16 @@ public class ZombieMonkey extends Zombie
         setImage("zombieMonkeyWalkToward/walkToward1.png");
     }
     /**
-     * Initialize zombie monkey images
+     * Act - do whatever the ZombieMonkey wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private void initImages() {
-        for(int i = 0; i < maxIndex; i++) {
-            walkAway[i] = new GreenfootImage("zombieMonkeyWalkAway/walkAway" + i + ".png");
-        }
-        for(int i = 0; i < maxIndex; i++) {
-            walkToward[i] = new GreenfootImage("zombieMonkeyWalkToward/walkToward" + i + ".png");
-        }
-        for(int i = 0; i < maxIndex; i++) {
-            walkRight[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
-        }
-        for(int i = 0; i < maxIndex; i++) {
-            walkLeft[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
-            walkLeft[i].mirrorHorizontally();
-        }
-        animIndex = 0;
-        animDelay = 10;
-        animCounter = animDelay;
+    public void act()
+    {
+        if(!super.update()) return;
+        animate();
+        setLocation(getX(), getY()); // to enable push physics
+        chaseChildren();
     }
-    
     public void chaseChildren(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
@@ -107,18 +96,28 @@ public class ZombieMonkey extends Zombie
         int modif = rand.nextInt(-10,11);
         getWorld().addObject(new Banana(direction+modif, speed), getX(), getY());
     }
-    /**
-     * Act - do whatever the ZombieMonkey wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        if(!super.update()) return;
-        animate();
-        setLocation(getX(), getY()); // to enable push physics
-        chaseChildren();
-    }
     
+    /**
+     * Initialize zombie monkey images
+     */
+    private void initImages() {
+        for(int i = 0; i < maxIndex; i++) {
+            walkAway[i] = new GreenfootImage("zombieMonkeyWalkAway/walkAway" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkToward[i] = new GreenfootImage("zombieMonkeyWalkToward/walkToward" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkRight[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
+        }
+        for(int i = 0; i < maxIndex; i++) {
+            walkLeft[i] = new GreenfootImage("zombieMonkeyWalkRight/walkRight" + i + ".png");
+            walkLeft[i].mirrorHorizontally();
+        }
+        animIndex = 0;
+        animDelay = 10;
+        animCounter = animDelay;
+    }
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 

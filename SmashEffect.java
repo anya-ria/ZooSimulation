@@ -3,7 +3,7 @@ import java.util.List;
 /**
  * The SmashEffect is an effect that deals damage in an aoe
  * 
- * @author <li> Lucas Fu | Functions
+ * @author <li> Lucas Fu  | Functions
  * @author <li> Anya Shah | Sounds
  * @version 04/25/2024
  */

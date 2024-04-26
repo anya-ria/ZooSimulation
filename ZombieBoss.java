@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Boss here.
  * 
- * @author Vanessa Huo | Functions 
- * @version April, 2024
+ * @author Vanessa Huo 
+ * @version 04/26/2024
  */
 public class ZombieBoss extends Entity
 {
@@ -21,17 +21,6 @@ public class ZombieBoss extends Entity
     //Facing
     private boolean turn;
     
-    /**
-     * Act - do whatever the ZombieBoss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        if(!super.update()) return;
-        animate();
-        throwFireBalls();
-    }
-    
     public ZombieBoss(){
         super(800); //800Hp
         LImage = new GreenfootImage("boss.png");
@@ -41,6 +30,16 @@ public class ZombieBoss extends Entity
         maxIndex = 20;
         animDelay = 60;
         animCounter = animDelay;
+    }
+    /**
+     * Act - do whatever the ZombieBoss wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        if(!super.update()) return;
+        animate();
+        throwFireBalls();
     }
     
     /**

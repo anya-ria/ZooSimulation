@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndButton extends Icon
 {
-    //sets the end button into the world
+    // Sets the end button into the world
     public EndButton(){
         setImage("endingButton.png");
         GreenfootImage image = getImage();

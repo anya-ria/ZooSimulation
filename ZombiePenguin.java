@@ -36,6 +36,17 @@ public class ZombiePenguin extends Zombie
         setImage("zombiePenguinWalkToward/walkToward1.png");
     }
     /**
+     * Act - do whatever the ZombiePenguin wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        if(!super.update()) return;
+        animate();
+        setLocation(getX(), getY());
+        slide();
+    }
+    /**
      * Initialize zombie penguin images
      */
     private void initImages() {
@@ -77,19 +88,6 @@ public class ZombiePenguin extends Zombie
         animDelay = 10;
         animCounter = animDelay;
     }
-
-    /**
-     * Act - do whatever the ZombiePenguin wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        if(!super.update()) return;
-        animate();
-        setLocation(getX(), getY());
-        slide();
-    }
-
     private void slide()
     {
         double[] childDetails = detectNearestEntity(Child.class, 500);

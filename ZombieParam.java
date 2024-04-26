@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * ZombieParam
  * 
- * @author <li> Megan Lee | Art
+ * @author <li> Megan Lee   | Art
  * @author <li> Vanessa Huo | Functions
  * @version 04/25/2024
  */

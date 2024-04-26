@@ -4,7 +4,7 @@ import java.util.List;
  * An effect that heals children whenever it appears. This effect is only used
  * by the healer
  * 
- * @author <li> Lucas Fu | Functions
+ * @author <li> Lucas Fu  | Functions
  * @author <li> Anya Shah | Sounds
  * @version 04/25/2024
  */

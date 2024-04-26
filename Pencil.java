@@ -3,7 +3,8 @@ import java.util.List;
 /**
  * The pencil is a projectile that does DOT upon impact
  * 
- * @author Lucas Fu
+ * @author <li> Lucas Fu  | Functions
+ * @author <li> Anya Shah | Animations + Sounds
  * @version 04/25/2024
  */
 public class Pencil extends Projectile

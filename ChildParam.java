@@ -10,11 +10,7 @@ import java.util.*;
  */
 public class ChildParam extends Icon
 {
-    /**
-     * Act - do whatever the ChildParam wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    //add new greenfoot images
+    // Add new greenfoot images
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
     

@@ -23,11 +23,7 @@ public class ZombieHippo extends Zombie
     private boolean lockedDirection = false;
 
     private int chargeCooldown = 20;
-    //protected double friction = 0.5; // override from Entity
 
-    //protected double friction = 0.25; // override from Entity
-
-    
     public ZombieHippo() {
         super(100);
         animCounter = 0;
@@ -87,7 +83,6 @@ public class ZombieHippo extends Zombie
         if(!super.update()) return;
         animate();
         charge();
-        // Greenfoot.playSound("hippo1.mp3");
         setLocation(getX(), getY());
     }
     

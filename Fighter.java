@@ -2,14 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Fights zombies...
  * 
- * @author <li> Anya Shah | Animations + Sounds 
- * @author <li> Lucas Fu  | Functions
-<<<<<<< HEAD
- * @author Gennie Won | Sounds
- * @version 04/08/2024
-=======
+ * @author <li> Anya Shah  | Animations 
+ * @author <li> Lucas Fu   | Functions
+ * @author <li> Gennie Won | Sounds
  * @version 04/25/2024
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
  */
 public class Fighter extends Child
 {

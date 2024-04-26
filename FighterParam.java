@@ -9,10 +9,6 @@ import java.util.*;
  */
 public class FighterParam extends Icon
 {
-    /**
-     * Act - do whatever the FighterParam wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private GreenfootImage[]list=new GreenfootImage[4];
     private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;

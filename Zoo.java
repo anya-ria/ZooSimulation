@@ -60,16 +60,8 @@ public class Zoo extends World
     private ZombieBoss boss = new ZombieBoss();
 
     private int actCount; // number of acts passed
-
-    // //Init music
-    // private static GreenfootSound[] music;
-    // private static int musicSoundIndex;
-
     private boolean bossFight; //boss level achieved or not
-
     private GreenfootSound musicBG; //background music
-    
-
     
     /**
      * A constructor for the simulation's Zoo to set up the world and initalize objects.
@@ -108,7 +100,6 @@ public class Zoo extends World
         check();
         checkEnd();
     }
-
 
     /**
      * Pauses longer sounds that were being played.
@@ -316,6 +307,4 @@ public class Zoo extends World
     public static int hit(){ 
         return numHit++;
     }
-    
-    
 }

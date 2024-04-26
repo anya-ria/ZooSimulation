@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HomeButton extends Icon
 {
-    //sets the home button
+    // Sets the home button
     public HomeButton(){
         setImage("homeButton.png"); //set image for the home button
         GreenfootImage image = getImage();
