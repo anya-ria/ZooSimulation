@@ -1,8 +1,17 @@
 #BlueJ class context
 comment0.target=EndingScreen
 comment0.text=\n\ Ending\ screen\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 04/25/2024\n
+
+comment0.text=\r\n\ Ending\ screen\ that\ displays\ which\ ending\ was\ achieved,\ along\ with\ the\ time\ elapsed.\r\n\ \r\n\ @author\ Vanessa\ Huo\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=EndingScreen()
+comment1.text=\r\n\ A\ constructor\ for\ the\ simulation's\ ending\ screen\ to\ set\ up\ the\ world\ and\ initalize\ objects.\r\n
+
+comment0.text=\n\ Ending\ screen\ that\ displays\ which\ ending\ was\ achieved,\ along\ with\ the\ time\ elapsed.\n\ \n\ @author\ Vanessa\ Huo\n\ @version\ 04/25/2024\n
+comment1.params=
+comment1.target=EndingScreen()
+comment1.text=\n\ A\ constructor\ for\ the\ simulation's\ ending\ screen\ to\ set\ up\ the\ world\ and\ initalize\ objects.\n
+
 comment2.params=
 comment2.target=void\ ending1()
 comment2.text=\n\ Call\ "Ending\ 1"\ and\ stop\ the\ game.\ \n

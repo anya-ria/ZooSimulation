@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Icon
 comment0.text=\n\ Icon\ abstract\ class\n\ Sets\ the\ variable,\ resets\ if\ a\ player\ chooses\ another\ option\n\ Check\ if\ the\ icon\ button\ gets\ clicked\n\ \n\ @author\ Vanessa\ Huo\ \n\ @version\ 04/25/2024\n
+comment0.text=\n\ Icon\ abstract\ class\n\ \n\ @author\ Vanessa\ Huo\ \n\ @version\ 04/25/2024\n
 comment1.params=
 comment1.target=void\ reset()
 comment2.params=

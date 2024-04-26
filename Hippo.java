@@ -19,10 +19,13 @@ public class Hippo extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxIndex;
+    private boolean right, left, away, toward;
+    
+    // Movement variables
+    private int direction;
     // Sound variales
     private static GreenfootSound[] hippoSound;
     private static int hippoSoundIndex;
-    
     public Hippo() {
         super(200);
         animCounter = 0;
@@ -30,13 +33,6 @@ public class Hippo extends Animal
         initImages();
     }
     
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
-    }
     /**
      * Initialize the hippo sounds
      */
@@ -51,6 +47,7 @@ public class Hippo extends Animal
     public static void playHippoSound()
     {
         hippoSound[hippoSoundIndex].setVolume(80);
+        hippoSound[hippoSoundIndex].setVolume(40);
         hippoSound[hippoSoundIndex].play();
         hippoSoundIndex++;
         if(hippoSoundIndex >= hippoSound.length) {
@@ -82,6 +79,20 @@ public class Hippo extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
+
+    /**
+     * Act - do whatever the Hippo wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        moveAround();
+        animate();
+    }
+    
+    // Determining the animation needed for each directions
     protected void animate() {
         if(animCounter == 0){
             animCounter = animDelay; 
@@ -91,7 +102,14 @@ public class Hippo extends Animal
             }
             if(right){
                 setImage(walkRight[animIndex]);
+            }
+            else if (!right && !away){
+                setImage(walkLeft[animIndex]);
             } 
+            else if(right && !away)
+            {
+                setImage(walkToward[animIndex]);
+            }
             else if (left){
                 setImage(walkLeft[animIndex]);
             } 
@@ -111,6 +129,9 @@ public class Hippo extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playHippoSound();
+        }
         setLocation(getX(), getY());
         playHippoSound();
         if (Greenfoot.getRandomNumber(240) < 10)

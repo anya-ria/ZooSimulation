@@ -7,19 +7,21 @@ import greenfoot.World;
  *      View Game Achievements
  *      View Game Endings
  * 
- * @author Vanessa Huo
+ * @author Megan Lee | Art & Sound
+ * @author Vanessa Huo | Functions
  * @version 04/25/2024
  */
 public class TitleScreen extends World
 {
-    //Init buttons
-    private AchieveButton achieveButton;
-    private EndButton endButton;
-    private StartButton startButton;
+    private AchieveButton achieveButton; //button to achievement screen
+    private EndButton endButton; //button to collections screen
+    private StartButton startButton; //button to user select screen
     
-    //Init music
-    private GreenfootSound musicBG;
+    private GreenfootSound musicBG; //background music
     
+    /**
+     * A constructor for the simulation's title screen to set up the world and initalize objects.
+     */
     public TitleScreen()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -51,10 +53,18 @@ public class TitleScreen extends World
         }
     }
     
+    /**
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void stopped() {
         musicBG.pause();
     }
     
+    /**
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
+     */
     public void started (){
         musicBG.playLoop();
     }

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Standard projectile thrown by monkeys and traitors, leaves a banana peel when expiring
+ * the Fireball is a projectile shot by the boss, dealing damage to those it touches
  * 
  * @author Lucas Fu
  * @version 04/25/2024
@@ -27,7 +27,7 @@ public class FireBall extends Projectile
     public FireBall(double vx, double vy){
         super(vx,vy);
         getImage().scale(40, 40);
-        
+        getImage().rotate((int)Utility.vectorToAngle(vx, vy)+225);
         animIndex = 0;
         animDelay = 5;
         animCounter = animDelay;
@@ -52,21 +52,19 @@ public class FireBall extends Projectile
     }
     
     /**
-     * Does damage and minor pushing to the child touching this, expiring this
+     * Does damage and minor pushing to the child touching this, without expiring
      */
     protected void detectCollision(){
         Child touched = (Child) getOneIntersectingObject(Child.class);
         if(touched!=null&&touched.isAwake()){
             touched.takeDamage(damage);
-            expired = true;
+            touched.push(vx, vy);
         }
     }
     /**
      * Creates a peel when expired
      */
     protected void expire(){
-        getWorld().addObject(new Peel(), (int)(getX()+vx*10), (int)(getY()+vy*10));
-
         getWorld().removeObject(this);
     }
 }
