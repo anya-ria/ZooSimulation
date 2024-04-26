@@ -49,7 +49,7 @@ public class Monkey extends Animal
         }
     }
     public static void playMonkeySound() {
-        monkeySound[monkeySoundIndex].setVolume(70);
+        monkeySound[monkeySoundIndex].setVolume(20);
         monkeySound[monkeySoundIndex].play();
         monkeySoundIndex++;
         if(monkeySoundIndex >= monkeySound.length) {
@@ -90,7 +90,10 @@ public class Monkey extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
-        //playMonkeySound();
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playMonkeySound();
+        }
+        
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             // changes direction at random times

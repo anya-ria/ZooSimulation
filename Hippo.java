@@ -46,7 +46,7 @@ public class Hippo extends Animal
     }
     public static void playHippoSound()
     {
-        hippoSound[hippoSoundIndex].setVolume(50);
+        hippoSound[hippoSoundIndex].setVolume(40);
         hippoSound[hippoSoundIndex].play();
         hippoSoundIndex++;
         if(hippoSoundIndex >= hippoSound.length) {
@@ -161,6 +161,30 @@ public class Hippo extends Animal
         } 
         else {
             animCounter--;
+        }
+    }
+    
+    private void moveAround()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(1);
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playHippoSound();
+        }
+        
+        setLocation(getX(), getY());
+        if (Greenfoot.getRandomNumber(240) < 10)
+        {
+            // changes direction at random times
+            adjustDirection();
+        }
+        if (getX() <= 700 || getX() >= 985)
+        {
+            turn(180);
+        }
+        if (getY() <= 30 || getY() >= 280)
+        {
+            turn(180);
         }
     }
 }

@@ -36,6 +36,10 @@ public class CutScene extends World
         
         actCount = 0;      
         happyMusic = new GreenfootSound("happyCutScene.wav");
+        // Initialize sounds
+        Hippo.init();
+        Monkey.init();
+        Penguin.init();
         
         spawnAnimals();
     }

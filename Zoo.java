@@ -96,9 +96,6 @@ public class Zoo extends World
         musicBG = new GreenfootSound("backgroundMusic.mp3");
         
         // Initialize sounds
-        Hippo.init();
-        Monkey.init();
-        Penguin.init();
         HealingEffect.init();
         SmashEffect.init();
         Pencil.init();

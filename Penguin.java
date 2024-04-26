@@ -47,7 +47,6 @@ public class Penguin extends Animal
         if(!super.update()) return;
         if(sliding) {
             slide();
-            //playSlidingSound();
         }
         moveAround();
         animate();
@@ -69,7 +68,7 @@ public class Penguin extends Animal
         }
     }
     public static void playPenguinSound() {
-        penguinSound[penguinSoundIndex].setVolume(70);
+        penguinSound[penguinSoundIndex].setVolume(20);
         penguinSound[penguinSoundIndex].play();
         penguinSoundIndex++;
         if(penguinSoundIndex >= penguinSound.length) {
@@ -147,7 +146,9 @@ public class Penguin extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
-        //playPenguinSound();
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playPenguinSound();
+        }
         if (Greenfoot.getRandomNumber(500) < 10)
         {
             // changes direction at random times
@@ -180,6 +181,9 @@ public class Penguin extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(3);
+        if(Greenfoot.getRandomNumber(300) == 0) {
+            playSlidingSound();
+        }
         if (Greenfoot.getRandomNumber(100) < 10)
         {
             setRotation(direction);
