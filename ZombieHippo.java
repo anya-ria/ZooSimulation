@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Write a description of class ZombieHippo here.
  * 
- * @author <li> Luke Xiao | Movements
+ * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Fixes
  * 
