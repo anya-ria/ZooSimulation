@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=Hippo
-<<<<<<< HEAD
-comment0.text=\n\ Hippos\ are\ our\ special\ imports\ from\ from\ the\ savannas\ of\ Africa.\ Look\ at\ those\ cute\ little\ giants\!\n\ \n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\n\ @author\ <li>\ Lucas\ Fu\ \ \ |\ Cleanup\n\ @version\ 04/12/2024\n
-=======
 comment0.text=\r\n\ Hippos\ are\ our\ special\ imports\ from\ from\ the\ savannas\ of\ Africa.\ Look\ at\ those\ cute\ little\ giants\!\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\r\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\r\n\ @author\ <li>\ Lucas\ Fu\ \ \ |\ Cleanup\r\n\ @version\ 04/25/2024\r\n
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=
 comment1.target=Hippo()
 comment2.params=

@@ -1,16 +1,12 @@
 #BlueJ class context
 comment0.target=Pencil
-<<<<<<< HEAD
-comment0.text=\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\n\ \n\ @author\ Lucas\n\ @version\ 2024/4/12\n
-=======
 comment0.text=\r\n\ The\ pencil\ is\ a\ projectile\ that\ does\ DOT\ upon\ impact\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
 comment1.params=dmg\ duration\ angle\ speed
 comment1.target=Pencil(int,\ int,\ int,\ double)
-comment1.text=\n\ Constructs\ a\ new\ Pencil\ using\ angle\ and\ speed\n\ @param\ dmg\ \ \ \ \ \ \ the\ damage\ to\ be\ taken\ every\ tick\ (30\ acts)\n\ @param\ duration\ \ the\ duration\ in\ terms\ of\ acts\n\ @param\ angle\ \ \ \ \ the\ direction\ in\ which\ to\ throw\n\ @param\ speed\ \ \ \ \ the\ speed\ at\ which\ the\ pencil\ moves\n
+comment1.text=\r\n\ Constructs\ a\ new\ Pencil\ using\ angle\ and\ speed\r\n\ @param\ dmg\ \ \ \ \ \ \ the\ damage\ to\ be\ taken\ every\ tick\ (30\ acts)\r\n\ @param\ duration\ \ the\ duration\ in\ terms\ of\ acts\r\n\ @param\ angle\ \ \ \ \ the\ direction\ in\ which\ to\ throw\r\n\ @param\ speed\ \ \ \ \ the\ speed\ at\ which\ the\ pencil\ moves\r\n
 comment2.params=dmg\ duration\ vx\ vy
 comment2.target=Pencil(int,\ int,\ double,\ double)
-comment2.text=\n\ Constructs\ a\ new\ Pencil\ using\ velocities\n\ @param\ dmg\ \ \ \ \ \ \ the\ damage\ to\ be\ taken\ every\ tick\ (30\ acts)\n\ @param\ duration\ \ the\ duration\ in\ terms\ of\ acts\n\ @param\ vx\ \ \ \ \ \ \ \ the\ horizontal\ velocity\n\ @param\ vy\ \ \ \ \ \ \ \ the\ vertical\ velocity\n
+comment2.text=\r\n\ Constructs\ a\ new\ Pencil\ using\ velocities\r\n\ @param\ dmg\ \ \ \ \ \ \ the\ damage\ to\ be\ taken\ every\ tick\ (30\ acts)\r\n\ @param\ duration\ \ the\ duration\ in\ terms\ of\ acts\r\n\ @param\ vx\ \ \ \ \ \ \ \ the\ horizontal\ velocity\r\n\ @param\ vy\ \ \ \ \ \ \ \ the\ vertical\ velocity\r\n
 comment3.params=
 comment3.target=void\ act()
 comment4.params=
@@ -23,7 +19,7 @@ comment7.params=
 comment7.target=void\ animate()
 comment8.params=
 comment8.target=void\ detectCollision()
-comment8.text=\n\ Wounds\ the\ touched\ entity\ when\ touching\ them,\ also\ expires\ this\n
+comment8.text=\r\n\ Wounds\ the\ touched\ entity\ when\ touching\ them,\ also\ expires\ this\r\n
 comment9.params=
 comment9.target=void\ expire()
 numComments=10

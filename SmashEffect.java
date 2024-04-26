@@ -44,7 +44,7 @@ public class SmashEffect extends Effect
         healingSoundIndex = 0;
         healingSound = new GreenfootSound[20];
         for(int i = 0; i < healingSound.length; i++) {
-            healingSound[i] = new GreenfootSound("heal.mp3");
+            healingSound[i] = new GreenfootSound("healup.mp3");
         }
     }
     public static void playHealingSound() {

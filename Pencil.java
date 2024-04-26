@@ -59,7 +59,7 @@ public class Pencil extends Projectile
         pencilSoundIndex = 0;
         pencilSound = new GreenfootSound[20];
         for(int i = 0; i < pencilSound.length; i++) {
-            pencilSound[i] = new GreenfootSound("pencilThrow2.mp3");
+            pencilSound[i] = new GreenfootSound("pencilThrow1.mp3");
         }
     }
     public static void playPencilSound() {

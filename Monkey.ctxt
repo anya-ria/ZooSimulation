@@ -1,24 +1,6 @@
 #BlueJ class context
 comment0.target=Monkey
-<<<<<<< HEAD
-comment0.text=\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\n\ \n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\ \n\ @author\ <li>\ Lucas\ Fu\ \ \ |\ Cleanup\n\ @version\ 04/12/2024\n
-comment1.params=
-comment1.target=Monkey()
-comment2.params=
-comment2.target=void\ init()
-comment3.params=
-comment3.target=void\ playMonkeySound()
-comment4.params=
-comment4.target=void\ initImages()
-comment5.params=
-comment5.target=void\ act()
-comment6.params=
-comment6.target=void\ moveAround()
-comment7.params=
-comment7.target=void\ animate()
-numComments=8
-=======
-comment0.text=\r\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Cleanup\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\r\n\ Monkeys\ are\ part\ of\ our\ natural\ fauna\ in\ our\ country.\ Look\ at\ them\ cutely\ walking\ around\!\r\n\ \r\n\ @author\ <li>\ Luke\ Xiao\ \ |\ Functions\r\n\ @author\ <li>\ Anya\ Shah\ \ |\ Animations\r\n\ @author\ <li>\ Gennie\ Won\ |\ Sounds\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Cleanup\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=Monkey()
 comment2.params=
@@ -27,8 +9,7 @@ comment3.params=
 comment3.target=void\ initImages()
 comment3.text=\r\n\ Initialize\ monkey\ images\r\n
 comment4.params=
-comment4.target=void\ animate()
+comment4.target=void\ moveAround()
 comment5.params=
-comment5.target=void\ moveAround()
+comment5.target=void\ animate()
 numComments=6
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3

@@ -68,18 +68,15 @@ public class Zoo extends World
     private ZombieBoss boss = new ZombieBoss();
 
     private int actCount;
-<<<<<<< HEAD
-    
-    //Init music
-    private static GreenfootSound[] music;
-    private static int musicSoundIndex;
-=======
+
+    // //Init music
+    // private static GreenfootSound[] music;
+    // private static int musicSoundIndex;
 
     private boolean bossFight; 
 
     private GreenfootSound musicBG;
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
-    
+
     public Zoo()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -97,40 +94,39 @@ public class Zoo extends World
         bossFight = false;
 
         musicBG = new GreenfootSound("backgroundMusic.mp3");
+
+        //play background music (already been intialized)
+        //playMusic();
+
         // Initialize sounds
+        Hippo.init();
+        //Monkey.init();
+        //Penguin.init();
         HealingEffect.init();
+        SmashEffect.init();
         Pencil.init();
         Banana.init();
         Traitor.init();
         Fighter.init();
-        Hippo.init();
-<<<<<<< HEAD
-        
-        //play background music (already been intialized)
-        playMusic();
-    }
-    
-    public static void init() {
-       musicSoundIndex = 0;
-       music = new GreenfootSound[20];
-       for(int i = 0; i < music.length; i++) {
-           music[i] = new GreenfootSound("backgroundMusic.mp3");
-       }
-    }
-    
-    public static void playMusic() {
-        music[musicSoundIndex].setVolume(70);
-        music[musicSoundIndex].play();
-        musicSoundIndex++;
-        if(musicSoundIndex >= music.length) {
-            musicSoundIndex = 0;
-        }
-    }
-=======
-        SmashEffect.init();
     }
 
->>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
+    // public static void init() {
+    // musicSoundIndex = 0;
+    // music = new GreenfootSound[20];
+    // for(int i = 0; i < music.length; i++) {
+    // music[i] = new GreenfootSound("backgroundMusic.mp3");
+    // }
+    // }
+
+    // public static void playMusic() {
+    // music[musicSoundIndex].setVolume(70);
+    // music[musicSoundIndex].play();
+    // musicSoundIndex++;
+    // if(musicSoundIndex >= music.length) {
+    // musicSoundIndex = 0;
+    // }
+    // }
+
     public void act(){
         actCount++;
         spawn();
@@ -138,7 +134,21 @@ public class Zoo extends World
         check();
         checkEnd();
     }
-    
+
+    public void stopped() {
+        musicBG.pause();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.pauseSound();
+        }
+    }
+
+    public void started (){
+        musicBG.playLoop();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.playSound();
+        }
+    }
+
     /**
      * A method that spawn animals and children according to preset values in the Customization screen.
      * If there is no preset value, then spawn default number of actors. 
@@ -295,18 +305,5 @@ public class Zoo extends World
     public static double getDistance (Actor a, Actor b){
         return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
     }
-    
-    public void stopped() {
-        musicBG.pause();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.pauseSound();
-        }
-    }
-    
-    public void started (){
-        musicBG.playLoop();
-        if((getObjects(Lightning.class).size()!=0)) {
-            Lightning.playSound();
-        }
-    }
+
 }
