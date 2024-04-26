@@ -6,8 +6,8 @@ import java.util.Random;
  * <li> manages the hp mechanics
  * <li> manages physics-y push mechanics
  * 
- * @author Lucas
- * @version 2024/4/12
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public abstract class Entity extends SuperSmoothMover
 {

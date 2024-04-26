@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Button to skip cutscene.
  * 
  * @author Megan Lee
- * @version April 2024
+ * @version 04/25/2024
  */
 public class SkipButton extends Icon
 {
@@ -19,6 +19,7 @@ public class SkipButton extends Icon
      */
     public void act(){
         if(Greenfoot.mouseClicked(this)){
+            (getWorld()).stopped();
             Zoo zoo = new Zoo();
             Greenfoot.setWorld(zoo);
             Greenfoot.playSound("mouseClick.mp3");

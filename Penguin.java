@@ -1,11 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 /**
  * Penguins are cute little birds at our zoo :) Look at them slide!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
+ * @author <li> Gennie Won| Sounds
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Penguin extends Animal
 {
@@ -26,6 +28,12 @@ public class Penguin extends Animal
     private int maxSlideIndex, maxWalkIndex;
     private boolean sliding;
 
+    // Sounds
+    // private static GreenfootSound[] penguinSound;
+    // private static int penguinSoundIndex;
+    // private static GreenfootSound[] slidingSound;
+    // private static int slidingSoundIndex;
+
     public Penguin()
     {
         super(100);
@@ -35,6 +43,54 @@ public class Penguin extends Animal
         initImages();
     }
 
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        if(sliding) {
+            slide();
+            //playSlidingSound();
+        }
+        moveAround();
+        animate();
+    }
+    
+    // **************************** SOUNDS ****************************
+    // public static void init() {
+        // // Initialize penguin sounds
+        // penguinSoundIndex = 0;
+        // penguinSound = new GreenfootSound[20];
+        // for(int i = 0; i < penguinSound.length; i++) {
+            // penguinSound[i] = new GreenfootSound("penguin.mp3");
+        // }
+        // // Initialize sliding sounds
+        // slidingSoundIndex = 0;
+        // slidingSound = new GreenfootSound[20];
+        // for(int i = 0; i < penguinSound.length; i++) {
+            // slidingSound[i] = new GreenfootSound("slide.mp3");
+        // }
+    // }
+    // public static void playPenguinSound() {
+        // penguinSound[penguinSoundIndex].setVolume(50);
+        // penguinSound[penguinSoundIndex].play();
+        // penguinSoundIndex++;
+        // if(penguinSoundIndex >= penguinSound.length) {
+            // penguinSoundIndex = 0;
+        // }
+    // }
+    // public static void playSlidingSound() {
+        // slidingSound[slidingSoundIndex].setVolume(50);
+        // slidingSound[slidingSoundIndex].play();
+        // slidingSoundIndex++;
+        // if(slidingSoundIndex >= slidingSound.length) {
+            // slidingSoundIndex = 0;
+        // }
+    // }
+    
+    // **************************** ANIMATIONS ****************************
+    /**
+     * Initialize penguin images
+     */
     private void initImages()
     {
         // Initializing sliding images
@@ -59,7 +115,6 @@ public class Penguin extends Animal
             slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
             slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
         }
-
         // Initializing walking images
         for(int i = 0; i < maxWalkIndex; i++)
         {
@@ -88,34 +143,26 @@ public class Penguin extends Animal
         animCounter = animDelay;
     }
 
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        if(sliding) slide();
-        moveAround();
-        animate();
-    }
-    
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        //playPenguinSound();
         if (Greenfoot.getRandomNumber(500) < 10)
         {
             // changes direction at random times
             adjustDirection();
         }
-
         if (getX() <= 695 || getX() >= 970)
 
-        if(Greenfoot.getRandomNumber(500) < 5){
-            sliding = true;
-        }
+            if(Greenfoot.getRandomNumber(500) < 5){
+                sliding = true;
+            }
         if(Greenfoot.getRandomNumber(500) < 5){
             sliding = false;
         }
         if (getX() <= 695 || getX() >= 980)
+
         {
             turn(180);
         }
@@ -125,8 +172,6 @@ public class Penguin extends Animal
         }
         animate();
     }
-
-    
     public void slide()
     {
         direction = Greenfoot.getRandomNumber(361);
@@ -146,6 +191,7 @@ public class Penguin extends Animal
             move(10);
         }
     }
+
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;

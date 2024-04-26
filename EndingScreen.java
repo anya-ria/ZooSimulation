@@ -4,14 +4,13 @@ import greenfoot.World;
  * Ending screen
  * 
  * @author Vanessa Huo
- * @version 2024/04
+ * @version 04/25/2024
  */
 public class EndingScreen extends World
 {
     //Init button and timer
     private HomeButton homeButton = new HomeButton();
     private SimpleTimer gameTimer = new SimpleTimer();
-    
     private int timeElasped;
     public EndingScreen()
     {    

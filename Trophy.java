@@ -4,9 +4,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Trophy.
  * Indication of an achievement get completed or not
  * 
+<<<<<<< HEAD
  * @author Megan Lee | Art
  * @author Vanessa Huo | Functions
+ * @author Gennie Won | Sounds 
  * @version April 2024
+=======
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
+ * @version 04/25/2024
+>>>>>>> e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3
  */
 public class Trophy extends Icon
 {

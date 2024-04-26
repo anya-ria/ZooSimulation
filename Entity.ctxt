@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Entity
-comment0.text=\r\n\ The\ Entity\ is\ an\ abstract\ class\ that\ encompasses\ animals\ and\ children.\r\n\ <li>\ manages\ the\ hp\ mechanics\r\n\ <li>\ manages\ physics-y\ push\ mechanics\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/12\r\n
+comment0.text=\r\n\ The\ Entity\ is\ an\ abstract\ class\ that\ encompasses\ animals\ and\ children.\r\n\ <li>\ manages\ the\ hp\ mechanics\r\n\ <li>\ manages\ physics-y\ push\ mechanics\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
 comment1.params=maxHp
 comment1.target=Entity(int)
 comment1.text=\r\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\r\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ entity\ can\ have\r\n

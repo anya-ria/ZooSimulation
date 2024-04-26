@@ -4,12 +4,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A cutscene introducing the inciting incident of this simulation.
  * A teacher introduces her students to the zoo, suddenly lightning turns the animals into zombies.
  * 
- * @author Megan
- * @version April 2024
+ * @author Megan Lee
+ * @version 04/25/2024
  */
 public class CutScene extends World
 {
     int actCount;
+    private GreenfootSound happyMusic;
     
     public CutScene() {    
         super(1024, 800, 1); 
@@ -32,11 +33,13 @@ public class CutScene extends World
         setBackground("zoo.jpg"); 
         
         actCount = 0;      
+        happyMusic = new GreenfootSound("happyCutScene.wav");
         
         spawnAnimals();
     }
 
-    public void act(){        
+    public void act(){
+        if(actCount == 100) happyMusic.play();
         //After transition effect, add first teacher dialogue
         if(actCount == 180){
             Effect teacherText1 = new Effect(null, new GreenfootImage("teacherText1.png"), 20, 180, 20);
@@ -54,7 +57,9 @@ public class CutScene extends World
         }
         //After 680 acts, begin actual simulation in main world (zoo)
         if(actCount == 680){
+            Lightning.stopSound();
             Zoo zoo = new Zoo();
+            zoo.started();
             Greenfoot.setWorld(zoo);
         }
         actCount++;
@@ -83,7 +88,12 @@ public class CutScene extends World
     public void started() {
         //starts or resumes lightning sound when simulation is started
         super.started();
-        if(getObjects(Lightning.class).size()!=0) Lightning.playSound();
+        if(actCount >  180 && actCount < 380){
+            happyMusic.play();
+        }
+        if(getObjects(Lightning.class).size()!=0) {
+            Lightning.playSound();
+        }
     }
 
     /**
@@ -92,6 +102,9 @@ public class CutScene extends World
     public void stopped() {
         //pauses lightning sound when simulation is paused
         super.stopped();
-        if((getObjects(Lightning.class).size()!=0)) Lightning.pauseSound();
+        happyMusic.pause();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.pauseSound();
+        }
     }
 }

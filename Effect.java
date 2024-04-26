@@ -3,7 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Effects that control visuals, imported from another project
  * 
- * @author Lucas
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public class Effect extends SuperSmoothMover
 {

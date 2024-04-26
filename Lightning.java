@@ -5,8 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * It causes the scene to darken and then flashes white, followed by two lightning strikes. 
  * The minimum recommended duration for the entire intended animation is 300 acts.
  *
- * @author Megan
- * @version April 2024
+ * @author Megan Lee
+ * @version 04/25/2024
  */
 public class Lightning extends SuperSmoothMover
 {
@@ -95,16 +95,22 @@ public class Lightning extends SuperSmoothMover
             }
         }
     }
-    /**
-     * Method that plays/resumes lightning sound.
-     */
-    public static void playSound(){
-        lightning.play();
-    }
     /** 
      * Method that pauses lightning sound.
      */
     public static void pauseSound(){
         lightning.pause();
+    }
+    /** 
+     * Method that plays lightning sound.
+     */
+    public static void playSound(){
+        lightning.play();
+    }
+    /** 
+     * Method that stops lightning sound.
+     */
+    public static void stopSound(){
+        lightning.stop();
     }
 }

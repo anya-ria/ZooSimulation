@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * General class of projectiles, objects that fly at a constant speed to hit something
  * 
- * @author Lucas
- * @version 2024/4/9
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public abstract class Projectile extends SuperSmoothMover
 {

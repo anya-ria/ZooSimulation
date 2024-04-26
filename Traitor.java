@@ -7,6 +7,7 @@ import java.util.List;
  * 
  * @author <li> Anya Shah | Animations + Sounds
  * @author <li> Lucas Fu  | Functions
+ * @author Gennie Won | Sounds 
  * @version 04/08/2024
  */
 public class Traitor extends Child
@@ -148,7 +149,6 @@ public class Traitor extends Child
             punchLeft[i] = new GreenfootImage("traitorPunchRight/punchRight" + i + ".png");
             punchLeft[i].mirrorHorizontally();
         }
-        
         // Initialize walking images
         for(int i = 0; i < maxWalkIndex; i++) {
             walkAway[i] = new GreenfootImage("traitorWalkAway/walkAway" + i + ".png");

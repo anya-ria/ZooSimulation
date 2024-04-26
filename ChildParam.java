@@ -4,8 +4,8 @@ import java.util.*;
  * ChildParam.
  * Player set the values.
  * 
- * @author Megan Lee | Art
- * @author Vanessa Huo | Functions
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
  * @version 2024/04
  */
 public class ChildParam extends Icon

@@ -1,11 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 /**
  * Monkeys are part of our natural fauna in our country. Look at them cutely walking around!
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
+ * @author <li> Luke Xiao  | Functions
+ * @author <li> Anya Shah  | Animations
+ * @author <li> Gennie Won | Sounds 
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Monkey extends Animal
 {
@@ -18,6 +20,10 @@ public class Monkey extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
+    
+    // Sounds
+    // private static GreenfootSound[] monkeySound;
+    // private static int monkeySoundIndex;
 
     public Monkey()
     {
@@ -26,7 +32,35 @@ public class Monkey extends Animal
         maxIndex = walkRight.length;
         initImages();
     }
-
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        moveAround();
+        animate();
+    }
+    
+    // **************************** SOUNDS ****************************
+    // public static void init() {
+        // monkeySoundIndex = 0;
+        // monkeySound = new GreenfootSound[20];
+        // for(int i = 0; i < monkeySound.length; i++) {
+            // monkeySound[i] = new GreenfootSound("monkey.mp3");
+        // }
+    // }
+    // public static void playMonkeySound() {
+        // monkeySound[monkeySoundIndex].setVolume(50);
+        // monkeySound[monkeySoundIndex].play();
+        // monkeySoundIndex++;
+        // if(monkeySoundIndex >= monkeySound.length) {
+            // monkeySoundIndex = 0;
+        // }
+    // }
+    
+    // **************************** ANIMATIONS ****************************
+    /**
+     * Initialize monkey images
+     */
     private void initImages() {
         // Initialize monkey images
         for(int i = 0; i < maxIndex; i++) {
@@ -50,19 +84,11 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
-    public void act()
-    {
-        // calls the update method from the Entity class, which returns whether this should continue acting
-        if(!super.update()) return;
-        moveAround();
-        animate();
-    }
-
     private void moveAround()
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        //playMonkeySound();
         if (Greenfoot.getRandomNumber(240) < 10)
         {
             // changes direction at random times
@@ -77,7 +103,6 @@ public class Monkey extends Animal
             turn(180);
         }
     }
-    
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;

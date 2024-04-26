@@ -6,7 +6,10 @@ import java.util.*;
  * Different values may lead to different endings
  * 
  * @author Vanessa Huo | Functions
+ * @author Gennie Won  | Sounds
  * @version 2024/04
+ *
+ * @version 04/25/2024
  */
 public class Customization extends World
 {
@@ -16,6 +19,9 @@ public class Customization extends World
     private ZombieParam z1, z2, z3; 
     private HealerParam h1, h2, h3; //2 choices
     private FighterParam f1, f2, f3;
+    
+    //Init music
+    private GreenfootSound musicBG;
     
     CutScene game = new CutScene();
     public Customization()
@@ -30,6 +36,10 @@ public class Customization extends World
         setBackground("userSelectScreen.jpg");
         
         createParams();
+        
+        //Preload background music
+        musicBG = new GreenfootSound ("backgroundMusic.mp3");
+        musicBG.playLoop();
     }
 
     /**
@@ -40,6 +50,8 @@ public class Customization extends World
         if(Greenfoot.mouseClicked(startButton)){
             resetVariables();
             setValue();
+            musicBG.stop();
+            game.started();
             //Go to CutScene
             Greenfoot.setWorld(game);
             Greenfoot.playSound("mouseClick.mp3");
@@ -49,7 +61,7 @@ public class Customization extends World
     /**
      * A method that checks which button player clicked for each variable. 
      * Set the initial number of Children, Fighter, Healer and Zombie according to player's choice. 
-     * If player did not make a choice, then no values are set. The Zoo world will create actors accroding to the default numbers.
+     * If player did not make a choice, then no values are set. The Zoo world will create actors according to the default numbers.
      */
     public void setValue(){
         //ArrayList<ChildParam> y = (ArrayList<ChildParam>)getObjects(ChildParam.class);
@@ -113,5 +125,13 @@ public class Customization extends World
         Zoo.numHealer = 2;
         Zoo.numFighter = 1;
         Zoo.numZombie = 0;
+    }
+    
+    public void stopped() {
+        musicBG.stop();
+    }
+    
+    public void started (){
+        musicBG.playLoop();
     }
 }

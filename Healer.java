@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author <li> Anya Shah | Animations
  * @author <li> Lucas Fu  | Functions
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Healer extends Child
 {
@@ -79,7 +79,6 @@ public class Healer extends Child
             healLeft[i] = new GreenfootImage("healRight/healRight" + i + ".png");
             healLeft[i].mirrorHorizontally();
         }
-
         // Initialize walking images
         for(int i = 0; i < maxWalkIndex; i++) {
             walkAway[i] = new GreenfootImage("healerWalkAway/healerWalkAway" + i + ".png");
@@ -94,7 +93,7 @@ public class Healer extends Child
             walkLeft[i] = new GreenfootImage("healerWalkRight/healerWalkRight" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
-
+        setImage(walkToward[0]);
         animIndex = 0;
         animDelay = 8;
         animCounter = animDelay;
