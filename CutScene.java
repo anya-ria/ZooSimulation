@@ -2,22 +2,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * A cutscene introducing the inciting incident of this simulation.
- * A teacher introduces her students to the zoo, suddenly lightning turns the animals into zombies.
+ * A teacher introduces her students to the zoo where lightning suddenly turns the animals into zombies.
  * 
  * @author Megan Lee
  * @version 04/25/2024
  */
 public class CutScene extends World
 {
-    int actCount;
-    private GreenfootSound happyMusic;
+    private int actCount; //track # of acts passed
+    private SkipButton skipKey; //home button
+    private GreenfootSound happyMusic = new GreenfootSound("happyCutScene.wav"); //happy music played before lightning
     
+    /**
+     * A constructor for the simulation's cutscene to set up the world and initalize objects.
+     */
     public CutScene() {    
         super(1024, 800, 1); 
-
-        //Set default speed of slider as 50
-        Greenfoot.setSpeed(50); 
     
+        //Set background to zoo
+        setBackground("zoo.jpg"); 
+        
         //Skip button can always be pressed, lightning appears above animals  
         setPaintOrder (Icon.class, Effect.class, Lightning.class, Animal.class);
         
@@ -25,12 +29,10 @@ public class CutScene extends World
         Effect transition = new Effect(null, new GreenfootImage("blackScreen.png"), 0, 120, 60);
         addObject(transition, 512, 400);
         
-        //Adds button for user to skip through cutscene
-        SkipButton skipButton = new SkipButton();
-        addObject(skipButton,79,739);
-        skipButton.setLocation(952,754);
-        
-        setBackground("zoo.jpg"); 
+        //Adds button for user to skip through cutscene in bottom left
+        skipKey = new SkipButton();
+        addObject(skipKey,79,739);
+        skipKey.setLocation(952,754);
         
         actCount = 0;      
         happyMusic = new GreenfootSound("happyCutScene.wav");
@@ -66,7 +68,7 @@ public class CutScene extends World
     }
 
     /**
-     * Method that spawns 3 of each type of animals in an initial location within their respective pens
+     * Spawns 3 of each type of animals in an initial location within their respective pens
      */
     public void spawnAnimals(){
         addObject(new Monkey(), 80, 100);
@@ -83,26 +85,29 @@ public class CutScene extends World
     }
     
     /**
-     * Method called by the Greenfoot system when the execution has started.
+     * Resumes longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
      */
     public void started() {
-        //starts or resumes lightning sound when simulation is started
         super.started();
+        //From acts 180-380, if simulation was started: either resume previously played/start sound
         if(actCount >  180 && actCount < 380){
             happyMusic.play();
         }
+        //if lightning effect is currently in world, resume sound
         if(getObjects(Lightning.class).size()!=0) {
             Lightning.playSound();
         }
     }
 
     /**
-     * Method called by the Greenfoot system when the execution has stopped.
+     * Pauses longer sounds that were being played.
+     * A method called by the Greenfoot system when the execution has stopped/paused.
      */
     public void stopped() {
-        //pauses lightning sound when simulation is paused
         super.stopped();
         happyMusic.pause();
+        //if lightning effect is currently in world, resume sound
         if((getObjects(Lightning.class).size()!=0)) {
             Lightning.pauseSound();
         }

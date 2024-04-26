@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Customization
-comment0.text=\r\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\r\n\ Different\ values\ may\ lead\ to\ different\ endings\r\n\ \r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\r\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\r\n\ Different\ values\ may\ lead\ to\ different\ endings\r\n\ \r\n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=Customization()
 comment2.params=
