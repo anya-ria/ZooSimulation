@@ -72,7 +72,7 @@ public class Zoo extends World
     private boolean bossFight; 
 
     private GreenfootSound musicBG;
-
+    
     public Zoo()
     {    
         // Create a new world with 1024x800 cells with a cell size of 1x1 pixels.
@@ -106,13 +106,6 @@ public class Zoo extends World
         checkAchi();
         check();
         checkEnd();
-    }
-
-    public void stopped() {
-        musicBG.stop();
-    }
-    public void started (){
-        musicBG.playLoop();
     }
     
     /**
@@ -268,9 +261,21 @@ public class Zoo extends World
         return x;
     } 
 
-    public static double getDistance (Actor a, Actor b)
-    {
+    public static double getDistance (Actor a, Actor b){
         return Math.hypot (a.getX() - b.getX(), a.getY() - b.getY());
     }
-
+    
+    public void stopped() {
+        musicBG.pause();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.pauseSound();
+        }
+    }
+    
+    public void started (){
+        musicBG.playLoop();
+        if((getObjects(Lightning.class).size()!=0)) {
+            Lightning.playSound();
+        }
+    }
 }

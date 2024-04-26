@@ -54,6 +54,7 @@ public class TitleScreen extends World
     public void stopped() {
         musicBG.pause();
     }
+    
     public void started (){
         musicBG.playLoop();
     }
