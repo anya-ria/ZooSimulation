@@ -40,6 +40,9 @@ public abstract class Animal extends Entity
      */
     protected void die(){
         disableStaticRotation();
+        // if a normal animal dies, track that
+        if(!(this instanceof Zombie))
+            Zoo.numAnimals--;
         super.die();
     }
     
