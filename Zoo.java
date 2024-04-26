@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * The Zoo:)
+ * The Zoo.
  * 
  * @author <li> Vanessa Huo
  * @author <li> Lucas Fu
@@ -14,18 +14,11 @@ import java.util.*;
  * <p>
  * <b> Credits: </b>
  * <p>
- * Images: 
- * <li> Buttons: Megan Lee
- * <li> Zombie Animals: Gennie Won
- * <li> Human Sprites (Children + Fighter + Healer + Traitor): https://docs.google.com/document/d/1sW2Eh0ZpOTb30mfv7Vz3xfyu8Zw5uIU2y6H37qHEoOk/edit
- * <li> Animal Sprites: https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
- * <li> Miscellaneous: https://docs.google.com/document/d/1BXjbhjg57LgRghTjHuzT30icTCHIeSzlp227fLNWW74/edit
- * <p>
- * Sounds:
- * <li> https://docs.google.com/document/d/1rRu4gmr6PWIPnOG4TaqbpQUJdSbmkpW4wQcUj5_YVuo/edit
+ * Art & Sound: 
+ * <li> Listed in CREDITS.TXT
  * <p>
  * Code: 
- *      author: Jordan Cohen -- (what code here)
+ * <li> Author: Jordan Cohen -- 
  *<p>
  * Description: 
  * This simulation tells the story of a group of children who decided to go on a
@@ -232,16 +225,19 @@ public class Zoo extends World
      */
     public void checkEnd(){
         if(numChildren == 0){
+            stopped();
             Greenfoot.setWorld(world);
             Collections.unlockEnd1();
             world.ending1();
         }
         if(numZombie == 0 && actCount > 1000 && numAnimals > 0){
+            stopped();
             Greenfoot.setWorld(world);
             Collections.unlockEnd2();
             world.ending2();
         }
         if(!boss.isAwake()){
+            stopped();
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
