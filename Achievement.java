@@ -15,7 +15,7 @@ public class Achievement extends World
     private static boolean achi0 = false; //heal 15 children
     private static boolean achi1 = false; //get hit by 10 bananas
     private static boolean achi2 = false; //no fighers
-    private static boolean achi3 = false; //all children became zombie
+    private static boolean achi3 = false; //all children die
     private static boolean achi4 = false; //all animals became zombie
     
     //Init instances 

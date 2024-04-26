@@ -41,7 +41,7 @@ import java.util.*;
  * <li> An utility class that converts an angle into a vector and vice versa
  * <li> Customizations are allowed for four types of variables. 
  * <li> Five achievements and three endings waiting to unlock. 
- * <li> The lightning has a chance to change normal animals into ZOMBIES!
+ * <li> Lightning that has a chance to change normal animals into ZOMBIES!
  * <li> Fighter children attack the zombies. Don't lose them. 
  * <p>
  * <b> Known bugs: </b>
@@ -191,7 +191,7 @@ public class Zoo extends World
             }
         }
 
-        if(numAnimals == 0 && numZombie > 0 && bossFight != false){
+        if(numAnimals <= 0 && numZombie > 0 && bossFight == false){
             for(Zombie a: getObjects(Zombie.class))
             {
                 removeObject(a);
@@ -216,13 +216,13 @@ public class Zoo extends World
         if(numHit >= 10){ //get hit by 10 bananas
             Achievement.completeAchi1();
         }
-        if(numFighter == 0){ //have no fighter children
+        if(numFighter <= 0){ //have no fighter children
             Achievement.completeAchi2();
         }
-        if(numChildren == 0){ //all children became zombies
+        if(numChildren <= 0){ //all children died
             Achievement.completeAchi3();
         }
-        if(numAnimals == 0 && numZombie > 0){ //all animals became zombies
+        if(numAnimals <= 0 && numZombie > 0){ //all animals became zombies
             Achievement.completeAchi4();
         }
     }
@@ -235,16 +235,19 @@ public class Zoo extends World
             Greenfoot.setWorld(world);
             Collections.unlockEnd1();
             world.ending1();
+            Greenfoot.setWorld(world);
         }
-        if(numZombie == 0 && actCount > 1000 && numAnimals > 0){
+        if(numZombie == 0 && actCount > 1000){
             Greenfoot.setWorld(world);
             Collections.unlockEnd2();
             world.ending2();
+            Greenfoot.setWorld(world);
         }
         if(!boss.isAwake()){
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
+            Greenfoot.setWorld(world);
         }
     }
 
@@ -279,27 +282,26 @@ public class Zoo extends World
     }
 
     //Increase the counter
-    public static int healed(){ //number of children get healed
+    //number of children get healed
+    public static int healed(){ 
         return numHealed++;
     }
 
-    public static int hit(){ //get hit by banana
+    // got hit by banana
+    public static int hit(){
         return numHit++;
     }
 
     public int getNumZombie(){
-        int x = numZombie;
-        return x;
+        return numZombie;
     }
 
     public int getNumChild(){
-        int x = numChildren;
-        return x;
+        return numChildren;
     } 
 
     public int getNumAnimal(){
-        int x = numAnimals;
-        return x;
+        return numAnimals;
     } 
 
     public static double getDistance (Actor a, Actor b){

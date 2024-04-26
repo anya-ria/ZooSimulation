@@ -29,7 +29,6 @@ public class EndingScreen extends World
     public void ending1(){
         setBackground("end1.png");
         timeElasped();
-        Greenfoot.stop();
     }
     
     /**
@@ -38,7 +37,6 @@ public class EndingScreen extends World
     public void ending2(){
         setBackground("end2.png");
         timeElasped();
-        Greenfoot.stop();
     }
     
     /**
@@ -47,7 +45,6 @@ public class EndingScreen extends World
     public void ending3(){
         setBackground("end3.png");
         timeElasped();
-        Greenfoot.stop();
     }
     
     /**
