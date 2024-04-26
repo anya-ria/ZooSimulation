@@ -1,18 +1,23 @@
 #BlueJ class context
 comment0.target=Fighter
-comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n\ @version\ 04/08/2024\r\n
+comment0.text=\r\n\ Fights\ zombies...\r\n\ \r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\ +\ Sounds\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Functions\r\n<<<<<<<\ HEAD\r\n\ @author\ Gennie\ Won\ |\ Sounds\r\n\ @version\ 04/08/2024\r\n\=\=\=\=\=\=\=\r\n\ @version\ 04/25/2024\r\n>>>>>>>\ e3481e9eb85cbe3943b7a5cfde6a88c4de577ed3\r\n
 comment1.params=
 comment1.target=Fighter()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ initImages()
+comment3.target=void\ init()
 comment4.params=
-comment4.target=void\ animate()
-comment5.params=enemyDetails
-comment5.target=void\ chaseZombies(double[])
-comment6.params=direction\ speed
-comment6.target=void\ throwPencil(int,\ int)
-comment7.params=
-comment7.target=void\ punch()
-numComments=8
+comment4.target=void\ playPunchSound()
+comment5.params=
+comment5.target=void\ initImages()
+comment6.params=
+comment6.target=void\ animate()
+comment7.params=enemyDetails
+comment7.target=void\ chaseEnemies(double[])
+comment7.text=\r\n\ Follows\ enemies\ and\ throws\ out\ attacks\r\n
+comment8.params=direction\ speed
+comment8.target=void\ throwPencil(int,\ int)
+comment9.params=
+comment9.target=void\ punch()
+numComments=10

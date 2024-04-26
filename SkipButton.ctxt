@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SkipButton
-comment0.text=\r\n\ Button\ to\ skip\ cutscene.\r\n\ \r\n\ @author\ Megan\ Lee\r\n\ @version\ April\ 2024\r\n
+comment0.text=\r\n\ Button\ to\ skip\ cutscene.\r\n\ \r\n\ @author\ Megan\ Lee\r\n\ @version\ 04/25/2024\r\n
 comment1.params=
 comment1.target=SkipButton()
 comment2.params=

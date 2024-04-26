@@ -3,9 +3,9 @@ import java.util.*;
 /**
  * FighterParam.
  * 
- * @author Megan Lee | Art
- * @author Vanessa Huo | Functions
- * @version April 2024
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
+ * @version 04/25/2024
  */
 public class FighterParam extends Icon
 {
@@ -13,8 +13,8 @@ public class FighterParam extends Icon
      * Act - do whatever the FighterParam wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private GreenfootImage[]list=new GreenfootImage[3];
-    private GreenfootImage[]clicked=new GreenfootImage[3];
+    private GreenfootImage[]list=new GreenfootImage[4];
+    private GreenfootImage[]clicked=new GreenfootImage[4];
     private GreenfootImage x;
     
     public FighterParam(int x){
@@ -36,7 +36,7 @@ public class FighterParam extends Icon
     }
     
     /**
-     * If a button is clicked (option is choosen), set to 'clicked' image and reset all other options to 'unclicked'.
+     * If a button is clicked (option is chosen), set to 'clicked' image and reset all other options to 'unclicked'.
      */
     public void act(){
         if(!isClicked){ //false
@@ -68,14 +68,17 @@ public class FighterParam extends Icon
     }
     
     /**
-     * Set value according to the choosen option
+     * Set value according to the chosen option
      */
     public void setValue(){
         if(index == 1){
             value = 0;
         }
         else if(index == 2){
-            value = 15;
+            value = 6;
+        }
+        else if(index == 3){
+            value = 12;
         }
     }
 }

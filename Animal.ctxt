@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Animal
-comment0.text=\r\n\ Animals\ are\ the\ residents\ of\ the\ zoo,\ wandering\ aimlessly\ in\ their\ pen\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/23\r\n
+comment0.text=\r\n\ Animals\ are\ the\ residents\ of\ the\ zoo,\ wandering\ aimlessly\ in\ their\ pen\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
 comment1.params=maxHp
 comment1.target=Animal(int)
 comment1.text=\r\n\ When\ constructed,\ sets\ the\ max\ hp\ and\ the\ hp\r\n\ @param\ maxHp\ \ \ the\ maximum\ hp\ the\ child\ can\ have\r\n
@@ -10,4 +10,7 @@ comment2.text=\r\n\ This\ animal\ has\ turned\ into\ a\ zombie\!\ removes\ the\ 
 comment3.params=
 comment3.target=void\ die()
 comment3.text=\r\n\ @override\r\n\ When\ dying,\ remove\ the\ static\ rotation\ aspect\ so\ that\ this\ actually\ looks\ dead\r\n
-numComments=4
+comment4.params=
+comment4.target=void\ adjustDirection()
+comment4.text=\r\n\ Changes\ the\ image\ according\ to\ the\ rotation,\ and\ changes\ rotation\ to\ direction\ value\r\n
+numComments=5

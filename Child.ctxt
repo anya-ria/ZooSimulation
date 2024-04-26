@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=Child
-comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ Lucas\r\n\ @version\ 2024/4/4\r\n
+comment0.text=\r\n\ A\ child\ is\ an\ abstact\ class\ that\ represents\ all\ the\ children\ attending\ the\ zoo.\r\n\ \r\n\ @author\ <li>\ Lucas\ Fu\ \ |\ Class\r\n\ @author\ <li>\ Anya\ Shah\ |\ Animations\r\n\ @version\ 04/25/2024\r\n
 comment1.params=maxHp
 comment1.target=Child(int)
 comment2.params=
 comment2.target=boolean\ update()
 comment3.params=
 comment3.target=void\ animate()
-numComments=4
+comment4.params=vector
+comment4.target=void\ updateDirection(double[])
+comment4.text=\r\n\ updates\ the\ facing\ direction\ variables\ \r\n\ @param\ vector\ \ \ \ the\ movement\ vectors\ that\ will\ determine\ the\ facing\ direction\r\n
+comment5.params=
+comment5.target=void\ updateWalking()
+comment5.text=\r\n\ updates\ walking\ direction\r\n
+numComments=6

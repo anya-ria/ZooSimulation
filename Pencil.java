@@ -3,8 +3,8 @@ import java.util.List;
 /**
  * The pencil is a projectile that does DOT upon impact
  * 
- * @author Lucas
- * @version 2024/4/12
+ * @author Lucas Fu
+ * @version 04/25/2024
  */
 public class Pencil extends Projectile
 {
@@ -16,8 +16,9 @@ public class Pencil extends Projectile
     private static GreenfootSound[] pencilSound;
     private static int pencilSoundIndex;
     
+    // Damage
     private int dot; // damage
-    private int duration; // how many acts (divide by 30 for number of ticks)
+    private int duration; // how many acts (divide by 30 for number of damage ticks)
     
     /**
      * Constructs a new Pencil using angle and speed
@@ -28,7 +29,7 @@ public class Pencil extends Projectile
      */
     public Pencil(int dmg, int duration, int angle, double speed){
         this(dmg, duration,
-            Utility.angleToVector(angle)[0]*speed, 
+             Utility.angleToVector(angle)[0]*speed, 
              Utility.angleToVector(angle)[1]*speed);
     }
     /**
@@ -53,14 +54,14 @@ public class Pencil extends Projectile
         animate();
     }
     
+    // ***************************** SOUNDS ******************************* \\
     public static void init() {
         pencilSoundIndex = 0;
         pencilSound = new GreenfootSound[20];
         for(int i = 0; i < pencilSound.length; i++) {
-            pencilSound[i] = new GreenfootSound("pencilThrow2.mp3");
+            pencilSound[i] = new GreenfootSound("pencilThrow1.mp3");
         }
     }
-    
     public static void playPencilSound() {
         pencilSound[pencilSoundIndex].setVolume(50);
         pencilSound[pencilSoundIndex].play();
@@ -70,6 +71,7 @@ public class Pencil extends Projectile
         }
     }
     
+    // *************************** ANIMATION ****************************** \\
     private void initImages() {
         for(int i = 0; i < pencil.length; i++) {
             pencil[i] = new GreenfootImage("pencilSprites/pencil" + i + ".png");
@@ -80,7 +82,6 @@ public class Pencil extends Projectile
         animDelay = 3; // smaller value: goes faster || larger value: goes slower
         animCounter = animDelay;
     }
-    
     private void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;
@@ -95,17 +96,19 @@ public class Pencil extends Projectile
         }
     }
     
+    // *************************** FUNCTIONS ****************************** \\
     /**
      * Wounds the touched entity when touching them, also expires this
      */
     protected void detectCollision(){
         Entity touched = (Entity) getOneIntersectingObject(Entity.class);
+        // if touching child is still alive
         if(touched!=null&&touched.isAwake()){
+            // that child gets wounded
             touched.getWounded(dot, duration);
             expired = true;
         }        
     }
-
     protected void expire(){
         getWorld().removeObject(this);
     }

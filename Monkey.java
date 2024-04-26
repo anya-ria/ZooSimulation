@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 /**
- * Write a description of class Monkey here.
+ * Monkeys are part of our natural fauna in our country. Look at them cutely walking around!
  * 
- * @author <li> Luke Xiao | Functions
- * @author <li> Anya Shah | Animations
- * @version 04/12/2024
+ * @author <li> Luke Xiao  | Functions
+ * @author <li> Anya Shah  | Animations
+ * @author <li> Gennie Won | Sounds 
+ * @author <li> Lucas Fu  | Cleanup
+ * @version 04/25/2024
  */
 public class Monkey extends Animal
 {
@@ -17,7 +20,10 @@ public class Monkey extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex;
     private int maxIndex;
-    private boolean right, left, away, toward, zombie;
+    
+    // Sounds
+    // private static GreenfootSound[] monkeySound;
+    // private static int monkeySoundIndex;
 
     public Monkey()
     {
@@ -26,7 +32,35 @@ public class Monkey extends Animal
         maxIndex = walkRight.length;
         initImages();
     }
-
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        moveAround();
+        animate();
+    }
+    
+    // **************************** SOUNDS ****************************
+    // public static void init() {
+        // monkeySoundIndex = 0;
+        // monkeySound = new GreenfootSound[20];
+        // for(int i = 0; i < monkeySound.length; i++) {
+            // monkeySound[i] = new GreenfootSound("monkey.mp3");
+        // }
+    // }
+    // public static void playMonkeySound() {
+        // monkeySound[monkeySoundIndex].setVolume(50);
+        // monkeySound[monkeySoundIndex].play();
+        // monkeySoundIndex++;
+        // if(monkeySoundIndex >= monkeySound.length) {
+            // monkeySoundIndex = 0;
+        // }
+    // }
+    
+    // **************************** ANIMATIONS ****************************
+    /**
+     * Initialize monkey images
+     */
     private void initImages() {
         // Initialize monkey images
         for(int i = 0; i < maxIndex; i++) {
@@ -50,7 +84,6 @@ public class Monkey extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
     public void act()
     {
         // calls the update method from the Entity class, which returns whether this should continue acting
@@ -64,29 +97,11 @@ public class Monkey extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        //playMonkeySound();
         if (Greenfoot.getRandomNumber(240) < 10)
         {
-            setRotation(direction);
-            if (direction >= 315 || direction <= 45)
-            {
-                away = true;
-                right = true;
-            }
-            if (direction > 45 && direction <= 135)
-            {   
-                right = true;
-                away = false;
-            }
-            if (direction > 135 && direction <= 225)
-            {
-                right = false;
-                away = false;
-            }
-            if (direction > 225 && direction <= 315)
-            {
-                right = false;
-                away = true;
-            }
+            // changes direction at random times
+            adjustDirection();
         }
         if (getX() <= 30 || getX() >= 320)
         {
@@ -106,30 +121,18 @@ public class Monkey extends Animal
             if(animIndex >= maxIndex) {
                 animIndex = 0;
             }
-            if(right && away)
-            {
+            if(right){
                 setImage(walkRight[animIndex]);
             } 
-            else if (!right && !away)
-            {
-                setImage(walkLeft[animIndex]);
-            }
-            else if(left) 
-            {
+            else if (left){
                 setImage(walkLeft[animIndex]);
             } 
-            else if(right && !away)
-            {
+            else if(toward){
                 setImage(walkToward[animIndex]); 
             } 
-            else 
-            {
+            else if(away){
                 setImage(walkAway[animIndex]);
             }
-        }
-        else if(toward)
-        {
-            setImage(walkToward[animIndex]);
         }
         else {
             animCounter--;

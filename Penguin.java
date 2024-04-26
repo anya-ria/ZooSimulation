@@ -1,11 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 /**
- * Write a description of class Penguin here.
+ * Penguins are cute little birds at our zoo :) Look at them slide!
  * 
  * @author <li> Luke Xiao | Functions
  * @author <li> Anya Shah | Animations
+ * @author <li> Gennie Won| Sounds
  * @author <li> Lucas Fu  | Cleanup
- * @version 04/12/2024
+ * @version 04/25/2024
  */
 public class Penguin extends Animal
 {
@@ -18,7 +20,13 @@ public class Penguin extends Animal
     // Animation variables
     private int animCounter, animDelay, animIndex; 
     private int maxSlideIndex, maxWalkIndex;
-    private boolean right, left, away, toward, sliding;
+    private boolean sliding;
+
+    // Sounds
+    // private static GreenfootSound[] penguinSound;
+    // private static int penguinSoundIndex;
+    // private static GreenfootSound[] slidingSound;
+    // private static int slidingSoundIndex;
 
     public Penguin()
     {
@@ -28,8 +36,79 @@ public class Penguin extends Animal
         initImages();
     }
 
+    public void act()
+    {
+        // calls the update method from the Entity class, which returns whether this should continue acting
+        if(!super.update()) return;
+        if(sliding) {
+            slide();
+            //playSlidingSound();
+        }
+        moveAround();
+        animate();
+    }
+    
+    // **************************** SOUNDS ****************************
+    // public static void init() {
+        // // Initialize penguin sounds
+        // penguinSoundIndex = 0;
+        // penguinSound = new GreenfootSound[20];
+        // for(int i = 0; i < penguinSound.length; i++) {
+            // penguinSound[i] = new GreenfootSound("penguin.mp3");
+        // }
+        // // Initialize sliding sounds
+        // slidingSoundIndex = 0;
+        // slidingSound = new GreenfootSound[20];
+        // for(int i = 0; i < penguinSound.length; i++) {
+            // slidingSound[i] = new GreenfootSound("slide.mp3");
+        // }
+    // }
+    // public static void playPenguinSound() {
+        // penguinSound[penguinSoundIndex].setVolume(50);
+        // penguinSound[penguinSoundIndex].play();
+        // penguinSoundIndex++;
+        // if(penguinSoundIndex >= penguinSound.length) {
+            // penguinSoundIndex = 0;
+        // }
+    // }
+    // public static void playSlidingSound() {
+        // slidingSound[slidingSoundIndex].setVolume(50);
+        // slidingSound[slidingSoundIndex].play();
+        // slidingSoundIndex++;
+        // if(slidingSoundIndex >= slidingSound.length) {
+            // slidingSoundIndex = 0;
+        // }
+    // }
+    
+    // **************************** ANIMATIONS ****************************
+    /**
+     * Initialize penguin images
+     */
     private void initImages()
     {
+        // Initializing sliding images
+        for(int i = 0; i < maxSlideIndex; i++)
+        {
+            slideRight[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+            slideRight[i].scale((int)(slideRight[i].getWidth()*1.5),(int)(slideRight[i].getHeight()*1.5));
+        }
+        for(int i = 0; i < maxSlideIndex; i++)
+        {
+            slideLeft[i] = new GreenfootImage("penguinSlideRight/slideRight" + i + ".png");
+            slideLeft[i].scale((int)(slideLeft[i].getWidth()*1.5),(int)(slideLeft[i].getHeight()*1.5));
+            slideLeft[i].mirrorHorizontally();
+        }
+        for(int i = 0; i < maxSlideIndex; i++)
+        {
+            slideAway[i] = new GreenfootImage("penguinSlideAway/slideAway" + i + ".png");
+            slideAway[i].scale((int)(slideAway[i].getWidth()*1.5),(int)(slideAway[i].getHeight()*1.5));
+        }
+        for(int i = 0; i < maxSlideIndex; i++)
+        {
+            slideToward[i] = new GreenfootImage("penguinSlideToward/slideToward" + i + ".png");
+            slideToward[i].scale((int)(slideToward[i].getWidth()*1.5),(int)(slideToward[i].getHeight()*1.5));
+        }
+
         // Initializing walking images
         for(int i = 0; i < maxWalkIndex; i++)
         {
@@ -57,7 +136,6 @@ public class Penguin extends Animal
         animDelay = 10;
         animCounter = animDelay;
     }
-
     public void act()
     {
         // calls the update method from the Entity class, which returns whether this should continue acting
@@ -71,33 +149,22 @@ public class Penguin extends Animal
     {
         direction = Greenfoot.getRandomNumber(361);
         move(1);
+        //playPenguinSound();
         if (Greenfoot.getRandomNumber(500) < 10)
         {
-            setRotation(direction);
-            right = false; away = false; left = false; toward = false;
-            // The initial orientation of the images are facing RIGHT
-            if (direction >= 315 || direction <= 45) // Right
-            {
-                right = true;
-            }
-            if (direction > 45 && direction <= 135) // Down
-            {   
-                toward = true;
-            }
-            if (direction > 135 && direction <= 225) // Left
-            {
-                left = true;
-            }
-            if (direction > 225 && direction <= 315) // Up
-            {
-                away = true;
-            }
+            // changes direction at random times
+            adjustDirection();
         }
         if (getX() <= 695 || getX() >= 970){
             if(Greenfoot.getRandomNumber(500) < 5){
                 sliding = true;
             }
         }
+        if (getX() <= 695 || getX() >= 970)
+
+            if(Greenfoot.getRandomNumber(500) < 5){
+                sliding = true;
+            }
         if(Greenfoot.getRandomNumber(500) < 5){
             sliding = false;
         }
@@ -111,7 +178,25 @@ public class Penguin extends Animal
         }
         animate();
     }
-
+    public void slide()
+    {
+        direction = Greenfoot.getRandomNumber(361);
+        move(3);
+        if (Greenfoot.getRandomNumber(100) < 10)
+        {
+            setRotation(direction);
+        }
+        if (getX() <= 685 || getX() >= 970)
+        {
+            turn(180);
+            move(10);
+        }
+        if (getY() <= 500 || getY() >= 750)
+        {
+            turn(180);
+            move(10);
+        }
+    }
     protected void animate() {
         if(animCounter == 0) {
             animCounter = animDelay;

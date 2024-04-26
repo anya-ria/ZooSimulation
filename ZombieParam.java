@@ -3,9 +3,9 @@ import java.util.*;
 /**
  * ZombieParam
  * 
- * @author Megan Lee | Art
- * @author Vanessa Huo | Functions
- * @version April 2024
+ * @author <li> Megan Lee | Art
+ * @author <li> Vanessa Huo | Functions
+ * @version 04/25/2024
  */
 public class ZombieParam extends Icon
 {
@@ -76,5 +76,4 @@ public class ZombieParam extends Icon
             value = 9;
         }
     }
-    
 }

@@ -4,7 +4,7 @@ import java.util.*;
  * Icon abstract class
  * 
  * @author Vanessa Huo 
- * @version 2024/04
+ * @version 04/25/2024
  */
 public abstract class Icon extends Actor
 {
@@ -28,5 +28,4 @@ public abstract class Icon extends Actor
     public void setClicked(boolean x){
         isClicked = x;
     }
-
 }
