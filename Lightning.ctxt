@@ -8,7 +8,11 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ turnIntoZombie()
+
 comment3.text=\r\n\ When\ lightning\ strikes,\ animals\ have\ a\ chance\ to\ turn\ into\ zombies\!\r\n
+
+comment3.text=\n\ When\ lightning\ strikes,\ animals\ have\ a\ chance\ to\ turn\ into\ zombies\!\n
+
 comment4.params=
 comment4.target=void\ pauseSound()
 comment4.text=\ \r\n\ Method\ that\ pauses\ lightning\ sound.\r\n

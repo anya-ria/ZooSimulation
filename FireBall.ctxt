@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FireBall
-comment0.text=\r\n\ Standard\ projectile\ thrown\ by\ monkeys\ and\ traitors,\ leaves\ a\ banana\ peel\ when\ expiring\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\r\n\ the\ Fireball\ is\ a\ projectile\ shot\ by\ the\ boss,\ dealing\ damage\ to\ those\ it\ touches\r\n\ \r\n\ @author\ Lucas\ Fu\r\n\ @version\ 04/25/2024\r\n
 comment1.params=angle\ speed
 comment1.target=FireBall(int,\ double)
 comment1.text=\r\n\ constructs\ a\ new\ FireBall\ with\ a\ speed\ and\ direction\r\n\ @param\ angle\ the\ direction\ in\ degrees\r\n\ @param\ speed\ the\ magnitude\ of\ speed\r\n
@@ -13,7 +13,7 @@ comment4.params=
 comment4.target=void\ animate()
 comment5.params=
 comment5.target=void\ detectCollision()
-comment5.text=\r\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ expiring\ this\r\n
+comment5.text=\r\n\ Does\ damage\ and\ minor\ pushing\ to\ the\ child\ touching\ this,\ without\ expiring\r\n
 comment6.params=
 comment6.target=void\ expire()
 comment6.text=\r\n\ Creates\ a\ peel\ when\ expired\r\n

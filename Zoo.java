@@ -33,7 +33,7 @@ import java.util.*;
  * <li> An utility class that converts an angle into a vector and vice versa
  * <li> Customizations are allowed for four types of variables. 
  * <li> Five achievements and three endings waiting to unlock. 
- * <li> The lightning has a chance to change normal animals into ZOMBIES!
+ * <li> Lightning that has a chance to change normal animals into ZOMBIES!
  * <li> Fighter children attack the zombies. Don't lose them. 
  * <p>
  * <b> Known bugs: </b>
@@ -65,9 +65,11 @@ public class Zoo extends World
     // private static GreenfootSound[] music;
     // private static int musicSoundIndex;
 
-    private boolean bossFight; 
+    private boolean bossFight; //boss level achieved or not
 
-    private GreenfootSound musicBG;
+    private GreenfootSound musicBG; //background music
+    
+
     
     /**
      * A constructor for the simulation's Zoo to set up the world and initalize objects.
@@ -99,23 +101,6 @@ public class Zoo extends World
         Fighter.init();
     }
 
-    // public static void init() {
-    // musicSoundIndex = 0;
-    // music = new GreenfootSound[20];
-    // for(int i = 0; i < music.length; i++) {
-    // music[i] = new GreenfootSound("backgroundMusic.mp3");
-    // }
-    // }
-
-    // public static void playMusic() {
-    // music[musicSoundIndex].setVolume(70);
-    // music[musicSoundIndex].play();
-    // musicSoundIndex++;
-    // if(musicSoundIndex >= music.length) {
-    // musicSoundIndex = 0;
-    // }
-    // }
-
     public void act(){
         actCount++;
         spawn();
@@ -123,6 +108,7 @@ public class Zoo extends World
         check();
         checkEnd();
     }
+
 
     /**
      * Pauses longer sounds that were being played.
@@ -188,7 +174,7 @@ public class Zoo extends World
             }
         }
 
-        if(numAnimals == 0 && numZombie > 0 && bossFight != false){
+        if(numAnimals <= 0 && numZombie > 0 && bossFight == false){
             for(Zombie a: getObjects(Zombie.class))
             {
                 removeObject(a);
@@ -213,13 +199,13 @@ public class Zoo extends World
         if(numHit >= 10){ //get hit by 10 bananas
             Achievement.completeAchi1();
         }
-        if(numFighter == 0){ //have no fighter children
+        if(numFighter <= 0){ //have no fighter children
             Achievement.completeAchi2();
         }
-        if(numChildren == 0){ //all children became zombies
+        if(numChildren <= 0){ //all children died
             Achievement.completeAchi3();
         }
-        if(numAnimals == 0 && numZombie > 0){ //all animals became zombies
+        if(numAnimals <= 0 && numZombie > 0){ //all animals became zombies
             Achievement.completeAchi4();
         }
     }
@@ -233,18 +219,21 @@ public class Zoo extends World
             Greenfoot.setWorld(world);
             Collections.unlockEnd1();
             world.ending1();
+            Greenfoot.setWorld(world);
         }
-        if(numZombie == 0 && actCount > 1000 && numAnimals > 0){
+        if(numZombie == 0 && actCount > 1000){
             stopped();
             Greenfoot.setWorld(world);
             Collections.unlockEnd2();
             world.ending2();
+            Greenfoot.setWorld(world);
         }
         if(!boss.isAwake()){
             stopped();
             Greenfoot.setWorld(world);
             Collections.unlockEnd3();
             world.ending3();
+            Greenfoot.setWorld(world);
         }
     }
 
@@ -283,8 +272,7 @@ public class Zoo extends World
      * @return int   Number of zombie in Zoo
      */
     public int getNumZombie(){
-        int x = numZombie;
-        return x;
+        return numZombie;
     }
 
     /**
@@ -292,8 +280,7 @@ public class Zoo extends World
      * @return int   Number of children in Zoo
      */
     public int getNumChild(){
-        int x = numChildren;
-        return x;
+        return numChildren;
     } 
 
     /**
@@ -301,8 +288,7 @@ public class Zoo extends World
      * @return int   Number of animals in Zoo
      */
     public int getNumAnimal(){
-        int x = numAnimals;
-        return x;
+        return numAnimals;
     } 
 
     /**

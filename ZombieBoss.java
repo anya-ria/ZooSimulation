@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Boss here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Vanessa Huo | Functions 
+ * @version April, 2024
  */
 public class ZombieBoss extends Entity
 {
@@ -21,6 +21,10 @@ public class ZombieBoss extends Entity
     //Facing
     private boolean turn;
     
+    /**
+     * Act - do whatever the ZombieBoss wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         if(!super.update()) return;
@@ -64,7 +68,9 @@ public class ZombieBoss extends Entity
         }
     }
     
-    
+    /**
+     * The Zombie Boss throws fireballs at the children. 
+     */
     private void throwFireBalls(){
         double[] enemyDetails = detectNearestEntity(Child.class, 1000);
         double direction = enemyDetails[0];
@@ -77,9 +83,11 @@ public class ZombieBoss extends Entity
         if(distance<500 && distance>50 && throwCooldown<=0){
             switch(rand.nextInt(2)){
                 case 0:
+                    // sometimes throws fireball slower
                     throwFireBall((int)direction, 4);
                     break;
                 case 1:
+                    // sometimes throws fireball faster
                     throwFireBall((int)direction, 8);
                     break;
             }
@@ -89,9 +97,15 @@ public class ZombieBoss extends Entity
         if(distance < 10){
             return;
         }
+        // movement
         setLocation(getX()+vector[0]*1.5, getY()+vector[1]*1.5);
     }
     
+    /**
+     * Throws FireBall with a speed and direction
+     * @param angle the direction in degrees
+     * @param speed the magnitude of speed
+     */
     private void throwFireBall(int direction, int speed){
         if(turn){
             getWorld().addObject(new FireBall(direction, speed), getX()-80, getY());
@@ -100,5 +114,4 @@ public class ZombieBoss extends Entity
             getWorld().addObject(new FireBall(direction, speed), getX()+80, getY());
         }
     }
-    
 }
