@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.target=Customization
-comment0.text=\r\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\r\n\ Different\ values\ may\ lead\ to\ different\ endings\r\n\ \r\n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @author\ Gennie\ Won\ \ |\ Sounds\r\n\ @version\ 2024/04\r\n\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\n\ Customization\ screen\ where\ plays\ can\ set\ the\ initial\ number\ of\ Children,\ Fighers,\ Healers\ and\ Zombies\ in\ Zoo\n\ Different\ values\ may\ lead\ to\ different\ endings\n\ \n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @author\ Gennie\ Won\ \ |\ Sounds\n\ @version\ 2024/04\n\n\ @version\ 04/25/2024\n
 comment1.params=
 comment1.target=Customization()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ When\ 'Start'\ button\ gets\ pressed,\ set\ initial\ number\ of\ each\ actor\ in\ Zoo\r\n\ Go\ to\ CutScene\ world\ and\ play\ sound\ effect\r\n
+comment2.text=\n\ When\ 'Start'\ button\ gets\ pressed,\ set\ initial\ number\ of\ each\ actor\ in\ Zoo\n\ Go\ to\ CutScene\ world\ and\ play\ sound\ effect\n
 comment3.params=
 comment3.target=void\ setValue()
-comment3.text=\r\n\ A\ method\ that\ checks\ which\ button\ player\ clicked\ for\ each\ variable.\ \r\n\ Set\ the\ initial\ number\ of\ Children,\ Fighter,\ Healer\ and\ Zombie\ according\ to\ player's\ choice.\ \r\n\ If\ player\ did\ not\ make\ a\ choice,\ then\ no\ values\ are\ set.\ The\ Zoo\ world\ will\ create\ actors\ according\ to\ the\ default\ numbers.\r\n
+comment3.text=\n\ A\ method\ that\ checks\ which\ button\ player\ clicked\ for\ each\ variable.\ \n\ Set\ the\ initial\ number\ of\ Children,\ Fighter,\ Healer\ and\ Zombie\ according\ to\ player's\ choice.\ \n\ If\ player\ did\ not\ make\ a\ choice,\ then\ no\ values\ are\ set.\ The\ Zoo\ world\ will\ create\ actors\ according\ to\ the\ default\ numbers.\n
 comment4.params=
 comment4.target=void\ createParams()
-comment4.text=\r\n\ Create\ choices\ (buttons)\ for\ each\ variable\ in\ the\ Customization\ screen\r\n
+comment4.text=\n\ Create\ choices\ (buttons)\ for\ each\ variable\ in\ the\ Customization\ screen\n
 comment5.params=
 comment5.target=void\ resetVariables()
 comment6.params=

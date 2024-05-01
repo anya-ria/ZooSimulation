@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ Title\ Screen\r\n\ The\ player\ can\:\r\n\ \ \ \ \ \ Start\ the\ game\r\n\ \ \ \ \ \ View\ Game\ Achievements\r\n\ \ \ \ \ \ View\ Game\ Endings\r\n\ \r\n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\r\n\ @author\ Vanessa\ Huo\ |\ Functions\r\n\ @version\ 04/25/2024\r\n
+comment0.text=\n\ Title\ Screen\n\ The\ player\ can\:\n\ \ \ \ \ \ Start\ the\ game\n\ \ \ \ \ \ View\ Game\ Achievements\n\ \ \ \ \ \ View\ Game\ Endings\n\ \n\ @author\ Megan\ Lee\ |\ Art\ &\ Sound\n\ @author\ Vanessa\ Huo\ |\ Functions\n\ @version\ 04/25/2024\n
 comment1.params=
 comment1.target=TitleScreen()
-comment1.text=\r\n\ A\ constructor\ for\ the\ simulation's\ title\ screen\ to\ set\ up\ the\ world\ and\ initalize\ objects.\r\n
+comment1.text=\n\ A\ constructor\ for\ the\ simulation's\ title\ screen\ to\ set\ up\ the\ world\ and\ initalize\ objects.\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\r\n
+comment2.text=\n\ When\ 'Start'\ button\ gets\ pressed,\ go\ to\ Customization\ screen\ and\ play\ the\ sound\ effect\n
 comment3.params=
 comment3.target=void\ stopped()
-comment3.text=\r\n\ Pauses\ longer\ sounds\ that\ were\ being\ played.\r\n\ A\ method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped/paused.\r\n
+comment3.text=\n\ Pauses\ longer\ sounds\ that\ were\ being\ played.\n\ A\ method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped/paused.\n
 comment4.params=
 comment4.target=void\ started()
-comment4.text=\r\n\ Resumes\ longer\ sounds\ that\ were\ being\ played.\r\n\ A\ method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped/paused.\r\n
+comment4.text=\n\ Resumes\ longer\ sounds\ that\ were\ being\ played.\n\ A\ method\ called\ by\ the\ Greenfoot\ system\ when\ the\ execution\ has\ stopped/paused.\n
 numComments=5
